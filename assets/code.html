@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Golf Profile Screen</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#013220",
+              "accent": "#FFBF00",
+              "background-light": "#F5F5F5",
+              "background-dark": "#01160E",
+              "text-light": "#333333",
+              "text-dark": "#E0E0E0",
+              "border-light": "#E0E0E0",
+              "border-dark": "#2A4B3A",
+              "card-light": "#FFFFFF",
+              "card-dark": "#0A2418"
+            },
+            fontFamily: {
+              "display": ["Lexend", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "0.5rem", "lg": "0.75rem", "xl": "1rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings:
+            'FILL' 0,
+            'wght' 400,
+            'GRAD' 0,
+            'opsz' 24
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display">
+<div class="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden">
+<!-- Top App Bar -->
+<div class="sticky top-0 z-10 flex items-center bg-background-light/80 dark:bg-background-dark/80 p-4 backdrop-blur-sm justify-between border-b border-border-light dark:border-border-dark">
+<div class="flex size-12 shrink-0 items-center justify-start">
+<button class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 w-10 text-text-light dark:text-text-dark gap-2 text-base font-bold leading-normal tracking-[0.015em]">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+</div>
+<h2 class="text-text-light dark:text-text-dark text-lg font-bold leading-tight tracking-[-0.015em] flex-1 text-center">My Profile</h2>
+<div class="flex w-12 items-center justify-end">
+<button class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 w-10 text-text-light dark:text-text-dark gap-2 text-base font-bold leading-normal tracking-[0.015em]">
+<span class="material-symbols-outlined">settings</span>
+</button>
+</div>
+</div>
+<main class="flex flex-col gap-6 p-4 pb-12">
+<!-- Profile Header -->
+<section class="flex w-full flex-col gap-4 items-center">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full h-32 w-32 border-4 border-accent" data-alt="User profile picture of a male golfer" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBO8cyXDGP225fZGE9ULJ8DoGeYL5oB6_Dbo9C2X3M8sax0Aqv8xBdGsUZg08C_3vksbVOmaoWvJAjkbBsdT9lwnQ6OAhTdTqchgDfGE5vXopcChVIq8Bo17k3eK3X8iUqG2N4732ule5SCy1L1zUgwG0WP3sx0ArZRYvfKSk1yHOBMwV6MQ4fgfrimAY9sW-L70Yoj6SMQ40b52wki0QVGnUR1WTBjxe5qiT2IS12j04bjkHfup1gJcUiSY6Bj1HqeOU165SCj8w7w");'></div>
+<div class="flex flex-col items-center justify-center">
+<p class="text-text-light dark:text-text-dark text-[22px] font-bold leading-tight tracking-[-0.015em] text-center">Alex Johnson</p>
+<p class="text-accent text-base font-medium leading-normal text-center">Handicap: 14.2</p>
+</div>
+</section>
+<!-- Stats -->
+<section class="grid grid-cols-3 gap-3">
+<div class="flex flex-col gap-1 rounded-lg p-4 bg-card-light dark:bg-card-dark border border-border-light dark:border-border-dark items-center text-center">
+<p class="text-text-light/70 dark:text-text-dark/70 text-xs font-medium leading-normal uppercase tracking-wider">Avg Score</p>
+<p class="text-text-light dark:text-text-dark tracking-tight text-2xl font-bold leading-tight">85.5</p>
+</div>
+<div class="flex flex-col gap-1 rounded-lg p-4 bg-card-light dark:bg-card-dark border border-border-light dark:border-border-dark items-center text-center">
+<p class="text-text-light/70 dark:text-text-dark/70 text-xs font-medium leading-normal uppercase tracking-wider">FIR</p>
+<p class="text-text-light dark:text-text-dark tracking-tight text-2xl font-bold leading-tight">62%</p>
+</div>
+<div class="flex flex-col gap-1 rounded-lg p-4 bg-card-light dark:bg-card-dark border border-border-light dark:border-border-dark items-center text-center">
+<p class="text-text-light/70 dark:text-text-dark/70 text-xs font-medium leading-normal uppercase tracking-wider">GIR</p>
+<p class="text-text-light dark:text-text-dark tracking-tight text-2xl font-bold leading-tight">55%</p>
+</div>
+</section>
+<!-- Tabs -->
+<section>
+<div class="flex border-b border-border-light dark:border-border-dark justify-between">
+<a class="flex flex-col items-center justify-center border-b-[3px] border-b-accent pb-3 pt-2 flex-1" href="#">
+<p class="text-accent text-sm font-bold leading-normal tracking-[0.015em]">Scoring</p>
+</a>
+<a class="flex flex-col items-center justify-center border-b-[3px] border-b-transparent pb-3 pt-2 flex-1" href="#">
+<p class="text-text-light/60 dark:text-text-dark/60 text-sm font-bold leading-normal tracking-[0.015em]">Driving</p>
+</a>
+<a class="flex flex-col items-center justify-center border-b-[3px] border-b-transparent pb-3 pt-2 flex-1" href="#">
+<p class="text-text-light/60 dark:text-text-dark/60 text-sm font-bold leading-normal tracking-[0.015em]">Putting</p>
+</a>
+</div>
+</section>
+<!-- Chart -->
+<section class="flex flex-col gap-2 rounded-lg border border-border-light dark:border-border-dark bg-card-light dark:bg-card-dark p-6">
+<p class="text-text-light dark:text-text-dark text-base font-medium leading-normal">Handicap Progression</p>
+<p class="text-accent tracking-light text-[32px] font-bold leading-tight truncate">14.2</p>
+<div class="flex gap-1.5 items-center">
+<p class="text-text-light/70 dark:text-text-dark/70 text-sm font-normal leading-normal">Last 6 Months</p>
+<div class="flex items-center gap-0.5">
+<span class="material-symbols-outlined text-green-500 text-base">arrow_downward</span>
+<p class="text-green-500 text-sm font-medium leading-normal">1.8</p>
+</div>
+</div>
+<div class="flex min-h-[160px] flex-1 flex-col gap-6 py-4">
+<svg fill="none" height="100%" preserveaspectratio="none" viewbox="0 0 475 150" width="100%" xmlns="http://www.w3.org/2000/svg">
+<path d="M0 109C18.1538 109 18.1538 21 36.3077 21C54.4615 21 54.4615 41 72.6154 41C90.7692 41 90.7692 93 108.923 93C127.077 93 127.077 33 145.231 33C163.385 33 163.385 101 181.538 101C199.692 101 199.692 61 217.846 61C236 61 236 45 254.154 45C272.308 45 272.308 121 290.462 121C308.615 121 308.615 149 326.769 149C344.923 149 344.923 1 363.077 1C381.231 1 381.231 81 399.385 81C417.538 81 417.538 129 435.692 129C453.846 129 453.846 25 472 25V149H0V109Z" fill="url(#paint0_linear_chart)"></path>
+<path d="M0 109C18.1538 109 18.1538 21 36.3077 21C54.4615 21 54.4615 41 72.6154 41C90.7692 41 90.7692 93 108.923 93C127.077 93 127.077 33 145.231 33C163.385 33 163.385 101 181.538 101C199.692 101 199.692 61 217.846 61C236 61 236 45 254.154 45C272.308 45 272.308 121 290.462 121C308.615 121 308.615 149 326.769 149C344.923 149 344.923 1 363.077 1C381.231 1 381.231 81 399.385 81C417.538 81 417.538 129 435.692 129C453.846 129 453.846 25 472 25" stroke="#FFBF00" stroke-linecap="round" stroke-width="3"></path>
+<defs>
+<lineargradient gradientunits="userSpaceOnUse" id="paint0_linear_chart" x1="236" x2="236" y1="1" y2="149">
+<stop stop-color="#FFBF00" stop-opacity="0.3"></stop>
+<stop offset="1" stop-color="#FFBF00" stop-opacity="0"></stop>
+</lineargradient>
+</defs>
+</svg>
+<div class="flex justify-between">
+<p class="text-text-light/60 dark:text-text-dark/60 text-[13px] font-medium leading-normal">Jan</p>
+<p class="text-text-light/60 dark:text-text-dark/60 text-[13px] font-medium leading-normal">Feb</p>
+<p class="text-text-light/60 dark:text-text-dark/60 text-[13px] font-medium leading-normal">Mar</p>
+<p class="text-text-light/60 dark:text-text-dark/60 text-[13px] font-medium leading-normal">Apr</p>
+<p class="text-text-light/60 dark:text-text-dark/60 text-[13px] font-medium leading-normal">May</p>
+<p class="text-text-light/60 dark:text-text-dark/60 text-[13px] font-medium leading-normal">Jun</p>
+</div>
+</div>
+</section>
+<!-- Recent Rounds -->
+<section class="flex flex-col gap-4">
+<div class="flex justify-between items-center">
+<h3 class="text-lg font-bold text-text-light dark:text-text-dark">Recent Rounds</h3>
+<a class="text-sm font-bold text-accent" href="#">View All</a>
+</div>
+<div class="flex flex-col gap-3">
+<div class="flex items-center gap-4 rounded-lg p-4 bg-card-light dark:bg-card-dark border border-border-light dark:border-border-dark">
+<div class="flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10 dark:bg-primary/20">
+<span class="material-symbols-outlined text-primary text-2xl">golf_course</span>
+</div>
+<div class="flex-1">
+<p class="font-bold text-text-light dark:text-text-dark">Pebble Beach</p>
+<p class="text-sm text-text-light/70 dark:text-text-dark/70">June 15, 2024</p>
+</div>
+<div class="text-right">
+<p class="font-bold text-xl text-text-light dark:text-text-dark">82</p>
+<p class="text-sm text-green-500 font-medium">+10</p>
+</div>
+</div>
+<div class="flex items-center gap-4 rounded-lg p-4 bg-card-light dark:bg-card-dark border border-border-light dark:border-border-dark">
+<div class="flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10 dark:bg-primary/20">
+<span class="material-symbols-outlined text-primary text-2xl">golf_course</span>
+</div>
+<div class="flex-1">
+<p class="font-bold text-text-light dark:text-text-dark">Augusta National</p>
+<p class="text-sm text-text-light/70 dark:text-text-dark/70">June 8, 2024</p>
+</div>
+<div class="text-right">
+<p class="font-bold text-xl text-text-light dark:text-text-dark">88</p>
+<p class="text-sm text-green-500 font-medium">+16</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Achievements -->
+<section class="flex flex-col gap-4">
+<div class="flex justify-between items-center">
+<h3 class="text-lg font-bold text-text-light dark:text-text-dark">Achievements</h3>
+<a class="text-sm font-bold text-accent" href="#">View All</a>
+</div>
+<div class="grid grid-cols-4 gap-4">
+<div class="flex flex-col items-center gap-2 text-center">
+<div class="flex h-16 w-16 items-center justify-center rounded-full bg-accent">
+<span class="material-symbols-outlined text-primary text-3xl">emoji_events</span>
+</div>
+<p class="text-xs font-medium text-text-light dark:text-text-dark">First Birdie</p>
+</div>
+<div class="flex flex-col items-center gap-2 text-center">
+<div class="flex h-16 w-16 items-center justify-center rounded-full bg-accent">
+<span class="material-symbols-outlined text-primary text-3xl">emoji_events</span>
+</div>
+<p class="text-xs font-medium text-text-light dark:text-text-dark">Broke 90</p>
+</div>
+<div class="flex flex-col items-center gap-2 text-center">
+<div class="flex h-16 w-16 items-center justify-center rounded-full bg-accent/30">
+<span class="material-symbols-outlined text-accent text-3xl">lock</span>
+</div>
+<p class="text-xs font-medium text-text-light/50 dark:text-text-dark/50">50 Rounds</p>
+</div>
+<div class="flex flex-col items-center gap-2 text-center">
+<div class="flex h-16 w-16 items-center justify-center rounded-full bg-accent/30">
+<span class="material-symbols-outlined text-accent text-3xl">lock</span>
+</div>
+<p class="text-xs font-medium text-text-light/50 dark:text-text-dark/50">Eagle Eye</p>
+</div>
+</div>
+</section>
+</main>
+</div>
+</body></html>

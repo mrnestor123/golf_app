@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Select a Course - Golf Assistant</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#13ec13",
+              "background-light": "#f6f8f6",
+              "background-dark": "#102210",
+            },
+            fontFamily: {
+              "display": ["Lexend", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display">
+<div class="relative flex h-auto min-h-screen w-full flex-col overflow-x-hidden">
+<!-- Top App Bar -->
+<div class="flex items-center p-4 pb-2 justify-between bg-background-light dark:bg-background-dark sticky top-0 z-10">
+<div class="flex size-12 shrink-0 items-center justify-start">
+<span class="material-symbols-outlined text-black dark:text-white text-2xl">arrow_back</span>
+</div>
+<h2 class="text-black dark:text-white text-lg font-bold leading-tight tracking-[-0.015em] flex-1 text-center">Select a Course</h2>
+<div class="flex w-12 items-center justify-end">
+<button class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 bg-transparent text-black dark:text-white gap-2 text-base font-bold leading-normal tracking-[0.015em] min-w-0 p-0">
+<span class="material-symbols-outlined text-2xl">tune</span>
+</button>
+</div>
+</div>
+<!-- Search Bar -->
+<div class="px-4 py-3 bg-background-light dark:bg-background-dark">
+<label class="flex flex-col min-w-40 h-12 w-full">
+<div class="flex w-full flex-1 items-stretch rounded-lg h-full">
+<div class="text-gray-400 dark:text-gray-300 flex border-none bg-gray-200 dark:bg-black/20 items-center justify-center pl-4 rounded-l-lg border-r-0">
+<span class="material-symbols-outlined text-2xl">search</span>
+</div>
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-black dark:text-white focus:outline-0 focus:ring-0 border-none bg-gray-200 dark:bg-black/20 focus:border-none h-full placeholder:text-gray-400 dark:placeholder:text-gray-300 px-4 rounded-l-none border-l-0 pl-2 text-base font-normal leading-normal" placeholder="Search for a course..." value=""/>
+</div>
+</label>
+</div>
+<!-- Chips / Filters -->
+<div class="flex gap-3 px-4 py-1 pb-3 overflow-x-auto">
+<button class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-full bg-primary/20 dark:bg-primary/20 px-4">
+<span class="material-symbols-outlined text-black dark:text-white text-xl">near_me</span>
+<p class="text-black dark:text-white text-sm font-medium leading-normal">Nearby</p>
+</button>
+<button class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-full bg-gray-200 dark:bg-black/20 px-4">
+<span class="material-symbols-outlined text-black dark:text-white text-xl">star</span>
+<p class="text-black dark:text-white text-sm font-medium leading-normal">Top Rated</p>
+</button>
+<button class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-full bg-gray-200 dark:bg-black/20 px-4">
+<span class="material-symbols-outlined text-black dark:text-white text-xl">sort_by_alpha</span>
+<p class="text-black dark:text-white text-sm font-medium leading-normal">A-Z</p>
+</button>
+</div>
+<!-- Course List -->
+<div class="flex flex-col gap-1 px-4 py-2">
+<!-- List Item 1 -->
+<div class="flex gap-4 p-3 justify-between items-center rounded-lg bg-gray-200/50 dark:bg-black/20">
+<div class="flex items-center gap-4">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-lg size-[70px]" data-alt="Aerial view of Pebble Beach golf course coastline" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCmq8jxcOy1M4vdzP4cUn-TKC6AWK40-q-caz1BC8c76vNj5bBh-j43AsNmlh1akBmP8dliWkSLBFSg86Ux8JswnXxS43vy-3p0dRWB8S0MliSGVa-LfxYIwMVPo6GG3taUJjxlPBD1vx3nbWVBtRC1PMw3NhRFJBWxCQLfBBGb8xqkrS48iwF89HF-AywLrW8NPMLIKqNBunRkJsXzmaNO2_2YQgJcBwILXbCrGvNIz9VgpxgmEVFEL0v8cGJrUGDkM3JiWBhbe19B");'></div>
+<div class="flex flex-1 flex-col justify-center gap-0.5">
+<p class="text-black dark:text-white text-base font-medium leading-normal">Pebble Beach Golf Links</p>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-yellow-500 text-base" style="font-variation-settings: 'FILL' 1;">star</span>
+<p class="text-gray-600 dark:text-gray-300 text-sm font-normal leading-normal">4.8</p>
+</div>
+<p class="text-gray-600 dark:text-gray-300 text-sm font-normal leading-normal">Pebble Beach, CA</p>
+</div>
+</div>
+<div class="shrink-0">
+<div class="text-gray-400 dark:text-gray-500 flex size-7 items-center justify-center">
+<span class="material-symbols-outlined text-2xl">chevron_right</span>
+</div>
+</div>
+</div>
+<!-- List Item 2 -->
+<div class="flex gap-4 p-3 justify-between items-center rounded-lg bg-gray-200/50 dark:bg-black/20">
+<div class="flex items-center gap-4">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-lg size-[70px]" data-alt="Lush green fairway at Augusta National Golf Club" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAMkGOmQlkFFYzqWj4JbpH5F-Zb2AmGrq4jW-3gQiT3yhKHdlsqrbzSSPQgcsRksZt5QJHKCkji1pUL-OKwTs35dwrTGjBpZgOqtbTCI832i1f4L4jIWqSxVP2ili-T9KXfU1thg302qKSHi-J2sWdigSHHPl-BnBmDebXF5gt5LL3Jj3LUk3PJHyB3bdvbE75KLujWIwEXwaX8Ny2GukiHNICgmns6r2gYeOlQkEvmH2pND058Ex0_dP8s47Ok-hF7G9lsqFJCf3tw");'></div>
+<div class="flex flex-1 flex-col justify-center gap-0.5">
+<p class="text-black dark:text-white text-base font-medium leading-normal">Augusta National Golf Club</p>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-yellow-500 text-base" style="font-variation-settings: 'FILL' 1;">star</span>
+<p class="text-gray-600 dark:text-gray-300 text-sm font-normal leading-normal">4.9</p>
+</div>
+<p class="text-gray-600 dark:text-gray-300 text-sm font-normal leading-normal">Augusta, GA</p>
+</div>
+</div>
+<div class="shrink-0">
+<div class="text-gray-400 dark:text-gray-500 flex size-7 items-center justify-center">
+<span class="material-symbols-outlined text-2xl">chevron_right</span>
+</div>
+</div>
+</div>
+<!-- List Item 3 -->
+<div class="flex gap-4 p-3 justify-between items-center rounded-lg bg-gray-200/50 dark:bg-black/20">
+<div class="flex items-center gap-4">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-lg size-[70px]" data-alt="Sand dunes and fairway at Bandon Dunes golf resort" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCcVO3ee4PcVU7frxt98S0jCjlUVlmj9KpX1A7MzX69o3bbWDdoXv0I8BT0iUSIZGe2SKV4mQ3eclNuMTOj5fN7Pvs5eh7WmDF9jHL26hB0fJbIkwYrsUNmFREXMFhIxF6DbLXOq_yxQDctbOoRe3VWLE7DPnjoea8AajVd1HlgIiW-tCujWfJciAqs22I0NkaM6TIAjxUQBK8ZVEftxe0ngQWkQwtqtv51BIr6i8fTOAp8rrIWiCbzblznHGzeT-suzgh1qD9bo5Mw");'></div>
+<div class="flex flex-1 flex-col justify-center gap-0.5">
+<p class="text-black dark:text-white text-base font-medium leading-normal">Bandon Dunes Golf Resort</p>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-yellow-500 text-base" style="font-variation-settings: 'FILL' 1;">star</span>
+<p class="text-gray-600 dark:text-gray-300 text-sm font-normal leading-normal">4.9</p>
+</div>
+<p class="text-gray-600 dark:text-gray-300 text-sm font-normal leading-normal">Bandon, OR</p>
+</div>
+</div>
+<div class="shrink-0">
+<div class="text-gray-400 dark:text-gray-500 flex size-7 items-center justify-center">
+<span class="material-symbols-outlined text-2xl">chevron_right</span>
+</div>
+</div>
+</div>
+<!-- List Item 4 -->
+<div class="flex gap-4 p-3 justify-between items-center rounded-lg bg-gray-200/50 dark:bg-black/20">
+<div class="flex items-center gap-4">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-lg size-[70px]" data-alt="Classic clubhouse at Pinehurst Resort" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuC5YX7bnNCgwAuChU6F_Q7G_y106gOd2ArwZoqtjueTKrhBAo-S7EsD3pPwVnX4No_nsB4hW0OVNxlAQas7j8RdBujdt5KWgrVa4MLp4DqkgBxImSUtSEAeIu1iOSyd1kr0twn_sjFxmuaZ4hB7LU2AM7rp91MfYyfiY7ENrNClmr8T9VFQVSsTbi_26GfnTfS3d2p-DR8qk5LuKtHf0xEBI1wh0kTuw0zcg8eWb5wgKETOqkSyIp9zwlc54iNgI-OGvV6bmQmWJDdb");'></div>
+<div class="flex flex-1 flex-col justify-center gap-0.5">
+<p class="text-black dark:text-white text-base font-medium leading-normal">Pinehurst Resort</p>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-yellow-500 text-base" style="font-variation-settings: 'FILL' 1;">star</span>
+<p class="text-gray-600 dark:text-gray-300 text-sm font-normal leading-normal">4.7</p>
+</div>
+<p class="text-gray-600 dark:text-gray-300 text-sm font-normal leading-normal">Pinehurst, NC</p>
+</div>
+</div>
+<div class="shrink-0">
+<div class="text-gray-400 dark:text-gray-500 flex size-7 items-center justify-center">
+<span class="material-symbols-outlined text-2xl">chevron_right</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Floating Action Button -->
+<div class="fixed bottom-6 right-6">
+<button class="flex h-14 w-14 items-center justify-center rounded-full bg-primary shadow-lg">
+<span class="material-symbols-outlined text-black text-3xl">add</span>
+</button>
+</div>
+</div>
+</body></html>

@@ -1,0 +1,4937 @@
+[
+  {
+    "url": "showcourse.php?cid=1227792771334",
+    "nombre": "Abama Golf",
+    "tipo": "18-hole course",
+    "ubicacion": "Guia de Isora, TEN, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1683087419301315",
+    "nombre": "Águilas Club de Golf Isla del Fraile",
+    "tipo": "18-hole course",
+    "ubicacion": "Águilas, Murcia, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1763579405725855",
+    "nombre": "aguilon",
+    "tipo": "18-hole course",
+    "ubicacion": "Pulpi, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1315901238208",
+    "nombre": "Aguilón Golf",
+    "tipo": "18-hole course",
+    "ubicacion": "Pilar de Jaravia, AN, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "newcourseform.php?clid=1676929690333312",
+    "nombre": "al haurin",
+    "tipo": "no courses added",
+    "ubicacion": "Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1526186882898313",
+    "nombre": "Albatros Golf",
+    "tipo": "Albatros",
+    "ubicacion": "Arteixo, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1257342537543",
+    "nombre": "Alborán Golf",
+    "tipo": "18-hole course",
+    "ubicacion": "Almería, AN, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1255970181021",
+    "nombre": "Alcarria Golf Valdeluz",
+    "tipo": "18-hole course",
+    "ubicacion": "Yebes, Guadalajara, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1132652837430",
+    "nombre": "Aldeamayor Golf Club",
+    "tipo": "Championship",
+    "ubicacion": "Valladolid, CL, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1333187345571",
+    "nombre": "Aldeamayor Golf Club",
+    "tipo": "Pares 3",
+    "ubicacion": "Valladolid, CL, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1204994207984",
+    "nombre": "Alenda Golf Club",
+    "tipo": "18-hole course",
+    "ubicacion": "Monforte del Cid, VC, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1322468647080",
+    "nombre": "Alhama Signature Golf",
+    "tipo": "18-hole course",
+    "ubicacion": "Alhama de Murcia, MC, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1214590642462",
+    "nombre": "Alhaurin Golf Club",
+    "tipo": "18-hole course",
+    "ubicacion": "Alhaurín el Grande, AN, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1323793698312025",
+    "nombre": "Alicante Golf",
+    "tipo": "18-hole course",
+    "ubicacion": "Alicante (Alacant), VC, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1285587187320_1_1",
+    "nombre": "Almenara Golf Club",
+    "tipo": "Pinos",
+    "ubicacion": "Sotogrande, AN, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1285587187320_2_2",
+    "nombre": "Almenara Golf Club",
+    "tipo": "Alcornoques",
+    "ubicacion": "Sotogrande, AN, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1285587187320_3_3",
+    "nombre": "Almenara Golf Club",
+    "tipo": "Lagos",
+    "ubicacion": "Sotogrande, AN, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1285587187320_1_2",
+    "nombre": "Almenara Golf Club",
+    "tipo": "Pinos + Alcornoques",
+    "ubicacion": "Sotogrande, AN, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1285587187320_1_3",
+    "nombre": "Almenara Golf Club",
+    "tipo": "Pinos + Lagos",
+    "ubicacion": "Sotogrande, AN, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1285587187320_2_3",
+    "nombre": "Almenara Golf Club",
+    "tipo": "Alcornoques + Lagos",
+    "ubicacion": "Sotogrande, AN, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1226433353060",
+    "nombre": "Aloha Golf Club",
+    "tipo": "18-hole course",
+    "ubicacion": "Marbella, AN, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1641826993122666",
+    "nombre": "Altaona Golf & Country Village",
+    "tipo": "18-hole course",
+    "ubicacion": "Murcia, MC, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1187507270693",
+    "nombre": "Altea Club de Golf",
+    "tipo": "18-hole course",
+    "ubicacion": "Altea la Vieja, VC, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1201468819016",
+    "nombre": "Amarilla Golf Club",
+    "tipo": "18-hole course",
+    "ubicacion": "Tenerife, CN, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1457429296379704",
+    "nombre": "Amarilla Golf Club",
+    "tipo": "P&P",
+    "ubicacion": "Tenerife, CN, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1218958297900",
+    "nombre": "Anfi Tauro Golf",
+    "tipo": "18-holes course",
+    "ubicacion": "Mogàn, CN, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1695305262791668",
+    "nombre": "Anfi Tauro Golf",
+    "tipo": "Par3",
+    "ubicacion": "Mogàn, CN, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1299688483665",
+    "nombre": "Angeles de San Rafael",
+    "tipo": "18-hole course",
+    "ubicacion": "El Espinar (Segovia), SG, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1339668734732",
+    "nombre": "Añoreta Resort & Golf",
+    "tipo": "18-hole course",
+    "ubicacion": "Rincón de la Victoria, AN, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1319465179540015",
+    "nombre": "Aravell Golf",
+    "tipo": "Aravell golf",
+    "ubicacion": "Montferrer, cat, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1336982897746414",
+    "nombre": "Arcos Gardens",
+    "tipo": "18-hole course",
+    "ubicacion": "Arcos de la Frontera, Cad, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1520779996779304",
+    "nombre": "Arcosur Golf",
+    "tipo": "9-hole course",
+    "ubicacion": "Zaragoza, AR, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1722514980582688",
+    "nombre": "Asociación de Golf Villa de El Escorial",
+    "tipo": "9 hoyos",
+    "ubicacion": "El Escorial, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1193576081417",
+    "nombre": "Atalaya Golf & Country Club",
+    "tipo": "New Course",
+    "ubicacion": "Estepona, AN, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1252753771761",
+    "nombre": "Atalaya Golf & Country Club",
+    "tipo": "Old Course",
+    "ubicacion": "Estepona, AN, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1443044606568994",
+    "nombre": "Augas Santas Golf",
+    "tipo": "Augas Santas Golf",
+    "ubicacion": "Ferreira de Panton, Lug, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1634805495471023",
+    "nombre": "Azata Golf",
+    "tipo": "18-hole course",
+    "ubicacion": "Estepona, AN, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1110306352538",
+    "nombre": "Balneario de Mondariz",
+    "tipo": "18-hole course",
+    "ubicacion": "Mondariz Balneario, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1620927786874072",
+    "nombre": "Banús Executive Golf",
+    "tipo": "9-hole course",
+    "ubicacion": "Marbella, AN, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1512160481468605",
+    "nombre": "Barberán y Collar",
+    "tipo": "18-hole course",
+    "ubicacion": "MADRID, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1314261167272",
+    "nombre": "Barberán y Collar",
+    "tipo": "Barberán",
+    "ubicacion": "MADRID, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1512160510662261",
+    "nombre": "Barberán y Collar",
+    "tipo": "Dehesa Militar",
+    "ubicacion": "MADRID, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1241692011532",
+    "nombre": "Barceló Montecastillo Golf",
+    "tipo": "18-hole course",
+    "ubicacion": "Jerez de la Frontera, AN, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1348351276359881",
+    "nombre": "Base Aerea de Zaragoza",
+    "tipo": "Base Aerea de Zaragoza",
+    "ubicacion": "Zaragoza, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1253991527929",
+    "nombre": "Base Area de Torrejón",
+    "tipo": "18-hole course",
+    "ubicacion": "Torrejón de Ardoz, Mad, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1375658246266",
+    "nombre": "Base Naval Rota",
+    "tipo": "Captain Jake Dennis",
+    "ubicacion": "Rota, CáD, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1333364987492817",
+    "nombre": "Baviera Golf",
+    "tipo": "Baviera",
+    "ubicacion": "Caleta de Vélez, AN, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1175968184303",
+    "nombre": "Bellavista Golf Club",
+    "tipo": "18-hole course",
+    "ubicacion": "Aljaraque, AN, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=133258099160951",
+    "nombre": "Benalmádena Golf",
+    "tipo": "9-hole course",
+    "ubicacion": "Málaga, AN, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1227792771334",
+    "nombre": "Abama Golf",
+    "tipo": "18-hole course",
+    "ubicacion": "Guia de Isora, TEN, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1683087419301315",
+    "nombre": "Águilas Club de Golf Isla del Fraile",
+    "tipo": "18-hole course",
+    "ubicacion": "Águilas, Murcia, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1763579405725855",
+    "nombre": "aguilon",
+    "tipo": "18-hole course",
+    "ubicacion": "Pulpi, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1315901238208",
+    "nombre": "Aguilón Golf",
+    "tipo": "18-hole course",
+    "ubicacion": "Pilar de Jaravia, AN, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "newcourseform.php?clid=1676929690333312",
+    "nombre": "al haurin",
+    "tipo": "no courses added",
+    "ubicacion": "Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1526186882898313",
+    "nombre": "Albatros Golf",
+    "tipo": "Albatros",
+    "ubicacion": "Arteixo, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1257342537543",
+    "nombre": "Alborán Golf",
+    "tipo": "18-hole course",
+    "ubicacion": "Almería, AN, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1255970181021",
+    "nombre": "Alcarria Golf Valdeluz",
+    "tipo": "18-hole course",
+    "ubicacion": "Yebes, Guadalajara, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1132652837430",
+    "nombre": "Aldeamayor Golf Club",
+    "tipo": "Championship",
+    "ubicacion": "Valladolid, CL, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1333187345571",
+    "nombre": "Aldeamayor Golf Club",
+    "tipo": "Pares 3",
+    "ubicacion": "Valladolid, CL, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1204994207984",
+    "nombre": "Alenda Golf Club",
+    "tipo": "18-hole course",
+    "ubicacion": "Monforte del Cid, VC, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1322468647080",
+    "nombre": "Alhama Signature Golf",
+    "tipo": "18-hole course",
+    "ubicacion": "Alhama de Murcia, MC, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1214590642462",
+    "nombre": "Alhaurin Golf Club",
+    "tipo": "18-hole course",
+    "ubicacion": "Alhaurín el Grande, AN, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1323793698312025",
+    "nombre": "Alicante Golf",
+    "tipo": "18-hole course",
+    "ubicacion": "Alicante (Alacant), VC, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1285587187320_1_1",
+    "nombre": "Almenara Golf Club",
+    "tipo": "Pinos",
+    "ubicacion": "Sotogrande, AN, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1285587187320_2_2",
+    "nombre": "Almenara Golf Club",
+    "tipo": "Alcornoques",
+    "ubicacion": "Sotogrande, AN, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1285587187320_3_3",
+    "nombre": "Almenara Golf Club",
+    "tipo": "Lagos",
+    "ubicacion": "Sotogrande, AN, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1285587187320_1_2",
+    "nombre": "Almenara Golf Club",
+    "tipo": "Pinos + Alcornoques",
+    "ubicacion": "Sotogrande, AN, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1285587187320_1_3",
+    "nombre": "Almenara Golf Club",
+    "tipo": "Pinos + Lagos",
+    "ubicacion": "Sotogrande, AN, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1285587187320_2_3",
+    "nombre": "Almenara Golf Club",
+    "tipo": "Alcornoques + Lagos",
+    "ubicacion": "Sotogrande, AN, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1226433353060",
+    "nombre": "Aloha Golf Club",
+    "tipo": "18-hole course",
+    "ubicacion": "Marbella, AN, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1641826993122666",
+    "nombre": "Altaona Golf & Country Village",
+    "tipo": "18-hole course",
+    "ubicacion": "Murcia, MC, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1187507270693",
+    "nombre": "Altea Club de Golf",
+    "tipo": "18-hole course",
+    "ubicacion": "Altea la Vieja, VC, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1201468819016",
+    "nombre": "Amarilla Golf Club",
+    "tipo": "18-hole course",
+    "ubicacion": "Tenerife, CN, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1457429296379704",
+    "nombre": "Amarilla Golf Club",
+    "tipo": "P&P",
+    "ubicacion": "Tenerife, CN, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1218958297900",
+    "nombre": "Anfi Tauro Golf",
+    "tipo": "18-holes course",
+    "ubicacion": "Mogàn, CN, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1695305262791668",
+    "nombre": "Anfi Tauro Golf",
+    "tipo": "Par3",
+    "ubicacion": "Mogàn, CN, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1299688483665",
+    "nombre": "Angeles de San Rafael",
+    "tipo": "18-hole course",
+    "ubicacion": "El Espinar (Segovia), SG, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1339668734732",
+    "nombre": "Añoreta Resort & Golf",
+    "tipo": "18-hole course",
+    "ubicacion": "Rincón de la Victoria, AN, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1319465179540015",
+    "nombre": "Aravell Golf",
+    "tipo": "Aravell golf",
+    "ubicacion": "Montferrer, cat, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1336982897746414",
+    "nombre": "Arcos Gardens",
+    "tipo": "18-hole course",
+    "ubicacion": "Arcos de la Frontera, Cad, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1520779996779304",
+    "nombre": "Arcosur Golf",
+    "tipo": "9-hole course",
+    "ubicacion": "Zaragoza, AR, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1722514980582688",
+    "nombre": "Asociación de Golf Villa de El Escorial",
+    "tipo": "9 hoyos",
+    "ubicacion": "El Escorial, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1193576081417",
+    "nombre": "Atalaya Golf & Country Club",
+    "tipo": "New Course",
+    "ubicacion": "Estepona, AN, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1252753771761",
+    "nombre": "Atalaya Golf & Country Club",
+    "tipo": "Old Course",
+    "ubicacion": "Estepona, AN, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1443044606568994",
+    "nombre": "Augas Santas Golf",
+    "tipo": "Augas Santas Golf",
+    "ubicacion": "Ferreira de Panton, Lug, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1634805495471023",
+    "nombre": "Azata Golf",
+    "tipo": "18-hole course",
+    "ubicacion": "Estepona, AN, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1110306352538",
+    "nombre": "Balneario de Mondariz",
+    "tipo": "18-hole course",
+    "ubicacion": "Mondariz Balneario, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1620927786874072",
+    "nombre": "Banús Executive Golf",
+    "tipo": "9-hole course",
+    "ubicacion": "Marbella, AN, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1512160481468605",
+    "nombre": "Barberán y Collar",
+    "tipo": "18-hole course",
+    "ubicacion": "MADRID, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1314261167272",
+    "nombre": "Barberán y Collar",
+    "tipo": "Barberán",
+    "ubicacion": "MADRID, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1512160510662261",
+    "nombre": "Barberán y Collar",
+    "tipo": "Dehesa Militar",
+    "ubicacion": "MADRID, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1241692011532",
+    "nombre": "Barceló Montecastillo Golf",
+    "tipo": "18-hole course",
+    "ubicacion": "Jerez de la Frontera, AN, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1348351276359881",
+    "nombre": "Base Aerea de Zaragoza",
+    "tipo": "Base Aerea de Zaragoza",
+    "ubicacion": "Zaragoza, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1253991527929",
+    "nombre": "Base Area de Torrejón",
+    "tipo": "18-hole course",
+    "ubicacion": "Torrejón de Ardoz, Mad, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1375658246266",
+    "nombre": "Base Naval Rota",
+    "tipo": "Captain Jake Dennis",
+    "ubicacion": "Rota, CáD, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1333364987492817",
+    "nombre": "Baviera Golf",
+    "tipo": "Baviera",
+    "ubicacion": "Caleta de Vélez, AN, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1175968184303",
+    "nombre": "Bellavista Golf Club",
+    "tipo": "18-hole course",
+    "ubicacion": "Aljaraque, AN, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=133258099160951",
+    "nombre": "Benalmádena Golf",
+    "tipo": "9-hole course",
+    "ubicacion": "Málaga, AN, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1387471192988674",
+    "nombre": "Bilbao Golf",
+    "tipo": "Bilbao golf",
+    "ubicacion": "Larrabetzu, Viz, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1374491085650",
+    "nombre": "Bocigas",
+    "tipo": "18-hole course",
+    "ubicacion": "Valladolid, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1141567902484",
+    "nombre": "Buenavista Golf",
+    "tipo": "18-hole course",
+    "ubicacion": "Buenavista, CN, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1142412915307",
+    "nombre": "Cabopino Golf Marbella",
+    "tipo": "Cabopino",
+    "ubicacion": "Marbella, AN, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1218147093938",
+    "nombre": "cala llonga",
+    "tipo": "18-hole course",
+    "ubicacion": "ibiza, bal, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1252321283370",
+    "nombre": "Calanova Golf Club",
+    "tipo": "18-hole course",
+    "ubicacion": "La Cala de Mijas, AN, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1120736404325",
+    "nombre": "Caldes Montbui Sakura",
+    "tipo": "9-hole course",
+    "ubicacion": "Caldes de Montbui, CAT, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1184434243108",
+    "nombre": "Camp der Mar",
+    "tipo": "18-hole course",
+    "ubicacion": "Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1360710232143",
+    "nombre": "Campo de Golf Antequera",
+    "tipo": "18-hole course",
+    "ubicacion": "Antequera, AN, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1287582590656",
+    "nombre": "Campo Municipal de Golf Supera La Torre De Hércule",
+    "tipo": "9-hole course",
+    "ubicacion": "A Coruña, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1295093922336",
+    "nombre": "Campoa 9H",
+    "tipo": "18-hole course",
+    "ubicacion": "Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1290589186317",
+    "nombre": "Campomar",
+    "tipo": "Campomar 18 Hoyos",
+    "ubicacion": "Narón (A Coruña) , Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1437738486263495",
+    "nombre": "Camposol Club de Golf",
+    "tipo": "Camposol club de golf",
+    "ubicacion": "Mazarron, Murcia, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1213532208280",
+    "nombre": "CAN BOSCH SANT FELIU",
+    "tipo": "18-hole course",
+    "ubicacion": "Sant Feliu de Codines, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1247915601487",
+    "nombre": "Can Cuyas Golf",
+    "tipo": "18-hole course",
+    "ubicacion": "Sant Feliu de Llobregat (Bcn), CAT, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1635788485683024",
+    "nombre": "Can Rafel",
+    "tipo": "9 forats amb sortides dobles",
+    "ubicacion": "Barcelona, Catalonia, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1133788421489",
+    "nombre": "Canyamel Golf - Mallorca",
+    "tipo": "18-hole course",
+    "ubicacion": "Capdepera, IB, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1143748238488",
+    "nombre": "Capdepera Golf",
+    "tipo": "18-hole course",
+    "ubicacion": "Artá, PM, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1275760646461",
+    "nombre": "Casares Costa Golf",
+    "tipo": "9-hole course",
+    "ubicacion": "Casares, AN, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1202123152547",
+    "nombre": "Casino Club de Golf Retamares",
+    "tipo": "-",
+    "ubicacion": "Madrid, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1407313745413034",
+    "nombre": "Castropol Golf",
+    "tipo": "18-hole course",
+    "ubicacion": "Castropol, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1237102318476",
+    "nombre": "Cdc negro",
+    "tipo": "18-hole course",
+    "ubicacion": "Madrid, Mad, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1431249634389",
+    "nombre": "CDE Torija",
+    "tipo": "Torija P&P",
+    "ubicacion": "Torija, Guadalajara, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1351455305432",
+    "nombre": "CDM La Dehesa",
+    "tipo": "18-hole course",
+    "ubicacion": "Madrid, MAD, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1140271764855",
+    "nombre": "Centre de Golf El Vendrell",
+    "tipo": "18-hole course",
+    "ubicacion": "El Vendrell, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1212352096368",
+    "nombre": "Centro de tecnificacion",
+    "tipo": "Centro de Tecnificacion de Madrid",
+    "ubicacion": "Madrid, Mad, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1404670267439",
+    "nombre": "Centro de tecnificacion",
+    "tipo": "Ct",
+    "ubicacion": "Madrid, Mad, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1248125289521",
+    "nombre": "Centro Nacional de Golf",
+    "tipo": "18-hole course",
+    "ubicacion": "Madrid, MD, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1369295411255133",
+    "nombre": "Cerrado del Águila Golf And Resort",
+    "tipo": "9-hole course",
+    "ubicacion": "Las Lagunas de Mijas, AN, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1232641679343",
+    "nombre": "Chaparral Golf Club",
+    "tipo": "18-hole course",
+    "ubicacion": "Las Lagunas de Mijas, AN, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=144519897463622",
+    "nombre": "Chiclana Family Golf Park",
+    "tipo": "Chiclana Family Golf Park",
+    "ubicacion": "Chiclana de la Frontera, CAD, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1472465582884824",
+    "nombre": "Cierro Grande",
+    "tipo": "Cierro Grande",
+    "ubicacion": "tapia de casariego, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1551114344506371",
+    "nombre": "Closed",
+    "tipo": "La Pared",
+    "ubicacion": "Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1219398272284",
+    "nombre": "Club de Campo Black",
+    "tipo": "18-hole course",
+    "ubicacion": "Madrid, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1231518898638",
+    "nombre": "Club de Campo El Tiro",
+    "tipo": "18-hole course",
+    "ubicacion": "La Granja de San Ildefonso - S, SEG, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1467368299929860",
+    "nombre": "Club de Campo Villa de Madrid",
+    "tipo": "Pares 3",
+    "ubicacion": "Madrid, MAD, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1503930378949856",
+    "nombre": "Club de Campo Villa de Madrid",
+    "tipo": "Recorrido Amarillo",
+    "ubicacion": "Madrid, MAD, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1319249893677071",
+    "nombre": "Club de Campo Villa de Madrid",
+    "tipo": "Recorrido Negro",
+    "ubicacion": "Madrid, MAD, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1251017360075",
+    "nombre": "Club de golf",
+    "tipo": "18-hole course",
+    "ubicacion": "Son servera, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1186992610135",
+    "nombre": "Club de Golf Alcanada",
+    "tipo": "18-hole course",
+    "ubicacion": "Port d'Alcúdia, Mallorca, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1627040216533846_1_1",
+    "nombre": "Club de Golf Almerimar",
+    "tipo": "Rojo",
+    "ubicacion": "Almerimar, AN, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1627040216533846_2_2",
+    "nombre": "Club de Golf Almerimar",
+    "tipo": "Azul",
+    "ubicacion": "Almerimar, AN, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1627040216533846_3_3",
+    "nombre": "Club de Golf Almerimar",
+    "tipo": "Blanco",
+    "ubicacion": "Almerimar, AN, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1627040216533846_1_2",
+    "nombre": "Club de Golf Almerimar",
+    "tipo": "Rojo + Azul",
+    "ubicacion": "Almerimar, AN, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1627040216533846_1_3",
+    "nombre": "Club de Golf Almerimar",
+    "tipo": "Rojo + Blanco",
+    "ubicacion": "Almerimar, AN, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1627040216533846_2_3",
+    "nombre": "Club de Golf Almerimar",
+    "tipo": "Azul + Blanco",
+    "ubicacion": "Almerimar, AN, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1319837693174313",
+    "nombre": "Club de Golf Aranjuez",
+    "tipo": "Club de Golf Aranjuez",
+    "ubicacion": "Aranjuez, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1473098585108269",
+    "nombre": "Club de Golf Arévalo",
+    "tipo": "Arévalo",
+    "ubicacion": "Arévalo, Ávila, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1301298837622",
+    "nombre": "Club de Golf Barcelona",
+    "tipo": "18 forats - masia",
+    "ubicacion": "Sant Esteve Sesrovires, CT, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1310134015422",
+    "nombre": "Club de Golf Barcelona",
+    "tipo": "9 forats - executive",
+    "ubicacion": "Sant Esteve Sesrovires, CT, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=134330613428390",
+    "nombre": "Club De Golf Bonalba",
+    "tipo": "18-hole course",
+    "ubicacion": "Mutxamel, VC, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1684830073347465",
+    "nombre": "Club de golf Camprodon",
+    "tipo": "18-hole course",
+    "ubicacion": "Camprodon, Catalunya, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1679399611119278",
+    "nombre": "Club de Golf Castellterçol",
+    "tipo": "18-hole course",
+    "ubicacion": "Castellterçol, Barcelona, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1322577350500",
+    "nombre": "Club de Golf Castillo de Gorraiz",
+    "tipo": "Gorraiz",
+    "ubicacion": "Gorráiz, NC, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1470846412504117",
+    "nombre": "Club de Golf Corta Atalaya",
+    "tipo": "9-hole course",
+    "ubicacion": "Minas de Riotinto, Huelva, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1348772679640008",
+    "nombre": "Club de Golf Costa Brava",
+    "tipo": "Recorregut Vermell",
+    "ubicacion": "Santa Maria de Solius, CT, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=155385762024847",
+    "nombre": "Club de Golf Costa Brava",
+    "tipo": "Rojo",
+    "ubicacion": "Santa Maria de Solius, CT, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1128609400009",
+    "nombre": "Club de Golf Costa Brava",
+    "tipo": "Verde",
+    "ubicacion": "Santa Maria de Solius, CT, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1514119709196891",
+    "nombre": "Club de Golf Costa Daurada",
+    "tipo": "Main course",
+    "ubicacion": "El Catllar (Tarragona), CAT, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1577392288701791",
+    "nombre": "Club de Golf Costa Daurada",
+    "tipo": "Pitch and Putt",
+    "ubicacion": "El Catllar (Tarragona), CAT, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1669508652952336",
+    "nombre": "club de golf costa de azahar",
+    "tipo": "Costa Azahar Recorrido Azul",
+    "ubicacion": "grao, castellon, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1669508974669878",
+    "nombre": "club de golf costa de azahar",
+    "tipo": "Costa Azahar Recorrido Rosa",
+    "ubicacion": "grao, castellon, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1669507528471938",
+    "nombre": "club de golf costa de azahar",
+    "tipo": "Costa Azahar Recorrido Verde",
+    "ubicacion": "grao, castellon, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1397341057162099",
+    "nombre": "club de golf costa de azahar",
+    "tipo": "costa de azahar",
+    "ubicacion": "grao, castellon, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1408127129242630",
+    "nombre": "Club de Golf de Jaca",
+    "tipo": "18-hole course",
+    "ubicacion": "Jaca, Hue, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1202729545660",
+    "nombre": "Club de Golf de Son Servera",
+    "tipo": "18-hole course",
+    "ubicacion": "Costa dels Pins, IB, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1725908549321737",
+    "nombre": "Club de Golf El Espinar",
+    "tipo": "18-hole course",
+    "ubicacion": "El Espinar, Castilla y León, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1132606883070",
+    "nombre": "Club de Golf Entrepinos",
+    "tipo": "Entrepinos",
+    "ubicacion": "Simancas, Sp, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1379082605279",
+    "nombre": "Club de Golf Entrepinos",
+    "tipo": "Golf Entrepinos",
+    "ubicacion": "Simancas, Sp, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1227522189124_1_1",
+    "nombre": "Club de Golf Escorpión",
+    "tipo": "Masia",
+    "ubicacion": "Bétera, VC, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1227522189124_2_2",
+    "nombre": "Club de Golf Escorpión",
+    "tipo": "Lagos",
+    "ubicacion": "Bétera, VC, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1227522189124_3_3",
+    "nombre": "Club de Golf Escorpión",
+    "tipo": "Nuevos",
+    "ubicacion": "Bétera, VC, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1227522189124_1_2",
+    "nombre": "Club de Golf Escorpión",
+    "tipo": "Masia + Lagos",
+    "ubicacion": "Bétera, VC, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1227522189124_1_3",
+    "nombre": "Club de Golf Escorpión",
+    "tipo": "Masia + Nuevos",
+    "ubicacion": "Bétera, VC, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1227522189124_2_3",
+    "nombre": "Club de Golf Escorpión",
+    "tipo": "Lagos + Nuevos",
+    "ubicacion": "Bétera, VC, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1321708845372",
+    "nombre": "Club de Golf Hato Verde",
+    "tipo": "HATO VERDE",
+    "ubicacion": "Guillena, Sevilla, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1187512647895",
+    "nombre": "Club de Golf Ifach",
+    "tipo": "9-hole course",
+    "ubicacion": "Benissa, VC, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1367427886521",
+    "nombre": "Club de golf Javea",
+    "tipo": "18-hole course",
+    "ubicacion": "Jávea, Alicante, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1357308329995",
+    "nombre": "Club de Golf La Cañada",
+    "tipo": "18-hole course",
+    "ubicacion": "San Roque, AN, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1203762699616",
+    "nombre": "Club de Golf la Dehesa",
+    "tipo": "18-hole course",
+    "ubicacion": "Villanueva de la Cañada, Madrid, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1314268576426",
+    "nombre": "Club de Golf La Garza",
+    "tipo": "La Garza",
+    "ubicacion": "Linares - Jaén, AN, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1229092585907",
+    "nombre": "Club de Golf La Mola",
+    "tipo": "9-hole course",
+    "ubicacion": "Matadepera, CAT, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1311788211881",
+    "nombre": "Club De Golf La Zagaleta",
+    "tipo": "New",
+    "ubicacion": "Benahavís, AN, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1312751654393",
+    "nombre": "Club De Golf La Zagaleta",
+    "tipo": "Old",
+    "ubicacion": "Benahavís, AN, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1184152467952",
+    "nombre": "Club de Golf Las Rejas",
+    "tipo": "9 largos",
+    "ubicacion": "Majadahonda , Madrid, Mad, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1350903895109425",
+    "nombre": "Club de Golf Las Rejas",
+    "tipo": "Club de Golf las Rejas",
+    "ubicacion": "Majadahonda , Madrid, Mad, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1205658268299",
+    "nombre": "Club de Golf Las Rejas",
+    "tipo": "par 3",
+    "ubicacion": "Majadahonda , Madrid, Mad, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1363179187819",
+    "nombre": "Club de Golf Llavaneras",
+    "tipo": "18-hole course",
+    "ubicacion": "St. Andreu de Llavaneras, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1376255654469615",
+    "nombre": "Club de Golf los Balagares",
+    "tipo": "Campo de Golf Los Balagares",
+    "ubicacion": "Corvera de Asturias, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1239449806056",
+    "nombre": "Club de Golf Madera III El Tragamon",
+    "tipo": "9-hole course",
+    "ubicacion": "Gijón, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1188074744847",
+    "nombre": "Club de Golf Montanyà",
+    "tipo": "18-hole course",
+    "ubicacion": "bcn, CT, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1336027406202734",
+    "nombre": "Club de Golf Nestares",
+    "tipo": "18-hole course",
+    "ubicacion": "Nestares, Cantabria, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1206029235544",
+    "nombre": "Club de Golf Oliva Nova",
+    "tipo": "18-hole course",
+    "ubicacion": "Oliva, VC, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1212662268964",
+    "nombre": "Club De Golf Playa Serena",
+    "tipo": "18-hole course",
+    "ubicacion": "Roquetas de Mar, AN, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1386797455624706",
+    "nombre": "Club de Golf Pozoblanco",
+    "tipo": "Club de Golf Pozoblanco",
+    "ubicacion": "Pozoblanco, COR, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1595187975859588",
+    "nombre": "Club de Golf Sant Cugat",
+    "tipo": "Naranja",
+    "ubicacion": "SANT CUGAT DEL VALLES (BCN), CAT, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1316630592124",
+    "nombre": "Club de Golf Sant Cugat",
+    "tipo": "Rojo",
+    "ubicacion": "SANT CUGAT DEL VALLES (BCN), CAT, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1157101623377",
+    "nombre": "Club de Golf Terramar",
+    "tipo": "18-hole course",
+    "ubicacion": "Sitges, CT, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1745438171948931",
+    "nombre": "Club de Golf Torre-Pacheco",
+    "tipo": "Combinado",
+    "ubicacion": "Torre-Pacheco, MC, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1478029624858012",
+    "nombre": "Club de Golf Torre-Pacheco",
+    "tipo": "Pitch & Putt",
+    "ubicacion": "Torre-Pacheco, MC, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1306258797679",
+    "nombre": "Club de Golf Ulzama",
+    "tipo": "18-hole course",
+    "ubicacion": "Lizaso, Navarra, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1266485514056",
+    "nombre": "Club de Golf Vallromanes",
+    "tipo": "18-hole course",
+    "ubicacion": "Vallromanes, CT, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1376829591357056",
+    "nombre": "Club de Golf Villa de Cuéllar",
+    "tipo": "18-hole course",
+    "ubicacion": "Cuéllar, SG, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1154271322677",
+    "nombre": "club de golf Villarrin",
+    "tipo": "18-hole course",
+    "ubicacion": "Zam, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1343945017825532",
+    "nombre": "Club de Golf Zuia",
+    "tipo": "Zuia",
+    "ubicacion": "Altube, Ala, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1465244072509546",
+    "nombre": "Club Golf Bierzo",
+    "tipo": "Club Golf Bierzo",
+    "ubicacion": "Congosto, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1112601623177",
+    "nombre": "Club Golf D`Aro",
+    "tipo": "Course 1",
+    "ubicacion": "Platja de Aro, Cat, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1578302524959721",
+    "nombre": "Club Golf d'Aro - Mas Nou",
+    "tipo": "18-hole course",
+    "ubicacion": "Platja d'Aro, CT, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1578266458759145",
+    "nombre": "Club Golf D’Aro – Mas Nou",
+    "tipo": "18-hole course",
+    "ubicacion": "Platja d’Aro, Girona, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1243347156876",
+    "nombre": "Club Golf Soria",
+    "tipo": "Golf Soria",
+    "ubicacion": "Soria, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1155151811328",
+    "nombre": "Club Golf Villarías",
+    "tipo": "18-hole course",
+    "ubicacion": "Villarías, Bur, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1253556255592",
+    "nombre": "Club Las Encinas de Boadilla",
+    "tipo": "18-hole course",
+    "ubicacion": "Boadilla del Monte, Mad, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1721521054396220",
+    "nombre": "Club Zamora Valderey",
+    "tipo": "Valderey Zamora",
+    "ubicacion": "Zamora, Castilla León, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1203602774390",
+    "nombre": "Club Zaudin Golf",
+    "tipo": "18-hole course",
+    "ubicacion": "Tomares, Sevilla, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1312440559041",
+    "nombre": "Colmenar Viejo",
+    "tipo": "9H",
+    "ubicacion": "Madrid, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1346596039827",
+    "nombre": "Complejo Deportivo Sotoverde",
+    "tipo": "Sotoverde",
+    "ubicacion": "Arroyo de la Encomienda, VA, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1388131523747468",
+    "nombre": "CORVERA GOLF & COUNTRY CLUB",
+    "tipo": "18-hole course",
+    "ubicacion": "Corvera, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1259690115955_1_1",
+    "nombre": "Costa Ballena Ocean Golf Club",
+    "tipo": "Olivos",
+    "ubicacion": "Costa Ballena, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1259690115955_2_2",
+    "nombre": "Costa Ballena Ocean Golf Club",
+    "tipo": "Palmeras",
+    "ubicacion": "Costa Ballena, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1259690115955_3_3",
+    "nombre": "Costa Ballena Ocean Golf Club",
+    "tipo": "Ficus",
+    "ubicacion": "Costa Ballena, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1259690115955_1_2",
+    "nombre": "Costa Ballena Ocean Golf Club",
+    "tipo": "Olivos + Palmeras",
+    "ubicacion": "Costa Ballena, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1259690115955_1_3",
+    "nombre": "Costa Ballena Ocean Golf Club",
+    "tipo": "Olivos + Ficus",
+    "ubicacion": "Costa Ballena, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1259690115955_2_3",
+    "nombre": "Costa Ballena Ocean Golf Club",
+    "tipo": "Palmeras + Ficus",
+    "ubicacion": "Costa Ballena, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=153996288277349",
+    "nombre": "Costa Ballena Ocean Golf Club",
+    "tipo": "Par 3",
+    "ubicacion": "Costa Ballena, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1230312843481",
+    "nombre": "Costa Teguise",
+    "tipo": "18-hole course",
+    "ubicacion": "Costa Teguise, Lanzarote - Canary Isles ?? , Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1724428101975484",
+    "nombre": "CUENCA GOLF CLUB",
+    "tipo": "9-hole course",
+    "ubicacion": "Villar de Olalla, Cuenca, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1362952576493",
+    "nombre": "CUENCA GOLF CLUB",
+    "tipo": "Villar de Olalla Cuenca",
+    "ubicacion": "Villar de Olalla, Cuenca, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1341489159689",
+    "nombre": "Dehesa Montenmedio",
+    "tipo": "18-hole course",
+    "ubicacion": "Vejer de la Frontera, AN, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=151329517631501",
+    "nombre": "Desert Springs Golf Club",
+    "tipo": "Indiana",
+    "ubicacion": "Cuevas del Almanzora, Almería, AN, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1451680373382468",
+    "nombre": "Deva Golf",
+    "tipo": "Deva Golf",
+    "ubicacion": "Gijón , Ast, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1361434554498",
+    "nombre": "Don Tello Golf",
+    "tipo": "Don Tello-AMS",
+    "ubicacion": "Mérida, Ext, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1237242164620",
+    "nombre": "Dona Julia Golf Club",
+    "tipo": "18-hole course",
+    "ubicacion": "Casares, AN, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1288570297147",
+    "nombre": "El Bonillo",
+    "tipo": "El Bonillo",
+    "ubicacion": "El Bonillo - Albacete, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1118834650281",
+    "nombre": "El Bosque Golf Club",
+    "tipo": "18-hole course",
+    "ubicacion": "Chiva, Valencia, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1519387177417302",
+    "nombre": "El Campanario",
+    "tipo": "9-hole course",
+    "ubicacion": "Estepona, MAL, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1325151293445574",
+    "nombre": "El cortijo club de campo",
+    "tipo": "cortijo",
+    "ubicacion": "Telde, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1324839055156",
+    "nombre": "El cortijo club de campo",
+    "tipo": "El cortijo",
+    "ubicacion": "Telde, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1372318221255248",
+    "nombre": "El Cortijo Grande",
+    "tipo": "2x9 hole-2013",
+    "ubicacion": "04639 Almeria, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1306957420649",
+    "nombre": "El Encin Golf",
+    "tipo": "18-hole course",
+    "ubicacion": "Alcalá de Henares, Mad, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1572858339744174",
+    "nombre": "El Encin Golf",
+    "tipo": "9 Hoyos cortos",
+    "ubicacion": "Alcalá de Henares, Mad, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1211460904970",
+    "nombre": "El Fresnillo",
+    "tipo": "Ávila",
+    "ubicacion": "Avila, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1380112808674235",
+    "nombre": "El Hidalgo Club de Golf",
+    "tipo": "Abedul Golf Pitch & Putt",
+    "ubicacion": "ALCAZAR DE SAN JUAN, CLM, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1372106467344981",
+    "nombre": "El Higueral Golf",
+    "tipo": "9-holes",
+    "ubicacion": "Benahavís, AN, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1175355690068",
+    "nombre": "El Paraíso Golf",
+    "tipo": "18-hole course",
+    "ubicacion": "Estepona, AN, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "newcourseform.php?clid=1637126275382754",
+    "nombre": "El Pilar - Sarria",
+    "tipo": "no courses added",
+    "ubicacion": "Sarria, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1128780081426",
+    "nombre": "El Plantío Golf Resort",
+    "tipo": "18-hole course",
+    "ubicacion": "Alacant, VC, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1287744836775",
+    "nombre": "El Plantío Golf Resort",
+    "tipo": "El Plantio 9 holes",
+    "ubicacion": "Alacant, VC, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1670483240713075",
+    "nombre": "El renachal",
+    "tipo": "18-hole course",
+    "ubicacion": "Moya, Cuenca, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1223309480324",
+    "nombre": "El Robledal",
+    "tipo": "18 Hoyos",
+    "ubicacion": "Madrid, M, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1127546204500",
+    "nombre": "El Rompid",
+    "tipo": "18-hole course",
+    "ubicacion": "Huelva, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1118836513781",
+    "nombre": "El Saler",
+    "tipo": "18-hole course",
+    "ubicacion": "El Saler, Valencia, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1110578321240",
+    "nombre": "EL tamujar",
+    "tipo": "18-hole course",
+    "ubicacion": "Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1347217346324682",
+    "nombre": "El Valle Golf",
+    "tipo": "18-hole course",
+    "ubicacion": "Murcia, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1543651577295112",
+    "nombre": "El Vallès Golf",
+    "tipo": "Pitch & Putt",
+    "ubicacion": "Terrassa, Barcelona, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1145385230390",
+    "nombre": "Empordà Golf",
+    "tipo": "Forest",
+    "ubicacion": "Gualta, CT, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1205009311600",
+    "nombre": "Empordà Golf",
+    "tipo": "Links",
+    "ubicacion": "Gualta, CT, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=136976375629596",
+    "nombre": "Equelite Golf Villena",
+    "tipo": "EqueliteGolfVillena",
+    "ubicacion": "Villena, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1272917589476",
+    "nombre": "Escalona",
+    "tipo": "Largo",
+    "ubicacion": "Escalona (Toledo), Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1274198093272",
+    "nombre": "Escalona",
+    "tipo": "largo + par 3",
+    "ubicacion": "Escalona (Toledo), Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1272918556616",
+    "nombre": "Escalona",
+    "tipo": "par 3",
+    "ubicacion": "Escalona (Toledo), Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1384114275184327",
+    "nombre": "Escuela de Golf Castilla y León",
+    "tipo": "Renedo",
+    "ubicacion": "Valladolid, VA, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1675448302792233",
+    "nombre": "Escuela de Golf de Castilla y León",
+    "tipo": "18-hole course",
+    "ubicacion": "Valladolid, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1733856075679595",
+    "nombre": "Escuela de Golf Elche",
+    "tipo": "El Misteri",
+    "ubicacion": "Elx, Alicante, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1761691131344764",
+    "nombre": "Escuela de Golf Elche",
+    "tipo": "El Palmeral",
+    "ubicacion": "Elx, Alicante, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1675236348746330",
+    "nombre": "Escuela golf Castilla y León",
+    "tipo": "18-hole course",
+    "ubicacion": "Valladolid, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1111482919623",
+    "nombre": "Estepona Golf",
+    "tipo": "18-hole course",
+    "ubicacion": "Estepona, AN, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1241778629042",
+    "nombre": "Fairplay Golf & Spa Resort",
+    "tipo": "18-hole course",
+    "ubicacion": "Benalup-Casas Viejas, AN, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1315548335467",
+    "nombre": "Federación de Golf de Madrid",
+    "tipo": "Federación de Golf de Madrid",
+    "ubicacion": "MADRID, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1341488999580",
+    "nombre": "Finca Cortesin",
+    "tipo": "18-hole course",
+    "ubicacion": "Casares, Mál, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1473961464314044",
+    "nombre": "Font del Llop Golf Resort",
+    "tipo": "18-hole course",
+    "ubicacion": "Monforte del Cid, VC, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1346063288615",
+    "nombre": "Fontanals Golf",
+    "tipo": "18-hole course",
+    "ubicacion": "Fontanals, CT, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1207047424472",
+    "nombre": "Foressos Club de Golf",
+    "tipo": "18-hole course",
+    "ubicacion": "Picassent, Valencia, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1325954630249",
+    "nombre": "Franciach",
+    "tipo": "Franciach 1 1-9",
+    "ubicacion": "Franciach, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1293739514388",
+    "nombre": "Fuerteventura Golf Club",
+    "tipo": "18-hole course",
+    "ubicacion": "Antigua, CN, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1351798591662502",
+    "nombre": "fuertoventure",
+    "tipo": "18-hole course",
+    "ubicacion": "Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1375635093843",
+    "nombre": "Gambito Golf Club Calatayud",
+    "tipo": "Gambito Golf Calatayud",
+    "ubicacion": "Calatayud (Zaragoza), Aragon, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1127480940468",
+    "nombre": "Gaudí Reus Golf Club",
+    "tipo": "18-hole course",
+    "ubicacion": "Reus, CT, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1281368366746",
+    "nombre": "Goiburu Golf Club",
+    "tipo": "9-hole course",
+    "ubicacion": "Andoain, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1333381586568912",
+    "nombre": "Golf Abra Del Pas",
+    "tipo": "Abra del Pas",
+    "ubicacion": "Mogro, CB, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1367766524774278",
+    "nombre": "Golf Altorreal",
+    "tipo": "18-hole course",
+    "ubicacion": "Molina de Segura, MC, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1336291335349475",
+    "nombre": "Golf Bonmont Terres Noves",
+    "tipo": "18-hole course",
+    "ubicacion": "Mont-roig del Camp (Tarragona), Cat, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1555367185210343",
+    "nombre": "Golf Cambrils - Pitch & Putt 9 forats",
+    "tipo": "Mas Gallau",
+    "ubicacion": "Cambrils, BC, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1134208420393",
+    "nombre": "Golf Campo de Layos",
+    "tipo": "18-hole course",
+    "ubicacion": "Layos, Tol, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1468106140221698",
+    "nombre": "Golf Candeleda",
+    "tipo": "Golf Candeleda",
+    "ubicacion": "Candeleda, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1226231640868",
+    "nombre": "Golf Center Majadahonda",
+    "tipo": "Center Majadahonda",
+    "ubicacion": "Majadahonda, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1377290768968172",
+    "nombre": "Golf Ciudad Real",
+    "tipo": "18-hole course",
+    "ubicacion": "Ciudad Real, CM, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1331993294112",
+    "nombre": "Golf Club Playitas",
+    "tipo": "18-hole course",
+    "ubicacion": "Tuineje, CN, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1293743241434",
+    "nombre": "Golf Club Salinas de Antigua",
+    "tipo": "18-hole course",
+    "ubicacion": "Antigua, SAL, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1371803146210425",
+    "nombre": "Golf Colmenar",
+    "tipo": "9H",
+    "ubicacion": "Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1253638484820",
+    "nombre": "Golf Costa Adeje",
+    "tipo": "Championship Course",
+    "ubicacion": "Adeje, CN, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1389965824269184",
+    "nombre": "Golf Costa Adeje",
+    "tipo": "Los Lagos",
+    "ubicacion": "Adeje, CN, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1152176271485",
+    "nombre": "Golf de Andratx",
+    "tipo": "18-hole course",
+    "ubicacion": "Camp de Mar, Andratx, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1115068789555",
+    "nombre": "Golf de Caldes",
+    "tipo": "18-hole course",
+    "ubicacion": "Caldes de Montbuí (BCN), Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1239395516305",
+    "nombre": "Golf de ibiza",
+    "tipo": "18-holes",
+    "ubicacion": "Santa eulalia, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=155859426751408",
+    "nombre": "Golf de ibiza",
+    "tipo": "9-holes",
+    "ubicacion": "Santa eulalia, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1240166127022",
+    "nombre": "Golf de Pals",
+    "tipo": "18-hole course",
+    "ubicacion": "Pals, CT, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1148714122281",
+    "nombre": "Golf de Poniente",
+    "tipo": "18-hole course",
+    "ubicacion": "Magalluf, Calvia, Mallorca, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1161578951744",
+    "nombre": "Golf de Son Termens",
+    "tipo": "18-hole course",
+    "ubicacion": "Bunyola, Mallorca, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1577799871664371_1_1",
+    "nombre": "Golf del Sur",
+    "tipo": "A-Links",
+    "ubicacion": "Golf del Sur, CN, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1577799871664371_2_2",
+    "nombre": "Golf del Sur",
+    "tipo": "B-Norte",
+    "ubicacion": "Golf del Sur, CN, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1577799871664371_3_3",
+    "nombre": "Golf del Sur",
+    "tipo": "C-Sur",
+    "ubicacion": "Golf del Sur, CN, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1577799871664371_1_2",
+    "nombre": "Golf del Sur",
+    "tipo": "A-Links  + B-Norte",
+    "ubicacion": "Golf del Sur, CN, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1577799871664371_1_3",
+    "nombre": "Golf del Sur",
+    "tipo": "A-Links  + C-Sur",
+    "ubicacion": "Golf del Sur, CN, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1577799871664371_2_3",
+    "nombre": "Golf del Sur",
+    "tipo": "B-Norte + C-Sur",
+    "ubicacion": "Golf del Sur, CN, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1295623604571",
+    "nombre": "Golf Dunas de Doñana",
+    "tipo": "DOÑANA GOLF",
+    "ubicacion": "Matalascañas, Huelva, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1266007620689",
+    "nombre": "Golf Dunas de Doñana",
+    "tipo": "Golf Dunas de Donana",
+    "ubicacion": "Matalascañas, Huelva, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1195421810483",
+    "nombre": "Golf El Puerto",
+    "tipo": "18-hole course",
+    "ubicacion": "El Puerto de Santa María, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1221891307106",
+    "nombre": "Golf El Rompido",
+    "tipo": "CAMPO NORTE",
+    "ubicacion": "El Rompido, AN, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=13508427965961",
+    "nombre": "Golf El Rompido",
+    "tipo": "CAMPO SUR",
+    "ubicacion": "El Rompido, AN, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1123429460062",
+    "nombre": "Golf Girona",
+    "tipo": "18-hole course",
+    "ubicacion": "St. Julià de Ramis, CAT, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1340080580390",
+    "nombre": "Golf Guadiana",
+    "tipo": "18-hole course",
+    "ubicacion": "Badajoz, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1345806110565044",
+    "nombre": "Golf Jardín de Aranjuez",
+    "tipo": "18-hole course",
+    "ubicacion": "Aranjuez-Madrid, Mad, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1205094760774",
+    "nombre": "Golf Jardín de Aranjuez",
+    "tipo": "-",
+    "ubicacion": "Aranjuez-Madrid, Mad, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1388863210563",
+    "nombre": "Golf Jundiz",
+    "tipo": "Golf Jundiz",
+    "ubicacion": "Vitoria, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1114791348693",
+    "nombre": "Golf L' Angel de Lloret",
+    "tipo": "18-hole course",
+    "ubicacion": "Lloret de Mar (GIR), Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1255194336755",
+    "nombre": "Golf La Estancia",
+    "tipo": "18-hole course",
+    "ubicacion": "Chiclana de la Frontera, AN, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1502694313483647",
+    "nombre": "Golf La Llorea",
+    "tipo": "18-holes",
+    "ubicacion": "Gijon, Asturias, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1677325759107522",
+    "nombre": "Golf La Llorea",
+    "tipo": "Par 70",
+    "ubicacion": "Gijon, Asturias, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1194801186432",
+    "nombre": "Golf La Moraleja",
+    "tipo": "18-hole course",
+    "ubicacion": "ALGETE, MAD, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1253515531984",
+    "nombre": "Golf La Moraleja",
+    "tipo": "9H",
+    "ubicacion": "ALGETE, MAD, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1246612897251",
+    "nombre": "Golf La Moraleja",
+    "tipo": "CAMPO 1",
+    "ubicacion": "ALGETE, MAD, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1195237530916",
+    "nombre": "Golf La Moraleja",
+    "tipo": "CAMPO 2",
+    "ubicacion": "ALGETE, MAD, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1368224210266936",
+    "nombre": "Golf La Moraleja",
+    "tipo": "CAMPO 3",
+    "ubicacion": "ALGETE, MAD, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1367616842931658",
+    "nombre": "Golf La Moraleja",
+    "tipo": "CAMPO 4",
+    "ubicacion": "ALGETE, MAD, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1168635739642",
+    "nombre": "Golf La Roca",
+    "tipo": "18-hole course",
+    "ubicacion": "La Roca del Vallès, CT, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1131795138267",
+    "nombre": "Golf La Roqueta",
+    "tipo": "9-hole course",
+    "ubicacion": "Castellgalí, CAT, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1326018202774",
+    "nombre": "Golf La Rosaleda",
+    "tipo": "18-hole course",
+    "ubicacion": "Puerto de la Cruz, Tenerife, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1318363572188981",
+    "nombre": "Golf Las Américas",
+    "tipo": "18-hole course",
+    "ubicacion": "Playa de las Américas, Ten, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1296498349718",
+    "nombre": "Golf Las Colinas",
+    "tipo": "18-hole course",
+    "ubicacion": "Dehesa de Campoamor, VC, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1107813000158",
+    "nombre": "Golf Las Ramblas",
+    "tipo": "18-hole course",
+    "ubicacion": "Orihuela, VC, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1191611953992",
+    "nombre": "Golf Lerma",
+    "tipo": "Lerma",
+    "ubicacion": "Lerma, BU, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1254767078807",
+    "nombre": "Golf Lleida & Country Club",
+    "tipo": "18-hole course",
+    "ubicacion": "Raimat (Lleida), Cat, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1372529791525363",
+    "nombre": "Golf Los Lagos",
+    "tipo": "Pinseque",
+    "ubicacion": "Pinseque, AR, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1719524460758776",
+    "nombre": "GOLF LOS PALOS P&P",
+    "tipo": "LOS PALOS - P&P",
+    "ubicacion": "ARONA, SANTA CRUZ DE TENERIFE, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1307809003439",
+    "nombre": "Golf Maioris",
+    "tipo": "Mallorca",
+    "ubicacion": "Llucmajor, IB, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1336252674154",
+    "nombre": "GOLF MEIS",
+    "tipo": "Meis",
+    "ubicacion": "Meis. Pontevedra, Galicia, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1679488393525365",
+    "nombre": "Golf Montbrú Moià",
+    "tipo": "18-hole course",
+    "ubicacion": "Moià (BCN), Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1595752859504051",
+    "nombre": "Golf Montbrú Moià",
+    "tipo": "9-hole course",
+    "ubicacion": "Moià (BCN), Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1373288967157533",
+    "nombre": "Golf Municipal de Llanes",
+    "tipo": "18-hole course",
+    "ubicacion": "Llanes, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1127633085203",
+    "nombre": "Golf Nuevo Portil",
+    "tipo": "18-hole course",
+    "ubicacion": "Cartaya, Huelva, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1312243367596",
+    "nombre": "Golf Olivar de la Hinojosa",
+    "tipo": "18H",
+    "ubicacion": "Madrid, MAD, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1236119554255",
+    "nombre": "Golf Olivar de la Hinojosa",
+    "tipo": "Corto",
+    "ubicacion": "Madrid, MAD, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1243333743983",
+    "nombre": "Golf Park",
+    "tipo": "Golf Park",
+    "ubicacion": "Madrid, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1224573056406",
+    "nombre": "Golf Park Mallorca",
+    "tipo": "Golfpark mallorca",
+    "ubicacion": "Palma de Mallorca, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1145180388062",
+    "nombre": "Golf Peralada",
+    "tipo": "18-hole course",
+    "ubicacion": "Peralada, CT, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=163320920527110",
+    "nombre": "Golf Peralada",
+    "tipo": "pitch and putt",
+    "ubicacion": "Peralada, CT, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1459765891958602",
+    "nombre": "Golf Pitch & Putt Canal Olímpic",
+    "tipo": "Golf Canal Olímpic de Catalunya",
+    "ubicacion": "Castelldefels, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1083267597560",
+    "nombre": "Golf Race",
+    "tipo": "18-hole course",
+    "ubicacion": "Madrid, MD, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1473028163326150",
+    "nombre": "Golf Race",
+    "tipo": "Pares 3",
+    "ubicacion": "Madrid, MD, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1197532572578",
+    "nombre": "Golf Rio Real",
+    "tipo": "18-hole course",
+    "ubicacion": "Marbella, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1114778313381",
+    "nombre": "Golf Sant Feliu",
+    "tipo": "18-hole course",
+    "ubicacion": "Sant Feliu de Codines (BCN), CAT, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1122284978453",
+    "nombre": "Golf Sant Joan Barcelona",
+    "tipo": "18-hole course",
+    "ubicacion": "Sant Cugat del Vallès / Rubí, CAT, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1207300646489",
+    "nombre": "Golf Sant Marc",
+    "tipo": "18-hole course",
+    "ubicacion": "Puigcerda, CAT, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1125601177893",
+    "nombre": "Golf Sant Vicenç de Montalt",
+    "tipo": "18-hole course",
+    "ubicacion": "Sant Vicenç de Montalt, CAT, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1148646480156",
+    "nombre": "Golf Santa Ponsa",
+    "tipo": "1",
+    "ubicacion": "Santa Ponça, IB, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1365868690359",
+    "nombre": "Golf Santa Ponsa",
+    "tipo": "2",
+    "ubicacion": "Santa Ponça, IB, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1201694247260",
+    "nombre": "Golf Santander",
+    "tipo": "18-hole course",
+    "ubicacion": "Boadilla del Monte, MD, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1458866332111474",
+    "nombre": "Golf Sierra Cortina",
+    "tipo": "Pitch and Putt",
+    "ubicacion": "Finestrat (Alicante), Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1245059675006",
+    "nombre": "Golf Son Antem - Mallorca",
+    "tipo": "East",
+    "ubicacion": "Llucmajor, IB, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1245402126593",
+    "nombre": "Golf Son Antem - Mallorca",
+    "tipo": "West",
+    "ubicacion": "Llucmajor, IB, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1225194257470",
+    "nombre": "Golf Son Gual Mallorca",
+    "tipo": "18-hole course",
+    "ubicacion": "Palma de Mallorca, Mallorca, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1466500409996118",
+    "nombre": "Golf Son Parc Menorca",
+    "tipo": "son parc",
+    "ubicacion": "Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1365694349929",
+    "nombre": "Golf Son Quint",
+    "tipo": "Pitch & Path",
+    "ubicacion": "Palma, IB, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1246023309739",
+    "nombre": "Golf Son Quint",
+    "tipo": "Son Quint",
+    "ubicacion": "Palma, IB, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1751407325555651",
+    "nombre": "Golf Son Vida",
+    "tipo": "Par 70",
+    "ubicacion": "Son Vida, IB, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1184432759056",
+    "nombre": "Golf Son Vida",
+    "tipo": "Par 71",
+    "ubicacion": "Son Vida, IB, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1081919731968",
+    "nombre": "Golf Torrequebrada",
+    "tipo": "18-hole course",
+    "ubicacion": "Benalmádena, AN, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1449678776678071",
+    "nombre": "Golf Villa Mayor",
+    "tipo": "18-hole course",
+    "ubicacion": "Villamayor, sal, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1646640344853465",
+    "nombre": "GOLF XAZ",
+    "tipo": "18-hole course",
+    "ubicacion": "Oleiros,  Coruña, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1602233646516464",
+    "nombre": "Granada Golf Club",
+    "tipo": "18-hole course",
+    "ubicacion": "Las Gabias, AN, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1272035810216",
+    "nombre": "Green Paddock P&P",
+    "tipo": "9-hole course",
+    "ubicacion": "Torrelodones, MAD, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1228385101972",
+    "nombre": "Green Sire Cabanillas Golf",
+    "tipo": "18-hole course",
+    "ubicacion": "Cabanillas del Campo, Guadalajara, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1400393416725434",
+    "nombre": "Greenlife Golf Marbella",
+    "tipo": "9-hole course",
+    "ubicacion": "Marbella, AN, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1275648017080",
+    "nombre": "Grijota Golf",
+    "tipo": "Grijota",
+    "ubicacion": "Grijota (Palencia), PA, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1222541088281",
+    "nombre": "Guadalhorce Club de Golf",
+    "tipo": "18-hole course",
+    "ubicacion": "Málaga, AN, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1314824780154",
+    "nombre": "Guara",
+    "tipo": "Golf de Guara",
+    "ubicacion": "Huesca, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1295269338899",
+    "nombre": "Hacienda del Álamo",
+    "tipo": "18-hole course",
+    "ubicacion": "Fuente Álamo, Murcia, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1325108368340",
+    "nombre": "Hacienda Riquelme Golf Resort",
+    "tipo": "18-hole course",
+    "ubicacion": "Sucina, MC, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1351625091949837",
+    "nombre": "Hauses Putt Training Course",
+    "tipo": "Training Turf 3 Meters",
+    "ubicacion": "Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1390552828941112",
+    "nombre": "HCP1 Pitch&Putt",
+    "tipo": "Hcp1",
+    "ubicacion": "St Vicens de Montalt, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1346777769591843",
+    "nombre": "Hércules Club de Golf",
+    "tipo": "18-hole course",
+    "ubicacion": "Arteixo, A Coruña, GAL, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1624387917855636",
+    "nombre": "HIERRO 3 - Reino de León -",
+    "tipo": "18-hole course",
+    "ubicacion": "Villanueva del Arbol, León, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1520454384425792",
+    "nombre": "Hotel Callao Salvaje",
+    "tipo": "18-hole course",
+    "ubicacion": "Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1108638537547",
+    "nombre": "Iberostar Real Novo Sancti Petri Golf Club",
+    "tipo": "A - Mar y pinos",
+    "ubicacion": "Novo Sancti Petri, AN, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1108639302761",
+    "nombre": "Iberostar Real Novo Sancti Petri Golf Club",
+    "tipo": "B - Centro",
+    "ubicacion": "Novo Sancti Petri, AN, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1255093246290",
+    "nombre": "Iberostar Real Novo Sancti Petri Golf Club",
+    "tipo": "C - Campano",
+    "ubicacion": "Novo Sancti Petri, AN, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1458829854595012",
+    "nombre": "IDP GOLF BASE AEREA DE ZARAGOZA",
+    "tipo": "18-hole course",
+    "ubicacion": "Zaragoza, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1249029452388",
+    "nombre": "INFINITUM Golf",
+    "tipo": "Hills",
+    "ubicacion": "Vila-seca, CT, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1747066567533331",
+    "nombre": "INFINITUM Golf",
+    "tipo": "Hills-Ruins temporary loop",
+    "ubicacion": "Vila-seca, CT, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1249110054265",
+    "nombre": "INFINITUM Golf",
+    "tipo": "Lakes",
+    "ubicacion": "Vila-seca, CT, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1225611077294",
+    "nombre": "INFINITUM Golf",
+    "tipo": "Ruins",
+    "ubicacion": "Vila-seca, CT, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1324917062026",
+    "nombre": "Instalaciones deportivas la cartuja",
+    "tipo": "La cartuja",
+    "ubicacion": "Sevilla, Sevilla, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1608235368686961",
+    "nombre": "Isla Canela Golf Club",
+    "tipo": "Links",
+    "ubicacion": "Ayamonte, AN, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1379838790470002",
+    "nombre": "Isla Canela Golf Club",
+    "tipo": "Old Course",
+    "ubicacion": "Ayamonte, AN, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1410971544857861",
+    "nombre": "isla de la cartuja",
+    "tipo": "9-hole course",
+    "ubicacion": "sevilla, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1326286623504",
+    "nombre": "Isla Valdecañas",
+    "tipo": "Valdecañas",
+    "ubicacion": "El Gordo, ext, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1217352897300_1_1",
+    "nombre": "Islantilla Golf Resort, S.L",
+    "tipo": "Azul",
+    "ubicacion": "Isla Cristina, Huelva, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1217352897300_2_2",
+    "nombre": "Islantilla Golf Resort, S.L",
+    "tipo": "Amarillo",
+    "ubicacion": "Isla Cristina, Huelva, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1217352897300_3_3",
+    "nombre": "Islantilla Golf Resort, S.L",
+    "tipo": "Verde",
+    "ubicacion": "Isla Cristina, Huelva, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1217352897300_1_2",
+    "nombre": "Islantilla Golf Resort, S.L",
+    "tipo": "Azul + Amarillo",
+    "ubicacion": "Isla Cristina, Huelva, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1217352897300_1_3",
+    "nombre": "Islantilla Golf Resort, S.L",
+    "tipo": "Azul + Verde",
+    "ubicacion": "Isla Cristina, Huelva, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1217352897300_2_3",
+    "nombre": "Islantilla Golf Resort, S.L",
+    "tipo": "Amarillo + Verde",
+    "ubicacion": "Isla Cristina, Huelva, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1280137371868",
+    "nombre": "Izki Golf",
+    "tipo": "Lagran",
+    "ubicacion": "Urturi, PV, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1147731481217",
+    "nombre": "Izki Golf",
+    "tipo": "Urturi",
+    "ubicacion": "Urturi, PV, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1451661302269149",
+    "nombre": "Jandia Golf Fuerteventura",
+    "tipo": "18-hole course",
+    "ubicacion": "Morro Jable, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1284377966100",
+    "nombre": "LA ALMARZA golf",
+    "tipo": "la almarza",
+    "ubicacion": "SANCHIDRIAN (AVILA), SAN, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1362003477520990",
+    "nombre": "la barganiza",
+    "tipo": "la barganiza",
+    "ubicacion": "Oviedo, AST, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1200430222149",
+    "nombre": "La Cala Golf",
+    "tipo": "America",
+    "ubicacion": "Mijas Costa Malaga, AN, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1105611211306",
+    "nombre": "La Cala Golf",
+    "tipo": "Asia",
+    "ubicacion": "Mijas Costa Malaga, AN, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1200604981160",
+    "nombre": "La Cala Golf",
+    "tipo": "Europa",
+    "ubicacion": "Mijas Costa Malaga, AN, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1327561977723321",
+    "nombre": "La Caminera Golf",
+    "tipo": "La Caminera Golf",
+    "ubicacion": "Torrenueva (Ciudad Real), Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1174406406132",
+    "nombre": "La Cuesta",
+    "tipo": "18-hole course",
+    "ubicacion": "Llanes, Ast, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1355174750754",
+    "nombre": "La Dehesa de moron",
+    "tipo": "18-hole course",
+    "ubicacion": "Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1303714507888",
+    "nombre": "La Ducuesa Golf Club",
+    "tipo": "La Ducuesa",
+    "ubicacion": "Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1335833294834531",
+    "nombre": "La Duquesa Golf Country Club",
+    "tipo": "18-hole course",
+    "ubicacion": "San Luis de Sabinillas, AN, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1488454265118378",
+    "nombre": "La Envia Golf",
+    "tipo": "18-hole course",
+    "ubicacion": "Vícar, AN, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1290534628964",
+    "nombre": "La Faisanera",
+    "tipo": "18-hole course",
+    "ubicacion": "Palazuelos de Eresma - Segovia, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1202572522789",
+    "nombre": "La Finca Golf",
+    "tipo": "Championship course",
+    "ubicacion": "Algorfa, VC, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1336927257465",
+    "nombre": "La Fresneda",
+    "tipo": "La fresneda club de golf",
+    "ubicacion": "La fresneda, Ast, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1356832957610",
+    "nombre": "La Galera",
+    "tipo": "18-hole course",
+    "ubicacion": "valladolid, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1316115566076",
+    "nombre": "La Galiana Golf Resort",
+    "tipo": "18-hole course",
+    "ubicacion": "Tavernes de la Valldigna, VC, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1266337333130",
+    "nombre": "La Graiera",
+    "tipo": "18",
+    "ubicacion": "Calafell (Tarragona), CAT, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1250786841553",
+    "nombre": "La Graiera",
+    "tipo": "Par 3",
+    "ubicacion": "Calafell (Tarragona), CAT, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1247247432117",
+    "nombre": "La Hacienda Links Golf Resort",
+    "tipo": "Heathland",
+    "ubicacion": "San Roque, AN, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1246819664124",
+    "nombre": "La Hacienda Links Golf Resort",
+    "tipo": "Links",
+    "ubicacion": "San Roque, AN, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1347182826972",
+    "nombre": "La Junquera",
+    "tipo": "La Junquera 09-09-2012",
+    "ubicacion": "Pedreña, CAN, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1274736514862",
+    "nombre": "La Manga Club",
+    "tipo": "North",
+    "ubicacion": "Atamaría, MC, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1404288837582965",
+    "nombre": "La Manga Club",
+    "tipo": "South",
+    "ubicacion": "Atamaría, MC, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1274738434141",
+    "nombre": "La Manga Club",
+    "tipo": "West",
+    "ubicacion": "Atamaría, MC, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "newcourseform.php?clid=1737570551463383",
+    "nombre": "La Maquessa",
+    "tipo": "no courses added",
+    "ubicacion": "Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1223571806453",
+    "nombre": "La Marquesa Golf",
+    "tipo": "18-hole course",
+    "ubicacion": "Rojales, VC, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1335440760113",
+    "nombre": "La Monacilla Golf Club",
+    "tipo": "18-hole course",
+    "ubicacion": "Dehesa Golf, AN, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1433970691199",
+    "nombre": "La Morgal Golf",
+    "tipo": "18-hole course",
+    "ubicacion": "Llanera, asturias, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1251387546331",
+    "nombre": "La noria golf",
+    "tipo": "9-hole course",
+    "ubicacion": "La Cala de Mijas, AN, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1244411783409",
+    "nombre": "La Peñaza",
+    "tipo": "La Peñaza 2014",
+    "ubicacion": "Zaragoza, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1471383698123297",
+    "nombre": "La Peñuela Golf Shot",
+    "tipo": "La Peñuela",
+    "ubicacion": "Cabanillas de la Sierra, MAD, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1248770904368",
+    "nombre": "La Peraleja",
+    "tipo": "peraleja",
+    "ubicacion": "Sucina, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1238234321453_1_1",
+    "nombre": "La Quinta Golf & Country Club",
+    "tipo": "A- San Pedro",
+    "ubicacion": "Benahavís, AN, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1238234321453_2_2",
+    "nombre": "La Quinta Golf & Country Club",
+    "tipo": "B - Ronda",
+    "ubicacion": "Benahavís, AN, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1238234321453_3_3",
+    "nombre": "La Quinta Golf & Country Club",
+    "tipo": "C - Guadaiza",
+    "ubicacion": "Benahavís, AN, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1238234321453_1_2",
+    "nombre": "La Quinta Golf & Country Club",
+    "tipo": "A- San Pedro + B - Ronda",
+    "ubicacion": "Benahavís, AN, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1238234321453_1_3",
+    "nombre": "La Quinta Golf & Country Club",
+    "tipo": "A- San Pedro + C - Guadaiza",
+    "ubicacion": "Benahavís, AN, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1238234321453_2_3",
+    "nombre": "La Quinta Golf & Country Club",
+    "tipo": "B - Ronda + C - Guadaiza",
+    "ubicacion": "Benahavís, AN, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1175785118092",
+    "nombre": "La Rasa de Berbes",
+    "tipo": "La Rasa de Berbes",
+    "ubicacion": "Berbes, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1285227654086",
+    "nombre": "La Reserva Golf Club",
+    "tipo": "18-hole course",
+    "ubicacion": "San Roque, Sotogrande, Cádiz, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1624676672544741",
+    "nombre": "La Reserva Rotana",
+    "tipo": "18-hole course",
+    "ubicacion": "Manacor, Mallorca, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1495368779302631",
+    "nombre": "La Resina Golf & Country Club",
+    "tipo": "9 Holes",
+    "ubicacion": "Estepona - Málaga, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1216763022540_1_1",
+    "nombre": "La Sella Golf",
+    "tipo": "Llebeig",
+    "ubicacion": "Jesus Pobre, VC, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1216763022540_2_2",
+    "nombre": "La Sella Golf",
+    "tipo": "Gregal",
+    "ubicacion": "Jesus Pobre, VC, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1216763022540_3_3",
+    "nombre": "La Sella Golf",
+    "tipo": "Mestral",
+    "ubicacion": "Jesus Pobre, VC, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1216763022540_1_2",
+    "nombre": "La Sella Golf",
+    "tipo": "Llebeig + Gregal",
+    "ubicacion": "Jesus Pobre, VC, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1216763022540_1_3",
+    "nombre": "La Sella Golf",
+    "tipo": "Llebeig + Mestral",
+    "ubicacion": "Jesus Pobre, VC, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1216763022540_2_3",
+    "nombre": "La Sella Golf",
+    "tipo": "Gregal + Mestral",
+    "ubicacion": "Jesus Pobre, VC, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1366738420497191",
+    "nombre": "La Siesta Golf Calahonda",
+    "tipo": "9-hole course",
+    "ubicacion": "Mijas-Costa, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1218387251299",
+    "nombre": "La Tercia Golf Resort",
+    "tipo": "18-hole course",
+    "ubicacion": "La Tercia, Mu, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1356125407513576",
+    "nombre": "La Torre Golf - GNK Golf",
+    "tipo": "18-hole course",
+    "ubicacion": "Roldán, MC, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1595959342971132",
+    "nombre": "Laguna De Los Patos",
+    "tipo": "9-hole course",
+    "ubicacion": "LA RODA, albacete, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1423679410964052",
+    "nombre": "Lanzarote Golf",
+    "tipo": "18-hole course",
+    "ubicacion": "Puerto del Carmen, CN, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1241762948668",
+    "nombre": "Larrabea Club de Golf",
+    "tipo": "LARRABEA CLUB",
+    "ubicacion": "Legutiano, Ala, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1334740260377982",
+    "nombre": "Las Caldas",
+    "tipo": "Campo Municipal Las Caldas",
+    "ubicacion": "Oviedo, AST, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1341686116804943",
+    "nombre": "Las Llanas",
+    "tipo": "9 Hoyos",
+    "ubicacion": "Grajera. Segovia, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1188587625118",
+    "nombre": "Las Lomas Bosque",
+    "tipo": "18 hoyos",
+    "ubicacion": "Villaviciosa de Odon, Mad, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1295091926703",
+    "nombre": "LAS MATAS",
+    "tipo": "18-hole course",
+    "ubicacion": "Madrid, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1267443754350",
+    "nombre": "Las Minas",
+    "tipo": "9-hole course",
+    "ubicacion": "Aznalcázar - Sevilla, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1339338279071",
+    "nombre": "Las Palmeras Golf",
+    "tipo": "Recorrido A",
+    "ubicacion": "Las Palmas, LPA, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1407514547172153",
+    "nombre": "Las Palmeras Golf",
+    "tipo": "Recorrido B",
+    "ubicacion": "Las Palmas, LPA, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1742819520357696",
+    "nombre": "Las Palmeras Golf",
+    "tipo": "Recorrido C",
+    "ubicacion": "Las Palmas, LPA, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1346858468858",
+    "nombre": "Las Pinaillas",
+    "tipo": "18-hole course",
+    "ubicacion": "Albacete, CM, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1313506210222",
+    "nombre": "Las Rejas Benidorm",
+    "tipo": "Golf Pitch & Putt",
+    "ubicacion": "Benidorm, AL, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1336676508894302_1_1",
+    "nombre": "Laukariz Country Club",
+    "tipo": "A",
+    "ubicacion": "Laukariz, PV, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1336676508894302_2_2",
+    "nombre": "Laukariz Country Club",
+    "tipo": "B",
+    "ubicacion": "Laukariz, PV, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1336676508894302_3_3",
+    "nombre": "Laukariz Country Club",
+    "tipo": "C",
+    "ubicacion": "Laukariz, PV, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1336676508894302_1_2",
+    "nombre": "Laukariz Country Club",
+    "tipo": "A + B",
+    "ubicacion": "Laukariz, PV, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1336676508894302_1_3",
+    "nombre": "Laukariz Country Club",
+    "tipo": "A + C",
+    "ubicacion": "Laukariz, PV, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1336676508894302_2_3",
+    "nombre": "Laukariz Country Club",
+    "tipo": "B + C",
+    "ubicacion": "Laukariz, PV, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1153863972427_1_1",
+    "nombre": "Lauro Golf Resort",
+    "tipo": "1. Nine",
+    "ubicacion": "Alhaurín de la Torre, AN, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1153863972427_2_2",
+    "nombre": "Lauro Golf Resort",
+    "tipo": "2. Nine",
+    "ubicacion": "Alhaurín de la Torre, AN, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1153863972427_3_3",
+    "nombre": "Lauro Golf Resort",
+    "tipo": "3. Nine",
+    "ubicacion": "Alhaurín de la Torre, AN, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1153863972427_1_2",
+    "nombre": "Lauro Golf Resort",
+    "tipo": "1. Nine + 2. Nine",
+    "ubicacion": "Alhaurín de la Torre, AN, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1153863972427_1_3",
+    "nombre": "Lauro Golf Resort",
+    "tipo": "1. Nine + 3. Nine",
+    "ubicacion": "Alhaurín de la Torre, AN, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1153863972427_2_3",
+    "nombre": "Lauro Golf Resort",
+    "tipo": "2. Nine + 3. Nine",
+    "ubicacion": "Alhaurín de la Torre, AN, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1216669328576",
+    "nombre": "León Club de Golf El Cueto",
+    "tipo": "El Cueto",
+    "ubicacion": "Spain, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1754904476236008",
+    "nombre": "LIZASO GOLF CLUB",
+    "tipo": "18-hole course",
+    "ubicacion": "Lizaso, Navarra, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1245662030352",
+    "nombre": "Lo Romero golfclub",
+    "tipo": "18-hole course",
+    "ubicacion": "Pilar de la Horadada, VC, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1478208390764319",
+    "nombre": "Logroño",
+    "tipo": "La Grajera",
+    "ubicacion": "Logroño, Rio, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1468263619415973",
+    "nombre": "Lorca Resort golfclub",
+    "tipo": "lorca resort",
+    "ubicacion": "Purias-Lorca, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1215014036136",
+    "nombre": "Los Arqueros Golf & Country Club",
+    "tipo": "18-hole course",
+    "ubicacion": "Benahavís, AN, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1357838709115",
+    "nombre": "los Montesinos",
+    "tipo": "Montesinosgolf",
+    "ubicacion": "scott, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1201336845315",
+    "nombre": "Los Moriscos Club de Golf",
+    "tipo": "18-hole course",
+    "ubicacion": "Motril, AN, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1207325971472",
+    "nombre": "Los Naranjos Golf Club",
+    "tipo": "18-hole course",
+    "ubicacion": "Marbella, AN, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1389966620887414",
+    "nombre": "Los Palos Golf Center",
+    "tipo": "Los Palos",
+    "ubicacion": "Arona, Tenerife, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1185436609473",
+    "nombre": "Los Retamares",
+    "tipo": "18-hole course",
+    "ubicacion": "Madrid, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1341669251373479",
+    "nombre": "Lugo",
+    "tipo": "9 Hoyos",
+    "ubicacion": "Lugo, LU, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1332847465384",
+    "nombre": "Magna Golf Marbella",
+    "tipo": "18 holes",
+    "ubicacion": "Marbella, AN, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "newcourseform.php?clid=1739623312378289",
+    "nombre": "Mar Menor",
+    "tipo": "no courses added",
+    "ubicacion": "Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1351541372617314",
+    "nombre": "Mar Menor Golf Village",
+    "tipo": "18-hole course",
+    "ubicacion": "Torre-Pacheco, MC, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1187781405364",
+    "nombre": "Marbella club golf resort",
+    "tipo": "18-hole course",
+    "ubicacion": "Benahavís, AN, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1242199968700",
+    "nombre": "Marbella Golf Country Club",
+    "tipo": "Marbella",
+    "ubicacion": "Marbella, AN, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1286547279218",
+    "nombre": "Margas Golf",
+    "tipo": "18-hole course",
+    "ubicacion": "Latas, Hue, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1213823456216",
+    "nombre": "Marina golf Mojacar",
+    "tipo": "18-hole course",
+    "ubicacion": "Mojacar almeria, alm, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1444151093588728",
+    "nombre": "Mas Gurumbau - Pitch & Putt",
+    "tipo": "18-hole course",
+    "ubicacion": "Taradell, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1448735350891509",
+    "nombre": "Mas Pages",
+    "tipo": "Mas Pages Golf",
+    "ubicacion": "Girona, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1475562261435712",
+    "nombre": "Mas Tapiolas Pitch & Putt",
+    "tipo": "18-hole course",
+    "ubicacion": "Santa Cristina d'Aro, CAT, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1475522561693751",
+    "nombre": "Mas Torrellas Pitch & Putt",
+    "tipo": "18-hole course",
+    "ubicacion": "Santa Cristina d'Aro, CAT, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1171015051535",
+    "nombre": "Masia Estrellas",
+    "tipo": "18-hole course",
+    "ubicacion": "Valencia, vl, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1317841501754",
+    "nombre": "Masia Estrellas",
+    "tipo": "Mini golf",
+    "ubicacion": "Valencia, vl, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1148019568800",
+    "nombre": "Maspalomas Golf",
+    "tipo": "18-hole course",
+    "ubicacion": "Maspalomas, CN, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1347182614602",
+    "nombre": "Mataleñas",
+    "tipo": "Mataleñas 09-09-2012",
+    "ubicacion": "Santander, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1154990624014",
+    "nombre": "Meaztegi Golf",
+    "tipo": "18-hole course",
+    "ubicacion": "Ortuella, Viz, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1239901008040",
+    "nombre": "Medina Elvira Golf",
+    "tipo": "18-hole course",
+    "ubicacion": "Granada, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1118834332906",
+    "nombre": "Mediterraneo Golf",
+    "tipo": "18-hole course",
+    "ubicacion": "Borriol, VC, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1249625831192",
+    "nombre": "Meis",
+    "tipo": "18-hole course",
+    "ubicacion": "PON, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1367085986141391",
+    "nombre": "Melilla",
+    "tipo": "no valid",
+    "ubicacion": "Melilla, ML, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1367085834485409",
+    "nombre": "Melilla",
+    "tipo": "valido",
+    "ubicacion": "Melilla, ML, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1392901166429",
+    "nombre": "Meloneras Golf Club",
+    "tipo": "18-hole course",
+    "ubicacion": "Maspalomas, CN, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1497964215818684",
+    "nombre": "Miguel Angel Jimenez Golf Academy",
+    "tipo": "9-hole course",
+    "ubicacion": "Torremolinos, AN, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1374241975773864",
+    "nombre": "Mijas Golf Club",
+    "tipo": "Los Lagos",
+    "ubicacion": "Las Lagunas de Mijas, AN, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1175010394261",
+    "nombre": "Mijas Golf Club",
+    "tipo": "Los Olivos",
+    "ubicacion": "Las Lagunas de Mijas, AN, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1558415488875966",
+    "nombre": "MIÑO Club de Golf ÁRTABRO",
+    "tipo": "MIÑO 18 Hoyos",
+    "ubicacion": "MIÑO (A CORUÑA), Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1602852253370131",
+    "nombre": "MIÑO Club de Golf ÁRTABRO",
+    "tipo": "MIÑO 9 Hoyos IDA",
+    "ubicacion": "MIÑO (A CORUÑA), Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1602852669369471",
+    "nombre": "MIÑO Club de Golf ÁRTABRO",
+    "tipo": "MIÑO 9 Hoyos VUELTA",
+    "ubicacion": "MIÑO (A CORUÑA), Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1399300383196325",
+    "nombre": "Miño OLD",
+    "tipo": "18 Hoyos R1 LARGO",
+    "ubicacion": "A Coruña, C, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1323347460797",
+    "nombre": "Miño OLD",
+    "tipo": "18 Hoyos R2 CORTO",
+    "ubicacion": "A Coruña, C, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1335910792234",
+    "nombre": "Miño OLD KO",
+    "tipo": "MIÑO",
+    "ubicacion": "La Coruña, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1144331101067",
+    "nombre": "Miraflores Golf Club",
+    "tipo": "18-hole course",
+    "ubicacion": "Mijas Costa, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1237186632669",
+    "nombre": "Monte Mayor",
+    "tipo": "yards",
+    "ubicacion": "Malaga, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1688313043730712",
+    "nombre": "Monte Paraiso",
+    "tipo": "9-hole course",
+    "ubicacion": "Marbella, Málaga, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1435170069165079",
+    "nombre": "Montealegre Golf Club",
+    "tipo": "Montealegre",
+    "ubicacion": "Ourense, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1357838854531",
+    "nombre": "montesinos",
+    "tipo": "9-hole course",
+    "ubicacion": "Los Montesinos, sco, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1302419999857",
+    "nombre": "Mosa Trajectum Golf",
+    "tipo": "Pine + Stone",
+    "ubicacion": "Baños y Medigo - Murcia, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1220810099358",
+    "nombre": "Mosa Trajectum Golf",
+    "tipo": "Stone + Olive",
+    "ubicacion": "Baños y Medigo - Murcia, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1374501660678",
+    "nombre": "Navagrulla",
+    "tipo": "18-hole course",
+    "ubicacion": "San Leonardo de Yagüe, SO, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1323103293954772",
+    "nombre": "Navaluenga",
+    "tipo": "Navaluenga",
+    "ubicacion": "Navaluenga, AVI, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1222417725948",
+    "nombre": "NCG LAS MATAS",
+    "tipo": "18-hole course",
+    "ubicacion": "Madrid, mad, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1184508665515",
+    "nombre": "Negralejo",
+    "tipo": "Corto",
+    "ubicacion": "Rivas-Vaciamadrid, Madrid, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1355836820515320",
+    "nombre": "Negralejo",
+    "tipo": "Largo",
+    "ubicacion": "Rivas-Vaciamadrid, Madrid, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1184064800921",
+    "nombre": "Negralejo",
+    "tipo": "Largo-Corto",
+    "ubicacion": "Rivas-Vaciamadrid, Madrid, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1425326224344",
+    "nombre": "Negralejo",
+    "tipo": "Negralejo 18 P&P",
+    "ubicacion": "Rivas-Vaciamadrid, Madrid, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1083269515077",
+    "nombre": "New Madrid Golf Club S.D.",
+    "tipo": "18-hole course",
+    "ubicacion": "Madrid, MD, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1676130788465220",
+    "nombre": "New Sierra Golf",
+    "tipo": "18-hole course",
+    "ubicacion": "Avileses, MC, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1203246833041",
+    "nombre": "Norba Club de Golf Cáceres",
+    "tipo": "18-hole course",
+    "ubicacion": "Cáceres, EX, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1349296098321842",
+    "nombre": "novo golf club",
+    "tipo": "18-hole course",
+    "ubicacion": "chiclana de la frontera, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1699704973601884",
+    "nombre": "OLD COURSE GRAN CANARIA",
+    "tipo": "18-hole course",
+    "ubicacion": "Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1624278678999247",
+    "nombre": "OLIMPICO DE LEON - CULB DEPORTIVO -",
+    "tipo": "18 hoyos",
+    "ubicacion": "LEON, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "newcourseform.php?clid=1715854796958913",
+    "nombre": "Olivia Nova",
+    "tipo": "no courses added",
+    "ubicacion": "Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1144951777520",
+    "nombre": "P&P Badalona",
+    "tipo": "18-hole course",
+    "ubicacion": "Badalona, BCN, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1144949440119",
+    "nombre": "P&P Handicap 1",
+    "tipo": "18-hole course",
+    "ubicacion": "Sant Andreu de Llavaneras, BCN, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=133663562279959",
+    "nombre": "P&P La Garriga",
+    "tipo": "P&P La Garriga",
+    "ubicacion": "La Garriga, BCN, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1140186830940",
+    "nombre": "P&P Lleida",
+    "tipo": "18-hole course",
+    "ubicacion": "Lleida, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1144952250642",
+    "nombre": "P&P Montseny NEW",
+    "tipo": "18-hole course",
+    "ubicacion": "Gualba, BCN, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1249145238003",
+    "nombre": "P&P ROC3",
+    "tipo": "18-hole course",
+    "ubicacion": "Santa Coloma de Cervello, BCN, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1369649179440808",
+    "nombre": "P&P ROC3",
+    "tipo": "ROC3",
+    "ubicacion": "Santa Coloma de Cervello, BCN, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1144911225827",
+    "nombre": "P&P Sant Cebria",
+    "tipo": "18-hole course",
+    "ubicacion": "Sant Cebriá de Vallalta, BCN, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1371119857770816",
+    "nombre": "P&P SANT CUGAT",
+    "tipo": "18-hole course",
+    "ubicacion": "Sant Cugat del Valles, BCN, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1719343781334916",
+    "nombre": "P&P Teià",
+    "tipo": "18 forats ACPP",
+    "ubicacion": "Teià, Barcelona, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1368083359594576",
+    "nombre": "P&P Teià",
+    "tipo": "EPPA",
+    "ubicacion": "Teià, Barcelona, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1144952601125",
+    "nombre": "P&P Tenis Mora",
+    "tipo": "18-hole course",
+    "ubicacion": "Sant Andreu de Llavaneras, BCN, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1673791855754102",
+    "nombre": "P&P Vallromanes",
+    "tipo": "Recorregut Vallromanes 9 forats",
+    "ubicacion": "Vilanova del Valles, BCN, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1144952994622",
+    "nombre": "P&P Vallromanes",
+    "tipo": "Recorregut Vilanova",
+    "ubicacion": "Vilanova del Valles, BCN, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1381601247936",
+    "nombre": "Pablo Hernandez",
+    "tipo": "18-hole course",
+    "ubicacion": "Noves, Tol, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1485423060301231",
+    "nombre": "Paderne Pitch&Putt",
+    "tipo": "Paderne P&P",
+    "ubicacion": "A Coruña, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1213383018484",
+    "nombre": "Palomarejos",
+    "tipo": "18-hole course",
+    "ubicacion": "Talavera de la Reina, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1136121319545",
+    "nombre": "Panoramica Golf",
+    "tipo": "18-hole course",
+    "ubicacion": "San Jorge, VC, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1144950383663",
+    "nombre": "Par 3 pitch & putt Gualta",
+    "tipo": "18-hole course",
+    "ubicacion": "Gualta, GIR, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1328464614426248",
+    "nombre": "Parador de Málaga Golf Club",
+    "tipo": "18-hole course",
+    "ubicacion": "Algeciras, AN, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1243092482784",
+    "nombre": "PdH arriba",
+    "tipo": "18-hole course",
+    "ubicacion": "Madrid, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1238939261108",
+    "nombre": "PGA Golf Catalunya",
+    "tipo": "Stadium",
+    "ubicacion": "Caldes de Malavella (GIR), CAT, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1238939411951",
+    "nombre": "PGA Golf Catalunya",
+    "tipo": "Tour",
+    "ubicacion": "Caldes de Malavella (GIR), CAT, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1117089009776",
+    "nombre": "Pitch & Putt",
+    "tipo": "18-hole course",
+    "ubicacion": "Figuerola, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1621844267720386",
+    "nombre": "Pitch & Putt Castelló d'Empúries",
+    "tipo": "Pitch & Putt Castelló-Empuriabrava",
+    "ubicacion": "Castelló d'Empúries, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1326964405534934",
+    "nombre": "Pitch & Putt Derio",
+    "tipo": "Pitch & Putt Derio",
+    "ubicacion": "Derio, Viz, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1123592581493",
+    "nombre": "Pitch & Putt La Figuerola",
+    "tipo": "18-hole course",
+    "ubicacion": "Vandellos, Cat, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1475591533866276",
+    "nombre": "PITCH & PUTT PLATJA D'ARO",
+    "tipo": "18-hole course",
+    "ubicacion": "Platja d'Aro, CAT, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1619760465579171",
+    "nombre": "Pitch&Putt Can Mascaro",
+    "tipo": "18-hole course",
+    "ubicacion": "La Palma de Cervello, Barcelona, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1640955151919612",
+    "nombre": "Pollença Golf Club",
+    "tipo": "9-hole course",
+    "ubicacion": "Pollença, IB, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1165377859572",
+    "nombre": "Portal del Roc",
+    "tipo": "Pitch & Putt",
+    "ubicacion": "Vilanova i la Geltrú (Barcelon, CAT, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1288208787013",
+    "nombre": "POZO DO LAGO",
+    "tipo": "POZO DO LAGO",
+    "ubicacion": "OURENSE, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1502386563686477",
+    "nombre": "Puig Campana Golf",
+    "tipo": "9-hole course",
+    "ubicacion": "Finestrat, VC, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "newcourseform.php?clid=1733912380185522",
+    "nombre": "Puit Campana",
+    "tipo": "no courses added",
+    "ubicacion": "Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1300001498412",
+    "nombre": "Pula Golf",
+    "tipo": "18-hole course",
+    "ubicacion": "Son Servera, PM, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1721234599346739",
+    "nombre": "Quinto Coto",
+    "tipo": "Quinto Coto",
+    "ubicacion": "Villanueva de la Serena, Extremadura, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1218195376498",
+    "nombre": "RAC Santiago",
+    "tipo": "18-hole course",
+    "ubicacion": "Santiago de Compostela, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1502647648729267",
+    "nombre": "RAC VIGO",
+    "tipo": "RAC VIGO",
+    "ubicacion": "VIGO, 34, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1181375916512",
+    "nombre": "RACE",
+    "tipo": "18-hole course",
+    "ubicacion": "San Sebastián de los Reyes, Mad, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1336666841133179",
+    "nombre": "Ramón Sota",
+    "tipo": "9-hole course",
+    "ubicacion": "Agüero , Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1231366823130",
+    "nombre": "Ranillas Golf",
+    "tipo": "Ranillas",
+    "ubicacion": "Zaragoza, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1560783203319573",
+    "nombre": "RCPH Buenavista",
+    "tipo": "RCPH-Campo Buenavista",
+    "ubicacion": "Madrid, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1446640422400587",
+    "nombre": "Real Club de Campo de Córdoba",
+    "tipo": "18-hole course",
+    "ubicacion": "CORDOBA, AN, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1440509320538953",
+    "nombre": "Real club de golf Campoamor",
+    "tipo": "18-hole course",
+    "ubicacion": "Orihuela Costa, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1559804015197418",
+    "nombre": "Real club de golf de Cerdaña",
+    "tipo": "Recorrido verde",
+    "ubicacion": "Puigcerdà- Girona, Cat, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1250025982846",
+    "nombre": "Real Club de Golf de La Coruña",
+    "tipo": "Zapateira",
+    "ubicacion": "A Coruña, GMP, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1262550452079",
+    "nombre": "Real Club de Golf de Las Palmas",
+    "tipo": "18-hole course",
+    "ubicacion": "Las Palmas, Gran Canaria, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1233571266459",
+    "nombre": "Real Club de Golf de Puerta de Hierro",
+    "tipo": "Abajo",
+    "ubicacion": "Madrid, MAD, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1201949925747",
+    "nombre": "Real Club de Golf de Puerta de Hierro",
+    "tipo": "Arriba",
+    "ubicacion": "Madrid, MAD, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1236113280062",
+    "nombre": "Real Club de Golf de Puerta de Hierro",
+    "tipo": "Buenavista",
+    "ubicacion": "Madrid, MAD, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1324039190533",
+    "nombre": "Real Club de Golf de Tenerife",
+    "tipo": "18-hole course",
+    "ubicacion": "Tacoronte, CN, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1394479077253",
+    "nombre": "Real Club de Golf El Candado",
+    "tipo": "El Candado",
+    "ubicacion": "Málaga, AN, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1303161455219",
+    "nombre": "Real Club de Golf El Prat",
+    "tipo": "Amarillo",
+    "ubicacion": "Terrassa, CT, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1312994527926",
+    "nombre": "Real Club de Golf El Prat",
+    "tipo": "Azul",
+    "ubicacion": "Terrassa, CT, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1306924174914",
+    "nombre": "Real Club de Golf El Prat",
+    "tipo": "Open",
+    "ubicacion": "Terrassa, CT, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1310148689972",
+    "nombre": "Real Club de Golf El Prat",
+    "tipo": "Rosa",
+    "ubicacion": "Terrassa, CT, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1524343453758883",
+    "nombre": "Real Club de Golf El Prat",
+    "tipo": "Verde",
+    "ubicacion": "Terrassa, CT, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1083269902588",
+    "nombre": "Real Club de Golf Green",
+    "tipo": "18-hole course",
+    "ubicacion": "Barcelona, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1119900862826",
+    "nombre": "Real Club de Golf Guadalmina",
+    "tipo": "Norte",
+    "ubicacion": "San Pedro de Alcántara - Marb, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1225960392257",
+    "nombre": "Real Club de Golf Guadalmina",
+    "tipo": "Sur",
+    "ubicacion": "San Pedro de Alcántara - Marb, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=142929187866951",
+    "nombre": "Real Club de Golf La Herreria",
+    "tipo": "Campo largo",
+    "ubicacion": "San Lorenzo de El Escorial, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1250269045516",
+    "nombre": "Real Club de Golf La Toja",
+    "tipo": "18-hole course",
+    "ubicacion": "Isla de La Toja, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1195239789821",
+    "nombre": "Real Club de Golf Las Brisas",
+    "tipo": "18-hole course",
+    "ubicacion": "Marbella, AN, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1735203278277436",
+    "nombre": "Real Club de Golf Las Rozas",
+    "tipo": "18-hole course",
+    "ubicacion": "Las Rozas de Madrid, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1540204499886475",
+    "nombre": "Real Club de Golf Sotogrande",
+    "tipo": "18-hole course",
+    "ubicacion": "Sotogrande,Cádiz, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1744040687453178",
+    "nombre": "Real Club de Golf Sotogrande",
+    "tipo": "Corto",
+    "ubicacion": "Sotogrande,Cádiz, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1471344805892525",
+    "nombre": "Real Club de Vista Hermosa",
+    "tipo": "Vista Hermosa",
+    "ubicacion": "El Puerto de Sta. María -  Cad, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1399747742440",
+    "nombre": "Real club golf castiello",
+    "tipo": "Real Club de Golf de Castiello",
+    "ubicacion": "Gijón, Asturias, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=153080112342206",
+    "nombre": "Real Club Pineda de Sevilla",
+    "tipo": "18-hole course",
+    "ubicacion": "Sevilla, AN, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1179469700756",
+    "nombre": "Real Club Sevilla Golf",
+    "tipo": "18-hole course",
+    "ubicacion": "Sevilla, SE, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1146054929551",
+    "nombre": "Real Club Valderrama",
+    "tipo": "18-hole course",
+    "ubicacion": "Sotogrande, AN, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1185121915548",
+    "nombre": "Real de Faula - Poniente",
+    "tipo": "18-hole course",
+    "ubicacion": "Benidorm, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1213012242660",
+    "nombre": "Real Golf Club de San Sebastian",
+    "tipo": "18-hole course",
+    "ubicacion": "Donostia, Gip, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1373042845749012",
+    "nombre": "Real Golf Club de San Sebastian",
+    "tipo": "jaizkibel",
+    "ubicacion": "Donostia, Gip, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1469621586342219",
+    "nombre": "Real Golf Club de Zarauz",
+    "tipo": "zarautz",
+    "ubicacion": "Zarautz, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=169089096326702",
+    "nombre": "Real Golf Club Oyambre",
+    "tipo": "9 hoyos",
+    "ubicacion": "Valdáliga, Cantabria, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1113909256931",
+    "nombre": "Real Golf de Bendinat",
+    "tipo": "Par 69",
+    "ubicacion": "Bendinat, IB, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1706043952255929",
+    "nombre": "Real Golf de Bendinat",
+    "tipo": "Par 70",
+    "ubicacion": "Bendinat, IB, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1317222950685999",
+    "nombre": "REAL GOLF DE PEDREÑA",
+    "tipo": "18-hole course",
+    "ubicacion": "Pedreña, Cantabria, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1365046548317926",
+    "nombre": "Real Nuevo club de Golf de San Sebastián Basozabal",
+    "tipo": "Basozabal",
+    "ubicacion": "San Sebastián, Gip, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1240006881187",
+    "nombre": "Real Sociedad de Golf de Neguri",
+    "tipo": "La Galea",
+    "ubicacion": "Getxo, BIL, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1371283642100828",
+    "nombre": "Real Sociedad Hipica Club de Campo",
+    "tipo": "Norte",
+    "ubicacion": "San Sebastián de los Reyes, Mad, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1371291030591127",
+    "nombre": "Real Sociedad Hipica Club de Campo",
+    "tipo": "Sur",
+    "ubicacion": "San Sebastián de los Reyes, Mad, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1319298541862519",
+    "nombre": "Reial Club de Golf Manises",
+    "tipo": "9-hole course",
+    "ubicacion": "Manises, VC, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1176558290644",
+    "nombre": "Retamares",
+    "tipo": "18-hole course",
+    "ubicacion": "Alalpardo, Madrid, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1184317672875",
+    "nombre": "RFEG",
+    "tipo": "18-hole course",
+    "ubicacion": "Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1499945826113251",
+    "nombre": "RFEG Campo Corto 6 hoyos",
+    "tipo": "Fede",
+    "ubicacion": "Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1336238979317",
+    "nombre": "Ria de vigo",
+    "tipo": "18-hole course",
+    "ubicacion": "Moaña, Pontevedra, GAL, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1432064797489300",
+    "nombre": "Riocerezo",
+    "tipo": "Riocerezo",
+    "ubicacion": "Riocerezo,Burgos, BU, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1184069585578",
+    "nombre": "RIOJA ALTA GOLF CLUB",
+    "tipo": "18-hole course",
+    "ubicacion": "Cirueña, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1475518756667297",
+    "nombre": "Roc 3 Pitch & Putt",
+    "tipo": "Roc 3 Pitch & Putt",
+    "ubicacion": "Santa Coloma de Cervelló, CAT, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1256634503944",
+    "nombre": "Roda Golf",
+    "tipo": "18-hole course",
+    "ubicacion": "Roda, MC, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1693156961410314",
+    "nombre": "Rovacías Comillas",
+    "tipo": "11+7",
+    "ubicacion": "Comillas, Cantabria, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1084271781364",
+    "nombre": "RSHECC",
+    "tipo": "Campo Norte",
+    "ubicacion": "Madrid, ESP, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1164114047259",
+    "nombre": "RSHECC",
+    "tipo": "Campo Sur",
+    "ubicacion": "Madrid, ESP, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1395089577420260",
+    "nombre": "Salas de los Infantes",
+    "tipo": "Salas de los infantes (ar)",
+    "ubicacion": "Salas de los Infantes, BU, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1253372769700",
+    "nombre": "Saldaña Golf",
+    "tipo": "Burgos Saldaña",
+    "ubicacion": "Saldaña de Burgos, Burgos, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1328560476933",
+    "nombre": "Saldaña Golf",
+    "tipo": "SaldaÃ±a",
+    "ubicacion": "Burgos, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1316707046904_1_1",
+    "nombre": "Salobre Golf",
+    "tipo": "Old 1-9",
+    "ubicacion": "Maspalomas, CN, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1316707046904_2_2",
+    "nombre": "Salobre Golf",
+    "tipo": "Old 10-18",
+    "ubicacion": "Maspalomas, CN, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1316707046904_3_3",
+    "nombre": "Salobre Golf",
+    "tipo": "New",
+    "ubicacion": "Maspalomas, CN, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1316707046904_1_2",
+    "nombre": "Salobre Golf",
+    "tipo": "Old 1-9 + Old 10-18",
+    "ubicacion": "Maspalomas, CN, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1316707046904_1_3",
+    "nombre": "Salobre Golf",
+    "tipo": "Old 1-9 + New",
+    "ubicacion": "Maspalomas, CN, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1316707046904_2_3",
+    "nombre": "Salobre Golf",
+    "tipo": "Old 10-18 + New",
+    "ubicacion": "Maspalomas, CN, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1306227342039",
+    "nombre": "San Feliu",
+    "tipo": "18-hole course",
+    "ubicacion": "Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1092220653671",
+    "nombre": "San Roque Golf Club",
+    "tipo": "New Course",
+    "ubicacion": "San Roque, AN, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1084875202470",
+    "nombre": "San Roque Golf Club",
+    "tipo": "Old Course",
+    "ubicacion": "San Roque, AN, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "newcourseform.php?clid=1756664732859159",
+    "nombre": "San Roque Golf Resort",
+    "tipo": "no courses added",
+    "ubicacion": "San Roque, Cádiz, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "newcourseform.php?clid=1756665507527556",
+    "nombre": "San Roque Golf Resort",
+    "tipo": "no courses added",
+    "ubicacion": "San Roque, Cádiz, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1756665807317961",
+    "nombre": "San Roque Golf Resort",
+    "tipo": "New",
+    "ubicacion": "San Roque, Cádiz, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1424025482911923",
+    "nombre": "Sancti Petri Hills Golf",
+    "tipo": "18-hole course",
+    "ubicacion": "Chiclana de la Frontera, AN, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1194645897267",
+    "nombre": "Sanlucar Club de Campo",
+    "tipo": "18-hole course",
+    "ubicacion": "Sanlucar de Barrameda, CAD, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1460815028443997",
+    "nombre": "Santa Clara Golf Granada",
+    "tipo": "18-hole course",
+    "ubicacion": "Otura, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1187784380960",
+    "nombre": "Santa Clara Golf Marbella",
+    "tipo": "18-hole course",
+    "ubicacion": "Marbella, AN, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1102439161627",
+    "nombre": "Santa Maria Golf & Country Club",
+    "tipo": "18-hole course",
+    "ubicacion": "Marbella, Málaga, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1751027575176193",
+    "nombre": "Santa Maria Golf & Country Club",
+    "tipo": "Provisional 2025",
+    "ubicacion": "Marbella, Málaga, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1342783053898",
+    "nombre": "Santa Marina Golf",
+    "tipo": "Santa Marina",
+    "ubicacion": "San Vicente de la Barquera, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1203588004720",
+    "nombre": "Santana Golf",
+    "tipo": "18-hole course",
+    "ubicacion": "Mijas, AN, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1340891682037",
+    "nombre": "Saurines Golf Ugolf",
+    "tipo": "18-hole course",
+    "ubicacion": "Roldán, MC, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1382225985582329",
+    "nombre": "SEK VILLAFRANCA DEL CASTILLO",
+    "tipo": "SEK VILLAFRANCA DEL CASTILLO",
+    "ubicacion": "Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1376604558765",
+    "nombre": "Señorio de Illescas",
+    "tipo": "Señorio de Illescas",
+    "ubicacion": "Illescas - Toledo, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1367774027469348",
+    "nombre": "SENSOL GOLF",
+    "tipo": "SENSOL GOLF",
+    "ubicacion": "Mazarrón, Mu, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1221003128929",
+    "nombre": "Serena Golf",
+    "tipo": "18-hole course",
+    "ubicacion": "Los Alcázares, MC, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1114861218234",
+    "nombre": "Serres De Pals - Golf & Sport Club",
+    "tipo": "18-hole course",
+    "ubicacion": "Pals - Girona, CAT, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1188576773578",
+    "nombre": "Sherry Golf Jerez",
+    "tipo": "18-hole course",
+    "ubicacion": "Jerez de la Frontera, AN, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1327263659029",
+    "nombre": "Sojuela Club de Campo",
+    "tipo": "18-hole course",
+    "ubicacion": "SOJUELA (Logroño), La Rioja, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1292498549212",
+    "nombre": "Somosaguas",
+    "tipo": "Somosaguas",
+    "ubicacion": "Madrid, MADRID, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1113909593224",
+    "nombre": "Son Muntaner Golf",
+    "tipo": "18-hole course",
+    "ubicacion": "Palma de Mallorca, E, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1663699475326679",
+    "nombre": "T Golf Calvia",
+    "tipo": "18-hole course",
+    "ubicacion": "Calvià, , PM, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1238262031473",
+    "nombre": "T Golf Palma Puntiro",
+    "tipo": "18-hole course",
+    "ubicacion": "Palma, IB, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1360608223977832",
+    "nombre": "Talayuela Golf",
+    "tipo": "18-hole course",
+    "ubicacion": "Talayuela, Cáceres, EX, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1640909040200791",
+    "nombre": "Tambre Golf - Pitch",
+    "tipo": "18-hole course",
+    "ubicacion": "Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1114791879621",
+    "nombre": "Taradell Golf",
+    "tipo": "18-hole course",
+    "ubicacion": "Taradell (BCN), CAT, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1657691486967019",
+    "nombre": "Taradell Golf",
+    "tipo": "Front 9",
+    "ubicacion": "Taradell (BCN), CAT, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1195323154828",
+    "nombre": "Tecina Golf",
+    "tipo": "18-hole course",
+    "ubicacion": "Playa Santiago, CN, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1143884956873",
+    "nombre": "Torre-Serona",
+    "tipo": "18-hole course",
+    "ubicacion": "Lleida, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1237643813004",
+    "nombre": "Torremirona Golf Club",
+    "tipo": "18-hole course",
+    "ubicacion": "Navata, CT, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1419547002276",
+    "nombre": "Uraburu Golf",
+    "tipo": "Uraburu Golf",
+    "ubicacion": "Galdakao, Basque Country, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1709735553410250",
+    "nombre": "Urnieta Pitch & Patt",
+    "tipo": "18-hole course",
+    "ubicacion": "Urnieta, Donostia, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1537280912314097",
+    "nombre": "Val de Rois",
+    "tipo": "Rois 18 Hoyos",
+    "ubicacion": "Rois.  A Coruña, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1540411952293668",
+    "nombre": "Valdenarra",
+    "tipo": "valdenarra",
+    "ubicacion": "Bercial, Segovia, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1600150873385877",
+    "nombre": "Vall D'or Golf",
+    "tipo": "18-hole course",
+    "ubicacion": "Felanitx, IB, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1322990175309",
+    "nombre": "Vall D'or Golf",
+    "tipo": "18-hole course",
+    "ubicacion": "Felanitx, IB, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1247776965944",
+    "nombre": "Valle del Este",
+    "tipo": "Valle Del Este",
+    "ubicacion": "Vera, AN, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1330173081151382",
+    "nombre": "Valle Romano Golf",
+    "tipo": "18-hole course",
+    "ubicacion": "Estepona, AN, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1297534923613",
+    "nombre": "Valles Golf",
+    "tipo": "18-hole course",
+    "ubicacion": "Terrassa, CAT, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1312384729165",
+    "nombre": "Valmuza Golf Resort",
+    "tipo": "18-hole course",
+    "ubicacion": "Salamanca, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1136656251251",
+    "nombre": "Veneziola Golf",
+    "tipo": "18-hole course",
+    "ubicacion": "La Manga, MU, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1241600968768",
+    "nombre": "Villa Nueva Golf",
+    "tipo": "18-hole course",
+    "ubicacion": "Puerto Real, Cadiz, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1270236262757",
+    "nombre": "Villa Padierna Golf Club",
+    "tipo": "Alferini",
+    "ubicacion": "Marbella, AN, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1189608190692",
+    "nombre": "Villa Padierna Golf Club",
+    "tipo": "Flamingos",
+    "ubicacion": "Marbella, AN, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1386149824767483",
+    "nombre": "Villa Padierna Golf Club",
+    "tipo": "Tramores",
+    "ubicacion": "Marbella, AN, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1157094465114",
+    "nombre": "Villaitana Golf",
+    "tipo": "Levante",
+    "ubicacion": "Benidorm, VC, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=135721498156151",
+    "nombre": "Villaitana Golf",
+    "tipo": "Poniente",
+    "ubicacion": "Benidorm, VC, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1107812511656",
+    "nombre": "Villamartín Golf",
+    "tipo": "18-hole course",
+    "ubicacion": "Villamartín, VC, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1262424603596",
+    "nombre": "VILLAMAYOR",
+    "tipo": "18-hole course",
+    "ubicacion": "SALAMANCA, SPAIN",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1184782265796",
+    "nombre": "Villanueva Golf & Croquet",
+    "tipo": "18-hole course",
+    "ubicacion": "Puerto Real, AN, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1401915465184",
+    "nombre": "villaviciosa golf 72",
+    "tipo": "villaviciosa",
+    "ubicacion": "villaviciosa, asturias, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1269065865579",
+    "nombre": "Vistabella Golf",
+    "tipo": "18-hole course",
+    "ubicacion": "Orihuela, VC, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1177373171059",
+    "nombre": "VistaHermosa Club de Golf",
+    "tipo": "9-hole course",
+    "ubicacion": "Puerto de Santa Maria, Cadiz, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1153861899904",
+    "nombre": "Zarapicos Salamanca",
+    "tipo": "18-hole course",
+    "ubicacion": "Salamanca, SA, Spain",
+    "gps_disponible": true
+  },
+  {
+    "url": "showcourse.php?cid=1271784143988",
+    "nombre": "Zuasti Club de Campo",
+    "tipo": "Zuasti nuevo recorrido",
+    "ubicacion": "Zuasti, Nav, Spain",
+    "gps_disponible": true
+  }
+]

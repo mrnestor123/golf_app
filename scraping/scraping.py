@@ -14,9 +14,11 @@ import getpass
 class MSCorecardScraper:
     def __init__(self):
         self.base_url = "https://www.mscorecard.com/mscorecard"
+        
         self.headers = {
             'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'
         }
+
         self.session = requests.Session()
         self.session.headers.update(self.headers)
         self.logged_in = False
@@ -117,30 +119,6 @@ class MSCorecardScraper:
         except:
             return False
     
-    def get_courses_page(self):
-        """
-        Obtiene la página principal de cursos (requiere login)
-        """
-        if not self.logged_in:
-            print("⚠ No has iniciado sesión")
-            return None
-        
-        url = f"{self.base_url}/courses.php"
-        try:
-            response = self.session.get(url, timeout=10)
-            
-            # Verificar si nos redirigió al login
-            if 'login' in response.url.lower():
-                print("⚠ Sesión expirada. Necesitas hacer login nuevamente.")
-                self.logged_in = False
-                return None
-            
-            response.raise_for_status()
-            return BeautifulSoup(response.content, 'lxml')
-        except requests.exceptions.RequestException as e:
-            print(f"Error al obtener la página: {e}")
-            return None
-    
     def get_all_courses_page(self, page_num: int = 0):
         """
         Obtiene la página con todos los cursos (requiere login)
@@ -149,7 +127,7 @@ class MSCorecardScraper:
             print("⚠ No has iniciado sesión")
             return None
         
-        url = f"{self.base_url}/courses.php?CourseName=&Country=Spain&SubmitButton=Search"
+        url = f"{self.base_url}/courses.php?CourseName=&Country=&SubmitButton=Search"
         if page_num > 0:
             url += f"&page={page_num}"
 
@@ -217,25 +195,109 @@ class MSCorecardScraper:
         if not soup:
             return holes
 
-        # La tabla de hoyos suele tener esta clase
-        table = soup.find('table', class_='table-condensed')
+        
+        table = soup.find('table', class_='scorecardtable')
+
         if not table:
             return holes
+        
 
-        # Iterar sobre las filas de la tabla, saltando la cabecera
-        for row in table.find_all('tr')[1:]:
+        # find the first row to determine column spans, 
+        header_row = table.find('tr', class_='total')
+
+        if not header_row:
+            return holes
+            
+        # Mapear los índices de las columnas basándose en los headers
+        column_indices = {}
+        
+        # Obtener todas las celdas de la fila de encabezados
+        
+        # sacar las celdas de la primera fila y luego sacar las celdas de la segunda fila
+        header_cells = header_row[0].find_all('td')
+        
+        current_index = 0
+        
+        for cell in header_cells:
+            cell_text = cell.text.strip().lower()
+            colspan = int(cell.get('colspan', 1))
+            
+            if cell_text == '':  # Primera celda vacía (para "Hole")
+                column_indices['hole'] = current_index
+                current_index += colspan
+            elif 'men' in cell_text:
+                column_indices['men_start'] = current_index
+                column_indices['men_end'] = current_index + colspan - 1
+                current_index += colspan
+            elif 'tees' in cell_text:
+                column_indices['tees_start'] = current_index
+                column_indices['tees_end'] = current_index + colspan - 1
+                current_index += colspan
+            elif 'ladies' in cell_text or 'women' in cell_text:
+                column_indices['women_start'] = current_index
+                column_indices['women_end'] = current_index + colspan - 1
+                current_index += colspan
+            else:
+                current_index += colspan
+        
+
+        # iteramos sobre la segunda fila para sacar los nombres de las tees
+        second_row = header_row[1].find_all('td')
+        tees_names = []
+
+        current_index = 0
+
+        for cell in second_row:
+            if column_indices['men_end'] >= current_index & current_index <= column_indices['women_start']:
+                tees_names.append(cell.text.strip())
+              
+            colspan = int(cell.get('colspan', 1))
+            current_index += colspan
+        
+        # print the tee names in console
+        print("Tee Names:", tees_names)
+
+        # Ahora iteramos sobre las filas de los hoyos
+        hole_rows = table.find_all('tr', class_='nonfocus')
+
+        for row in hole_rows:
             cells = row.find_all('td')
-            if len(cells) >= 3: # Asegurarse de que hay suficientes celdas
-                try:
-                    hole_data = {
-                        'hole_number': int(cells[0].text.strip()),
-                        'par': int(cells[1].text.strip()),
-                        'distance_meters': int(cells[2].text.strip().split()[0])
-                    }
-                    holes.append(hole_data)
-                except (ValueError, IndexError):
-                    # Si alguna conversión falla o no hay celdas, se salta la fila
-                    continue
+            hole_data = {}
+
+            # Extraer el número del hoyo
+            hole_number = cells[column_indices['hole']].text.strip()
+            hole_data['number'] = hole_number
+
+            hole_data['men']= {}
+
+            for i in range(column_indices['men_start'], column_indices['men_end'] + 1):    
+                hole_data['men'][second_row[i].text.strip()] = cells[i].text.strip()
+
+            
+            hole_data['women'] = {}
+
+            for i in range(column_indices['women_start'], column_indices['women_end'] + 1):
+                hole_data['women'][second_row[i].text.strip()] = cells[i].text.strip()
+
+            hole_data['tees'] = {}
+            for i in range(column_indices['tees_start'], column_indices['tees_end'] + 1):
+                
+                hole_data['tees'][second_row[i].text.strip()] = cells[i].text.strip()
+
+            holes.append(hole_data)
+
+            
+            
+            
+            
+
+
+
+            # Extraer las distancias para hombres
+
+
+
+
         return holes
     
     def get_course_details(self, course_url: str) -> Dict:
@@ -301,8 +363,8 @@ def main():
     scraper = MSCorecardScraper()
     
     # Solicitar credenciales
-    username = "barrachinasanernest@gmail.com"
-    password = "Lovejustin12!"
+    username = "rostersmusic@gmail.com"
+    password = "rosters!"
     
     # Realizar login
     if not scraper.login(username, password):
@@ -311,10 +373,11 @@ def main():
     
     print("\n" + "="*50 + "\n")
     
-    # 1. Obtener la lista de todos los cursos
+    # 1. Obtener la lista de los primeros 10 páginas de cursos
     all_courses = []
-    page_num = 0
-    while True:
+    max_pages = 5  # Limitar a 10 páginas para evitar timeouts
+
+    for page_num in range(max_pages):
         print(f"Obteniendo cursos de la página {page_num}...")
         list_soup = scraper.get_all_courses_page(page_num)
         
@@ -330,7 +393,6 @@ def main():
         
         all_courses.extend(courses_on_page)
         print(f"✓ {len(courses_on_page)} cursos encontrados en la página {page_num}. Total parcial: {len(all_courses)}")
-        page_num += 1
         time.sleep(1)
 
     # 2. Iterar sobre cada curso para obtener los detalles de los hoyos
@@ -343,8 +405,10 @@ def main():
             print(f"Procesando curso {course['id']}/{len(all_courses)}: {course.get('nombre', 'Sin Nombre')}")
             
             course_url = course.get('url')
+
             if course_url:
                 details_soup = scraper.get_course_details(course_url)
+                
                 if details_soup:
                     holes = scraper.extract_hole_data(details_soup)
                     course['holes'] = holes
@@ -373,71 +437,4 @@ if __name__ == "__main__":
     main()
 
 
-# ============================================
-# MODO INTERACTIVO CON LOGIN
-# ============================================
 
-def modo_interactivo():
-    """
-    Modo interactivo para explorar el sitio (con login)
-    """
-    scraper = MSCorecardScraper()
-    
-    # Login inicial
-    print("=== Login en MSCorecard ===")
-    username = input("Usuario/Email: ")
-    password = getpass.getpass("Contraseña: ")
-    
-    if not scraper.login(username, password):
-        print("❌ Login falló. Saliendo...")
-        return
-    
-    while True:
-        print("\n" + "="*50)
-        print("=== MSCorecard Scraper ===")
-        print("1. Ver página principal de cursos")
-        print("2. Obtener todos los cursos")
-        print("3. Obtener detalles de un curso")
-        print("4. Verificar estado de sesión")
-        print("5. Salir")
-        print("="*50)
-        
-        opcion = input("\nElige una opción: ")
-        
-        if opcion == "1":
-            soup = scraper.get_courses_page()
-            if soup:
-                print("\n" + soup.prettify()[:800])
-        
-        elif opcion == "2":
-            soup = scraper.get_all_courses_page()
-            if soup:
-                courses = scraper.extract_course_data(soup)
-                print(f"\n✓ Encontrados {len(courses)} cursos")
-                
-                if courses and input("\n¿Guardar datos? (s/n): ").lower() == 's':
-                    scraper.save_to_json(courses)
-                    scraper.save_to_csv(courses)
-        
-        elif opcion == "3":
-            course_url = input("URL del curso: ")
-            details = scraper.get_course_details(course_url)
-            print("\nDetalles del curso:")
-            for key, value in details.items():
-                print(f"  {key}: {value}")
-        
-        elif opcion == "4":
-            if scraper.check_login_status():
-                print("✓ Sesión activa")
-            else:
-                print("✗ Sesión expirada")
-        
-        elif opcion == "5":
-            scraper.logout()
-            print("¡Hasta luego!")
-            break
-        
-        time.sleep(0.5)
-
-# Descomentar para usar modo interactivo:
-# modo_interactivo()

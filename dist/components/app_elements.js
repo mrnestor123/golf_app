@@ -7,7 +7,6 @@ export { App, AppBar, AppContent, NavBar, LucideIcon };
 function AppBar() {
     return {
         view: (vnode) => {
-            console.log('attrs', vnode.attrs);
             return m(FlexRow, {
                 alignItems: 'center',
                 justifyContent: 'space-between',
@@ -25,7 +24,7 @@ function AppBar() {
                         }
                     }
                 }, m(LucideIcon, {
-                    icon: vnode.attrs.leading.icon || 'chevron-left',
+                    icon: vnode.attrs.leading.icon || 'move-left',
                     width: '24',
                     height: '24',
                     style: {
@@ -33,7 +32,7 @@ function AppBar() {
                         color: config.app?.appBar?.color || 'white',
                         ...vnode.attrs.leading.style
                     }
-                })) : null, vnode.attrs.title
+                })) : m('div', { style: { width: '24px', height: '24px' } }), vnode.attrs.title
                 ? m(H2, vnode.attrs.title)
                 : null, vnode.children);
         }
@@ -111,6 +110,7 @@ function LucideIcon() {
                 "data-lucide": vnode.attrs.icon,
                 width: vnode.attrs.width || 24,
                 height: vnode.attrs.height || 24,
+                onclick: vnode.attrs.onclick,
                 style: {
                     display: 'inline-block',
                     ...vnode.attrs.style

@@ -1,32 +1,39 @@
 import { 
     scrapGolfClubs, 
-    scrapCourses
+    scrapLaps,
+    scrapTees,
+    
 } from "./scrap_data.js";
 
 export {
     getGolfClubs,
     getClub,
-    getCourses,
-
 }
 
 
-// funciones comunes para manejar la lógica de la aplicación
 function getGolfClubs(){
+
+    scrapGolfClubs.map((course)=> {
+        course.laps = scrapLaps.filter(lap => lap.club_id === course.id);
+        course.tees = scrapTees.filter(tee => tee.club_id === course.id);
+    })
+
+    console.log('scrapGolfClubs', scrapGolfClubs);
+
     return Promise.resolve(scrapGolfClubs);
-}
-
-function getCourses(){
-
-    return Promise.resolve(scrapCourses);
 }
 
 
 function getClub(id:string){
+    let course = scrapGolfClubs.find(club => club.id === id);
+    course.laps = scrapLaps.filter(lap => lap.club_id === course.id);
+    course.tees = scrapTees.filter(tee => tee.club_id === course.id);
 
-    return Promise.resolve(scrapGolfClubs.find(club => club.id === id));
-
+    return Promise.resolve(course);
 } 
+
+
+
 
 
 

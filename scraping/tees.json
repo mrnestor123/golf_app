@@ -1,0 +1,39 @@
+[
+  [
+    {
+      "id": "tee_negras",
+      "name": "Negras",
+      "index": 3
+    },
+    {
+      "id": "tee_doradas",
+      "name": "Doradas",
+      "index": 4
+    },
+    {
+      "id": "tee_azules",
+      "name": "Azules",
+      "index": 5
+    },
+    {
+      "id": "tee_amarllas",
+      "name": "Amarllas",
+      "index": 6
+    },
+    {
+      "id": "tee_naranjas",
+      "name": "Naranjas",
+      "index": 7
+    },
+    {
+      "id": "tee_rojas",
+      "name": "Rojas",
+      "index": 8
+    },
+    {
+      "id": "tee_verdes",
+      "name": "Verdes",
+      "index": 9
+    }
+  ]
+]

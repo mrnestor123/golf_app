@@ -187,7 +187,8 @@ class MSCorecardScraper:
         
         return courses
     
-    def extract_hole_data(self, soup) -> List[Dict]:
+    def extract_lap_data(self, soup) -> List[Dict]:
+
         """
         Extrae los datos de los hoyos de la página de detalles de un curso.
         """
@@ -195,6 +196,14 @@ class MSCorecardScraper:
         if not soup:
             return holes
 
+        lap = {
+            'id': 'lap_gf_' + time.strftime("%Y%m%d%H%M%S"),
+            'club_id': 'gf_escorpion_1',
+            'holes': [], # list with the id of the holes
+            'handicaps': [],
+            'slopes': {},
+            'course_ratings': {}
+        }
         
         table = soup.find('table', class_='scorecardtable')
 
@@ -207,98 +216,120 @@ class MSCorecardScraper:
 
         if not header_row:
             return holes
-            
-        # Mapear los índices de las columnas basándose en los headers
-        column_indices = {}
         
-        # Obtener todas las celdas de la fila de encabezados
-        
-        # sacar las celdas de la primera fila y luego sacar las celdas de la segunda fila
-        header_cells = header_row[0].find_all('td')
-        
-        current_index = 0
-        
-        for cell in header_cells:
-            cell_text = cell.text.strip().lower()
-            colspan = int(cell.get('colspan', 1))
-            
-            if cell_text == '':  # Primera celda vacía (para "Hole")
-                column_indices['hole'] = current_index
-                current_index += colspan
-            elif 'men' in cell_text:
-                column_indices['men_start'] = current_index
-                column_indices['men_end'] = current_index + colspan - 1
-                current_index += colspan
-            elif 'tees' in cell_text:
-                column_indices['tees_start'] = current_index
-                column_indices['tees_end'] = current_index + colspan - 1
-                current_index += colspan
-            elif 'ladies' in cell_text or 'women' in cell_text:
-                column_indices['women_start'] = current_index
-                column_indices['women_end'] = current_index + colspan - 1
-                current_index += colspan
-            else:
-                current_index += colspan
-        
-
         # iteramos sobre la segunda fila para sacar los nombres de las tees
-        second_row = header_row[1].find_all('td')
-        tees_names = []
+        all_header_rows = table.find_all('tr', class_='total')
+        if len(all_header_rows) < 2:
+            return holes
+        
 
+        second_row = all_header_rows[1].find_all('td')
+        tees = []
         current_index = 0
 
         for cell in second_row:
-            if column_indices['men_end'] >= current_index & current_index <= column_indices['women_start']:
-                tees_names.append(cell.text.strip())
+            if current_index > 2 and cell.text.strip() != 'Par' and cell.text.strip() != 'SI' and cell.text.strip() != 'Hole':
+                tees.append({
+                    'id': 'tee_' + cell.text.strip().lower().replace(' ', '_'),
+                    'name': cell.text.strip(),
+                    'index': current_index
+                })
               
-            colspan = int(cell.get('colspan', 1))
-            current_index += colspan
+            current_index += 1
+
+        
         
         # print the tee names in console
-        print("Tee Names:", tees_names)
-
+        print("Tees:", tees)
+        
         # Ahora iteramos sobre las filas de los hoyos
         hole_rows = table.find_all('tr', class_='nonfocus')
 
+        hole_index = 0
+
         for row in hole_rows:
             cells = row.find_all('td')
-            hole_data = {}
+            
+            # Debug: print all cell contents to see what we're working with
+            print(f"Row has {len(cells)} cells:")
+            for i, cell in enumerate(cells):
+                print(f"  cells[{i}]: '{cell.text.strip()}'")
 
-            # Extraer el número del hoyo
-            hole_number = cells[column_indices['hole']].text.strip()
-            hole_data['number'] = hole_number
+            if hole_index >= 18:
+                for i, tee in enumerate(tees):
+                    lap['slopes'][tee['id']] = cells[tee['index']-2].text.strip()
+                    lap['course_ratings'][tee['id']] = cells[tee['index']-2].text.strip()
+                break
+            
+            hole_data = {
+                'par': '',
+                'tees': {},
+                'club_id': 'gf_escorpion'
+            }
 
-            hole_data['men']= {}
-
-            for i in range(column_indices['men_start'], column_indices['men_end'] + 1):    
-                hole_data['men'][second_row[i].text.strip()] = cells[i].text.strip()
+            # Extraer el número del hoyo y par
+            if len(cells) >= 3:
+                hole_data['number'] = cells[0].text.strip()
+                hole_data['par'] = int(cells[1].text.strip())
+                
+                # Safe access to SI (Stroke Index) in cells[2]
+                # The SI values might be hidden in span tags with CSS obfuscation
+                si_cell = cells[2]
+                si_value = si_cell.text.strip()
+                
+                # Try to extract from span tags if the main text shows '--'
+                if si_value in ['--', '-']:
+                    span_tags = si_cell.find_all('span')
+                    if span_tags:
+                        for span in span_tags:
+                            span_text = span.text.strip()
+                            if span_text.isdigit():
+                                si_value = span_text
+                                break
+                
+                if si_value and si_value != '--' and si_value != '-' and si_value.isdigit():
+                    lap['handicaps'].append(int(si_value))
+                else:
+                    # If SI data not available, use hole number as default handicap order
+                    lap['handicaps'].append(int(hole_data['number']))
+            else:
+                print(f"Warning: Row has insufficient cells ({len(cells)})")
+                continue
 
             
-            hole_data['women'] = {}
+            last_tee_distance = 0
 
-            for i in range(column_indices['women_start'], column_indices['women_end'] + 1):
-                hole_data['women'][second_row[i].text.strip()] = cells[i].text.strip()
+            for i, tee in enumerate(tees):
+                if tee['index'] < len(cells):
+                    tee_distance = cells[tee['index']].text.strip()
+                    
+                    print('isdigit', tee_distance.isdigit())
 
-            hole_data['tees'] = {}
-            for i in range(column_indices['tees_start'], column_indices['tees_end'] + 1):
-                
-                hole_data['tees'][second_row[i].text.strip()] = cells[i].text.strip()
+                    try:
+                        if last_tee_distance != 0 and tee_distance.isdigit() and int(tee_distance) > int(last_tee_distance):
+                            hole_data['tees'][tee['id']] = {
+                                'distance': tee_distance,
+                                'par': int(hole_data['par']) + 1
+                            }
+                        else:
+                            hole_data['tees'][tee['id']] = tee_distance
+                            
+                            if tee_distance.isdigit():
+                                last_tee_distance = int(tee_distance)
 
+                    except (ValueError, IndexError):
+                        continue
+            
+
+            hole_index += 1
+
+            
             holes.append(hole_data)
 
-            
-            
-            
-            
+        # Extraer las distancias para hombres
+        lap['holes'] = holes
 
-
-
-            # Extraer las distancias para hombres
-
-
-
-
-        return holes
+        return [lap,tees]
     
     def get_course_details(self, course_url: str) -> Dict:
         """
@@ -363,8 +394,8 @@ def main():
     scraper = MSCorecardScraper()
     
     # Solicitar credenciales
-    username = "rostersmusic@gmail.com"
-    password = "rosters!"
+    username = "jjjrostersmusic@gmail.com"
+    password = "Lovejustin12!"
     
     # Realizar login
     if not scraper.login(username, password):
@@ -372,69 +403,42 @@ def main():
         return
     
     print("\n" + "="*50 + "\n")
+
+    details_soup = scraper.get_course_details('https://www.mscorecard.com/mscorecard/showcourse.php?cid=1227522189124_1_1')
+
+    # Debug: Save the HTML to see what we're actually getting
+    if details_soup:
+        with open('debug_page.html', 'w', encoding='utf-8') as f:
+            f.write(str(details_soup))
+        print("Saved raw HTML to debug_page.html for inspection")
+
+    course = {'id': 'test_id', 'nombre': 'Test Course'}
+
+    if details_soup:
+        lap, tees = scraper.extract_lap_data(details_soup)
+
+        # add lap to a json
+        scraper.save_to_json([lap], 'laps.json')
+        scraper.save_to_json([tees], 'tees.json')
+
+        
+        print(f"  ✓ Encontrado la vuelta con {len(lap['holes'])} hoyos.")
+    else:
+        print(f"  ⚠ No se pudieron obtener detalles para este curso.")
+
+    return
     
     # 1. Obtener la lista de los primeros 10 páginas de cursos
-    all_courses = []
-    max_pages = 5  # Limitar a 10 páginas para evitar timeouts
-
-    for page_num in range(max_pages):
-        print(f"Obteniendo cursos de la página {page_num}...")
-        list_soup = scraper.get_all_courses_page(page_num)
-        
-        if not list_soup:
-            print("❌ No se pudo acceder a la página de lista de cursos. Terminando.")
-            break
-            
-        courses_on_page = scraper.extract_course_data(list_soup)
-        
-        if not courses_on_page:
-            print("No se encontraron más cursos en la lista.")
-            break
-        
-        all_courses.extend(courses_on_page)
-        print(f"✓ {len(courses_on_page)} cursos encontrados en la página {page_num}. Total parcial: {len(all_courses)}")
-        time.sleep(1)
-
-    # 2. Iterar sobre cada curso para obtener los detalles de los hoyos
-    if all_courses:
-        print(f"\n" + "="*50)
-        print(f"\nIniciando extracción de detalles para {len(all_courses)} cursos...\n")
-        
-        for i, course in enumerate(all_courses):
-            course['id'] = i + 1
-            print(f"Procesando curso {course['id']}/{len(all_courses)}: {course.get('nombre', 'Sin Nombre')}")
-            
-            course_url = course.get('url')
-
-            if course_url:
-                details_soup = scraper.get_course_details(course_url)
-                
-                if details_soup:
-                    holes = scraper.extract_hole_data(details_soup)
-                    course['holes'] = holes
-                    print(f"  ✓ Encontrados {len(holes)} hoyos.")
-                else:
-                    course['holes'] = []
-                    print(f"  ⚠ No se pudieron obtener detalles para este curso.")
-            else:
-                course['holes'] = []
-                print(f"  ⚠ No se encontró URL para este curso.")
-            
-            time.sleep(0.5) # Pausa para no sobrecargar el servidor
-
-        # 3. Guardar los datos completos
-        print("\n" + "="*50)
-        print("\nGuardando todos los datos enriquecidos...")
-        scraper.save_to_json(all_courses, 'mscorecard_courses_with_holes.json')
-        scraper.save_to_csv(all_courses, 'mscorecard_courses_with_holes.csv')
-    else:
-        print("\n⚠ No se encontraron cursos para procesar.")
+    
     
     # Cerrar sesión
     scraper.logout()
     print("\n=== Proceso completado ===")
 if __name__ == "__main__":
     main()
+
+
+
 
 
 

@@ -1,0 +1,316 @@
+[
+  {
+    "id": "lap_gf_20251208175917",
+    "club_id": "gf_escorpion_1",
+    "holes": [
+      {
+        "par": 5,
+        "tees": {
+          "tee_negras": "470",
+          "tee_doradas": "455",
+          "tee_azules": "442",
+          "tee_amarllas": "431",
+          "tee_naranjas": "421",
+          "tee_rojas": "392",
+          "tee_verdes": "360"
+        },
+        "club_id": "gf_escorpion",
+        "number": "1"
+      },
+      {
+        "par": 4,
+        "tees": {
+          "tee_negras": "334",
+          "tee_doradas": "325",
+          "tee_azules": "313",
+          "tee_amarllas": "303",
+          "tee_naranjas": "280",
+          "tee_rojas": "260",
+          "tee_verdes": "233"
+        },
+        "club_id": "gf_escorpion",
+        "number": "2"
+      },
+      {
+        "par": 4,
+        "tees": {
+          "tee_negras": "374",
+          "tee_doradas": "355",
+          "tee_azules": "344",
+          "tee_amarllas": "318",
+          "tee_naranjas": "304",
+          "tee_rojas": "283",
+          "tee_verdes": "256"
+        },
+        "club_id": "gf_escorpion",
+        "number": "3"
+      },
+      {
+        "par": 4,
+        "tees": {
+          "tee_negras": "417",
+          "tee_doradas": "384",
+          "tee_azules": "377",
+          "tee_amarllas": "368",
+          "tee_naranjas": "333",
+          "tee_rojas": "313",
+          "tee_verdes": "282"
+        },
+        "club_id": "gf_escorpion",
+        "number": "4"
+      },
+      {
+        "par": 4,
+        "tees": {
+          "tee_negras": "373",
+          "tee_doradas": "359",
+          "tee_azules": "340",
+          "tee_amarllas": "332",
+          "tee_naranjas": "323",
+          "tee_rojas": "294",
+          "tee_verdes": "252"
+        },
+        "club_id": "gf_escorpion",
+        "number": "5"
+      },
+      {
+        "par": 3,
+        "tees": {
+          "tee_negras": "161",
+          "tee_doradas": "147",
+          "tee_azules": "138",
+          "tee_amarllas": "136",
+          "tee_naranjas": "124",
+          "tee_rojas": "111",
+          "tee_verdes": "103"
+        },
+        "club_id": "gf_escorpion",
+        "number": "6"
+      },
+      {
+        "par": 4,
+        "tees": {
+          "tee_negras": "369",
+          "tee_doradas": "355",
+          "tee_azules": "339",
+          "tee_amarllas": "333",
+          "tee_naranjas": "315",
+          "tee_rojas": "292",
+          "tee_verdes": "244"
+        },
+        "club_id": "gf_escorpion",
+        "number": "7"
+      },
+      {
+        "par": 3,
+        "tees": {
+          "tee_negras": "178",
+          "tee_doradas": "166",
+          "tee_azules": "154",
+          "tee_amarllas": "143",
+          "tee_naranjas": "134",
+          "tee_rojas": "129",
+          "tee_verdes": "112"
+        },
+        "club_id": "gf_escorpion",
+        "number": "8"
+      },
+      {
+        "par": 4,
+        "tees": {
+          "tee_negras": "389",
+          "tee_doradas": "361",
+          "tee_azules": "346",
+          "tee_amarllas": {
+            "distance": "429",
+            "par": 5
+          },
+          "tee_naranjas": "300",
+          "tee_rojas": {
+            "distance": "379",
+            "par": 5
+          },
+          "tee_verdes": {
+            "distance": "337",
+            "par": 5
+          }
+        },
+        "club_id": "gf_escorpion",
+        "number": "9"
+      },
+      {
+        "par": 5,
+        "tees": {
+          "tee_negras": "470",
+          "tee_doradas": "455",
+          "tee_azules": "442",
+          "tee_amarllas": "431",
+          "tee_naranjas": "421",
+          "tee_rojas": "392",
+          "tee_verdes": "360"
+        },
+        "club_id": "gf_escorpion",
+        "number": "10"
+      },
+      {
+        "par": 4,
+        "tees": {
+          "tee_negras": "334",
+          "tee_doradas": "325",
+          "tee_azules": "313",
+          "tee_amarllas": "303",
+          "tee_naranjas": "280",
+          "tee_rojas": "260",
+          "tee_verdes": "233"
+        },
+        "club_id": "gf_escorpion",
+        "number": "11"
+      },
+      {
+        "par": 4,
+        "tees": {
+          "tee_negras": "374",
+          "tee_doradas": "355",
+          "tee_azules": "344",
+          "tee_amarllas": "318",
+          "tee_naranjas": "304",
+          "tee_rojas": "283",
+          "tee_verdes": "256"
+        },
+        "club_id": "gf_escorpion",
+        "number": "12"
+      },
+      {
+        "par": 4,
+        "tees": {
+          "tee_negras": "417",
+          "tee_doradas": "384",
+          "tee_azules": "377",
+          "tee_amarllas": "368",
+          "tee_naranjas": "333",
+          "tee_rojas": "313",
+          "tee_verdes": "282"
+        },
+        "club_id": "gf_escorpion",
+        "number": "13"
+      },
+      {
+        "par": 4,
+        "tees": {
+          "tee_negras": "373",
+          "tee_doradas": "359",
+          "tee_azules": "340",
+          "tee_amarllas": "332",
+          "tee_naranjas": "323",
+          "tee_rojas": "294",
+          "tee_verdes": "252"
+        },
+        "club_id": "gf_escorpion",
+        "number": "14"
+      },
+      {
+        "par": 3,
+        "tees": {
+          "tee_negras": "161",
+          "tee_doradas": "147",
+          "tee_azules": "138",
+          "tee_amarllas": "136",
+          "tee_naranjas": "124",
+          "tee_rojas": "111",
+          "tee_verdes": "103"
+        },
+        "club_id": "gf_escorpion",
+        "number": "15"
+      },
+      {
+        "par": 4,
+        "tees": {
+          "tee_negras": "369",
+          "tee_doradas": "355",
+          "tee_azules": "339",
+          "tee_amarllas": "333",
+          "tee_naranjas": "315",
+          "tee_rojas": "292",
+          "tee_verdes": "244"
+        },
+        "club_id": "gf_escorpion",
+        "number": "16"
+      },
+      {
+        "par": 3,
+        "tees": {
+          "tee_negras": "178",
+          "tee_doradas": "166",
+          "tee_azules": "154",
+          "tee_amarllas": "143",
+          "tee_naranjas": "134",
+          "tee_rojas": "129",
+          "tee_verdes": "112"
+        },
+        "club_id": "gf_escorpion",
+        "number": "17"
+      },
+      {
+        "par": 4,
+        "tees": {
+          "tee_negras": "389",
+          "tee_doradas": "361",
+          "tee_azules": "346",
+          "tee_amarllas": {
+            "distance": "429",
+            "par": 5
+          },
+          "tee_naranjas": "300",
+          "tee_rojas": {
+            "distance": "379",
+            "par": 5
+          },
+          "tee_verdes": {
+            "distance": "337",
+            "par": 5
+          }
+        },
+        "club_id": "gf_escorpion",
+        "number": "18"
+      }
+    ],
+    "handicaps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18
+    ],
+    "slopes": {
+      "tee_negras": "---------",
+      "tee_doradas": "---------",
+      "tee_azules": "---------",
+      "tee_amarllas": "---------",
+      "tee_naranjas": "---------",
+      "tee_rojas": "---------",
+      "tee_verdes": "---------"
+    },
+    "course_ratings": {
+      "tee_negras": "---------",
+      "tee_doradas": "---------",
+      "tee_azules": "---------",
+      "tee_amarllas": "---------",
+      "tee_naranjas": "---------",
+      "tee_rojas": "---------",
+      "tee_verdes": "---------"
+    }
+  }
+]

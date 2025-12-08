@@ -1,11 +1,12 @@
 // MODEL
-import {App, AppBar, AppContent, LucideIcon, NavBar} from './components/app_elements.js'
+import { App, AppBar, AppContent, LucideIcon, NavBar} from './components/app_elements.js'
 import { setConfig } from './components/config.js'
 import { Button } from './components/elements.js'
-import { Box, Div, FlexCol, FlexRow, Tappable } from './components/layout.js'
+import { FormLabel, HtmlIntegerInput, Input, IntegerInput } from './components/forms.js'
+import { Box,  Div,  FlexCol, FlexRow, Tappable } from './components/layout.js'
 import { H2, H3, SmallText, Text } from './components/texts.js'
 import { getClub, getGolfClubs } from './controller.js'
-import { GolfClub } from './model.js'
+import { GolfClub, Hole, Round } from './model.js'
 
 const m = (window as any).m;
 
@@ -22,13 +23,27 @@ setConfig({
     app: {
         appBar: {
             background: '#102210',
-            borderBottom: '#2a4b3a solid 1px'
+            borderBottom: '#2a4b3a solid 1px',
+            leading: 'white'
         }
+    },
+    form: {
+        formLabel: {
+            color: 'white'
+        }
+    },
+    button: {
+        primary: {
+            background: '#014d26',
+            color: 'white',
+            padding: '0.75rem 1.5rem',
+            borderRadius: '0.5rem',
+        },
     }
 })
 
-// Router
 
+// Router
 m.route(document.body, "/", {
     "/": {
         render: function(vnode:any) {
@@ -42,10 +57,9 @@ m.route(document.body, "/", {
         }
     },
 
-
-    "/club/:clubId/:courseId": {
+    "/club/:clubId/:lapId/:teeId": {
         render: function(vnode) {
-            return m(ClubSelected, vnode.attrs)
+            return m(LapStart, vnode.attrs)
         }
     },
 
@@ -210,6 +224,8 @@ function ClubSelected() {
     let club: GolfClub | null = null;
     let loading = false;
 
+    let selectedLap: any = null;
+    let selectedTee: any = null;
     
     return {
         oninit:(vnode:any)=> {
@@ -248,21 +264,300 @@ function ClubSelected() {
 
                             m(H2, club.name),
 
+                            club.laps?.length 
+                            ? [
+                                m(Text, {marginTop:'1rem'}, 'Select a lap'),
+
+                                club.laps.map((lap)=>
+                                    m(Tappable,{
+                                        onclick:(e: Event) => {
+                                            selectedLap = lap;
+                                        },
+                                        style: {
+                                            background: '#00000033',
+                                            borderRadius: '0.5rem',
+                                            padding: '1rem',
+                                            marginTop: '1rem',
+                                            display:'flex',
+                                            alignItems:'center',
+                                            width: '100%'
+                                        },
+                                    },      
+                                        m(FlexCol,
+                                            m(H3, lap.name),
+                                            m(SmallText, `Holes: ${lap.number_of_holes || 'N/A'}`),
+                                        ),
+
+                                        m(Div, {
+                                            height: '12px',
+                                            width: '12px',
+                                            borderRadius: '50%',
+                                            background: selectedLap && selectedLap.id === lap.id ? 'white' : '#ffffff55',
+                                            border: '1px solid white',
+                                            padding: '4px',
+                                            marginLeft: 'auto',
+                                        })
+
+                                        /*
+                                        m(FlexRow, {alignItems:'center', gap:'0.5rem', marginTop:'0.5rem'},
+                                            m(LucideIcon,{
+                                                icon: 'star',
+                                                width: '16',
+                                                height: '16'
+                                            }),
+                                            m(SmallText, `Rating: ${lap.course_ratings['blue'] || 'N/A'}`)  
+                                        ),
+
+                                        m(FlexRow, {alignItems:'center', gap:'0.5rem', marginTop:'0.5rem'},
+                                            m(LucideIcon,{
+                                                icon: 'sliders',
+                                                width: '16',
+                                                height: '16'
+                                            }),
+                                            m(SmallText, `Slope: ${lap.slopes['blue'] || 'N/A'}`)  
+                                        ),*/
+                                    )
+                                )
+                            ]
+                            : null,
+
+
+                            club.tees?.length ?
+                            [   
+                                m(Text, { marginTop:'1rem' }, 'Tee Options'),
+
+                                m(FlexRow, {flexWrap:'wrap', gap:'0.1rem'},
+                                    club.tees.map((tee)=>
+                                        m(Tappable,{ 
+                                            onclick:(e: Event) => {
+                                                selectedTee = tee;
+                                            },
+                                            style:{
+                                                display:'flex',
+                                                background: '#00000033',
+                                                borderRadius: '0.5rem',
+                                                padding: '1rem',
+                                                marginTop: '1rem',
+                                                //border: `0.5px solid ${tee.color}`,
+                                                width: '40%',
+                                                alignItems:'center'
+                                            }
+                                        },  
+                                            m(Div, {
+                                                height: '24px',
+                                                width: '24px',
+                                                borderRadius: '50%',
+                                                background: tee.color || '#ffffff55',
+                                                border: '1px solid white',
+                                                marginRight: '1rem',
+                                            }),
+
+                                            m(FlexCol,
+                                                m(Text, tee.name),
+                                            ),
+
+                                            m(Div, {
+                                                height: '12px',
+                                                width: '12px',
+                                                borderRadius: '50%',
+                                                background: selectedTee && selectedTee.id === tee.id ? 'white' : '#ffffff55',
+                                                border: '1px solid white',
+                                                padding: '4px',
+                                                marginLeft: 'auto',
+                                            })
+
+                                        )
+                                    )
+                                )
+                            ] : null,
 
                             m(Button, {
                                 type:'primary',
+                                disabled: !selectedLap || !selectedTee,
                                 onclick:(e: Event) => {
-                                    m.route.set(`/course/map/${club.id}`)
+                                    m.route.set(`/club/${club.id}/${selectedLap.id}/${selectedTee.id}`);
                                 },
                                 style: {
-                                    marginTop:'1rem'
+                                    marginTop:'1rem',
+                                    position:'fixed',
+                                    bottom:'2em',
+                                    width:'80%',
+                                    maxWidth:'400px'
                                 }
-                            }, 'View Course on Map')
+                            }, 'Start')
                         ),
 
                     )
                 )
             ]
+        }
+    }
+}
+
+
+function LapStart(){ 
+    let lap;
+    let tee;
+
+    let holes: Hole[] = [];
+    let club: GolfClub;
+
+    let hole_index = 0;
+
+    let round: Round;
+    
+    return {
+        oninit:(vnode:any)=> {
+            getClub(vnode.attrs.clubId).then((res:any)=>{
+                club = res;
+                lap = res.laps.find((l:any) => l.id === vnode.attrs.lapId);
+                holes = lap.holes.map((hole:any) => new Hole(hole));
+                tee = res.tees.find((t:any) => t.id === vnode.attrs.teeId);
+                m.redraw();
+            })
+
+            round = new Round({
+                id: 'round_ ' + Date.now(),
+                date: new Date(),
+                lap_id: vnode.attrs.lapId,
+                club_id: vnode.attrs.clubId,
+                tee_id: vnode.attrs.teeId
+            })
+        },
+        view : (vnode:any) => {
+            
+
+            return m(App,
+                
+                m(AppBar, {
+                    leading: true,
+                    title: lap?.name 
+                }),
+
+                m(AppContent,
+                    m(FlexCol, {padding:'1em'},
+                        m(Text, `Club ID: ${vnode.attrs.clubId}`),
+                        m(Text, `Lap ID: ${vnode.attrs.lapId}`),
+                        m(Text, `Tee ID: ${vnode.attrs.teeId}`),
+                    ),
+
+                    m(HoleInfo, {
+                        hole: holes[hole_index], 
+                        teeId: vnode.attrs.teeId
+                    }),
+
+
+                    m(Div,{ 
+                        position: 'fixed',
+                        bottom:'0px',
+                        left:'0px',
+                        right:'0px',
+                        padding:'1rem',
+                        background: 'white',
+                        color:'black',
+                        display:'flex',
+                        alignItems:'center',
+                        justifyContent:'space-between'
+                    },
+
+                        m(Tappable,{
+                            onclick: () => {
+                                if(hole_index > 0){
+                                    hole_index--;
+                                }
+                            }
+                        },
+                            m(LucideIcon, {
+                                icon: 'circle-chevron-left',
+                                width: '48',
+                                height: '48',
+                            })
+                        ),
+
+                        m(Text, "Hoyo " + (hole_index +1)),
+                        
+                        m(Tappable,{
+                            onclick: () => {
+                                console.log('onclick')
+                                m.redraw();
+                                if(hole_index < holes.length -1){
+                                    hole_index++;
+                                }
+                            }
+                        },
+                            m(LucideIcon, {
+                                icon: 'circle-chevron-right',
+                                width: '48',
+                                height: '48',
+                            
+                            })
+                        )   
+                
+                    )
+                )
+
+
+            )
+        }
+    }
+
+
+    function HoleInfo(){
+
+        return {
+            view: (vnode)=> {
+                let hole = vnode.attrs.hole
+
+                if(!hole) return;
+
+                console.log('round', round.scores, round.scores[hole_index])
+
+                return m(Div,{ margin:'0 auto', borderRadius:'8px', width:'90%', maxWidth:'400px', background:'white', padding:'0.2em', color:'black'},
+                    m(FlexCol, {padding:'1em'},
+                        m(H2, `Hole ${hole_index + 1}`),
+
+                        m(Text, `Distance: ${hole.tees[vnode.attrs.teeId] || 'N/A'} yards`),
+                        m(Text, `Par ${holes[hole_index].par},  Hcp ${lap.handicaps[hole_index]}`),
+                    ),
+
+                    m(Text, "Strokes"),
+                    
+                    m(HtmlIntegerInput,{
+                        type:'number',
+                        min: 1,
+                        data: round?.scores || {},
+                        name: hole_index,
+                        onchange: (e) => {
+                            //round.scores[hole_index] += e;
+                            m.redraw()
+                        }
+                    })
+                )
+
+            }
+        }
+    }
+}
+
+
+function LapEnded(){
+
+    return {
+        view: (vnode:any)=> {
+            return m(App,
+                
+                m(AppBar, {
+                    leading: true,
+                    title: 'Lap Ended'
+                }),
+
+                m(AppContent,
+                    m(FlexCol, {padding:'1em'},
+                        m(H2, 'Congratulations!'),
+                        m(Text, 'You have completed the lap.'),
+                    )
+                )
+            )
         }
     }
 }

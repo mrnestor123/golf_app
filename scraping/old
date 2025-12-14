@@ -1,0 +1,61 @@
+
+    /*
+    all_courses = []
+    max_pages = 5  # Limitar a 10 páginas para evitar timeouts
+
+    for page_num in range(max_pages):
+        print(f"Obteniendo cursos de la página {page_num}...")
+        list_soup = scraper.get_all_courses_page(page_num)
+        
+        if not list_soup:
+            print("❌ No se pudo acceder a la página de lista de cursos. Terminando.")
+            break
+            
+        courses_on_page = scraper.extract_course_data(list_soup)
+        
+        if not courses_on_page:
+            print("No se encontraron más cursos en la lista.")
+            break
+        
+        all_courses.extend(courses_on_page)
+        print(f"✓ {len(courses_on_page)} cursos encontrados en la página {page_num}. Total parcial: {len(all_courses)}")
+        time.sleep(1)
+    */
+
+
+
+
+    # 2. Iterar sobre cada curso para obtener los detalles de los hoyos
+    if all_courses:
+        print(f"\n" + "="*50)
+        print(f"\nIniciando extracción de detalles para {len(all_courses)} cursos...\n")
+        
+        for i, course in enumerate(all_courses):
+            course['id'] = i + 1
+            print(f"Procesando curso {course['id']}/{len(all_courses)}: {course.get('nombre', 'Sin Nombre')}")
+            
+            course_url = course.get('url')
+
+            if course_url:
+                details_soup = scraper.get_course_details(course_url)
+                
+                if details_soup:
+                    holes = scraper.extract_hole_data(details_soup)
+                    course['holes'] = holes
+                    print(f"  ✓ Encontrados {len(holes)} hoyos.")
+                else:
+                    course['holes'] = []
+                    print(f"  ⚠ No se pudieron obtener detalles para este curso.")
+            else:
+                course['holes'] = []
+                print(f"  ⚠ No se encontró URL para este curso.")
+            
+            time.sleep(0.5) # Pausa para no sobrecargar el servidor
+
+        # 3. Guardar los datos completos
+        print("\n" + "="*50)
+        print("\nGuardando todos los datos enriquecidos...")
+        scraper.save_to_json(all_courses, 'mscorecard_courses_with_holes.json')
+        scraper.save_to_csv(all_courses, 'mscorecard_courses_with_holes.csv')
+    else:
+        print("\n⚠ No se encontraron cursos para procesar.")

@@ -12,7 +12,7 @@ const m = (window as any).m;
 
 
 setConfig({
-    background: '#102210',
+    background: '#',
     fontFamily: 'Lexend, sans-serif',
     primaryColor:'#013220',
     'text-light': '#333333',

@@ -11,6 +11,19 @@ import time
 from typing import List, Dict
 import getpass
 
+
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.chrome.service import Service
+from webdriver_manager.chrome import ChromeDriverManager
+from selenium.webdriver.chrome.options import Options
+
+import time
+
+
+
 class MSCorecardScraper:
     def __init__(self):
         self.base_url = "https://www.mscorecard.com/mscorecard"
@@ -392,6 +405,130 @@ def main():
     print("=== Scraper de MSCorecard (con Login) ===\n")
     
     scraper = MSCorecardScraper()
+    # Configure Chrome options
+    chrome_options = Options()
+    chrome_options.add_argument('--no-sandbox')
+    chrome_options.add_argument('--disable-dev-shm-usage')
+    chrome_options.add_argument('--disable-blink-features=AutomationControlled')
+    chrome_options.add_experimental_option("excludeSwitches", ["enable-automation"])
+    chrome_options.add_experimental_option('useAutomationExtension', False)
+
+    # Create driver with proper service
+    service = Service(ChromeDriverManager().install())
+    driver = webdriver.Chrome(service=service, options=chrome_options)
+    
+    try: 
+        driver.get('https://www.mscorecard.com/mscorecard/login.php')
+
+        # Click the "Sign in with Google" button
+        wait = WebDriverWait(driver, 10) 
+
+        google_signin_button = driver.find_element(By.CLASS_NAME, 'g-signin2')
+        google_signin_button.click()
+
+        print("===  Clicked Google Sign-In button ===")
+
+        email_input = driver.find_element(By.CSS_SELECTOR,  'input[type="email"]')
+        email_input.send_keys('rostersmusic@gmail.com')
+
+        next_button = driver.find_element(By.TAG_NAME, "button")
+        next_button.click()
+
+        print("===  Sent mail and clicked next ===")
+
+        password_field = driver.find_element(By.CSS_SELECTOR, 'input[type="password"]')
+        password_field.send_keys("Lovejustin12!")
+
+
+        login_button = driver.find_element(By.TAG_NAME, "button")
+        login_button.click()
+
+        print("===  Sent password and logged in ===")
+
+        cookies = driver.get_cookies()
+
+        if(len(cookies) == 0):
+            return
+
+
+        countries = ['Spain']
+
+        courses = []
+
+        for country in countries:
+
+            page = 1
+
+            for page in range(1, 300):  # Scrape till you find no more courses
+
+                driver.get(f"https://www.mscorecard.com/mscorecard/courses.php?CourseName=&Country={country}&SubmitButton=Search&page={page}")
+                time.sleep(5)  # Wait for the page to load
+                
+                soup = BeautifulSoup(driver.page_source, 'lxml')
+
+                if(soup == None):
+                    break
+
+                # page = 0
+                # for page in range(10):  Scrape first 10 pages
+                
+                course_links = soup.find_all('a', class_='no-hover')
+
+                for link in course_links:
+                    course_data = {}
+
+                    # 1. Extraer la URL del curso
+                    course_url = link.get('href')
+                    if course_url:
+                        course_data['url'] = course_url
+
+                    # 2. Extraer el nombre del curso
+                    name_div = link.find('div', style=lambda s: s and 'font-weight: 600' in s)
+                    if name_div:
+                        course_data['name'] = name_div.text.strip()
+                    
+                    # 3. Extraer el tipo de curso (ej. "18-hole course")
+                    if name_div:
+                        type_div = name_div.find_next_sibling('div')
+                        if type_div:
+                            course_data['tipo'] = type_div.text.strip()
+
+
+                    # 4. Extraer la ubicación
+                    location_div = link.find('div', class_='course-location')
+                    if location_div:
+                        course_data['location_name'] = location_div.text.strip()
+
+                    if course_data.get('name'):
+                        courses.append(course_data)
+                
+
+
+        
+
+        print(f"Found {len(courses)} courses in {country}")
+
+        print(courses[0])
+
+        # add courses to courses.json
+        with open(f'courses.json', 'w', encoding='utf-8') as f:
+            json.dump(courses, f, ensure_ascii=False, indent=2)
+
+
+        
+
+        
+    
+    except Exception as e:
+        print(f"Error during login: {e}")
+
+    finally:
+        driver.quit()
+
+
+    return 
+
+
     
     # Solicitar credenciales
     username = "jjjrostersmusic@gmail.com"
@@ -415,7 +552,7 @@ def main():
     course = {'id': 'test_id', 'nombre': 'Test Course'}
 
     if details_soup:
-        lap, tees = scraper.extract_lap_data(details_soup)
+        lap, tees = scraper.extract_lap_data(   )
 
         # add lap to a json
         scraper.save_to_json([lap], 'laps.json')

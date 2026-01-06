@@ -11,6 +11,7 @@ const m = (window as any).m;
 
 
 setConfig({
+<<<<<<< HEAD
   fontFamily: 'Lexend, sans-serif',
   primaryColor:'#013220',
   'text-light': '#333333',
@@ -21,6 +22,15 @@ setConfig({
       background: '#102210',
       borderBottom: '#2a4b3a solid 1px',
       leading: 'white'
+=======
+    background: '#',
+    fontFamily: 'Lexend, sans-serif',
+    primaryColor:'#013220',
+    'text-light': '#333333',
+    card: {
+        background:'#00000033',
+        border:' 1px solid #444444'
+>>>>>>> dd95925f8936f15964d2a1a2cee1ea37a01ff087
     },
     navBar: {
       background:'#0a1b0b'

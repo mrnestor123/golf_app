@@ -1,13 +1,18 @@
 import { config } from "./config.js";
 import { Div, FlexRow, Tappable, FlexCol, Animate, Box } from "./layout.js";
-import { Text, SmallText } from "./texts.js";
+import { Text, SmallText, H2 } from "./texts.js";
 export { Segment, Span, RippleEffect, Button, Icon, Img, Sidebar, Label, Message, Card, Checkbox, Spinner, BreadCrumb, Table, TableHead, TableBody, TableRow, TableCell };
+// cachea la imagen al mostrarse
 function Img() {
+    let image = new Image();
     return {
+        oninit: (vnode) => {
+            image.src = vnode.attrs.src;
+        },
         view: (vnode) => {
             return [
                 m("img", {
-                    src: vnode.attrs.src,
+                    src: image.src,
                     id: vnode.attrs.id,
                     style: vnode.attrs.style,
                     onload: vnode.attrs.onload,
@@ -209,6 +214,7 @@ function RippleEffect() {
             type = vnode.attrs.type || 'dark';
             return m("div", {
                 id: vnode.attrs.id || null,
+                ...vnode.attrs,
                 style: {
                     position: "relative",
                     overflow: "hidden",
@@ -249,15 +255,17 @@ function RippleEffect() {
 */
 function Button() {
     let types = {
-        primary: config.button.primary || {
+        primary: {
             color: 'white',
             //border: '1px solid white',
-            background: '#1b1c1d'
+            background: '#1b1c1d',
+            ...config.button?.primary || {}
         },
         secondary: {
             color: '#4b4b4b',
             border: '1px solid #4b4b4b',
-            background: 'white'
+            background: 'white',
+            ...config.button?.secondary || {}
         },
         positive: {
             color: 'white',
@@ -372,6 +380,9 @@ function Icon() {
         'massive': 'font-size:50px'
     };
     return {
+        /*oninit:(vnode)=>{
+            
+        },*/
         view: (vnode) => {
             let { onclick } = vnode.attrs;
             return m("span", {
@@ -408,9 +419,11 @@ function Message() {
     // set different types 
     return {
         view: (vnode) => {
-            return m("div", {
-                style: messageStyle
-            }, vnode.children);
+            return m(Segment, {
+                type: 'secondary',
+            }, m(FlexRow, { alignItems: 'center', gap: '1em' }, m(Icon, { icon: 'info', size: 'mini' }), vnode.attrs.header || vnode.attrs.message ?
+                m(FlexCol, {}, vnode.attrs.header && m(H2, { marginBottom: '0.5em' }, vnode.attrs.header), vnode.attrs.message && m(SmallText, {}, vnode.attrs.message)) :
+                m(SmallText, vnode.children)));
         }
     };
 }
@@ -419,17 +432,20 @@ function Label() {
         default: {
             backgroundColor: "#1b1c1d",
             color: "white",
-            border: "1px solid #e8e8e8"
+            border: "1px solid #e8e8e8",
+            ...config.elements?.label?.default || {}
         },
         primary: {
             backgroundColor: "#1b1c1d",
             color: "white",
-            border: "1px solid #1b1c1d"
+            border: "1px solid #1b1c1d",
+            ...config.elements?.label?.primary || {}
         },
         secondary: {
             backgroundColor: "#4b5563",
             color: "white",
-            border: "1px solid #4b5563"
+            border: "1px solid #4b5563",
+            ...config.elements?.label?.secondary || {}
         },
         tertiary: {
             backgroundColor: "#e8e8e8",

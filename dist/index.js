@@ -1,27 +1,25 @@
 // MODEL
 import { App, AppBar, AppContent, LucideIcon, NavBar } from './components/app_elements.js';
-import { setConfig } from './components/config.js';
-import { Button } from './components/elements.js';
-import { HtmlIntegerInput } from './components/forms.js';
-import { Box, Div, FlexCol, FlexRow, Tappable } from './components/layout.js';
-import { H2, H3, SmallText, Text } from './components/texts.js';
-import { getClub, getGolfClubs } from './controller.js';
-import { GolfClub, Hole, Round } from './model.js';
+import { setConfig, config } from './components/config.js';
+import { Button, Img, Label } from './components/elements.js';
+import { Animate, Box, Div, FlexCol, FlexRow, Tappable } from './components/layout.js';
+import { H2, SmallText, Text } from './components/texts.js';
+import { getClub, getGolfClubs, AppData, endGame, getGame } from './controller.js';
+import { Game, GolfClub, Hole } from './model.js';
 const m = window.m;
 setConfig({
-    background: '#102210',
     fontFamily: 'Lexend, sans-serif',
     primaryColor: '#013220',
     'text-light': '#333333',
-    card: {
-        background: '#00000033',
-        border: ' 1px solid #444444'
-    },
+    background: '#102210',
     app: {
         appBar: {
             background: '#102210',
             borderBottom: '#2a4b3a solid 1px',
             leading: 'white'
+        },
+        navBar: {
+            background: '#0a1b0b'
         }
     },
     form: {
@@ -36,6 +34,18 @@ setConfig({
             padding: '0.75rem 1.5rem',
             borderRadius: '0.5rem',
         },
+        secondary: {
+            padding: '0.75rem 1.5rem',
+            borderRadius: '0.5rem',
+        }
+    },
+    elements: {
+        label: {
+            secondary: {
+                backgroundColor: "white",
+                color: 'black'
+            }
+        }
     }
 });
 // Router
@@ -50,11 +60,16 @@ m.route(document.body, "/", {
             return m(ClubSelected, vnode.attrs);
         }
     },
-    "/club/:clubId/:lapId/:teeId": {
+    "/club/:clubId/:roundId/:teeId": {
         render: function (vnode) {
-            return m(LapStart, vnode.attrs);
+            return m(RoundStart, vnode.attrs);
         }
     },
+    "/round/:roundId": {
+        render: function (vnode) {
+            return m(RoundEnded, vnode.attrs);
+        }
+    }
     /*
     "/profile": {
         render: function(vnode) {
@@ -98,12 +113,29 @@ function Layout() {
     return {
         view: (vnode) => {
             return m(App, m(AppBar, {
-                title: 'Play'
-            }), m(AppContent, vnode.children.map((child) => m(child)), m(Box, { height: '4rem' })), m(NavBar, {
+                title: 'Golfing'
+            }, m(Tappable, {
+                style: {
+                    background: 'white',
+                    borderRadius: '50%',
+                    padding: '0.3rem',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center'
+                },
+                onclick: (e) => {
+                    m.route.set('/profile');
+                }
+            }, m(LucideIcon, {
+                width: '28',
+                height: '28',
+                icon: 'circle-user-round'
+            }))), m(AppContent, vnode.children.map((child) => m(child)), m(Box, { height: '4rem' })), m(NavBar, {
                 icons: [
                     { icon: "land-plot", link: "/", name: 'Play' },
-                    { icon: "dumbbell", link: "/train", name: 'Train' },
-                    { icon: "user", link: "/club", name: 'Club' }
+                    // { icon: "land-plot", link: "/", name: 'Play'},
+                    // { icon: "dumbbell", link: "/train", name: 'Train'},
+                    //{ icon: "user", link: "/profile", name:'Profile'}
                 ]
             }));
         }
@@ -115,7 +147,7 @@ function MainPage() {
         oninit: (vnode) => {
             getGolfClubs()
                 .then((res) => {
-                res.map((club) => {
+                res.forEach((club) => {
                     golfClubs.push(new GolfClub(club));
                 });
                 m.redraw();
@@ -132,10 +164,11 @@ function MainPage() {
                 }
             }, [
                 m('h3', 'Golf Courses Near You'),
-                m(FlexCol, { gap: '1rem' }, golfClubs.map((club) => {
+                m(FlexCol, { gap: '1rem' }, AppData.golfClubs.map((club) => {
                     const photo = club.photo;
                     return m(Tappable, {
                         onclick: (e) => {
+                            AppData.selectedClub = club;
                             m.route.set(`/club/${club.id}`);
                         }
                     }, m(FlexRow, {
@@ -154,11 +187,13 @@ function MainPage() {
                     }), m(FlexCol, { justifyContent: 'space-between' }, m(Text, club.name), m(FlexRow, { alignItems: 'center', gap: '0.5rem' }, m(LucideIcon, {
                         icon: 'star',
                         width: '16',
-                        height: '16'
+                        height: '16',
+                        style: { color: 'white' }
                     }), m(SmallText, club.rating || 'N/A')))), m(LucideIcon, {
                         icon: 'chevron-right',
                         width: '24',
-                        height: '24'
+                        height: '24',
+                        style: { color: 'white' }
                     })));
                 }))
             ]);
@@ -168,29 +203,43 @@ function MainPage() {
 function ClubSelected() {
     let club = null;
     let loading = false;
-    let selectedLap = null;
-    let selectedTee = null;
+    let selectedRound = AppData.selectedRound;
+    let selectedTee = AppData.selectedTee;
     return {
         oninit: (vnode) => {
             let clubId = vnode.attrs.id;
-            console.log('Selected club ID:', clubId);
-            loading = true;
-            getClub(clubId)
-                .then((res) => {
-                club = new GolfClub(res);
-                loading = false;
+            if (!AppData.selectedClub) {
+                loading = true;
+                getClub(clubId)
+                    .then((res) => {
+                    club = new GolfClub(res);
+                    if (club.rounds && club.rounds.length == 1) {
+                        selectedRound = club.rounds[0];
+                    }
+                    if (club.tees && club.tees.length == 1) {
+                        selectedTee = club.tees[0];
+                    }
+                    loading = false;
+                    m.redraw();
+                })
+                    .catch((error) => {
+                    console.error('Error loading club details:', error);
+                });
+            }
+            else {
+                club = AppData.selectedClub;
                 m.redraw();
-            })
-                .catch((error) => {
-                console.error('Error loading club details:', error);
-            });
+            }
         },
         view: (vnode) => {
             if (loading)
                 return;
+            console.log('data', AppData);
             return [
                 m(App, m(AppBar, {
-                    leading: true
+                    leading: {
+                        route: '/'
+                    }
                 }), m(AppContent, m(FlexCol, { padding: '1em', alignItems: 'center' }, m("img", {
                     style: {
                         width: '80%',
@@ -198,89 +247,61 @@ function ClubSelected() {
                         marginBottom: '1rem'
                     },
                     src: club.photo
-                }), m(H2, club.name), club.laps?.length
-                    ? [
-                        m(Text, { marginTop: '1rem' }, 'Select a lap'),
-                        club.laps.map((lap) => m(Tappable, {
+                }), m(H2, club.name), m(ButtonModal, {
+                    left: 'Select Round',
+                    right: selectedRound ? selectedRound.name : 'Select',
+                    modal: club.rounds.map((round) => {
+                        return {
+                            title: round.name,
+                            description: round.number_of_holes + ' holes',
                             onclick: (e) => {
-                                selectedLap = lap;
-                            },
-                            style: {
-                                background: '#00000033',
-                                borderRadius: '0.5rem',
-                                padding: '1rem',
-                                marginTop: '1rem',
-                                display: 'flex',
-                                alignItems: 'center',
-                                width: '100%'
-                            },
-                        }, m(FlexCol, m(H3, lap.name), m(SmallText, `Holes: ${lap.number_of_holes || 'N/A'}`)), m(Div, {
-                            height: '12px',
-                            width: '12px',
-                            borderRadius: '50%',
-                            background: selectedLap && selectedLap.id === lap.id ? 'white' : '#ffffff55',
-                            border: '1px solid white',
-                            padding: '4px',
-                            marginLeft: 'auto',
-                        })
-                        /*
-                        m(FlexRow, {alignItems:'center', gap:'0.5rem', marginTop:'0.5rem'},
-                            m(LucideIcon,{
-                                icon: 'star',
-                                width: '16',
-                                height: '16'
-                            }),
-                            m(SmallText, `Rating: ${lap.course_ratings['blue'] || 'N/A'}`)
-                        ),
-
-                        m(FlexRow, {alignItems:'center', gap:'0.5rem', marginTop:'0.5rem'},
-                            m(LucideIcon,{
-                                icon: 'sliders',
-                                width: '16',
-                                height: '16'
-                            }),
-                            m(SmallText, `Slope: ${lap.slopes['blue'] || 'N/A'}`)
-                        ),*/
-                        ))
-                    ]
-                    : null, club.tees?.length ?
-                    [
-                        m(Text, { marginTop: '1rem' }, 'Tee Options'),
-                        m(FlexRow, { flexWrap: 'wrap', gap: '0.1rem' }, club.tees.map((tee) => m(Tappable, {
+                                selectedRound = round;
+                                AppData.selectedRound = round;
+                            }
+                        };
+                    })
+                }), m(ButtonModal, {
+                    left: 'Select Tee',
+                    right: selectedTee ? selectedTee.name : 'Select',
+                    modal: club.tees.map((tee) => {
+                        return {
+                            title: tee.name,
+                            description: selectedRound && selectedRound.course_ratings[tee.id]
+                                ? `CR: ${selectedRound.course_ratings[tee.id]}, Slope: ${selectedRound.slopes[tee.id]}`
+                                : 'Select a round first',
                             onclick: (e) => {
                                 selectedTee = tee;
-                            },
-                            style: {
-                                display: 'flex',
-                                background: '#00000033',
-                                borderRadius: '0.5rem',
-                                padding: '1rem',
-                                marginTop: '1rem',
-                                //border: `0.5px solid ${tee.color}`,
-                                width: '40%',
-                                alignItems: 'center'
+                                AppData.selectedTee = tee;
                             }
-                        }, m(Div, {
-                            height: '24px',
-                            width: '24px',
-                            borderRadius: '50%',
-                            background: tee.color || '#ffffff55',
-                            border: '1px solid white',
-                            marginRight: '1rem',
-                        }), m(FlexCol, m(Text, tee.name)), m(Div, {
-                            height: '12px',
-                            width: '12px',
-                            borderRadius: '50%',
-                            background: selectedTee && selectedTee.id === tee.id ? 'white' : '#ffffff55',
-                            border: '1px solid white',
-                            padding: '4px',
-                            marginLeft: 'auto',
-                        }))))
-                    ] : null, m(Button, {
+                        };
+                    })
+                }), 
+                /*
+                m(ButtonModal, {
+                    left: 'Select Players',
+                    right: selectedTee ? selectedTee.name : 'Select',
+                    modal: club.tees.map((tee:Tee)=>{
+                        return {
+                            title: tee.name,
+                            description: tee.color,
+                            onclick: (e: Event) => {
+                                selectedTee = tee;
+                            }
+                        }
+                    })
+                }),*/
+                m(Button, {
                     type: 'primary',
-                    disabled: !selectedLap || !selectedTee,
+                    disabled: !selectedRound || !selectedTee,
                     onclick: (e) => {
-                        m.route.set(`/club/${club.id}/${selectedLap.id}/${selectedTee.id}`);
+                        AppData.currentGame = new Game({
+                            id: 'game_' + Date.now(),
+                            date: new Date(),
+                            club: club,
+                            round: selectedRound,
+                            tee: selectedTee
+                        });
+                        m.route.set(`/club/${club.id}/${selectedRound.id}/${selectedTee.id}`);
                     },
                     style: {
                         marginTop: '1rem',
@@ -293,39 +314,131 @@ function ClubSelected() {
             ];
         }
     };
+    function ButtonModal() {
+        let openModal = false;
+        return {
+            view: (vnode) => {
+                let { left, right, modal } = vnode.attrs;
+                return [
+                    openModal && [
+                        // dimmer overlay
+                        m(Tappable, {
+                            style: {
+                                position: 'fixed',
+                                inset: 0,
+                                background: '#00000088',
+                                zIndex: 1000
+                            },
+                            onclick: (e) => {
+                                openModal = false;
+                                e.stopPropagation();
+                            }
+                        }, m(Animate, {
+                            duration: 300,
+                            from: { translateY: '100%' },
+                            to: { translateY: '0%' },
+                            style: {
+                                position: 'fixed',
+                                bottom: 0,
+                                left: 0,
+                                right: 0,
+                                padding: '1em',
+                                background: 'white',
+                                borderTopLeftRadius: '1rem',
+                                borderTopRightRadius: '1rem',
+                                maxHeight: '50vh',
+                                overflowY: 'auto',
+                                boxShadow: '0 -2px 10px rgba(0,0,0,0.3)'
+                            },
+                        }, m(FlexCol, { gap: '1rem' }, m(Div, { width: '40px', height: '4px', background: '#ccc', borderRadius: '2px', margin: '0 auto', marginBottom: '1rem' }), modal.map((item) => m(Tappable, {
+                            onclick: (e) => {
+                                item.onclick(e);
+                                openModal = false;
+                            },
+                            rippleEffect: true,
+                            style: {
+                                padding: '1rem',
+                                display: 'flex',
+                                justifyContent: 'space-between',
+                                background: '#f0f0f0',
+                                borderRadius: '0.5rem',
+                                alignItems: 'center',
+                            }
+                        }, m(FlexCol, { color: 'black', gap: '0.25rem' }, m(Text, { fontWeight: 'bold' }, item.title), m(SmallText, item.description)), m(LucideIcon, {
+                            icon: 'chevron-right',
+                            width: '20',
+                            height: '20',
+                            style: {
+                                display: 'block',
+                                color: 'black'
+                            }
+                        }))))))
+                    ],
+                    m(Tappable, {
+                        onclick: (e) => {
+                            openModal = true;
+                        },
+                        rippleEffect: true,
+                        style: {
+                            background: '#00000033',
+                            borderRadius: '0.5rem',
+                            padding: '1.5rem',
+                            margin: '1rem ',
+                            display: 'flex',
+                            alignItems: 'center',
+                            width: '100%'
+                        },
+                    }, m(FlexRow, { flex: 1, alignItems: 'center', justifyContent: 'space-between' }, m(Text, { fontWeight: 'bold' }, left), m(SmallText, right)))
+                ];
+            }
+        };
+    }
 }
-function LapStart() {
-    let lap;
-    let tee;
-    let holes = [];
-    let club;
+function RoundStart() {
+    let club = AppData.selectedClub;
+    let game = AppData.currentGame;
+    let round = game?.round;
+    let tee = game?.tee;
+    let holes = round?.holes.map((hole) => new Hole(hole));
     let hole_index = 0;
-    let round;
+    let loading = false;
     return {
         oninit: (vnode) => {
-            getClub(vnode.attrs.clubId).then((res) => {
-                club = res;
-                lap = res.laps.find((l) => l.id === vnode.attrs.lapId);
-                holes = lap.holes.map((hole) => new Hole(hole));
-                tee = res.tees.find((t) => t.id === vnode.attrs.teeId);
-                m.redraw();
-            });
-            round = new Round({
-                id: 'round_ ' + Date.now(),
-                date: new Date(),
-                lap_id: vnode.attrs.lapId,
-                club_id: vnode.attrs.clubId,
-                tee_id: vnode.attrs.teeId
-            });
+            if (!game) {
+                loading = true;
+                getClub(vnode.attrs.clubId).then((res) => {
+                    club = res;
+                    round = res.rounds.find((r) => r.id === vnode.attrs.roundId);
+                    holes = round.holes.map((hole) => new Hole(hole));
+                    tee = res.tees.find((t) => t.id === vnode.attrs.teeId);
+                    game = new Game({
+                        date: new Date(),
+                        club: club,
+                        round: round,
+                        tee: tee
+                    });
+                    loading = false;
+                    m.redraw();
+                });
+            }
         },
         view: (vnode) => {
+            if (loading)
+                return;
+            console.log('game', game);
             return m(App, m(AppBar, {
-                leading: true,
-                title: lap?.name
-            }), m(AppContent, m(FlexCol, { padding: '1em' }, m(Text, `Club ID: ${vnode.attrs.clubId}`), m(Text, `Lap ID: ${vnode.attrs.lapId}`), m(Text, `Tee ID: ${vnode.attrs.teeId}`)), m(HoleInfo, {
+                leading: {
+                    icon: 'x',
+                    style: { color: 'white' },
+                    onclick: () => m.route.set(`/club/${vnode.attrs.clubId}`)
+                },
+                title: round?.name,
+                subtitle: club?.name,
+            }), m(AppContent, m(HoleInfo, {
                 hole: holes[hole_index],
+                score: game.scores[hole_index],
                 teeId: vnode.attrs.teeId
-            }), m(Div, {
+            }), m(TotalScore), m(Div, {
                 position: 'fixed',
                 bottom: '0px',
                 left: '0px',
@@ -335,60 +448,267 @@ function LapStart() {
                 color: 'black',
                 display: 'flex',
                 alignItems: 'center',
+                gap: '0.5rem',
                 justifyContent: 'space-between'
-            }, m(Tappable, {
+            }, m(Button, {
+                type: 'secondary',
                 onclick: () => {
+                    endGame(game);
+                    m.route.set(`/round/${round.id}`);
+                    m.redraw();
+                }
+            }, "END"), m(Button, {
+                disabled: hole_index == 0,
+                onclick: () => {
+                    m.redraw();
                     if (hole_index > 0) {
                         hole_index--;
                     }
+                },
+                style: {
+                    flex: 1
                 }
             }, m(LucideIcon, {
-                icon: 'circle-chevron-left',
-                width: '48',
-                height: '48',
-            })), m(Text, "Hoyo " + (hole_index + 1)), m(Tappable, {
+                icon: 'arrow-left',
+                style: {
+                    color: 'white'
+                },
+                width: '16',
+                height: '16'
+            })), m(Button, {
                 onclick: () => {
-                    console.log('onclick');
                     m.redraw();
                     if (hole_index < holes.length - 1) {
+                        if (game.scores[hole_index].strokes && !game.scores[hole_index].end) {
+                            game.scores[hole_index].end = new Date();
+                        }
                         hole_index++;
                     }
+                },
+                style: {
+                    flex: 1
                 }
             }, m(LucideIcon, {
-                icon: 'circle-chevron-right',
-                width: '48',
-                height: '48',
+                icon: 'arrow-right',
+                style: {
+                    color: 'white'
+                },
+                width: '16',
+                height: '16'
             })))));
         }
     };
     function HoleInfo() {
+        let expandMore = false;
+        let hole;
+        let score;
         return {
             view: (vnode) => {
-                let hole = vnode.attrs.hole;
+                hole = vnode.attrs.hole;
+                score = vnode.attrs.score;
                 if (!hole)
                     return;
-                console.log('round', round.scores, round.scores[hole_index]);
-                return m(Div, { margin: '0 auto', borderRadius: '8px', width: '90%', maxWidth: '400px', background: 'white', padding: '0.2em', color: 'black' }, m(FlexCol, { padding: '1em' }, m(H2, `Hole ${hole_index + 1}`), m(Text, `Distance: ${hole.tees[vnode.attrs.teeId] || 'N/A'} yards`), m(Text, `Par ${holes[hole_index].par},  Hcp ${lap.handicaps[hole_index]}`)), m(Text, "Strokes"), m(HtmlIntegerInput, {
-                    type: 'number',
-                    min: 1,
-                    data: round?.scores || {},
-                    name: hole_index,
-                    onchange: (e) => {
-                        //round.scores[hole_index] += e;
+                if (!score.start)
+                    score.start = new Date();
+                let green_score = (hole.par - 2);
+                score.green_in_regulation = score.strokes && score.putts ? score.strokes - (score.putts || 0) <= green_score : false;
+                score.up_and_down = score.strokes && !score.green_in_regulation ? hole.par >= score.strokes : false;
+                return m(FlexCol, {
+                    margin: '0 auto', padding: '1rem', borderRadius: '8px',
+                    width: '90%', maxWidth: '400px', background: 'white',
+                    gap: '1rem', color: 'black'
+                }, m(FlexRow, { alignItems: 'center', justifyContent: 'space-between' }, m(H2, `Hole ${hole_index + 1}`), m(Label, {
+                    type: 'secondary',
+                    style: { border: `1px solid ${tee.color}`, color: tee.color, background: 'white' }
+                }, m(SmallText, tee.name))), m(FlexRow, { justifyContent: 'space-between', alignItems: 'center' }, m(FlexRow, { alignItems: 'center', gap: '0.5rem' }, [
+                    'Par ' + hole.par,
+                    'Hcp ' + round.handicaps[hole_index],
+                    hole.tees[vnode.attrs.teeId] + ' m',
+                ].map((text) => {
+                    return m(SmallText, {
+                        type: 'default'
+                    }, text);
+                })), m(FlexRow, { gap: '1rem', alignItems: 'center' }, m(Label, {
+                    type: score.green_in_regulation ? 'primary' : 'secondary',
+                }, "GIR"), m(Label, {
+                    type: score.up_and_down ? 'primary' : 'secondary',
+                }, "UP & DOWN"))), m(NumberPut, {
+                    data: score,
+                    name: 'strokes',
+                    text: 'Total Strokes'
+                }), expandMore ?
+                    [
+                        m(NumberPut, {
+                            data: score,
+                            name: 'putts',
+                            text: 'Putts'
+                        }),
+                        m(NumberPut, {
+                            data: score,
+                            name: 'chip',
+                            text: 'Approach shots'
+                        }),
+                        m(NumberPut, {
+                            data: score,
+                            name: 'penalties',
+                            text: 'Penalties'
+                        }),
+                        m(Fairway, {
+                            data: score,
+                            name: 'fairway',
+                            text: 'Fairways Hit'
+                        })
+                    ] : null, m(Tappable, {
+                    onclick: (e) => {
+                        expandMore = !expandMore;
                         m.redraw();
                     }
-                }));
+                }, m(LucideIcon, {
+                    icon: 'chevron-down',
+                    width: '24',
+                    height: '24',
+                    style: {
+                        display: 'block',
+                        margin: '0 auto',
+                        transition: 'transform 0.3s',
+                        transform: expandMore ? 'rotate(180deg)' : 'rotate(0deg)'
+                    }
+                })));
+            }
+        };
+        function NumberPut() {
+            return {
+                view: (vnode) => {
+                    let { text, data, name } = vnode.attrs;
+                    return [
+                        m(FlexRow, {
+                            style: {
+                                padding: '1rem', background: '#f0f0f0', flex: 1, alignItems: 'center',
+                                borderRadius: '0.5rem', justifyContent: 'space-between'
+                            }
+                        }, m(Text, text), m(FlexRow, { alignItems: 'center' }, m(Text, data[name] || 0), m(FlexRow, { alignItems: 'center', gap: '0.5rem', marginLeft: '1rem' }, m(Tappable, {
+                            style: {
+                                border: '1px solid #ccc',
+                                borderRadius: '0.5rem',
+                                padding: '0.5rem 1rem'
+                            },
+                            onclick: (e) => {
+                                if (data[name] == 0)
+                                    return;
+                                data[name] = (data[name] || 0) - 1;
+                                m.redraw();
+                            },
+                        }, m(LucideIcon, { icon: 'minus', width: '16', height: '16' })), m(Tappable, {
+                            style: {
+                                padding: '0.5rem 1rem',
+                                border: '1px solid #ccc',
+                                borderRadius: '0.5rem',
+                            },
+                            onclick: (e) => {
+                                data[name] = (data[name] || 0) + 1;
+                                m.redraw();
+                            },
+                        }, m(LucideIcon, {
+                            icon: 'plus',
+                            width: '16',
+                            height: '16'
+                        })))))
+                    ];
+                }
+            };
+        }
+        function Fairway() {
+            return {
+                view: (vnode) => {
+                    let { text, data, name } = vnode.attrs;
+                    return [
+                        m(FlexRow, {
+                            style: {
+                                padding: '1rem', background: '#f0f0f0', flex: 1, alignItems: 'center',
+                                borderRadius: '0.5rem', justifyContent: 'space-between'
+                            }
+                        }, m(Text, text), m(FlexRow, { alignItems: 'center' }, m(FlexRow, { alignItems: 'center', gap: '0.5rem', marginLeft: '1rem' }, [
+                            { icon: 'arrow-left', name: 'left' },
+                            { icon: 'circle-dot', name: 'middle' },
+                            { icon: 'arrow-right', name: 'right' },
+                        ].map((item) => {
+                            return m(Tappable, {
+                                style: {
+                                    borderRadius: '0.5rem',
+                                    padding: '0.5rem 1rem',
+                                    display: 'flex',
+                                    alignItems: 'center',
+                                    justifyContent: 'center',
+                                    border: data[name] === item.name ? `1.5px solid ${config.primaryColor}` : '1px solid #ccc'
+                                    //background: data[name] === item.name ? config.background : 'transparent',
+                                },
+                                onclick: (e) => {
+                                    data[name] = item.name;
+                                    m.redraw();
+                                },
+                            }, m(LucideIcon, { icon: item.icon, width: '16', height: '16' }));
+                        }))))
+                    ];
+                }
+            };
+        }
+    }
+    function TotalScore() {
+        return {
+            view: (vnode) => {
+                return [];
             }
         };
     }
 }
-function LapEnded() {
+function RoundEnded() {
+    let game = AppData.currentGame;
+    let club = game?.club;
+    let round = game?.round;
+    let tee = game?.tee;
     return {
+        oninit: (vnode) => {
+            if (!game) {
+                getGame(vnode.attrs.roundId)
+                    .then((res) => {
+                    if (!res)
+                        return;
+                    game = res;
+                    club = game.club;
+                    round = game.round;
+                    tee = game.tee;
+                    m.redraw();
+                });
+            }
+        },
         view: (vnode) => {
+            console.log('game', game);
             return m(App, m(AppBar, {
-                leading: true,
-                title: 'Lap Ended'
-            }), m(AppContent, m(FlexCol, { padding: '1em' }, m(H2, 'Congratulations!'), m(Text, 'You have completed the lap.'))));
+                leading: {
+                    icon: 'x',
+                    style: { color: 'white' },
+                    onclick: () => m.route.set(`/`)
+                },
+                title: 'Round Ended'
+            }), m(AppContent, !game
+                ? null
+                :
+                    m(FlexCol, { padding: '1em' }, m(Img, {
+                        src: club.photo,
+                        style: {
+                            borderRadius: '0.5rem',
+                            width: '85%',
+                            maxHeight: '200px',
+                            objectFit: 'cover'
+                        }
+                    }), m(H2, club.name), m(FlexRow, {
+                        justifyContent: 'space-between',
+                        alignItems: 'center',
+                        marginTop: '1rem',
+                    }, m(Text, round.name), m(Text, tee.name)), m(Div, {
+                        marginTop: '1.5em',
+                        background: 'grey'
+                    }), m(Text, 'You have completed the round.'))));
         }
     };
 }

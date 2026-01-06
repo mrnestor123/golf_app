@@ -16,7 +16,38 @@
             font-family: 'Lexend', sans-serif;
             background-color: #121212;
             color: #ffffff;
+            /* Disable scrolling completely */
+            overflow: hidden;
+            height: 100vh;
+            width: 100vw;
         }
+
+        html {
+            /* Prevent any scrolling on the root element */
+            overflow: hidden;
+            height: 100%;
+            width: 100%;
+        }
+
+        /* Hide scrollbars completely across all browsers */
+        * {
+            -ms-overflow-style: none;  /* IE and Edge */
+            scrollbar-width: none;     /* Firefox */
+        }
+        
+        *::-webkit-scrollbar {
+            display: none;             /* Chrome, Safari, Opera */
+        }
+
+        /* Prevent pull-to-refresh and other mobile gestures */
+        body {
+            overscroll-behavior: none;
+            touch-action: pan-x pan-y;
+            -webkit-overflow-scrolling: touch;
+        }
+
+
+    
     </style>
 
 </head>

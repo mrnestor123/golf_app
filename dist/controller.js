@@ -1,18 +1,59 @@
-import { scrapGolfClubs, scrapLaps, scrapTees, } from "./scrap_data.js";
-export { getGolfClubs, getClub, };
+import { Game } from "./model.js";
+import { scrapGolfClubs, scrapRounds, scrapTees, } from "./scrap_data.js";
+export { getGolfClubs, getClub, endGame, getGame, AppData };
+// Global data store for the app
+const AppData = {
+    user: null,
+    golfClubs: [],
+    selectedClub: null,
+    selectedRound: null,
+    selectedTee: null,
+    currentGame: null,
+    isLoading: false,
+    cache: new Map()
+};
 function getGolfClubs() {
     scrapGolfClubs.map((course) => {
-        course.laps = scrapLaps.filter(lap => lap.club_id === course.id);
+        course.rounds = scrapRounds.filter(round => round.club_id === course.id);
         course.tees = scrapTees.filter(tee => tee.club_id === course.id);
     });
+    AppData.golfClubs = scrapGolfClubs;
     console.log('scrapGolfClubs', scrapGolfClubs);
     return Promise.resolve(scrapGolfClubs);
 }
 function getClub(id) {
     let course = scrapGolfClubs.find(club => club.id === id);
-    course.laps = scrapLaps.filter(lap => lap.club_id === course.id);
+    course.rounds = scrapRounds.filter(round => round.club_id === course.id);
     course.tees = scrapTees.filter(tee => tee.club_id === course.id);
     return Promise.resolve(course);
+}
+function endGame(game) {
+    // SAVE IT IN LOCAL STORAGE AT THE MOMENT !!!
+    let games = JSON.parse(localStorage.getItem('games') || '[]');
+    games.push(game.toJSON());
+    localStorage.setItem('games', JSON.stringify(games));
+}
+function getGame(id) {
+    let games = JSON.parse(localStorage.getItem('games') || '[]');
+    let gameData = games.find((game) => game.id === id);
+    if (gameData) {
+        let game = new Game(gameData);
+        if (!game.round) {
+            game.round = scrapRounds.find((round) => round.id === gameData.round_id);
+        }
+        if (!game.tee) {
+            game.tee = scrapTees.find((tee) => tee.id === gameData.tee_id);
+        }
+        return Promise.resolve(game);
+    }
+    else {
+        return Promise.resolve(null);
+    }
+}
+function listGames(userId) {
+    let games = JSON.parse(localStorage.getItem('games') || '[]');
+    let userGames = games.filter((game) => game.user_id === userId);
+    return Promise.resolve(userGames);
 }
 /*
 let googleKey  = 'AIzaSyCWmkjYRastjR3yvNxNVnEUPJ-y7zW6YjA'

@@ -17,7 +17,7 @@ class GolfClub {
 
     telephone?: string;
     rating: number;
-    laps?: Lap[];
+    rounds?: Round[];
     tees?: Tee[];
 
     constructor(data: any){
@@ -29,7 +29,7 @@ class GolfClub {
         this.telephone = data.telephone
         this.rating = data.rating
         //this.coordinates = data.coordinates; // crear un objeto coordenadas tal vez
-        this.laps = data.laps?.map((lap:any) => new Lap(lap))
+        this.rounds = data.rounds?.map((round:any) => new Round(round))
         this.tees = data.tees?.map(tee => new Tee(tee))
     }
 
@@ -47,7 +47,8 @@ class GolfClub {
 }
 
 
-class Lap {
+// LAS VUELTAS DEL CAMPO !!
+class Round {
     id: string;
     name: string;
     club_id: string;
@@ -167,39 +168,95 @@ class User {
 }
 
 
-class Round {
+class Game {
     id: string;
     date: Date;
-    club_id: string;
-    lap_id: string;
-    tee_id: string;
-
+    club: GolfClub ;
+    round: Round;
+    tee: Tee ;
+    user_id: string;
     // lista with the scores
-    scores: any[];
+    scores: Score[];
 
     constructor({
-        id, date, club_id, 
-        lap_id, tee_id,
-        scores = Array(18).fill(0)
+        id = 'game ' + Math.random().toString(36).substring(2, 9),
+        date, 
+        club, 
+        round, 
+        tee,
+        scores = Array.from({length: 18}, () => new Score({}))
     }){
         this.id = id
         this.date = date
-        this.club_id = club_id
-        this.lap_id = lap_id
-        this.tee_id = tee_id
-        this.scores = scores || Array(18).fill(0)
+        this.club = club
+        this.round = round;
+        this.tee = tee
+        this.scores = scores 
+    }
+
+
+    toJSON() {
+        return {
+            id: this.id,
+            date: this.date,
+            club_id: this.club.id,
+            round_id: this.round.id,
+            tee_id: this.tee.id,
+            
+            //scores: this.scores.map(score => score.toJSON())
+            // club_id: this.club?.id || this.club,
+            // round_id: this.round?.id || this.round,
+            // tee_id: this.tee?.id || this.tee,
+            //scores: this.scores.map(score => score.toJSON())
+        }
+    }
+}
+
+
+class Score {
+    strokes: number;
+    putts: number;
+    penalties: number;
+
+    green_in_regulation: boolean;
+    fairway_hit: boolean;
+    up_and_down: boolean;
+    start: Date | null;
+    end: Date | null;
+
+
+    constructor({
+        strokes = 0,
+        putts = 0,
+        penalties = 0,
+        green_in_regulation = false,
+        fairway_hit = false,
+        up_and_down = false,
+        start = null,
+        end = null
+    }){
+        this.strokes = strokes
+        this.putts = putts
+        this.penalties = penalties
+        this.green_in_regulation = green_in_regulation
+        this.fairway_hit = fairway_hit
+        this.up_and_down = up_and_down
+        this.start = start
+        this.end = end
     }
 }
 
 
 
+
 export {
     GolfClub,
-    Lap, 
+    Round, 
     Tee,
     Hole,
     User,
-    Round
+    Score,
+    Game
 }
 
 

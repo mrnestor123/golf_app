@@ -1,4 +1,4 @@
-import { GolfClub, Lap, Tee } from "./model.js";
+import { GolfClub, Round, Tee } from "./model.js";
 // HOLES - 18 hoyos del course_masia
 // TEES - 7 diferentes salidas
 let scrapTees = [
@@ -52,8 +52,8 @@ let scrapTees = [
         club_id: 'escorpion_1'
     })
 ];
-let scrapLaps = [
-    new Lap({
+let scrapRounds = [
+    new Round({
         "id": "20251208174706",
         "club_id": "escorpion_1",
         "name": "Masia + Masia",
@@ -389,4 +389,4 @@ let scrapGolfClubs = [
         }
     })
 ];
-export { scrapGolfClubs, scrapTees, scrapLaps };
+export { scrapGolfClubs, scrapTees, scrapRounds };

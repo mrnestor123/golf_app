@@ -187,18 +187,19 @@ class MSCorecardScraper:
         
         return courses
     
-    def extract_lap_data(self, soup) -> List[Dict]:
-
+    def extract_lap_data(self, soup, club_id) -> List[Dict]:
         """
         Extrae los datos de los hoyos de la página de detalles de un curso.
         """
+
         holes = []
+        
         if not soup:
             return holes
 
         lap = {
             'id': 'lap_gf_' + time.strftime("%Y%m%d%H%M%S"),
-            'club_id': 'gf_escorpion_1',
+            'club_id': club_id,
             'holes': [], # list with the id of the holes
             'handicaps': [],
             'slopes': {},
@@ -236,7 +237,6 @@ class MSCorecardScraper:
                 })
               
             current_index += 1
-
         
         
         # print the tee names in console
@@ -331,10 +331,11 @@ class MSCorecardScraper:
 
         return [lap,tees]
     
-    def get_course_details(self, course_url: str) -> Dict:
+    def get_course_html(self, course_url: str) -> Dict:
         """
         Obtiene detalles de un curso específico
         """
+
         if not self.logged_in:
             print("⚠ No has iniciado sesión")
             return None
@@ -394,7 +395,7 @@ def main():
     scraper = MSCorecardScraper()
     
     # Solicitar credenciales
-    username = "jjjrostersmusic@gmail.com"
+    username = "rostersmusic@gmail.com"
     password = "Lovejustin12!"
     
     # Realizar login
@@ -404,38 +405,45 @@ def main():
     
     print("\n" + "="*50 + "\n")
 
-    details_soup = scraper.get_course_details('https://www.mscorecard.com/mscorecard/showcourse.php?cid=1227522189124_1_1')
 
-    # Debug: Save the HTML to see what we're actually getting
-    if details_soup:
-        with open('debug_page.html', 'w', encoding='utf-8') as f:
-            f.write(str(details_soup))
-        print("Saved raw HTML to debug_page.html for inspection")
+    # iterate through this list and get course details
+    course_urls = [
+        'https://www.mscorecard.com/mscorecard/showcourse.php?cid=1227522189124_1_2',
+        'https://www.mscorecard.com/mscorecard/showcourse.php?cid=1227522189124_1_3',
+        'https://www.mscorecard.com/mscorecard/showcourse.php?cid=1227522189124_2_1',
+        'https://www.mscorecard.com/mscorecard/showcourse.php?cid=1227522189124_2_2',
+        'https://www.mscorecard.com/mscorecard/showcourse.php?cid=1227522189124_2_3',
+        'https://www.mscorecard.com/mscorecard/showcourse.php?cid=1227522189124_3_1',
+        'https://www.mscorecard.com/mscorecard/showcourse.php?cid=1227522189124_3_2',
+        'https://www.mscorecard.com/mscorecard/showcourse.php?cid=1227522189124_3_3'
+    ]
 
-    course = {'id': 'test_id', 'nombre': 'Test Course'}
+    laps = []
+    tees = []
+    
+    for url in course_urls:
 
-    if details_soup:
-        lap, tees = scraper.extract_lap_data(details_soup)
+        course_html = scraper.get_course_html(url)
 
-        # add lap to a json
-        scraper.save_to_json([lap], 'laps.json')
-        scraper.save_to_json([tees], 'tees.json')
 
-        
-        print(f"  ✓ Encontrado la vuelta con {len(lap['holes'])} hoyos.")
-    else:
-        print(f"  ⚠ No se pudieron obtener detalles para este curso.")
+        if course_html:
+            lap, tees = scraper.extract_lap_data(course_html, 'escorpion_1' )
+            laps.append(lap)
+            tees.append(tees)
+    
+
+    print('Laps extracted:', len(laps))
+    print('Tees extracted:', len(tees))
+
+    # add lap to a json
+    scraper.save_to_json(laps, 'laps.json')
+    scraper.save_to_json(tees, 'tees.json')
 
     return
     
     # 1. Obtener la lista de los primeros 10 páginas de cursos
     
     
-    # Cerrar sesión
-    scraper.logout()
-    print("\n=== Proceso completado ===")
-if __name__ == "__main__":
-    main()
 
 
 

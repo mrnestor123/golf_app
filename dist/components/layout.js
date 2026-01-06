@@ -1,3 +1,4 @@
+import { RippleEffect } from "./elements.js";
 export { Container, Grid, FlexCol, FlexRow, Div, Animate, Tappable, Draggable, Box, CssStyle };
 function Container() {
     return {
@@ -73,7 +74,7 @@ function FlexRow() {
             return m("div", {
                 style: {
                     display: 'flex',
-                    ...vnode.attrs
+                    ...vnode.attrs?.style || vnode.attrs
                 }
             }, vnode.children);
         }
@@ -171,12 +172,13 @@ function Tappable() {
     let clickout;
     function checkclickout(e) {
         if (!elem.contains(e.target)) {
+            e.redraw = true;
             clickout();
         }
     }
     return {
         view: (vnode) => {
-            return m("div", {
+            return m(vnode.attrs.rippleEffect ? RippleEffect : "div", {
                 oncreate: ({ dom }) => {
                     elem = dom;
                     if (vnode.attrs.clickout) {

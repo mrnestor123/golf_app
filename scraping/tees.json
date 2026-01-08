@@ -1,39 +1,41 @@
 [
   [
     {
-      "id": "tee_negras",
-      "name": "Negras",
+      "id": "tee_white",
+      "name": "White",
       "index": 3
     },
     {
-      "id": "tee_doradas",
-      "name": "Doradas",
+      "id": "tee_red",
+      "name": "Red",
+      "index": 4
+    },
+    {
+      "id": "tee_yellow",
+      "name": "Yellow",
+      "index": 5
+    }
+  ],
+  [
+    {
+      "id": "tee_white",
+      "name": "White",
+      "index": 3
+    },
+    {
+      "id": "tee_yellow",
+      "name": "Yellow",
+      "index": 4
+    },
+    {
+      "id": "tee_blue",
+      "name": "Blue",
       "index": 5
     },
     {
-      "id": "tee_azules",
-      "name": "Azules",
+      "id": "tee_red",
+      "name": "Red",
       "index": 6
-    },
-    {
-      "id": "tee_amarllas",
-      "name": "Amarllas",
-      "index": 7
-    },
-    {
-      "id": "tee_naranjas",
-      "name": "Naranjas",
-      "index": 8
-    },
-    {
-      "id": "tee_rojas",
-      "name": "Rojas",
-      "index": 9
-    },
-    {
-      "id": "tee_verdes",
-      "name": "Verdes",
-      "index": 10
     }
   ]
 ]

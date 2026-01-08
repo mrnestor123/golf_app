@@ -1,0 +1,7538 @@
+[
+  {
+    "id": "a_toxas_golf_club_0",
+    "name": "A Toxa's Golf Club",
+    "location": {
+      "country": "Spain",
+      "province": "Pontevedra",
+      "address": "Isla de La Toja"
+    },
+    "courses": [
+      {
+        "tipo": "18-hole course",
+        "url": "showcourse.php?cid=1250269045516"
+      }
+    ]
+  },
+  {
+    "id": "abama_golf_1",
+    "name": "Abama Golf",
+    "location": {
+      "country": "Spain",
+      "province": "Canarias",
+      "address": "Playa San Juan"
+    },
+    "courses": [
+      {
+        "tipo": "18-hole course",
+        "url": "showcourse.php?cid=1227792771334"
+      }
+    ]
+  },
+  {
+    "id": "academia_de_golf_novo_sancti_petri_2",
+    "name": "Academia de Golf Novo Sancti Petri",
+    "location": {
+      "country": "Spain",
+      "province": "Andalucía",
+      "address": "Urbanización Novo Santi Petri"
+    },
+    "courses": [
+      {
+        "tipo": "18-hole course",
+        "url": "showcourse.php?cid=1349296098321842"
+      }
+    ]
+  },
+  {
+    "id": "aguiln_golf_4",
+    "name": "Aguilón Golf",
+    "location": {
+      "country": "Spain",
+      "province": "Almería",
+      "address": "Pilar de Jaravia"
+    },
+    "courses": [
+      {
+        "tipo": "18-hole course",
+        "url": "showcourse.php?cid=1763579405725855"
+      },
+      {
+        "tipo": "18-hole course",
+        "url": "showcourse.php?cid=1315901238208"
+      }
+    ]
+  },
+  {
+    "id": "air_golf_club_5",
+    "name": "Air Golf Club",
+    "location": {
+      "country": "Spain",
+      "province": "Castilla y León",
+      "address": "Vegas de Matute"
+    },
+    "courses": [
+      {
+        "tipo": "18-hole course",
+        "url": "showcourse.php?cid=1299688483665"
+      }
+    ]
+  },
+  {
+    "id": "al_haurin_6",
+    "name": "al haurin",
+    "location": {
+      "country": "Spain",
+      "province": "",
+      "address": ""
+    },
+    "courses": [
+      {
+        "tipo": "no courses added",
+        "url": "newcourseform.php?clid=1676929690333312"
+      }
+    ]
+  },
+  {
+    "id": "albatros_golf_7",
+    "name": "Albatros Golf",
+    "location": {
+      "country": "Spain",
+      "province": "A Coruña",
+      "address": "Arteixo"
+    },
+    "courses": [
+      {
+        "tipo": "Albatros",
+        "url": "showcourse.php?cid=1526186882898313"
+      }
+    ]
+  },
+  {
+    "id": "alborn_golf_8",
+    "name": "Alborán Golf",
+    "location": {
+      "country": "Spain",
+      "province": "Almería",
+      "address": "Almería"
+    },
+    "courses": [
+      {
+        "tipo": "18-hole course",
+        "url": "showcourse.php?cid=1257342537543"
+      }
+    ]
+  },
+  {
+    "id": "aldeamayor_golf_club_9",
+    "name": "Aldeamayor Golf Club",
+    "location": {
+      "country": "Spain",
+      "province": "Valladolid",
+      "address": "Valladolid"
+    },
+    "courses": [
+      {
+        "tipo": "Championship",
+        "url": "showcourse.php?cid=1132652837430"
+      },
+      {
+        "tipo": "Pares 3",
+        "url": "showcourse.php?cid=1333187345571"
+      }
+    ]
+  },
+  {
+    "id": "alenda_golf_club_10",
+    "name": "Alenda Golf Club",
+    "location": {
+      "country": "Spain",
+      "province": "Alicante",
+      "address": "Monforte del Cid"
+    },
+    "courses": [
+      {
+        "tipo": "18-hole course",
+        "url": "showcourse.php?cid=1204994207984"
+      }
+    ]
+  },
+  {
+    "id": "alhama_signature_golf_11",
+    "name": "Alhama Signature Golf",
+    "location": {
+      "country": "Spain",
+      "province": "Región de Murcia",
+      "address": "Alhama de Murcia"
+    },
+    "courses": [
+      {
+        "tipo": "18-hole course",
+        "url": "showcourse.php?cid=1322468647080"
+      }
+    ]
+  },
+  {
+    "id": "alhaurin_golf_club_12",
+    "name": "Alhaurin Golf Club",
+    "location": {
+      "country": "Spain",
+      "province": "Málaga",
+      "address": "Alhaurín el Grande"
+    },
+    "courses": [
+      {
+        "tipo": "18-hole course",
+        "url": "showcourse.php?cid=1214590642462"
+      }
+    ]
+  },
+  {
+    "id": "alicante_golf_13",
+    "name": "Alicante Golf",
+    "location": {
+      "country": "Spain",
+      "province": "Alicante",
+      "address": "Alicante (Alacant)"
+    },
+    "courses": [
+      {
+        "tipo": "18-hole course",
+        "url": "showcourse.php?cid=1323793698312025"
+      }
+    ]
+  },
+  {
+    "id": "almenara_golf_club_14",
+    "name": "Almenara Golf Club",
+    "location": {
+      "country": "Spain",
+      "province": "Cádiz",
+      "address": "Sotogrande"
+    },
+    "courses": [
+      {
+        "tipo": "Pinos",
+        "url": "showcourse.php?cid=1285587187320_1_1"
+      },
+      {
+        "tipo": "Alcornoques",
+        "url": "showcourse.php?cid=1285587187320_2_2"
+      },
+      {
+        "tipo": "Lagos",
+        "url": "showcourse.php?cid=1285587187320_3_3"
+      },
+      {
+        "tipo": "Pinos + Alcornoques",
+        "url": "showcourse.php?cid=1285587187320_1_2"
+      },
+      {
+        "tipo": "Pinos + Lagos",
+        "url": "showcourse.php?cid=1285587187320_1_3"
+      },
+      {
+        "tipo": "Alcornoques + Lagos",
+        "url": "showcourse.php?cid=1285587187320_2_3"
+      }
+    ]
+  },
+  {
+    "id": "aloha_golf_club_15",
+    "name": "Aloha Golf Club",
+    "location": {
+      "country": "Spain",
+      "province": "Málaga",
+      "address": "Marbella"
+    },
+    "courses": [
+      {
+        "tipo": "18-hole course",
+        "url": "showcourse.php?cid=1226433353060"
+      }
+    ]
+  },
+  {
+    "id": "altaona_golf__country_village_16",
+    "name": "Altaona Golf & Country Village",
+    "location": {
+      "country": "Spain",
+      "province": "Región de Murcia",
+      "address": "Murcia"
+    },
+    "courses": [
+      {
+        "tipo": "18-hole course",
+        "url": "showcourse.php?cid=1641826993122666"
+      }
+    ]
+  },
+  {
+    "id": "altea_club_de_golf_17",
+    "name": "Altea Club de Golf",
+    "location": {
+      "country": "Spain",
+      "province": "Alicante",
+      "address": "Altea la Vieja"
+    },
+    "courses": [
+      {
+        "tipo": "18-hole course",
+        "url": "showcourse.php?cid=1187507270693"
+      }
+    ]
+  },
+  {
+    "id": "amarilla_golf_club_18",
+    "name": "Amarilla Golf Club",
+    "location": {
+      "country": "Spain",
+      "province": "Santa Cruz de Tenerife",
+      "address": "Tenerife"
+    },
+    "courses": [
+      {
+        "tipo": "18-hole course",
+        "url": "showcourse.php?cid=1201468819016"
+      },
+      {
+        "tipo": "P&P",
+        "url": "showcourse.php?cid=1457429296379704"
+      }
+    ]
+  },
+  {
+    "id": "anfi_tauro_golf_19",
+    "name": "Anfi Tauro Golf",
+    "location": {
+      "country": "Spain",
+      "province": "Las Palmas",
+      "address": "Mogàn"
+    },
+    "courses": [
+      {
+        "tipo": "18-holes course",
+        "url": "showcourse.php?cid=1218958297900"
+      },
+      {
+        "tipo": "Par3",
+        "url": "showcourse.php?cid=1695305262791668"
+      }
+    ]
+  },
+  {
+    "id": "aravell_golf_21",
+    "name": "Aravell Golf",
+    "location": {
+      "country": "Spain",
+      "province": "Catalunya",
+      "address": "Montferrer"
+    },
+    "courses": [
+      {
+        "tipo": "Aravell golf",
+        "url": "showcourse.php?cid=1319465179540015"
+      }
+    ]
+  },
+  {
+    "id": "arcos_gardens_22",
+    "name": "Arcos Gardens",
+    "location": {
+      "country": "Spain",
+      "province": "Cad",
+      "address": "Arcos de la Frontera"
+    },
+    "courses": [
+      {
+        "tipo": "18-hole course",
+        "url": "showcourse.php?cid=1336982897746414"
+      }
+    ]
+  },
+  {
+    "id": "arcosur_golf_23",
+    "name": "Arcosur Golf",
+    "location": {
+      "country": "Spain",
+      "province": "Aragón",
+      "address": "Zaragoza"
+    },
+    "courses": [
+      {
+        "tipo": "9-hole course",
+        "url": "showcourse.php?cid=1520779996779304"
+      }
+    ]
+  },
+  {
+    "id": "asociacin_de_golf_villa_de_el_escorial_24",
+    "name": "Asociación de Golf Villa de El Escorial",
+    "location": {
+      "country": "Spain",
+      "province": "Madrid",
+      "address": "El Escorial"
+    },
+    "courses": [
+      {
+        "tipo": "9 hoyos",
+        "url": "showcourse.php?cid=1722514980582688"
+      }
+    ]
+  },
+  {
+    "id": "atalaya_golf__country_club_25",
+    "name": "Atalaya Golf & Country Club",
+    "location": {
+      "country": "Spain",
+      "province": "Málaga",
+      "address": "Estepona"
+    },
+    "courses": [
+      {
+        "tipo": "New Course",
+        "url": "showcourse.php?cid=1193576081417"
+      },
+      {
+        "tipo": "Old Course",
+        "url": "showcourse.php?cid=1252753771761"
+      }
+    ]
+  },
+  {
+    "id": "augas_santas_golf_26",
+    "name": "Augas Santas Golf",
+    "location": {
+      "country": "Spain",
+      "province": "Lug",
+      "address": "Ferreira de Panton"
+    },
+    "courses": [
+      {
+        "tipo": "Augas Santas Golf",
+        "url": "showcourse.php?cid=1443044606568994"
+      }
+    ]
+  },
+  {
+    "id": "azata_golf_27",
+    "name": "Azata Golf",
+    "location": {
+      "country": "Spain",
+      "province": "Andalusia",
+      "address": "Estepona"
+    },
+    "courses": [
+      {
+        "tipo": "18-hole course",
+        "url": "showcourse.php?cid=1634805495471023"
+      }
+    ]
+  },
+  {
+    "id": "aoreta_resort__golf_20",
+    "name": "Añoreta Resort & Golf",
+    "location": {
+      "country": "Spain",
+      "province": "Málaga",
+      "address": "Rincón de la Victoria"
+    },
+    "courses": [
+      {
+        "tipo": "18-hole course",
+        "url": "showcourse.php?cid=1339668734732"
+      }
+    ]
+  },
+  {
+    "id": "balagares_golf_28",
+    "name": "Balagares Golf",
+    "location": {
+      "country": "Spain",
+      "province": "Asturias",
+      "address": "Corvera de Asturias"
+    },
+    "courses": [
+      {
+        "tipo": "Campo de Golf Los Balagares",
+        "url": "showcourse.php?cid=1376255654469615"
+      }
+    ]
+  },
+  {
+    "id": "balneario_de_mondariz_29",
+    "name": "Balneario de Mondariz",
+    "location": {
+      "country": "Spain",
+      "province": "Pontevedra",
+      "address": "Mondariz-Balneario"
+    },
+    "courses": [
+      {
+        "tipo": "18-hole course",
+        "url": "showcourse.php?cid=1110306352538"
+      }
+    ]
+  },
+  {
+    "id": "bans_executive_golf_30",
+    "name": "Banús Executive Golf",
+    "location": {
+      "country": "Spain",
+      "province": "Andalusia",
+      "address": "Marbella"
+    },
+    "courses": [
+      {
+        "tipo": "9-hole course",
+        "url": "showcourse.php?cid=1620927786874072"
+      }
+    ]
+  },
+  {
+    "id": "barberan_31",
+    "name": "Barberan",
+    "location": {
+      "country": "Spain",
+      "province": "Madrid",
+      "address": "Madrid"
+    },
+    "courses": [
+      {
+        "tipo": "Barberán",
+        "url": "showcourse.php?cid=1314261167272"
+      }
+    ]
+  },
+  {
+    "id": "barcel_montecastillo_golf_32",
+    "name": "Barceló Montecastillo Golf",
+    "location": {
+      "country": "Spain",
+      "province": "Andalusia",
+      "address": "Jerez de la Frontera"
+    },
+    "courses": [
+      {
+        "tipo": "18-hole course",
+        "url": "showcourse.php?cid=1241692011532"
+      }
+    ]
+  },
+  {
+    "id": "base_aerea_de_zaragoza_33",
+    "name": "Base Aerea De Zaragoza",
+    "location": {
+      "country": "Spain",
+      "province": "Aragón",
+      "address": "Zaragoza"
+    },
+    "courses": [
+      {
+        "tipo": "18-hole course",
+        "url": "showcourse.php?cid=1458829854595012"
+      }
+    ]
+  },
+  {
+    "id": "base_area_de_torrejn_34",
+    "name": "Base Area de Torrejón",
+    "location": {
+      "country": "Spain",
+      "province": "Madrid",
+      "address": "Torrejón de Ardoz"
+    },
+    "courses": [
+      {
+        "tipo": "18-hole course",
+        "url": "showcourse.php?cid=1253991527929"
+      }
+    ]
+  },
+  {
+    "id": "base_naval_rota_35",
+    "name": "Base Naval Rota",
+    "location": {
+      "country": "Spain",
+      "province": "CáD",
+      "address": "Rota"
+    },
+    "courses": [
+      {
+        "tipo": "Captain Jake Dennis",
+        "url": "showcourse.php?cid=1375658246266"
+      }
+    ]
+  },
+  {
+    "id": "baviera_golf_36",
+    "name": "Baviera Golf",
+    "location": {
+      "country": "Spain",
+      "province": "Andalusia",
+      "address": "Caleta de Vélez"
+    },
+    "courses": [
+      {
+        "tipo": "Baviera",
+        "url": "showcourse.php?cid=1333364987492817"
+      }
+    ]
+  },
+  {
+    "id": "bellavista_golf_club_37",
+    "name": "Bellavista Golf Club",
+    "location": {
+      "country": "Spain",
+      "province": "Andalusia",
+      "address": "Aljaraque"
+    },
+    "courses": [
+      {
+        "tipo": "18-hole course",
+        "url": "showcourse.php?cid=1175968184303"
+      }
+    ]
+  },
+  {
+    "id": "benalmdena_golf_38",
+    "name": "Benalmádena Golf",
+    "location": {
+      "country": "Spain",
+      "province": "Andalusia",
+      "address": "Málaga"
+    },
+    "courses": [
+      {
+        "tipo": "9-hole course",
+        "url": "showcourse.php?cid=133258099160951"
+      }
+    ]
+  },
+  {
+    "id": "bilbao_golf_39",
+    "name": "Bilbao Golf",
+    "location": {
+      "country": "Spain",
+      "province": "Viz",
+      "address": "Larrabetzu"
+    },
+    "courses": [
+      {
+        "tipo": "Bilbao golf",
+        "url": "showcourse.php?cid=1387471192988674"
+      }
+    ]
+  },
+  {
+    "id": "buenavista_golf_40",
+    "name": "Buenavista Golf",
+    "location": {
+      "country": "Spain",
+      "province": "Canarias",
+      "address": "Buenavista"
+    },
+    "courses": [
+      {
+        "tipo": "18-hole course",
+        "url": "showcourse.php?cid=1141567902484"
+      }
+    ]
+  },
+  {
+    "id": "c_d_golf_sotoverde_41",
+    "name": "C. D. Golf Sotoverde",
+    "location": {
+      "country": "Spain",
+      "province": "Castilla y León",
+      "address": "Arroyo de la Encomienda"
+    },
+    "courses": [
+      {
+        "tipo": "Sotoverde",
+        "url": "showcourse.php?cid=1346596039827"
+      }
+    ]
+  },
+  {
+    "id": "cabopino_golf_marbella_42",
+    "name": "Cabopino Golf Marbella",
+    "location": {
+      "country": "Spain",
+      "province": "Andalusia",
+      "address": "Marbella"
+    },
+    "courses": [
+      {
+        "tipo": "Cabopino",
+        "url": "showcourse.php?cid=1142412915307"
+      }
+    ]
+  },
+  {
+    "id": "cala_llonga_43",
+    "name": "cala llonga",
+    "location": {
+      "country": "Spain",
+      "province": "bal",
+      "address": "ibiza"
+    },
+    "courses": [
+      {
+        "tipo": "18-hole course",
+        "url": "showcourse.php?cid=1218147093938"
+      }
+    ]
+  },
+  {
+    "id": "calanova_golf_club_44",
+    "name": "Calanova Golf Club",
+    "location": {
+      "country": "Spain",
+      "province": "Andalusia",
+      "address": "La Cala de Mijas"
+    },
+    "courses": [
+      {
+        "tipo": "18-hole course",
+        "url": "showcourse.php?cid=1252321283370"
+      }
+    ]
+  },
+  {
+    "id": "caldes_montbui_sakura_45",
+    "name": "Caldes Montbui Sakura",
+    "location": {
+      "country": "Spain",
+      "province": "Catalunya",
+      "address": "Caldes de Montbui"
+    },
+    "courses": [
+      {
+        "tipo": "9-hole course",
+        "url": "showcourse.php?cid=1120736404325"
+      }
+    ]
+  },
+  {
+    "id": "cambrils_pitch__putt_46",
+    "name": "cambrils pitch & putt",
+    "location": {
+      "country": "Spain",
+      "province": "Catalunya",
+      "address": "Cambrils"
+    },
+    "courses": [
+      {
+        "tipo": "Mas Gallau",
+        "url": "showcourse.php?cid=1555367185210343"
+      }
+    ]
+  },
+  {
+    "id": "campo_de_golf_antequera_47",
+    "name": "Campo de Golf Antequera",
+    "location": {
+      "country": "Spain",
+      "province": "Andalusia",
+      "address": "Antequera"
+    },
+    "courses": [
+      {
+        "tipo": "18-hole course",
+        "url": "showcourse.php?cid=1360710232143"
+      }
+    ]
+  },
+  {
+    "id": "campo_de_golf_base_area_48",
+    "name": "Campo de Golf Base Aérea",
+    "location": {
+      "country": "Spain",
+      "province": "Zaragoza",
+      "address": "Garrapinillos"
+    },
+    "courses": [
+      {
+        "tipo": "Base Aerea de Zaragoza",
+        "url": "showcourse.php?cid=1348351276359881"
+      }
+    ]
+  },
+  {
+    "id": "campo_de_golf_bocigas_49",
+    "name": "Campo de Golf Bocigas",
+    "location": {
+      "country": "Spain",
+      "province": "Castilla y León",
+      "address": "Bocigas"
+    },
+    "courses": [
+      {
+        "tipo": "18-hole course",
+        "url": "showcourse.php?cid=1374491085650"
+      }
+    ]
+  },
+  {
+    "id": "campo_de_golf_cartuja_50",
+    "name": "Campo de Golf Cartuja",
+    "location": {
+      "country": "Spain",
+      "province": "Andalucía",
+      "address": "Santiponce"
+    },
+    "courses": [
+      {
+        "tipo": "La cartuja",
+        "url": "showcourse.php?cid=1324917062026"
+      }
+    ]
+  },
+  {
+    "id": "campo_de_golf_las_ranillas_51",
+    "name": "Campo de Golf Las Ranillas",
+    "location": {
+      "country": "Spain",
+      "province": "Aragón",
+      "address": "Zaragoza"
+    },
+    "courses": [
+      {
+        "tipo": "Ranillas",
+        "url": "showcourse.php?cid=1231366823130"
+      }
+    ]
+  },
+  {
+    "id": "campo_de_golf_salas_de_los_infantes_52",
+    "name": "Campo de golf Salas de los Infantes",
+    "location": {
+      "country": "Spain",
+      "province": "Burgos",
+      "address": "Salas de los Infantes"
+    },
+    "courses": [
+      {
+        "tipo": "Salas de los infantes (ar)",
+        "url": "showcourse.php?cid=1395089577420260"
+      }
+    ]
+  },
+  {
+    "id": "campo_golf_el_bonillo_53",
+    "name": "Campo Golf El Bonillo",
+    "location": {
+      "country": "Spain",
+      "province": "Albacete",
+      "address": "El Bonillo"
+    },
+    "courses": [
+      {
+        "tipo": "El Bonillo",
+        "url": "showcourse.php?cid=1288570297147"
+      }
+    ]
+  },
+  {
+    "id": "campo_municipal_de_golf_supera_la_torre_54",
+    "name": "Campo Municipal de Golf Supera La Torre",
+    "location": {
+      "country": "Spain",
+      "province": "La Coruña",
+      "address": "A Coruña"
+    },
+    "courses": [
+      {
+        "tipo": "9-hole course",
+        "url": "showcourse.php?cid=1287582590656"
+      }
+    ]
+  },
+  {
+    "id": "camposol_club_de_golf_55",
+    "name": "Camposol Club de Golf",
+    "location": {
+      "country": "Spain",
+      "province": "Región de Murcia",
+      "address": "Mazarron"
+    },
+    "courses": [
+      {
+        "tipo": "Camposol club de golf",
+        "url": "showcourse.php?cid=1437738486263495"
+      }
+    ]
+  },
+  {
+    "id": "camposol_golf_56",
+    "name": "Camposol Golf",
+    "location": {
+      "country": "Spain",
+      "province": "Región de Murcia",
+      "address": "Mazarrón"
+    },
+    "courses": [
+      {
+        "tipo": "SENSOL GOLF",
+        "url": "showcourse.php?cid=1367774027469348"
+      }
+    ]
+  },
+  {
+    "id": "can_cuyas_golf_57",
+    "name": "Can Cuyas Golf",
+    "location": {
+      "country": "Spain",
+      "province": "Catalunya",
+      "address": "Sant Feliu de Llobregat (Bcn)"
+    },
+    "courses": [
+      {
+        "tipo": "18-hole course",
+        "url": "showcourse.php?cid=1247915601487"
+      }
+    ]
+  },
+  {
+    "id": "can_rafel_58",
+    "name": "Can Rafel",
+    "location": {
+      "country": "Spain",
+      "province": "Catalunya",
+      "address": "Barcelona"
+    },
+    "courses": [
+      {
+        "tipo": "9 forats amb sortides dobles",
+        "url": "showcourse.php?cid=1635788485683024"
+      }
+    ]
+  },
+  {
+    "id": "canyamel_golf__mallorca_59",
+    "name": "Canyamel Golf - Mallorca",
+    "location": {
+      "country": "Spain",
+      "province": "Illes Balears",
+      "address": "Capdepera"
+    },
+    "courses": [
+      {
+        "tipo": "18-hole course",
+        "url": "showcourse.php?cid=1133788421489"
+      }
+    ]
+  },
+  {
+    "id": "capdepera_golf_60",
+    "name": "Capdepera Golf",
+    "location": {
+      "country": "Spain",
+      "province": "Islas Baleares",
+      "address": "Artà"
+    },
+    "courses": [
+      {
+        "tipo": "18-hole course",
+        "url": "showcourse.php?cid=1143748238488"
+      }
+    ]
+  },
+  {
+    "id": "casares_costa_golf_61",
+    "name": "Casares Costa Golf",
+    "location": {
+      "country": "Spain",
+      "province": "Andalusia",
+      "address": "Casares"
+    },
+    "courses": [
+      {
+        "tipo": "9-hole course",
+        "url": "showcourse.php?cid=1275760646461"
+      }
+    ]
+  },
+  {
+    "id": "castropol_golf__hotel_casa_cachn_62",
+    "name": "Castropol Golf - Hotel Casa Cachón",
+    "location": {
+      "country": "Spain",
+      "province": "Asturias",
+      "address": "Castropol"
+    },
+    "courses": [
+      {
+        "tipo": "18-hole course",
+        "url": "showcourse.php?cid=1407313745413034"
+      }
+    ]
+  },
+  {
+    "id": "cde_torija_63",
+    "name": "CDE Torija",
+    "location": {
+      "country": "Spain",
+      "province": "Guadalajara",
+      "address": "Torija"
+    },
+    "courses": [
+      {
+        "tipo": "Torija P&P",
+        "url": "showcourse.php?cid=1431249634389"
+      }
+    ]
+  },
+  {
+    "id": "cdm_la_dehesa_64",
+    "name": "CDM La Dehesa",
+    "location": {
+      "country": "Spain",
+      "province": "Madrid",
+      "address": "Madrid"
+    },
+    "courses": [
+      {
+        "tipo": "18-hole course",
+        "url": "showcourse.php?cid=1351455305432"
+      }
+    ]
+  },
+  {
+    "id": "centro_de_tecnificacion_65",
+    "name": "Centro de tecnificacion",
+    "location": {
+      "country": "Spain",
+      "province": "Madrid",
+      "address": "Madrid"
+    },
+    "courses": [
+      {
+        "tipo": "Centro de Tecnificacion de Madrid",
+        "url": "showcourse.php?cid=1212352096368"
+      },
+      {
+        "tipo": "Ct",
+        "url": "showcourse.php?cid=1404670267439"
+      }
+    ]
+  },
+  {
+    "id": "centro_nacional_de_golf_66",
+    "name": "Centro Nacional de Golf",
+    "location": {
+      "country": "Spain",
+      "province": "Madrid",
+      "address": "Madrid"
+    },
+    "courses": [
+      {
+        "tipo": "18-hole course",
+        "url": "showcourse.php?cid=1248125289521"
+      }
+    ]
+  },
+  {
+    "id": "cerrado_del_guila_golf_and_resort_67",
+    "name": "Cerrado del Águila Golf And Resort",
+    "location": {
+      "country": "Spain",
+      "province": "Andalusia",
+      "address": "Las Lagunas de Mijas"
+    },
+    "courses": [
+      {
+        "tipo": "9-hole course",
+        "url": "showcourse.php?cid=1369295411255133"
+      }
+    ]
+  },
+  {
+    "id": "chaparral_golf_club_68",
+    "name": "Chaparral Golf Club",
+    "location": {
+      "country": "Spain",
+      "province": "Andalusia",
+      "address": "Las Lagunas de Mijas"
+    },
+    "courses": [
+      {
+        "tipo": "18-hole course",
+        "url": "showcourse.php?cid=1232641679343"
+      }
+    ]
+  },
+  {
+    "id": "club_de_campo_el_tiro_69",
+    "name": "Club de Campo El Tiro",
+    "location": {
+      "country": "Spain",
+      "province": "SEG",
+      "address": "La Granja de San Ildefonso - S"
+    },
+    "courses": [
+      {
+        "tipo": "18-hole course",
+        "url": "showcourse.php?cid=1231518898638"
+      }
+    ]
+  },
+  {
+    "id": "club_de_campo_la_galera_70",
+    "name": "Club de Campo La Galera",
+    "location": {
+      "country": "Spain",
+      "province": "Castilla y León",
+      "address": "Valladolid"
+    },
+    "courses": [
+      {
+        "tipo": "18-hole course",
+        "url": "showcourse.php?cid=1356832957610"
+      }
+    ]
+  },
+  {
+    "id": "club_de_campo_laukariz_71",
+    "name": "CLUB DE CAMPO LAUKARIZ",
+    "location": {
+      "country": "Spain",
+      "province": "Euskadi",
+      "address": "Laukariz"
+    },
+    "courses": [
+      {
+        "tipo": "A",
+        "url": "showcourse.php?cid=1336676508894302_1_1"
+      },
+      {
+        "tipo": "B",
+        "url": "showcourse.php?cid=1336676508894302_2_2"
+      },
+      {
+        "tipo": "C",
+        "url": "showcourse.php?cid=1336676508894302_3_3"
+      },
+      {
+        "tipo": "A + B",
+        "url": "showcourse.php?cid=1336676508894302_1_2"
+      },
+      {
+        "tipo": "A + C",
+        "url": "showcourse.php?cid=1336676508894302_1_3"
+      },
+      {
+        "tipo": "B + C",
+        "url": "showcourse.php?cid=1336676508894302_2_3"
+      }
+    ]
+  },
+  {
+    "id": "club_de_campo_villa_de_madrid_72",
+    "name": "Club de Campo Villa de Madrid",
+    "location": {
+      "country": "Spain",
+      "province": "Madrid",
+      "address": "Madrid"
+    },
+    "courses": [
+      {
+        "tipo": "18-hole course",
+        "url": "showcourse.php?cid=1219398272284"
+      },
+      {
+        "tipo": "Pares 3",
+        "url": "showcourse.php?cid=1467368299929860"
+      },
+      {
+        "tipo": "Recorrido Amarillo",
+        "url": "showcourse.php?cid=1503930378949856"
+      },
+      {
+        "tipo": "Recorrido Negro",
+        "url": "showcourse.php?cid=1319249893677071"
+      }
+    ]
+  },
+  {
+    "id": "club_de_campo_villa_de_madrid_golf_73",
+    "name": "Club de Campo Villa de Madrid golf",
+    "location": {
+      "country": "Spain",
+      "province": "Madrid",
+      "address": "Madrid"
+    },
+    "courses": [
+      {
+        "tipo": "Negro",
+        "url": "showcourse.php?cid=1237102318476"
+      }
+    ]
+  },
+  {
+    "id": "club_de_golf_alcanada_74",
+    "name": "Club de Golf Alcanada",
+    "location": {
+      "country": "Spain",
+      "province": "Mallorca",
+      "address": "Port d'Alcúdia"
+    },
+    "courses": [
+      {
+        "tipo": "18-hole course",
+        "url": "showcourse.php?cid=1186992610135"
+      }
+    ]
+  },
+  {
+    "id": "club_de_golf_almerimar_75",
+    "name": "Club de Golf Almerimar",
+    "location": {
+      "country": "Spain",
+      "province": "Andalusia",
+      "address": "Almerimar"
+    },
+    "courses": [
+      {
+        "tipo": "Rojo",
+        "url": "showcourse.php?cid=1627040216533846_1_1"
+      },
+      {
+        "tipo": "Azul",
+        "url": "showcourse.php?cid=1627040216533846_2_2"
+      },
+      {
+        "tipo": "Blanco",
+        "url": "showcourse.php?cid=1627040216533846_3_3"
+      },
+      {
+        "tipo": "Rojo + Azul",
+        "url": "showcourse.php?cid=1627040216533846_1_2"
+      },
+      {
+        "tipo": "Rojo + Blanco",
+        "url": "showcourse.php?cid=1627040216533846_1_3"
+      },
+      {
+        "tipo": "Azul + Blanco",
+        "url": "showcourse.php?cid=1627040216533846_2_3"
+      }
+    ]
+  },
+  {
+    "id": "club_de_golf_andratx_76",
+    "name": "Club de Golf Andratx",
+    "location": {
+      "country": "Spain",
+      "province": "Illes Balears",
+      "address": "Camp de Mar"
+    },
+    "courses": [
+      {
+        "tipo": "18-hole course",
+        "url": "showcourse.php?cid=1152176271485"
+      }
+    ]
+  },
+  {
+    "id": "club_de_golf_aranjuez_77",
+    "name": "Club de Golf Aranjuez",
+    "location": {
+      "country": "Spain",
+      "province": "Madrid",
+      "address": "Aranjuez"
+    },
+    "courses": [
+      {
+        "tipo": "Club de Golf Aranjuez",
+        "url": "showcourse.php?cid=1319837693174313"
+      }
+    ]
+  },
+  {
+    "id": "club_de_golf_arvalo_78",
+    "name": "Club de Golf Arévalo",
+    "location": {
+      "country": "Spain",
+      "province": "Ávila",
+      "address": "Arévalo"
+    },
+    "courses": [
+      {
+        "tipo": "Arévalo",
+        "url": "showcourse.php?cid=1473098585108269"
+      }
+    ]
+  },
+  {
+    "id": "club_de_golf_barcelona_79",
+    "name": "Club de Golf Barcelona",
+    "location": {
+      "country": "Spain",
+      "province": "Catalunya",
+      "address": "Sant Esteve Sesrovires"
+    },
+    "courses": [
+      {
+        "tipo": "18 forats - masia",
+        "url": "showcourse.php?cid=1301298837622"
+      },
+      {
+        "tipo": "9 forats - executive",
+        "url": "showcourse.php?cid=1310134015422"
+      }
+    ]
+  },
+  {
+    "id": "club_de_golf_bonalba_80",
+    "name": "Club De Golf Bonalba",
+    "location": {
+      "country": "Spain",
+      "province": "Comunidad Valenciana",
+      "address": "Mutxamel"
+    },
+    "courses": [
+      {
+        "tipo": "18-hole course",
+        "url": "showcourse.php?cid=134330613428390"
+      }
+    ]
+  },
+  {
+    "id": "club_de_golf_campomar_81",
+    "name": "Club de golf Campomar",
+    "location": {
+      "country": "Spain",
+      "province": "A Coruña",
+      "address": "Narón"
+    },
+    "courses": [
+      {
+        "tipo": "Campomar 18 Hoyos",
+        "url": "showcourse.php?cid=1290589186317"
+      }
+    ]
+  },
+  {
+    "id": "club_de_golf_camprodon_82",
+    "name": "Club de golf Camprodon",
+    "location": {
+      "country": "Spain",
+      "province": "Catalunya",
+      "address": "Camprodon"
+    },
+    "courses": [
+      {
+        "tipo": "18-hole course",
+        "url": "showcourse.php?cid=1684830073347465"
+      }
+    ]
+  },
+  {
+    "id": "club_de_golf_can_bosch_sant_feliu_83",
+    "name": "Club de Golf Can Bosch Sant Feliu",
+    "location": {
+      "country": "Spain",
+      "province": "Barcelona",
+      "address": "Sant Feliu de Codines"
+    },
+    "courses": [
+      {
+        "tipo": "18-hole course",
+        "url": "showcourse.php?cid=1213532208280"
+      }
+    ]
+  },
+  {
+    "id": "club_de_golf_castellterol_84",
+    "name": "Club de Golf Castellterçol",
+    "location": {
+      "country": "Spain",
+      "province": "Barcelona",
+      "address": "Castellterçol"
+    },
+    "courses": [
+      {
+        "tipo": "18-hole course",
+        "url": "showcourse.php?cid=1679399611119278"
+      }
+    ]
+  },
+  {
+    "id": "club_de_golf_castillo_de_gorraiz_85",
+    "name": "Club de Golf Castillo de Gorraiz",
+    "location": {
+      "country": "Spain",
+      "province": "Navarra",
+      "address": "Gorráiz"
+    },
+    "courses": [
+      {
+        "tipo": "Gorraiz",
+        "url": "showcourse.php?cid=1322577350500"
+      }
+    ]
+  },
+  {
+    "id": "club_de_golf_corta_atalaya_86",
+    "name": "Club de Golf Corta Atalaya",
+    "location": {
+      "country": "Spain",
+      "province": "Huelva",
+      "address": "Minas de Riotinto"
+    },
+    "courses": [
+      {
+        "tipo": "9-hole course",
+        "url": "showcourse.php?cid=1470846412504117"
+      }
+    ]
+  },
+  {
+    "id": "club_de_golf_costa_brava_87",
+    "name": "Club de Golf Costa Brava",
+    "location": {
+      "country": "Spain",
+      "province": "Catalunya",
+      "address": "Santa Maria de Solius"
+    },
+    "courses": [
+      {
+        "tipo": "Recorregut Vermell",
+        "url": "showcourse.php?cid=1348772679640008"
+      },
+      {
+        "tipo": "Rojo",
+        "url": "showcourse.php?cid=155385762024847"
+      },
+      {
+        "tipo": "Verde",
+        "url": "showcourse.php?cid=1128609400009"
+      }
+    ]
+  },
+  {
+    "id": "club_de_golf_costa_daurada_88",
+    "name": "Club de Golf Costa Daurada",
+    "location": {
+      "country": "Spain",
+      "province": "Catalunya",
+      "address": "El Catllar (Tarragona)"
+    },
+    "courses": [
+      {
+        "tipo": "Main course",
+        "url": "showcourse.php?cid=1514119709196891"
+      },
+      {
+        "tipo": "Pitch and Putt",
+        "url": "showcourse.php?cid=1577392288701791"
+      }
+    ]
+  },
+  {
+    "id": "club_de_golf_costa_de_azahar_89",
+    "name": "Club de Golf Costa de Azahar",
+    "location": {
+      "country": "Spain",
+      "province": "Comunidad Valenciana",
+      "address": "Grao de Castellón"
+    },
+    "courses": [
+      {
+        "tipo": "Costa Azahar Recorrido Azul",
+        "url": "showcourse.php?cid=1669508652952336"
+      },
+      {
+        "tipo": "Costa Azahar Recorrido Rosa",
+        "url": "showcourse.php?cid=1669508974669878"
+      },
+      {
+        "tipo": "Costa Azahar Recorrido Verde",
+        "url": "showcourse.php?cid=1669507528471938"
+      },
+      {
+        "tipo": "costa de azahar",
+        "url": "showcourse.php?cid=1397341057162099"
+      }
+    ]
+  },
+  {
+    "id": "club_de_golf_de_jaca_90",
+    "name": "Club de Golf de Jaca",
+    "location": {
+      "country": "Spain",
+      "province": "Hue",
+      "address": "Jaca"
+    },
+    "courses": [
+      {
+        "tipo": "18-hole course",
+        "url": "showcourse.php?cid=1408127129242630"
+      }
+    ]
+  },
+  {
+    "id": "club_de_golf_de_la_cerdanya_91",
+    "name": "Club de Golf de La Cerdanya",
+    "location": {
+      "country": "Spain",
+      "province": "Girona",
+      "address": "Puigcerdà"
+    },
+    "courses": [
+      {
+        "tipo": "Recorrido verde",
+        "url": "showcourse.php?cid=1559804015197418"
+      }
+    ]
+  },
+  {
+    "id": "club_de_golf_de_son_servera_92",
+    "name": "Club de Golf de Son Servera",
+    "location": {
+      "country": "Spain",
+      "province": "Illes Balears",
+      "address": "Costa dels Pins"
+    },
+    "courses": [
+      {
+        "tipo": "18-hole course",
+        "url": "showcourse.php?cid=1202729545660"
+      },
+      {
+        "tipo": "18-hole course",
+        "url": "showcourse.php?cid=1251017360075"
+      }
+    ]
+  },
+  {
+    "id": "club_de_golf_el_espinar_93",
+    "name": "Club de Golf El Espinar",
+    "location": {
+      "country": "Spain",
+      "province": "Castilla y León",
+      "address": "El Espinar"
+    },
+    "courses": [
+      {
+        "tipo": "18-hole course",
+        "url": "showcourse.php?cid=1725908549321737"
+      }
+    ]
+  },
+  {
+    "id": "club_de_golf_escorpin_94",
+    "name": "Club de Golf Escorpión",
+    "location": {
+      "country": "Spain",
+      "province": "Comunidad Valenciana",
+      "address": "Bétera"
+    },
+    "courses": [
+      {
+        "tipo": "Masia",
+        "url": "showcourse.php?cid=1227522189124_1_1"
+      },
+      {
+        "tipo": "Lagos",
+        "url": "showcourse.php?cid=1227522189124_2_2"
+      },
+      {
+        "tipo": "Nuevos",
+        "url": "showcourse.php?cid=1227522189124_3_3"
+      },
+      {
+        "tipo": "Masia + Lagos",
+        "url": "showcourse.php?cid=1227522189124_1_2"
+      },
+      {
+        "tipo": "Masia + Nuevos",
+        "url": "showcourse.php?cid=1227522189124_1_3"
+      },
+      {
+        "tipo": "Lagos + Nuevos",
+        "url": "showcourse.php?cid=1227522189124_2_3"
+      }
+    ]
+  },
+  {
+    "id": "club_de_golf_hato_verde_95",
+    "name": "Club de Golf Hato Verde",
+    "location": {
+      "country": "Spain",
+      "province": "Andalucía",
+      "address": "Guillena"
+    },
+    "courses": [
+      {
+        "tipo": "HATO VERDE",
+        "url": "showcourse.php?cid=1321708845372"
+      }
+    ]
+  },
+  {
+    "id": "club_de_golf_ifach_96",
+    "name": "Club de Golf Ifach",
+    "location": {
+      "country": "Spain",
+      "province": "Comunidad Valenciana",
+      "address": "Benissa"
+    },
+    "courses": [
+      {
+        "tipo": "9-hole course",
+        "url": "showcourse.php?cid=1187512647895"
+      }
+    ]
+  },
+  {
+    "id": "club_de_golf_la_caada_97",
+    "name": "Club de Golf La Cañada",
+    "location": {
+      "country": "Spain",
+      "province": "Andalusia",
+      "address": "San Roque"
+    },
+    "courses": [
+      {
+        "tipo": "18-hole course",
+        "url": "showcourse.php?cid=1357308329995"
+      }
+    ]
+  },
+  {
+    "id": "club_de_golf_la_dehesa_98",
+    "name": "Club de Golf la Dehesa",
+    "location": {
+      "country": "Spain",
+      "province": "Madrid",
+      "address": "Villanueva de la Cañada"
+    },
+    "courses": [
+      {
+        "tipo": "18-hole course",
+        "url": "showcourse.php?cid=1203762699616"
+      }
+    ]
+  },
+  {
+    "id": "club_de_golf_la_garza_99",
+    "name": "Club de Golf La Garza",
+    "location": {
+      "country": "Spain",
+      "province": "Andalusia",
+      "address": "Linares - Jaén"
+    },
+    "courses": [
+      {
+        "tipo": "La Garza",
+        "url": "showcourse.php?cid=1314268576426"
+      }
+    ]
+  },
+  {
+    "id": "club_de_golf_la_mola_100",
+    "name": "Club de Golf La Mola",
+    "location": {
+      "country": "Spain",
+      "province": "Catalonia",
+      "address": "Matadepera"
+    },
+    "courses": [
+      {
+        "tipo": "9-hole course",
+        "url": "showcourse.php?cid=1229092585907"
+      }
+    ]
+  },
+  {
+    "id": "club_de_golf_la_rasa_de_berbes_101",
+    "name": "Club de Golf La Rasa de Berbes",
+    "location": {
+      "country": "Spain",
+      "province": "Asturias",
+      "address": "Ribadesella"
+    },
+    "courses": [
+      {
+        "tipo": "La Rasa de Berbes",
+        "url": "showcourse.php?cid=1175785118092"
+      }
+    ]
+  },
+  {
+    "id": "club_de_golf_la_zagaleta_102",
+    "name": "Club De Golf La Zagaleta",
+    "location": {
+      "country": "Spain",
+      "province": "Andalusia",
+      "address": "Benahavís"
+    },
+    "courses": [
+      {
+        "tipo": "New",
+        "url": "showcourse.php?cid=1311788211881"
+      },
+      {
+        "tipo": "Old",
+        "url": "showcourse.php?cid=1312751654393"
+      }
+    ]
+  },
+  {
+    "id": "club_de_golf_las_llanas_103",
+    "name": "Club de Golf Las Llanas",
+    "location": {
+      "country": "Spain",
+      "province": "Castilla y León",
+      "address": "Grajera"
+    },
+    "courses": [
+      {
+        "tipo": "9 Hoyos",
+        "url": "showcourse.php?cid=1341686116804943"
+      }
+    ]
+  },
+  {
+    "id": "club_de_golf_las_rejas_104",
+    "name": "Club de Golf Las Rejas",
+    "location": {
+      "country": "Spain",
+      "province": "Madrid",
+      "address": "Majadahonda"
+    },
+    "courses": [
+      {
+        "tipo": "9 largos",
+        "url": "showcourse.php?cid=1184152467952"
+      },
+      {
+        "tipo": "Club de Golf las Rejas",
+        "url": "showcourse.php?cid=1350903895109425"
+      },
+      {
+        "tipo": "par 3",
+        "url": "showcourse.php?cid=1205658268299"
+      }
+    ]
+  },
+  {
+    "id": "club_de_golf_llavaneras_105",
+    "name": "Club de Golf Llavaneras",
+    "location": {
+      "country": "Spain",
+      "province": "Catalunya",
+      "address": "Sant Andreu de Llavaneres"
+    },
+    "courses": [
+      {
+        "tipo": "18-hole course",
+        "url": "showcourse.php?cid=1363179187819"
+      }
+    ]
+  },
+  {
+    "id": "club_de_golf_lugo_106",
+    "name": "Club de Golf Lugo",
+    "location": {
+      "country": "Spain",
+      "province": "Lugo",
+      "address": "Lugo"
+    },
+    "courses": [
+      {
+        "tipo": "9 Hoyos",
+        "url": "showcourse.php?cid=1341669251373479"
+      }
+    ]
+  },
+  {
+    "id": "club_de_golf_montany_107",
+    "name": "Club de Golf Montanyà",
+    "location": {
+      "country": "Spain",
+      "province": "Catalunya",
+      "address": "bcn"
+    },
+    "courses": [
+      {
+        "tipo": "18-hole course",
+        "url": "showcourse.php?cid=1188074744847"
+      }
+    ]
+  },
+  {
+    "id": "club_de_golf_montbr_moi_108",
+    "name": "Club de Golf Montbrú Moià",
+    "location": {
+      "country": "Spain",
+      "province": "Barcelona",
+      "address": "Moià"
+    },
+    "courses": [
+      {
+        "tipo": "18-hole course",
+        "url": "showcourse.php?cid=1679488393525365"
+      },
+      {
+        "tipo": "9-hole course",
+        "url": "showcourse.php?cid=1595752859504051"
+      }
+    ]
+  },
+  {
+    "id": "club_de_golf_nestares_109",
+    "name": "Club de Golf Nestares",
+    "location": {
+      "country": "Spain",
+      "province": "Cantabria",
+      "address": "Nestares"
+    },
+    "courses": [
+      {
+        "tipo": "18-hole course",
+        "url": "showcourse.php?cid=1336027406202734"
+      }
+    ]
+  },
+  {
+    "id": "club_de_golf_oliva_nova_110",
+    "name": "Club de Golf Oliva Nova",
+    "location": {
+      "country": "Spain",
+      "province": "Comunidad Valenciana",
+      "address": "Oliva"
+    },
+    "courses": [
+      {
+        "tipo": "18-hole course",
+        "url": "showcourse.php?cid=1206029235544"
+      }
+    ]
+  },
+  {
+    "id": "club_de_golf_paderne_pitch__putt_111",
+    "name": "Club de Golf Paderne Pitch & Putt",
+    "location": {
+      "country": "Spain",
+      "province": "La Coruña",
+      "address": "Paderne"
+    },
+    "courses": [
+      {
+        "tipo": "Paderne P&P",
+        "url": "showcourse.php?cid=1485423060301231"
+      }
+    ]
+  },
+  {
+    "id": "club_de_golf_playa_serena_112",
+    "name": "Club De Golf Playa Serena",
+    "location": {
+      "country": "Spain",
+      "province": "Andalusia",
+      "address": "Roquetas de Mar"
+    },
+    "courses": [
+      {
+        "tipo": "18-hole course",
+        "url": "showcourse.php?cid=1212662268964"
+      }
+    ]
+  },
+  {
+    "id": "club_de_golf_pozoblanco_113",
+    "name": "Club de Golf Pozoblanco",
+    "location": {
+      "country": "Spain",
+      "province": "COR",
+      "address": "Pozoblanco"
+    },
+    "courses": [
+      {
+        "tipo": "Club de Golf Pozoblanco",
+        "url": "showcourse.php?cid=1386797455624706"
+      }
+    ]
+  },
+  {
+    "id": "club_de_golf_retamares_114",
+    "name": "Club de Golf Retamares",
+    "location": {
+      "country": "Spain",
+      "province": "Madrid",
+      "address": "Alalpardo"
+    },
+    "courses": [
+      {
+        "tipo": "18-hole course",
+        "url": "showcourse.php?cid=1185436609473"
+      }
+    ]
+  },
+  {
+    "id": "club_de_golf_sant_cugat_115",
+    "name": "Club de Golf Sant Cugat",
+    "location": {
+      "country": "Spain",
+      "province": "Catalunya",
+      "address": "SANT CUGAT DEL VALLES (BCN)"
+    },
+    "courses": [
+      {
+        "tipo": "Naranja",
+        "url": "showcourse.php?cid=1595187975859588"
+      },
+      {
+        "tipo": "P&P",
+        "url": "showcourse.php?cid=1371119857770816"
+      },
+      {
+        "tipo": "Rojo",
+        "url": "showcourse.php?cid=1316630592124"
+      }
+    ]
+  },
+  {
+    "id": "club_de_golf_terramar_116",
+    "name": "Club de Golf Terramar",
+    "location": {
+      "country": "Spain",
+      "province": "Catalunya",
+      "address": "Sitges"
+    },
+    "courses": [
+      {
+        "tipo": "18-hole course",
+        "url": "showcourse.php?cid=1157101623377"
+      }
+    ]
+  },
+  {
+    "id": "club_de_golf_torrepacheco_117",
+    "name": "Club de Golf Torre-Pacheco",
+    "location": {
+      "country": "Spain",
+      "province": "Región de Murcia",
+      "address": "Torre-Pacheco"
+    },
+    "courses": [
+      {
+        "tipo": "Combinado",
+        "url": "showcourse.php?cid=1745438171948931"
+      },
+      {
+        "tipo": "Pitch & Putt",
+        "url": "showcourse.php?cid=1478029624858012"
+      }
+    ]
+  },
+  {
+    "id": "club_de_golf_ulzama_118",
+    "name": "Club de Golf Ulzama",
+    "location": {
+      "country": "Spain",
+      "province": "Navarra",
+      "address": "Lizaso"
+    },
+    "courses": [
+      {
+        "tipo": "18-hole course",
+        "url": "showcourse.php?cid=1306258797679"
+      }
+    ]
+  },
+  {
+    "id": "club_de_golf_val_de_rois_119",
+    "name": "Club de Golf Val de Rois",
+    "location": {
+      "country": "Spain",
+      "province": "La Coruña",
+      "address": "Seira"
+    },
+    "courses": [
+      {
+        "tipo": "Rois 18 Hoyos",
+        "url": "showcourse.php?cid=1537280912314097"
+      }
+    ]
+  },
+  {
+    "id": "club_de_golf_vallromanes_120",
+    "name": "Club de Golf Vallromanes",
+    "location": {
+      "country": "Spain",
+      "province": "Catalunya",
+      "address": "Vallromanes"
+    },
+    "courses": [
+      {
+        "tipo": "18-hole course",
+        "url": "showcourse.php?cid=1266485514056"
+      }
+    ]
+  },
+  {
+    "id": "club_de_golf_villa_de_cuellar_s_l_121",
+    "name": "Club De Golf Villa De Cuellar S L",
+    "location": {
+      "country": "Spain",
+      "province": "Castilla y León",
+      "address": "Cuéllar"
+    },
+    "courses": [
+      {
+        "tipo": "18-hole course",
+        "url": "showcourse.php?cid=1376829591357056"
+      }
+    ]
+  },
+  {
+    "id": "club_de_golf_villarrin_122",
+    "name": "club de golf Villarrin",
+    "location": {
+      "country": "Spain",
+      "province": "",
+      "address": "Zam"
+    },
+    "courses": [
+      {
+        "tipo": "18-hole course",
+        "url": "showcourse.php?cid=1154271322677"
+      }
+    ]
+  },
+  {
+    "id": "club_de_golf_xbia_123",
+    "name": "Club de Golf Xàbia",
+    "location": {
+      "country": "Spain",
+      "province": "Comunidad Valenciana",
+      "address": "Jávea"
+    },
+    "courses": [
+      {
+        "tipo": "18-hole course",
+        "url": "showcourse.php?cid=1367427886521"
+      }
+    ]
+  },
+  {
+    "id": "club_de_golf_zuia_124",
+    "name": "Club de Golf Zuia",
+    "location": {
+      "country": "Spain",
+      "province": "Ala",
+      "address": "Altube"
+    },
+    "courses": [
+      {
+        "tipo": "Zuia",
+        "url": "showcourse.php?cid=1343945017825532"
+      }
+    ]
+  },
+  {
+    "id": "club_golf_daro__mas_nou_126",
+    "name": "Club Golf d'Aro - Mas Nou",
+    "location": {
+      "country": "Spain",
+      "province": "Catalunya",
+      "address": "Platja d'Aro"
+    },
+    "courses": [
+      {
+        "tipo": "18-hole course",
+        "url": "showcourse.php?cid=1578302524959721"
+      },
+      {
+        "tipo": "18-hole course",
+        "url": "showcourse.php?cid=1578266458759145"
+      }
+    ]
+  },
+  {
+    "id": "club_golf_daro_125",
+    "name": "Club Golf D`Aro",
+    "location": {
+      "country": "Spain",
+      "province": "Catalonia",
+      "address": "Platja de Aro"
+    },
+    "courses": [
+      {
+        "tipo": "Course 1",
+        "url": "showcourse.php?cid=1112601623177"
+      }
+    ]
+  },
+  {
+    "id": "club_golf_villaras_127",
+    "name": "Club Golf Villarías",
+    "location": {
+      "country": "Spain",
+      "province": "Bur",
+      "address": "Villarías"
+    },
+    "courses": [
+      {
+        "tipo": "18-hole course",
+        "url": "showcourse.php?cid=1155151811328"
+      }
+    ]
+  },
+  {
+    "id": "club_las_encinas_de_boadilla_128",
+    "name": "Club las Encinas de Boadilla",
+    "location": {
+      "country": "Spain",
+      "province": "Madrid",
+      "address": "Boadilla del Monte"
+    },
+    "courses": [
+      {
+        "tipo": "18-hole course",
+        "url": "showcourse.php?cid=1253556255592"
+      }
+    ]
+  },
+  {
+    "id": "club_las_minas_golf_129",
+    "name": "Club Las Minas Golf",
+    "location": {
+      "country": "Spain",
+      "province": "Andalucía",
+      "address": "Aznalcázar"
+    },
+    "courses": [
+      {
+        "tipo": "9-hole course",
+        "url": "showcourse.php?cid=1267443754350"
+      }
+    ]
+  },
+  {
+    "id": "club_zamora_valderey_130",
+    "name": "Club Zamora Valderey",
+    "location": {
+      "country": "Spain",
+      "province": "Castilla León",
+      "address": "Zamora"
+    },
+    "courses": [
+      {
+        "tipo": "Valderey Zamora",
+        "url": "showcourse.php?cid=1721521054396220"
+      }
+    ]
+  },
+  {
+    "id": "club_zaudin_golf_131",
+    "name": "Club Zaudin Golf",
+    "location": {
+      "country": "Spain",
+      "province": "Andalucía",
+      "address": "Tomares"
+    },
+    "courses": [
+      {
+        "tipo": "18-hole course",
+        "url": "showcourse.php?cid=1203602774390"
+      }
+    ]
+  },
+  {
+    "id": "cortijo_grande_golf_resort_132",
+    "name": "Cortijo Grande Golf Resort",
+    "location": {
+      "country": "Spain",
+      "province": "Andalucía",
+      "address": "Cortijo Grande ( El )"
+    },
+    "courses": [
+      {
+        "tipo": "2x9 hole-2013",
+        "url": "showcourse.php?cid=1372318221255248"
+      }
+    ]
+  },
+  {
+    "id": "corvera_golf_and_country_club_133",
+    "name": "Corvera Golf and country club",
+    "location": {
+      "country": "Spain",
+      "province": "Región de Murcia",
+      "address": "Corvera"
+    },
+    "courses": [
+      {
+        "tipo": "18-hole course",
+        "url": "showcourse.php?cid=1388131523747468"
+      }
+    ]
+  },
+  {
+    "id": "costa_ballena_ocean_golf_club_134",
+    "name": "Costa Ballena Ocean Golf Club",
+    "location": {
+      "country": "Spain",
+      "province": "Cádiz",
+      "address": "Rota"
+    },
+    "courses": [
+      {
+        "tipo": "Olivos",
+        "url": "showcourse.php?cid=1259690115955_1_1"
+      },
+      {
+        "tipo": "Palmeras",
+        "url": "showcourse.php?cid=1259690115955_2_2"
+      },
+      {
+        "tipo": "Ficus",
+        "url": "showcourse.php?cid=1259690115955_3_3"
+      },
+      {
+        "tipo": "Olivos + Palmeras",
+        "url": "showcourse.php?cid=1259690115955_1_2"
+      },
+      {
+        "tipo": "Olivos + Ficus",
+        "url": "showcourse.php?cid=1259690115955_1_3"
+      },
+      {
+        "tipo": "Palmeras + Ficus",
+        "url": "showcourse.php?cid=1259690115955_2_3"
+      },
+      {
+        "tipo": "Par 3",
+        "url": "showcourse.php?cid=153996288277349"
+      }
+    ]
+  },
+  {
+    "id": "costa_teguise_135",
+    "name": "Costa Teguise",
+    "location": {
+      "country": "Spain",
+      "province": "Lanzarote - Canary Isles ??",
+      "address": "Costa Teguise"
+    },
+    "courses": [
+      {
+        "tipo": "18-hole course",
+        "url": "showcourse.php?cid=1230312843481"
+      }
+    ]
+  },
+  {
+    "id": "cuenca_golf_club_136",
+    "name": "CUENCA GOLF CLUB",
+    "location": {
+      "country": "Spain",
+      "province": "Cuenca",
+      "address": "Villar de Olalla"
+    },
+    "courses": [
+      {
+        "tipo": "9-hole course",
+        "url": "showcourse.php?cid=1724428101975484"
+      },
+      {
+        "tipo": "Villar de Olalla Cuenca",
+        "url": "showcourse.php?cid=1362952576493"
+      }
+    ]
+  },
+  {
+    "id": "dehesa_montenmedio_137",
+    "name": "Dehesa Montenmedio",
+    "location": {
+      "country": "Spain",
+      "province": "Andalusia",
+      "address": "Vejer de la Frontera"
+    },
+    "courses": [
+      {
+        "tipo": "18-hole course",
+        "url": "showcourse.php?cid=1341489159689"
+      }
+    ]
+  },
+  {
+    "id": "desert_springs_golf_club_138",
+    "name": "Desert Springs Golf Club",
+    "location": {
+      "country": "Spain",
+      "province": "Andalusia",
+      "address": "Cuevas del Almanzora"
+    },
+    "courses": [
+      {
+        "tipo": "Indiana",
+        "url": "showcourse.php?cid=151329517631501"
+      }
+    ]
+  },
+  {
+    "id": "deva_golf_139",
+    "name": "Deva Golf",
+    "location": {
+      "country": "Spain",
+      "province": "Ast",
+      "address": "Gijón"
+    },
+    "courses": [
+      {
+        "tipo": "Deva Golf",
+        "url": "showcourse.php?cid=1451680373382468"
+      }
+    ]
+  },
+  {
+    "id": "don_tello_golf_140",
+    "name": "Don Tello Golf",
+    "location": {
+      "country": "Spain",
+      "province": "Ext",
+      "address": "Mérida"
+    },
+    "courses": [
+      {
+        "tipo": "Don Tello-AMS",
+        "url": "showcourse.php?cid=1361434554498"
+      }
+    ]
+  },
+  {
+    "id": "dona_julia_golf_club_141",
+    "name": "Dona Julia Golf Club",
+    "location": {
+      "country": "Spain",
+      "province": "Andalusia",
+      "address": "Casares"
+    },
+    "courses": [
+      {
+        "tipo": "18-hole course",
+        "url": "showcourse.php?cid=1237242164620"
+      }
+    ]
+  },
+  {
+    "id": "el_bosque_golf_club_142",
+    "name": "El Bosque Golf Club",
+    "location": {
+      "country": "Spain",
+      "province": "Comunidad Valenciana",
+      "address": "Chiva"
+    },
+    "courses": [
+      {
+        "tipo": "18-hole course",
+        "url": "showcourse.php?cid=1118834650281"
+      }
+    ]
+  },
+  {
+    "id": "el_campanario_143",
+    "name": "El Campanario",
+    "location": {
+      "country": "Spain",
+      "province": "MAL",
+      "address": "Estepona"
+    },
+    "courses": [
+      {
+        "tipo": "9-hole course",
+        "url": "showcourse.php?cid=1519387177417302"
+      }
+    ]
+  },
+  {
+    "id": "el_cortijo_club_de_campo_golf_144",
+    "name": "El Cortijo Club De Campo Golf",
+    "location": {
+      "country": "Spain",
+      "province": "Canarias",
+      "address": "Telde"
+    },
+    "courses": [
+      {
+        "tipo": "cortijo",
+        "url": "showcourse.php?cid=1325151293445574"
+      },
+      {
+        "tipo": "El cortijo",
+        "url": "showcourse.php?cid=1324839055156"
+      }
+    ]
+  },
+  {
+    "id": "el_encin_golf_145",
+    "name": "El Encin Golf",
+    "location": {
+      "country": "Spain",
+      "province": "Madrid",
+      "address": "Alcalá de Henares"
+    },
+    "courses": [
+      {
+        "tipo": "18-hole course",
+        "url": "showcourse.php?cid=1306957420649"
+      },
+      {
+        "tipo": "9 Hoyos cortos",
+        "url": "showcourse.php?cid=1572858339744174"
+      }
+    ]
+  },
+  {
+    "id": "el_hidalgo_club_de_golf_146",
+    "name": "El Hidalgo Club de Golf",
+    "location": {
+      "country": "Spain",
+      "province": "CLM",
+      "address": "ALCAZAR DE SAN JUAN"
+    },
+    "courses": [
+      {
+        "tipo": "Abedul Golf Pitch & Putt",
+        "url": "showcourse.php?cid=1380112808674235"
+      }
+    ]
+  },
+  {
+    "id": "el_higueral_golf_147",
+    "name": "El Higueral Golf",
+    "location": {
+      "country": "Spain",
+      "province": "Andalusia",
+      "address": "Benahavís"
+    },
+    "courses": [
+      {
+        "tipo": "9-holes",
+        "url": "showcourse.php?cid=1372106467344981"
+      }
+    ]
+  },
+  {
+    "id": "el_paraso_golf_148",
+    "name": "El Paraíso Golf",
+    "location": {
+      "country": "Spain",
+      "province": "Andalusia",
+      "address": "Estepona"
+    },
+    "courses": [
+      {
+        "tipo": "18-hole course",
+        "url": "showcourse.php?cid=1175355690068"
+      }
+    ]
+  },
+  {
+    "id": "el_pilar__sarria_149",
+    "name": "El Pilar - Sarria",
+    "location": {
+      "country": "Spain",
+      "province": "",
+      "address": "Sarria"
+    },
+    "courses": [
+      {
+        "tipo": "no courses added",
+        "url": "newcourseform.php?clid=1637126275382754"
+      }
+    ]
+  },
+  {
+    "id": "el_planto_golf_resort_150",
+    "name": "El Plantío Golf Resort",
+    "location": {
+      "country": "Spain",
+      "province": "Comunidad Valenciana",
+      "address": "Alacant"
+    },
+    "courses": [
+      {
+        "tipo": "18-hole course",
+        "url": "showcourse.php?cid=1128780081426"
+      },
+      {
+        "tipo": "El Plantio 9 holes",
+        "url": "showcourse.php?cid=1287744836775"
+      }
+    ]
+  },
+  {
+    "id": "el_robledal_golf_151",
+    "name": "El Robledal Golf",
+    "location": {
+      "country": "Spain",
+      "province": "Comunidad de Madrid",
+      "address": "Villalbilla"
+    },
+    "courses": [
+      {
+        "tipo": "18 Hoyos",
+        "url": "showcourse.php?cid=1223309480324"
+      }
+    ]
+  },
+  {
+    "id": "el_valle_golf_152",
+    "name": "El Valle Golf",
+    "location": {
+      "country": "Spain",
+      "province": "Región de Murcia",
+      "address": "Baños y Mendigos"
+    },
+    "courses": [
+      {
+        "tipo": "18-hole course",
+        "url": "showcourse.php?cid=1347217346324682"
+      }
+    ]
+  },
+  {
+    "id": "el_valls_golf_153",
+    "name": "El Vallès Golf",
+    "location": {
+      "country": "Spain",
+      "province": "Barcelona",
+      "address": "Terrassa"
+    },
+    "courses": [
+      {
+        "tipo": "Pitch & Putt",
+        "url": "showcourse.php?cid=1543651577295112"
+      }
+    ]
+  },
+  {
+    "id": "empord_golf_154",
+    "name": "Empordà Golf",
+    "location": {
+      "country": "Spain",
+      "province": "Catalunya",
+      "address": "Gualta"
+    },
+    "courses": [
+      {
+        "tipo": "Forest",
+        "url": "showcourse.php?cid=1145385230390"
+      },
+      {
+        "tipo": "Links",
+        "url": "showcourse.php?cid=1205009311600"
+      }
+    ]
+  },
+  {
+    "id": "equelite_club_de_golf_155",
+    "name": "Equelite Club de Golf",
+    "location": {
+      "country": "Spain",
+      "province": "Alicante",
+      "address": "Villena"
+    },
+    "courses": [
+      {
+        "tipo": "EqueliteGolfVillena",
+        "url": "showcourse.php?cid=136976375629596"
+      }
+    ]
+  },
+  {
+    "id": "escola_de_golf_hcp1_156",
+    "name": "Escola De Golf Hcp1",
+    "location": {
+      "country": "Spain",
+      "province": "Barcelona",
+      "address": "Sant Vicenç de Montalt"
+    },
+    "courses": [
+      {
+        "tipo": "Hcp1",
+        "url": "showcourse.php?cid=1390552828941112"
+      }
+    ]
+  },
+  {
+    "id": "escuela_de_golf_castilla_y_leon_157",
+    "name": "Escuela de golf castilla y leon",
+    "location": {
+      "country": "Spain",
+      "province": "Valladolid",
+      "address": "Valladolid"
+    },
+    "courses": [
+      {
+        "tipo": "18-hole course",
+        "url": "showcourse.php?cid=1675448302792233"
+      },
+      {
+        "tipo": "18-hole course",
+        "url": "showcourse.php?cid=1675236348746330"
+      },
+      {
+        "tipo": "Renedo",
+        "url": "showcourse.php?cid=1384114275184327"
+      }
+    ]
+  },
+  {
+    "id": "escuela_de_golf_elche_158",
+    "name": "Escuela de Golf Elche",
+    "location": {
+      "country": "Spain",
+      "province": "Alicante",
+      "address": "Elx"
+    },
+    "courses": [
+      {
+        "tipo": "El Misteri",
+        "url": "showcourse.php?cid=1733856075679595"
+      },
+      {
+        "tipo": "El Palmeral",
+        "url": "showcourse.php?cid=1761691131344764"
+      }
+    ]
+  },
+  {
+    "id": "estepona_golf_159",
+    "name": "Estepona Golf",
+    "location": {
+      "country": "Spain",
+      "province": "Andalusia",
+      "address": "Estepona"
+    },
+    "courses": [
+      {
+        "tipo": "18-hole course",
+        "url": "showcourse.php?cid=1111482919623"
+      }
+    ]
+  },
+  {
+    "id": "fairplay_golf__spa_resort_160",
+    "name": "Fairplay Golf & Spa Resort",
+    "location": {
+      "country": "Spain",
+      "province": "Andalusia",
+      "address": "Benalup-Casas Viejas"
+    },
+    "courses": [
+      {
+        "tipo": "18-hole course",
+        "url": "showcourse.php?cid=1241778629042"
+      }
+    ]
+  },
+  {
+    "id": "family_golf_park_161",
+    "name": "Family Golf Park",
+    "location": {
+      "country": "Spain",
+      "province": "Cádiz",
+      "address": "Chiclana de la Frontera"
+    },
+    "courses": [
+      {
+        "tipo": "Chiclana Family Golf Park",
+        "url": "showcourse.php?cid=144519897463622"
+      }
+    ]
+  },
+  {
+    "id": "finca_cortesin_162",
+    "name": "Finca Cortesin",
+    "location": {
+      "country": "Spain",
+      "province": "Mál",
+      "address": "Casares"
+    },
+    "courses": [
+      {
+        "tipo": "18-hole course",
+        "url": "showcourse.php?cid=1341488999580"
+      }
+    ]
+  },
+  {
+    "id": "font_del_llop_golf_resort_163",
+    "name": "Font del Llop Golf Resort",
+    "location": {
+      "country": "Spain",
+      "province": "Comunidad Valenciana",
+      "address": "Monforte del Cid"
+    },
+    "courses": [
+      {
+        "tipo": "18-hole course",
+        "url": "showcourse.php?cid=1473961464314044"
+      }
+    ]
+  },
+  {
+    "id": "fontanals_golf_164",
+    "name": "Fontanals Golf",
+    "location": {
+      "country": "Spain",
+      "province": "Catalunya",
+      "address": "Fontanals"
+    },
+    "courses": [
+      {
+        "tipo": "18-hole course",
+        "url": "showcourse.php?cid=1346063288615"
+      }
+    ]
+  },
+  {
+    "id": "foressos_club_de_golf_165",
+    "name": "Foressos Club de Golf",
+    "location": {
+      "country": "Spain",
+      "province": "Comunidad Valenciana",
+      "address": "Picassent"
+    },
+    "courses": [
+      {
+        "tipo": "18-hole course",
+        "url": "showcourse.php?cid=1207047424472"
+      }
+    ]
+  },
+  {
+    "id": "fuerteventura_golf_club_166",
+    "name": "Fuerteventura Golf Club",
+    "location": {
+      "country": "Spain",
+      "province": "Canarias",
+      "address": "Antigua"
+    },
+    "courses": [
+      {
+        "tipo": "18-hole course",
+        "url": "showcourse.php?cid=1293739514388"
+      }
+    ]
+  },
+  {
+    "id": "gambito_golf_club_calatayud_167",
+    "name": "Gambito Golf Club Calatayud",
+    "location": {
+      "country": "Spain",
+      "province": "Aragon",
+      "address": "Calatayud (Zaragoza)"
+    },
+    "courses": [
+      {
+        "tipo": "Gambito Golf Calatayud",
+        "url": "showcourse.php?cid=1375635093843"
+      }
+    ]
+  },
+  {
+    "id": "gaud_reus_golf_club_168",
+    "name": "Gaudí Reus Golf Club",
+    "location": {
+      "country": "Spain",
+      "province": "Catalunya",
+      "address": "Reus"
+    },
+    "courses": [
+      {
+        "tipo": "18-hole course",
+        "url": "showcourse.php?cid=1127480940468"
+      }
+    ]
+  },
+  {
+    "id": "goiburu_golf_club_169",
+    "name": "Goiburu Golf Club",
+    "location": {
+      "country": "Spain",
+      "province": "Euskadi",
+      "address": "Andoain"
+    },
+    "courses": [
+      {
+        "tipo": "9-hole course",
+        "url": "showcourse.php?cid=1281368366746"
+      }
+    ]
+  },
+  {
+    "id": "golf_abra_del_pas_170",
+    "name": "Golf Abra Del Pas",
+    "location": {
+      "country": "Spain",
+      "province": "Cantabria",
+      "address": "Mogro"
+    },
+    "courses": [
+      {
+        "tipo": "Abra del Pas",
+        "url": "showcourse.php?cid=1333381586568912"
+      }
+    ]
+  },
+  {
+    "id": "golf_altorreal_171",
+    "name": "Golf Altorreal",
+    "location": {
+      "country": "Spain",
+      "province": "Región de Murcia",
+      "address": "Molina de Segura"
+    },
+    "courses": [
+      {
+        "tipo": "18-hole course",
+        "url": "showcourse.php?cid=1367766524774278"
+      }
+    ]
+  },
+  {
+    "id": "golf_bierzo_172",
+    "name": "Golf Bierzo",
+    "location": {
+      "country": "Spain",
+      "province": "Castilla y León",
+      "address": "Congosto"
+    },
+    "courses": [
+      {
+        "tipo": "Club Golf Bierzo",
+        "url": "showcourse.php?cid=1465244072509546"
+      }
+    ]
+  },
+  {
+    "id": "golf_bonmont_terres_noves_173",
+    "name": "Golf Bonmont Terres Noves",
+    "location": {
+      "country": "Spain",
+      "province": "Catalunya",
+      "address": "Mont-roig del Camp (Tarragona)"
+    },
+    "courses": [
+      {
+        "tipo": "18-hole course",
+        "url": "showcourse.php?cid=1336291335349475"
+      }
+    ]
+  },
+  {
+    "id": "golf_campo_de_layos_174",
+    "name": "Golf Campo de Layos",
+    "location": {
+      "country": "Spain",
+      "province": "Tol",
+      "address": "Layos"
+    },
+    "courses": [
+      {
+        "tipo": "18-hole course",
+        "url": "showcourse.php?cid=1134208420393"
+      }
+    ]
+  },
+  {
+    "id": "golf_candeleda_175",
+    "name": "Golf Candeleda",
+    "location": {
+      "country": "Spain",
+      "province": "Castilla y León",
+      "address": "Candeleda"
+    },
+    "courses": [
+      {
+        "tipo": "Golf Candeleda",
+        "url": "showcourse.php?cid=1468106140221698"
+      }
+    ]
+  },
+  {
+    "id": "golf_ciudad_real_176",
+    "name": "Golf Ciudad Real",
+    "location": {
+      "country": "Spain",
+      "province": "Castilla-La Mancha",
+      "address": "Ciudad Real"
+    },
+    "courses": [
+      {
+        "tipo": "18-hole course",
+        "url": "showcourse.php?cid=1377290768968172"
+      }
+    ]
+  },
+  {
+    "id": "golf_club_playitas_177",
+    "name": "Golf Club Playitas",
+    "location": {
+      "country": "Spain",
+      "province": "Canarias",
+      "address": "Tuineje"
+    },
+    "courses": [
+      {
+        "tipo": "18-hole course",
+        "url": "showcourse.php?cid=1331993294112"
+      }
+    ]
+  },
+  {
+    "id": "golf_club_salinas_de_antigua_178",
+    "name": "Golf Club Salinas de Antigua",
+    "location": {
+      "country": "Spain",
+      "province": "SAL",
+      "address": "Antigua"
+    },
+    "courses": [
+      {
+        "tipo": "18-hole course",
+        "url": "showcourse.php?cid=1293743241434"
+      }
+    ]
+  },
+  {
+    "id": "golf_colmenar_179",
+    "name": "Golf Colmenar",
+    "location": {
+      "country": "Spain",
+      "province": "Madrid",
+      "address": "Colmenar Viejo"
+    },
+    "courses": [
+      {
+        "tipo": "9H",
+        "url": "showcourse.php?cid=1371803146210425"
+      }
+    ]
+  },
+  {
+    "id": "golf_costa_adeje_180",
+    "name": "Golf Costa Adeje",
+    "location": {
+      "country": "Spain",
+      "province": "Canarias",
+      "address": "Adeje"
+    },
+    "courses": [
+      {
+        "tipo": "Championship Course",
+        "url": "showcourse.php?cid=1253638484820"
+      },
+      {
+        "tipo": "Los Lagos",
+        "url": "showcourse.php?cid=1389965824269184"
+      }
+    ]
+  },
+  {
+    "id": "golf_de_caldes_181",
+    "name": "Golf de Caldes",
+    "location": {
+      "country": "Spain",
+      "province": "Barcelona",
+      "address": "Caldes de Montbui"
+    },
+    "courses": [
+      {
+        "tipo": "18-hole course",
+        "url": "showcourse.php?cid=1115068789555"
+      }
+    ]
+  },
+  {
+    "id": "golf_de_guara_182",
+    "name": "Golf de Guara",
+    "location": {
+      "country": "Spain",
+      "province": "Aragón",
+      "address": "Arascues-Nueno"
+    },
+    "courses": [
+      {
+        "tipo": "Golf de Guara",
+        "url": "showcourse.php?cid=1314824780154"
+      }
+    ]
+  },
+  {
+    "id": "golf_de_pals_183",
+    "name": "Golf de Pals",
+    "location": {
+      "country": "Spain",
+      "province": "Catalunya",
+      "address": "Pals"
+    },
+    "courses": [
+      {
+        "tipo": "18-hole course",
+        "url": "showcourse.php?cid=1240166127022"
+      }
+    ]
+  },
+  {
+    "id": "golf_de_poniente_184",
+    "name": "Golf de Poniente",
+    "location": {
+      "country": "Spain",
+      "province": "Mallorca",
+      "address": "Magalluf"
+    },
+    "courses": [
+      {
+        "tipo": "18-hole course",
+        "url": "showcourse.php?cid=1148714122281"
+      }
+    ]
+  },
+  {
+    "id": "golf_de_son_termens_185",
+    "name": "Golf de Son Termens",
+    "location": {
+      "country": "Spain",
+      "province": "Islas Baleares",
+      "address": "S'Esgleieta"
+    },
+    "courses": [
+      {
+        "tipo": "18-hole course",
+        "url": "showcourse.php?cid=1161578951744"
+      }
+    ]
+  },
+  {
+    "id": "golf_del_sur_186",
+    "name": "Golf del Sur",
+    "location": {
+      "country": "Spain",
+      "province": "Canarias",
+      "address": "Golf del Sur"
+    },
+    "courses": [
+      {
+        "tipo": "Links + Norte",
+        "url": "showcourse.php?cid=1767655162272222"
+      }
+    ]
+  },
+  {
+    "id": "golf_dunas_de_doana_187",
+    "name": "Golf Dunas de Doñana",
+    "location": {
+      "country": "Spain",
+      "province": "Huelva",
+      "address": "Matalascañas"
+    },
+    "courses": [
+      {
+        "tipo": "DOÑANA GOLF",
+        "url": "showcourse.php?cid=1295623604571"
+      },
+      {
+        "tipo": "Golf Dunas de Donana",
+        "url": "showcourse.php?cid=1266007620689"
+      }
+    ]
+  },
+  {
+    "id": "golf_el_puerto_188",
+    "name": "Golf El Puerto",
+    "location": {
+      "country": "Spain",
+      "province": "Andalucía",
+      "address": "El Puerto de Santa María"
+    },
+    "courses": [
+      {
+        "tipo": "18-hole course",
+        "url": "showcourse.php?cid=1195421810483"
+      }
+    ]
+  },
+  {
+    "id": "golf_el_rompido_189",
+    "name": "Golf El Rompido",
+    "location": {
+      "country": "Spain",
+      "province": "Andalucía",
+      "address": "El Rompido"
+    },
+    "courses": [
+      {
+        "tipo": "18-hole course",
+        "url": "showcourse.php?cid=1127546204500"
+      },
+      {
+        "tipo": "CAMPO NORTE",
+        "url": "showcourse.php?cid=1221891307106"
+      },
+      {
+        "tipo": "CAMPO SUR",
+        "url": "showcourse.php?cid=13508427965961"
+      }
+    ]
+  },
+  {
+    "id": "golf_entrepinos_190",
+    "name": "Golf Entrepinos",
+    "location": {
+      "country": "Spain",
+      "province": "Castilla y León",
+      "address": "Simancas"
+    },
+    "courses": [
+      {
+        "tipo": "Entrepinos",
+        "url": "showcourse.php?cid=1132606883070"
+      },
+      {
+        "tipo": "Golf Entrepinos",
+        "url": "showcourse.php?cid=1379082605279"
+      }
+    ]
+  },
+  {
+    "id": "golf_girona_191",
+    "name": "Golf Girona",
+    "location": {
+      "country": "Spain",
+      "province": "Catalunya",
+      "address": "St. Julià de Ramis"
+    },
+    "courses": [
+      {
+        "tipo": "18-hole course",
+        "url": "showcourse.php?cid=1123429460062"
+      }
+    ]
+  },
+  {
+    "id": "golf_guadiana_192",
+    "name": "Golf Guadiana",
+    "location": {
+      "country": "Spain",
+      "province": "Extremadura",
+      "address": "Badajoz"
+    },
+    "courses": [
+      {
+        "tipo": "18-hole course",
+        "url": "showcourse.php?cid=1340080580390"
+      }
+    ]
+  },
+  {
+    "id": "golf_ibiza_by_azulinehotels_193",
+    "name": "Golf Ibiza by azuLinehotels",
+    "location": {
+      "country": "Spain",
+      "province": "Illes Balears",
+      "address": "Santa Eulàlia"
+    },
+    "courses": [
+      {
+        "tipo": "18-holes",
+        "url": "showcourse.php?cid=1239395516305"
+      },
+      {
+        "tipo": "9-holes",
+        "url": "showcourse.php?cid=155859426751408"
+      }
+    ]
+  },
+  {
+    "id": "golf_jardn_de_aranjuez_194",
+    "name": "Golf Jardín de Aranjuez",
+    "location": {
+      "country": "Spain",
+      "province": "Madrid",
+      "address": "Aranjuez-Madrid"
+    },
+    "courses": [
+      {
+        "tipo": "18-hole course",
+        "url": "showcourse.php?cid=1345806110565044"
+      },
+      {
+        "tipo": "-",
+        "url": "showcourse.php?cid=1205094760774"
+      }
+    ]
+  },
+  {
+    "id": "golf_jundiz_195",
+    "name": "Golf Jundiz",
+    "location": {
+      "country": "Spain",
+      "province": "Euskadi",
+      "address": "Vitoria-Gasteiz"
+    },
+    "courses": [
+      {
+        "tipo": "Golf Jundiz",
+        "url": "showcourse.php?cid=1388863210563"
+      }
+    ]
+  },
+  {
+    "id": "golf_la_dehesa_de_morn_196",
+    "name": "Golf la Dehesa de Morón",
+    "location": {
+      "country": "Spain",
+      "province": "Castilla y León",
+      "address": "Morón de Almazán"
+    },
+    "courses": [
+      {
+        "tipo": "18-hole course",
+        "url": "showcourse.php?cid=1355174750754"
+      }
+    ]
+  },
+  {
+    "id": "golf_la_estancia_197",
+    "name": "Golf La Estancia",
+    "location": {
+      "country": "Spain",
+      "province": "Andalusia",
+      "address": "Chiclana de la Frontera"
+    },
+    "courses": [
+      {
+        "tipo": "18-hole course",
+        "url": "showcourse.php?cid=1255194336755"
+      }
+    ]
+  },
+  {
+    "id": "golf_la_llorea_198",
+    "name": "Golf La Llorea",
+    "location": {
+      "country": "Spain",
+      "province": "Asturias",
+      "address": "Gijon"
+    },
+    "courses": [
+      {
+        "tipo": "18-holes",
+        "url": "showcourse.php?cid=1502694313483647"
+      },
+      {
+        "tipo": "Par 70",
+        "url": "showcourse.php?cid=1677325759107522"
+      }
+    ]
+  },
+  {
+    "id": "golf_la_moraleja_199",
+    "name": "Golf La Moraleja",
+    "location": {
+      "country": "Spain",
+      "province": "Madrid",
+      "address": "ALGETE"
+    },
+    "courses": [
+      {
+        "tipo": "18-hole course",
+        "url": "showcourse.php?cid=1194801186432"
+      },
+      {
+        "tipo": "9H",
+        "url": "showcourse.php?cid=1253515531984"
+      },
+      {
+        "tipo": "CAMPO 1",
+        "url": "showcourse.php?cid=1246612897251"
+      },
+      {
+        "tipo": "CAMPO 2",
+        "url": "showcourse.php?cid=1195237530916"
+      },
+      {
+        "tipo": "CAMPO 3",
+        "url": "showcourse.php?cid=1368224210266936"
+      },
+      {
+        "tipo": "CAMPO 4",
+        "url": "showcourse.php?cid=1367616842931658"
+      }
+    ]
+  },
+  {
+    "id": "golf_la_roca_200",
+    "name": "Golf La Roca",
+    "location": {
+      "country": "Spain",
+      "province": "Catalunya",
+      "address": "La Roca del Vallès"
+    },
+    "courses": [
+      {
+        "tipo": "18-hole course",
+        "url": "showcourse.php?cid=1168635739642"
+      }
+    ]
+  },
+  {
+    "id": "golf_la_roqueta_201",
+    "name": "Golf La Roqueta",
+    "location": {
+      "country": "Spain",
+      "province": "Catalunya",
+      "address": "Castellgalí"
+    },
+    "courses": [
+      {
+        "tipo": "9-hole course",
+        "url": "showcourse.php?cid=1131795138267"
+      }
+    ]
+  },
+  {
+    "id": "golf_la_rosaleda_202",
+    "name": "Golf La Rosaleda",
+    "location": {
+      "country": "Spain",
+      "province": "Tenerife",
+      "address": "Puerto de la Cruz"
+    },
+    "courses": [
+      {
+        "tipo": "18-hole course",
+        "url": "showcourse.php?cid=1326018202774"
+      }
+    ]
+  },
+  {
+    "id": "golf_las_amricas_203",
+    "name": "Golf Las Américas",
+    "location": {
+      "country": "Spain",
+      "province": "Ten",
+      "address": "Playa de las Américas"
+    },
+    "courses": [
+      {
+        "tipo": "18-hole course",
+        "url": "showcourse.php?cid=1318363572188981"
+      }
+    ]
+  },
+  {
+    "id": "golf_las_colinas_204",
+    "name": "Golf Las Colinas",
+    "location": {
+      "country": "Spain",
+      "province": "Comunidad Valenciana",
+      "address": "Dehesa de Campoamor"
+    },
+    "courses": [
+      {
+        "tipo": "18-hole course",
+        "url": "showcourse.php?cid=1296498349718"
+      }
+    ]
+  },
+  {
+    "id": "golf_las_ramblas_205",
+    "name": "Golf Las Ramblas",
+    "location": {
+      "country": "Spain",
+      "province": "Comunidad Valenciana",
+      "address": "Orihuela"
+    },
+    "courses": [
+      {
+        "tipo": "18-hole course",
+        "url": "showcourse.php?cid=1107813000158"
+      }
+    ]
+  },
+  {
+    "id": "golf_lerma_206",
+    "name": "Golf Lerma",
+    "location": {
+      "country": "Spain",
+      "province": "Castilla y León",
+      "address": "Lerma"
+    },
+    "courses": [
+      {
+        "tipo": "Lerma",
+        "url": "showcourse.php?cid=1191611953992"
+      }
+    ]
+  },
+  {
+    "id": "golf_lleida__country_club_207",
+    "name": "Golf Lleida & Country Club",
+    "location": {
+      "country": "Spain",
+      "province": "Catalunya",
+      "address": "Raimat (Lleida)"
+    },
+    "courses": [
+      {
+        "tipo": "18-hole course",
+        "url": "showcourse.php?cid=1254767078807"
+      }
+    ]
+  },
+  {
+    "id": "golf_lloret__pdel__pitch__putt_208",
+    "name": "Golf Lloret / Pàdel - Pitch & Putt",
+    "location": {
+      "country": "Spain",
+      "province": "Girona",
+      "address": "Lloret de Mar"
+    },
+    "courses": [
+      {
+        "tipo": "18-hole course",
+        "url": "showcourse.php?cid=1114791348693"
+      }
+    ]
+  },
+  {
+    "id": "golf_los_lagos_209",
+    "name": "Golf Los Lagos",
+    "location": {
+      "country": "Spain",
+      "province": "Aragón",
+      "address": "Pinseque"
+    },
+    "courses": [
+      {
+        "tipo": "Pinseque",
+        "url": "showcourse.php?cid=1372529791525363"
+      }
+    ]
+  },
+  {
+    "id": "golf_los_palos_pp_210",
+    "name": "GOLF LOS PALOS P&P",
+    "location": {
+      "country": "Spain",
+      "province": "SANTA CRUZ DE TENERIFE",
+      "address": "ARONA"
+    },
+    "courses": [
+      {
+        "tipo": "LOS PALOS - P&P",
+        "url": "showcourse.php?cid=1719524460758776"
+      }
+    ]
+  },
+  {
+    "id": "golf_maioris_211",
+    "name": "Golf Maioris",
+    "location": {
+      "country": "Spain",
+      "province": "Illes Balears",
+      "address": "Llucmajor"
+    },
+    "courses": [
+      {
+        "tipo": "Mallorca",
+        "url": "showcourse.php?cid=1307809003439"
+      }
+    ]
+  },
+  {
+    "id": "golf_meis_212",
+    "name": "GOLF MEIS",
+    "location": {
+      "country": "Spain",
+      "province": "Galicia",
+      "address": "Meis. Pontevedra"
+    },
+    "courses": [
+      {
+        "tipo": "Meis",
+        "url": "showcourse.php?cid=1336252674154"
+      }
+    ]
+  },
+  {
+    "id": "golf_melilla_213",
+    "name": "Golf Melilla",
+    "location": {
+      "country": "Spain",
+      "province": "Melilla",
+      "address": "Melilla"
+    },
+    "courses": [
+      {
+        "tipo": "no valid",
+        "url": "showcourse.php?cid=1367085986141391"
+      },
+      {
+        "tipo": "valido",
+        "url": "showcourse.php?cid=1367085834485409"
+      }
+    ]
+  },
+  {
+    "id": "golf_municipal_de_llanes_214",
+    "name": "Golf Municipal de Llanes",
+    "location": {
+      "country": "Spain",
+      "province": "Asturias",
+      "address": "Llanes"
+    },
+    "courses": [
+      {
+        "tipo": "18-hole course",
+        "url": "showcourse.php?cid=1373288967157533"
+      }
+    ]
+  },
+  {
+    "id": "golf_nuevo_portil_215",
+    "name": "Golf Nuevo Portil",
+    "location": {
+      "country": "Spain",
+      "province": "Huelva",
+      "address": "Cartaya"
+    },
+    "courses": [
+      {
+        "tipo": "18-hole course",
+        "url": "showcourse.php?cid=1127633085203"
+      }
+    ]
+  },
+  {
+    "id": "golf_olivar_de_la_hinojosa_216",
+    "name": "Golf Olivar de la Hinojosa",
+    "location": {
+      "country": "Spain",
+      "province": "Madrid",
+      "address": "Madrid"
+    },
+    "courses": [
+      {
+        "tipo": "18H",
+        "url": "showcourse.php?cid=1312243367596"
+      },
+      {
+        "tipo": "Corto",
+        "url": "showcourse.php?cid=1236119554255"
+      }
+    ]
+  },
+  {
+    "id": "golf_park_217",
+    "name": "Golf Park",
+    "location": {
+      "country": "Spain",
+      "province": "Comunidad de Madrid",
+      "address": "Alcobendas"
+    },
+    "courses": [
+      {
+        "tipo": "Golf Park",
+        "url": "showcourse.php?cid=1243333743983"
+      }
+    ]
+  },
+  {
+    "id": "golf_peralada_218",
+    "name": "Golf Peralada",
+    "location": {
+      "country": "Spain",
+      "province": "Catalunya",
+      "address": "Peralada"
+    },
+    "courses": [
+      {
+        "tipo": "18-hole course",
+        "url": "showcourse.php?cid=1145180388062"
+      },
+      {
+        "tipo": "pitch and putt",
+        "url": "showcourse.php?cid=163320920527110"
+      }
+    ]
+  },
+  {
+    "id": "golf_pitch__putt_canal_olmpic_219",
+    "name": "Golf Pitch & Putt Canal Olímpic",
+    "location": {
+      "country": "Spain",
+      "province": "Barcelona",
+      "address": "Castelldefels"
+    },
+    "courses": [
+      {
+        "tipo": "9-hole course",
+        "url": "showcourse.php?cid=1459765891958602"
+      }
+    ]
+  },
+  {
+    "id": "golf_quinto_coto_220",
+    "name": "Golf Quinto Coto",
+    "location": {
+      "country": "Spain",
+      "province": "Badajoz",
+      "address": "Villanueva de la Serena"
+    },
+    "courses": [
+      {
+        "tipo": "Quinto Coto",
+        "url": "showcourse.php?cid=1721234599346739"
+      }
+    ]
+  },
+  {
+    "id": "golf_race_221",
+    "name": "Golf Race",
+    "location": {
+      "country": "Spain",
+      "province": "Madrid",
+      "address": "Madrid"
+    },
+    "courses": [
+      {
+        "tipo": "18-hole course",
+        "url": "showcourse.php?cid=1083267597560"
+      },
+      {
+        "tipo": "18-hole course",
+        "url": "showcourse.php?cid=1181375916512"
+      },
+      {
+        "tipo": "Pares 3",
+        "url": "showcourse.php?cid=1473028163326150"
+      }
+    ]
+  },
+  {
+    "id": "golf_riocerezo_222",
+    "name": "Golf Riocerezo",
+    "location": {
+      "country": "Spain",
+      "province": "Castilla y León",
+      "address": "Riocerezo"
+    },
+    "courses": [
+      {
+        "tipo": "Riocerezo",
+        "url": "showcourse.php?cid=1432064797489300"
+      }
+    ]
+  },
+  {
+    "id": "golf_saldaa_de_burgos_223",
+    "name": "Golf Saldaña de Burgos",
+    "location": {
+      "country": "Spain",
+      "province": "Burgos",
+      "address": "Saldaña de Burgos"
+    },
+    "courses": [
+      {
+        "tipo": "SaldaÃ±a",
+        "url": "showcourse.php?cid=1328560476933"
+      }
+    ]
+  },
+  {
+    "id": "golf_sant_joan_barcelona_224",
+    "name": "Golf Sant Joan Barcelona",
+    "location": {
+      "country": "Spain",
+      "province": "Catalunya",
+      "address": "Sant Cugat del Vallès / Rubí"
+    },
+    "courses": [
+      {
+        "tipo": "18-hole course",
+        "url": "showcourse.php?cid=1122284978453"
+      }
+    ]
+  },
+  {
+    "id": "golf_sant_marc_225",
+    "name": "Golf Sant Marc",
+    "location": {
+      "country": "Spain",
+      "province": "Catalonia",
+      "address": "Puigcerda"
+    },
+    "courses": [
+      {
+        "tipo": "18-hole course",
+        "url": "showcourse.php?cid=1207300646489"
+      }
+    ]
+  },
+  {
+    "id": "golf_sant_vicen_de_montalt_226",
+    "name": "Golf Sant Vicenç de Montalt",
+    "location": {
+      "country": "Spain",
+      "province": "Catalunya",
+      "address": "Sant Vicenç de Montalt"
+    },
+    "courses": [
+      {
+        "tipo": "18-hole course",
+        "url": "showcourse.php?cid=1125601177893"
+      }
+    ]
+  },
+  {
+    "id": "golf_santa_marina_227",
+    "name": "Golf Santa Marina",
+    "location": {
+      "country": "Spain",
+      "province": "Cantabria",
+      "address": "San Vicente de la Barquera"
+    },
+    "courses": [
+      {
+        "tipo": "Santa Marina",
+        "url": "showcourse.php?cid=1342783053898"
+      }
+    ]
+  },
+  {
+    "id": "golf_santa_ponsa_228",
+    "name": "Golf Santa Ponsa",
+    "location": {
+      "country": "Spain",
+      "province": "Illes Balears",
+      "address": "Santa Ponça"
+    },
+    "courses": [
+      {
+        "tipo": "1",
+        "url": "showcourse.php?cid=1148646480156"
+      },
+      {
+        "tipo": "2",
+        "url": "showcourse.php?cid=1365868690359"
+      }
+    ]
+  },
+  {
+    "id": "golf_santander_229",
+    "name": "Golf Santander",
+    "location": {
+      "country": "Spain",
+      "province": "Madrid",
+      "address": "Boadilla del Monte"
+    },
+    "courses": [
+      {
+        "tipo": "18-hole course",
+        "url": "showcourse.php?cid=1201694247260"
+      }
+    ]
+  },
+  {
+    "id": "golf_sierra_cortina_230",
+    "name": "Golf Sierra Cortina",
+    "location": {
+      "country": "Spain",
+      "province": "Comunidad Valenciana",
+      "address": "Finestrat"
+    },
+    "courses": [
+      {
+        "tipo": "Pitch and Putt",
+        "url": "showcourse.php?cid=1458866332111474"
+      }
+    ]
+  },
+  {
+    "id": "golf_son_antem__mallorca_231",
+    "name": "Golf Son Antem - Mallorca",
+    "location": {
+      "country": "Spain",
+      "province": "Illes Balears",
+      "address": "Llucmajor"
+    },
+    "courses": [
+      {
+        "tipo": "East",
+        "url": "showcourse.php?cid=1245059675006"
+      },
+      {
+        "tipo": "West",
+        "url": "showcourse.php?cid=1245402126593"
+      }
+    ]
+  },
+  {
+    "id": "golf_son_gual_mallorca_232",
+    "name": "Golf Son Gual Mallorca",
+    "location": {
+      "country": "Spain",
+      "province": "Mallorca",
+      "address": "Palma de Mallorca"
+    },
+    "courses": [
+      {
+        "tipo": "18-hole course",
+        "url": "showcourse.php?cid=1225194257470"
+      }
+    ]
+  },
+  {
+    "id": "golf_son_muntaner_233",
+    "name": "Golf Son Muntaner",
+    "location": {
+      "country": "Spain",
+      "province": "Islas Baleares",
+      "address": "Palma"
+    },
+    "courses": [
+      {
+        "tipo": "18-hole course",
+        "url": "showcourse.php?cid=1113909593224"
+      }
+    ]
+  },
+  {
+    "id": "golf_son_parc_menorca_234",
+    "name": "Golf Son Parc Menorca",
+    "location": {
+      "country": "Spain",
+      "province": "Illes Balears",
+      "address": "Mercadal"
+    },
+    "courses": [
+      {
+        "tipo": "son parc",
+        "url": "showcourse.php?cid=1466500409996118"
+      }
+    ]
+  },
+  {
+    "id": "golf_son_quint_235",
+    "name": "Golf Son Quint",
+    "location": {
+      "country": "Spain",
+      "province": "Illes Balears",
+      "address": "Palma"
+    },
+    "courses": [
+      {
+        "tipo": "Pitch & Path",
+        "url": "showcourse.php?cid=1365694349929"
+      },
+      {
+        "tipo": "Son Quint",
+        "url": "showcourse.php?cid=1246023309739"
+      }
+    ]
+  },
+  {
+    "id": "golf_son_vida_236",
+    "name": "Golf Son Vida",
+    "location": {
+      "country": "Spain",
+      "province": "Illes Balears",
+      "address": "Son Vida"
+    },
+    "courses": [
+      {
+        "tipo": "Par 70",
+        "url": "showcourse.php?cid=1751407325555651"
+      },
+      {
+        "tipo": "Par 71",
+        "url": "showcourse.php?cid=1184432759056"
+      }
+    ]
+  },
+  {
+    "id": "golf_soria_237",
+    "name": "Golf Soria",
+    "location": {
+      "country": "Spain",
+      "province": "Castilla y León",
+      "address": "Oteruelos"
+    },
+    "courses": [
+      {
+        "tipo": "Golf Soria",
+        "url": "showcourse.php?cid=1243347156876"
+      }
+    ]
+  },
+  {
+    "id": "golf_the_tragamon_238",
+    "name": "Golf The Tragamon",
+    "location": {
+      "country": "Spain",
+      "province": "Asturias",
+      "address": "Gijón"
+    },
+    "courses": [
+      {
+        "tipo": "9-hole course",
+        "url": "showcourse.php?cid=1239449806056"
+      }
+    ]
+  },
+  {
+    "id": "golf_torrequebrada_239",
+    "name": "Golf Torrequebrada",
+    "location": {
+      "country": "Spain",
+      "province": "Andalusia",
+      "address": "Benalmádena"
+    },
+    "courses": [
+      {
+        "tipo": "18-hole course",
+        "url": "showcourse.php?cid=1081919731968"
+      }
+    ]
+  },
+  {
+    "id": "golf_valdenarra_240",
+    "name": "Golf Valdenarra",
+    "location": {
+      "country": "Spain",
+      "province": "Segovia",
+      "address": "Bercial"
+    },
+    "courses": [
+      {
+        "tipo": "valdenarra",
+        "url": "showcourse.php?cid=1540411952293668"
+      }
+    ]
+  },
+  {
+    "id": "golf_xaz_241",
+    "name": "GOLF XAZ",
+    "location": {
+      "country": "Spain",
+      "province": "Coruña",
+      "address": "Oleiros"
+    },
+    "courses": [
+      {
+        "tipo": "18-hole course",
+        "url": "showcourse.php?cid=1646640344853465"
+      }
+    ]
+  },
+  {
+    "id": "granada_golf_club_242",
+    "name": "Granada Golf Club",
+    "location": {
+      "country": "Spain",
+      "province": "Andalusia",
+      "address": "Las Gabias"
+    },
+    "courses": [
+      {
+        "tipo": "18-hole course",
+        "url": "showcourse.php?cid=1602233646516464"
+      }
+    ]
+  },
+  {
+    "id": "green_paddock_pp_243",
+    "name": "Green Paddock P&P",
+    "location": {
+      "country": "Spain",
+      "province": "Madrid",
+      "address": "Torrelodones"
+    },
+    "courses": [
+      {
+        "tipo": "9-hole course",
+        "url": "showcourse.php?cid=1272035810216"
+      }
+    ]
+  },
+  {
+    "id": "green_sire_cabanillas_golf_244",
+    "name": "Green Sire Cabanillas Golf",
+    "location": {
+      "country": "Spain",
+      "province": "Guadalajara",
+      "address": "Cabanillas del Campo"
+    },
+    "courses": [
+      {
+        "tipo": "18-hole course",
+        "url": "showcourse.php?cid=1228385101972"
+      }
+    ]
+  },
+  {
+    "id": "greenlife_golf_marbella_245",
+    "name": "Greenlife Golf Marbella",
+    "location": {
+      "country": "Spain",
+      "province": "Andalusia",
+      "address": "Marbella"
+    },
+    "courses": [
+      {
+        "tipo": "9-hole course",
+        "url": "showcourse.php?cid=1400393416725434"
+      }
+    ]
+  },
+  {
+    "id": "grijota_golf_246",
+    "name": "Grijota Golf",
+    "location": {
+      "country": "Spain",
+      "province": "Castilla y León",
+      "address": "Grijota"
+    },
+    "courses": [
+      {
+        "tipo": "Grijota",
+        "url": "showcourse.php?cid=1275648017080"
+      }
+    ]
+  },
+  {
+    "id": "guadalhorce_club_de_golf_247",
+    "name": "Guadalhorce Club de Golf",
+    "location": {
+      "country": "Spain",
+      "province": "Andalusia",
+      "address": "Málaga"
+    },
+    "courses": [
+      {
+        "tipo": "18-hole course",
+        "url": "showcourse.php?cid=1222541088281"
+      }
+    ]
+  },
+  {
+    "id": "hacienda_del_lamo_248",
+    "name": "Hacienda del Álamo",
+    "location": {
+      "country": "Spain",
+      "province": "Región de Murcia",
+      "address": "Fuente Álamo"
+    },
+    "courses": [
+      {
+        "tipo": "18-hole course",
+        "url": "showcourse.php?cid=1295269338899"
+      }
+    ]
+  },
+  {
+    "id": "hacienda_riquelme_golf_resort_249",
+    "name": "Hacienda Riquelme Golf Resort",
+    "location": {
+      "country": "Spain",
+      "province": "Región de Murcia",
+      "address": "Sucina"
+    },
+    "courses": [
+      {
+        "tipo": "18-hole course",
+        "url": "showcourse.php?cid=1325108368340"
+      }
+    ]
+  },
+  {
+    "id": "hierro_3__reino_de_len__251",
+    "name": "HIERRO 3 - Reino de León -",
+    "location": {
+      "country": "Spain",
+      "province": "León",
+      "address": "Villanueva del Arbol"
+    },
+    "courses": [
+      {
+        "tipo": "18-hole course",
+        "url": "showcourse.php?cid=1624387917855636"
+      }
+    ]
+  },
+  {
+    "id": "hotel_golf_campoamor_252",
+    "name": "Hotel Golf Campoamor",
+    "location": {
+      "country": "Spain",
+      "province": "Alicante",
+      "address": "Dehesa de Campoamor"
+    },
+    "courses": [
+      {
+        "tipo": "18-hole course",
+        "url": "showcourse.php?cid=1440509320538953"
+      }
+    ]
+  },
+  {
+    "id": "hrcules_club_de_golf_250",
+    "name": "Hércules Club de Golf",
+    "location": {
+      "country": "Spain",
+      "province": "GAL",
+      "address": "Arteixo"
+    },
+    "courses": [
+      {
+        "tipo": "18-hole course",
+        "url": "showcourse.php?cid=1346777769591843"
+      }
+    ]
+  },
+  {
+    "id": "iberostar_real_novo_sancti_petri_golf_club_253",
+    "name": "Iberostar Real Novo Sancti Petri Golf Club",
+    "location": {
+      "country": "Spain",
+      "province": "Andalusia",
+      "address": "Novo Sancti Petri"
+    },
+    "courses": [
+      {
+        "tipo": "A - Mar y pinos",
+        "url": "showcourse.php?cid=1108638537547"
+      },
+      {
+        "tipo": "B - Centro",
+        "url": "showcourse.php?cid=1108639302761"
+      },
+      {
+        "tipo": "C - Campano",
+        "url": "showcourse.php?cid=1255093246290"
+      }
+    ]
+  },
+  {
+    "id": "illescas_manor_golf__padel_club_254",
+    "name": "Illescas Manor Golf & Padel Club",
+    "location": {
+      "country": "Spain",
+      "province": "Castilla-La Mancha",
+      "address": "Illescas"
+    },
+    "courses": [
+      {
+        "tipo": "Señorio de Illescas",
+        "url": "showcourse.php?cid=1376604558765"
+      }
+    ]
+  },
+  {
+    "id": "infinitum_golf_255",
+    "name": "INFINITUM Golf",
+    "location": {
+      "country": "Spain",
+      "province": "Catalunya",
+      "address": "Vila-seca"
+    },
+    "courses": [
+      {
+        "tipo": "Hills",
+        "url": "showcourse.php?cid=1249029452388"
+      },
+      {
+        "tipo": "Hills-Ruins temporary loop",
+        "url": "showcourse.php?cid=1747066567533331"
+      },
+      {
+        "tipo": "Lakes",
+        "url": "showcourse.php?cid=1249110054265"
+      },
+      {
+        "tipo": "Ruins",
+        "url": "showcourse.php?cid=1225611077294"
+      }
+    ]
+  },
+  {
+    "id": "isla_canela_golf_club_256",
+    "name": "Isla Canela Golf Club",
+    "location": {
+      "country": "Spain",
+      "province": "Andalusia",
+      "address": "Ayamonte"
+    },
+    "courses": [
+      {
+        "tipo": "Links",
+        "url": "showcourse.php?cid=1608235368686961"
+      },
+      {
+        "tipo": "Old Course",
+        "url": "showcourse.php?cid=1379838790470002"
+      }
+    ]
+  },
+  {
+    "id": "isla_valdecaas_257",
+    "name": "Isla Valdecañas",
+    "location": {
+      "country": "Spain",
+      "province": "ext",
+      "address": "El Gordo"
+    },
+    "courses": [
+      {
+        "tipo": "Valdecañas",
+        "url": "showcourse.php?cid=1326286623504"
+      }
+    ]
+  },
+  {
+    "id": "islantilla_golf_resort_sl_258",
+    "name": "Islantilla Golf Resort, S.L",
+    "location": {
+      "country": "Spain",
+      "province": "Huelva",
+      "address": "Isla Cristina"
+    },
+    "courses": [
+      {
+        "tipo": "Azul",
+        "url": "showcourse.php?cid=1217352897300_1_1"
+      },
+      {
+        "tipo": "Amarillo",
+        "url": "showcourse.php?cid=1217352897300_2_2"
+      },
+      {
+        "tipo": "Verde",
+        "url": "showcourse.php?cid=1217352897300_3_3"
+      },
+      {
+        "tipo": "Azul + Amarillo",
+        "url": "showcourse.php?cid=1217352897300_1_2"
+      },
+      {
+        "tipo": "Azul + Verde",
+        "url": "showcourse.php?cid=1217352897300_1_3"
+      },
+      {
+        "tipo": "Amarillo + Verde",
+        "url": "showcourse.php?cid=1217352897300_2_3"
+      }
+    ]
+  },
+  {
+    "id": "izki_golf_259",
+    "name": "Izki Golf",
+    "location": {
+      "country": "Spain",
+      "province": "Euskadi",
+      "address": "Urturi"
+    },
+    "courses": [
+      {
+        "tipo": "Lagran",
+        "url": "showcourse.php?cid=1280137371868"
+      },
+      {
+        "tipo": "Urturi",
+        "url": "showcourse.php?cid=1147731481217"
+      }
+    ]
+  },
+  {
+    "id": "janda_golf_course_260",
+    "name": "Jandía Golf Course",
+    "location": {
+      "country": "Spain",
+      "province": "Las Palmas",
+      "address": "Pájara"
+    },
+    "courses": [
+      {
+        "tipo": "18-hole course",
+        "url": "showcourse.php?cid=1451661302269149"
+      }
+    ]
+  },
+  {
+    "id": "la_almarza_golf_261",
+    "name": "LA ALMARZA golf",
+    "location": {
+      "country": "Spain",
+      "province": "SAN",
+      "address": "SANCHIDRIAN (AVILA)"
+    },
+    "courses": [
+      {
+        "tipo": "la almarza",
+        "url": "showcourse.php?cid=1284377966100"
+      }
+    ]
+  },
+  {
+    "id": "la_barganiza_262",
+    "name": "la barganiza",
+    "location": {
+      "country": "Spain",
+      "province": "AST",
+      "address": "Oviedo"
+    },
+    "courses": [
+      {
+        "tipo": "la barganiza",
+        "url": "showcourse.php?cid=1362003477520990"
+      }
+    ]
+  },
+  {
+    "id": "la_cala_golf_263",
+    "name": "La Cala Golf",
+    "location": {
+      "country": "Spain",
+      "province": "Andalusia",
+      "address": "Mijas Costa Malaga"
+    },
+    "courses": [
+      {
+        "tipo": "America",
+        "url": "showcourse.php?cid=1200430222149"
+      },
+      {
+        "tipo": "Asia",
+        "url": "showcourse.php?cid=1105611211306"
+      },
+      {
+        "tipo": "Europa",
+        "url": "showcourse.php?cid=1200604981160"
+      }
+    ]
+  },
+  {
+    "id": "la_cuesta_264",
+    "name": "La Cuesta",
+    "location": {
+      "country": "Spain",
+      "province": "Ast",
+      "address": "Llanes"
+    },
+    "courses": [
+      {
+        "tipo": "18-hole course",
+        "url": "showcourse.php?cid=1174406406132"
+      }
+    ]
+  },
+  {
+    "id": "la_duquesa_golf_country_club_265",
+    "name": "La Duquesa Golf Country Club",
+    "location": {
+      "country": "Spain",
+      "province": "Andalusia",
+      "address": "San Luis de Sabinillas"
+    },
+    "courses": [
+      {
+        "tipo": "18-hole course",
+        "url": "showcourse.php?cid=1335833294834531"
+      },
+      {
+        "tipo": "La Ducuesa",
+        "url": "showcourse.php?cid=1303714507888"
+      }
+    ]
+  },
+  {
+    "id": "la_envia_golf_266",
+    "name": "La Envia Golf",
+    "location": {
+      "country": "Spain",
+      "province": "Andalusia",
+      "address": "Vícar"
+    },
+    "courses": [
+      {
+        "tipo": "18-hole course",
+        "url": "showcourse.php?cid=1488454265118378"
+      }
+    ]
+  },
+  {
+    "id": "la_faisanera_golf_267",
+    "name": "La Faisanera Golf",
+    "location": {
+      "country": "Spain",
+      "province": "Castilla y León",
+      "address": "Palazuelos de Eresma"
+    },
+    "courses": [
+      {
+        "tipo": "18-hole course",
+        "url": "showcourse.php?cid=1290534628964"
+      }
+    ]
+  },
+  {
+    "id": "la_figuerola_resort__spa_268",
+    "name": "La Figuerola Resort & Spa",
+    "location": {
+      "country": "Spain",
+      "province": "Catalunya",
+      "address": "Vandellòs"
+    },
+    "courses": [
+      {
+        "tipo": "18-hole course",
+        "url": "showcourse.php?cid=1117089009776"
+      }
+    ]
+  },
+  {
+    "id": "la_finca_golf_269",
+    "name": "La Finca Golf",
+    "location": {
+      "country": "Spain",
+      "province": "Comunidad Valenciana",
+      "address": "Algorfa"
+    },
+    "courses": [
+      {
+        "tipo": "Championship course",
+        "url": "showcourse.php?cid=1202572522789"
+      }
+    ]
+  },
+  {
+    "id": "la_fresneda_270",
+    "name": "La Fresneda",
+    "location": {
+      "country": "Spain",
+      "province": "Ast",
+      "address": "La fresneda"
+    },
+    "courses": [
+      {
+        "tipo": "La fresneda club de golf",
+        "url": "showcourse.php?cid=1336927257465"
+      }
+    ]
+  },
+  {
+    "id": "la_galiana_golf_resort_271",
+    "name": "La Galiana Golf Resort",
+    "location": {
+      "country": "Spain",
+      "province": "Comunidad Valenciana",
+      "address": "Tavernes de la Valldigna"
+    },
+    "courses": [
+      {
+        "tipo": "18-hole course",
+        "url": "showcourse.php?cid=1316115566076"
+      }
+    ]
+  },
+  {
+    "id": "la_graiera_272",
+    "name": "La Graiera",
+    "location": {
+      "country": "Spain",
+      "province": "Catalunya",
+      "address": "Calafell (Tarragona)"
+    },
+    "courses": [
+      {
+        "tipo": "18",
+        "url": "showcourse.php?cid=1266337333130"
+      },
+      {
+        "tipo": "Par 3",
+        "url": "showcourse.php?cid=1250786841553"
+      }
+    ]
+  },
+  {
+    "id": "la_hacienda_links_golf_resort_273",
+    "name": "La Hacienda Links Golf Resort",
+    "location": {
+      "country": "Spain",
+      "province": "Andalusia",
+      "address": "San Roque"
+    },
+    "courses": [
+      {
+        "tipo": "Heathland",
+        "url": "showcourse.php?cid=1247247432117"
+      },
+      {
+        "tipo": "Links",
+        "url": "showcourse.php?cid=1246819664124"
+      }
+    ]
+  },
+  {
+    "id": "la_junquera_274",
+    "name": "La Junquera",
+    "location": {
+      "country": "Spain",
+      "province": "CAN",
+      "address": "Pedreña"
+    },
+    "courses": [
+      {
+        "tipo": "La Junquera 09-09-2012",
+        "url": "showcourse.php?cid=1347182826972"
+      }
+    ]
+  },
+  {
+    "id": "la_manga_club_275",
+    "name": "La Manga Club",
+    "location": {
+      "country": "Spain",
+      "province": "Región de Murcia",
+      "address": "Atamaría"
+    },
+    "courses": [
+      {
+        "tipo": "North",
+        "url": "showcourse.php?cid=1274736514862"
+      },
+      {
+        "tipo": "South",
+        "url": "showcourse.php?cid=1404288837582965"
+      },
+      {
+        "tipo": "West",
+        "url": "showcourse.php?cid=1274738434141"
+      }
+    ]
+  },
+  {
+    "id": "la_maquessa_276",
+    "name": "La Maquessa",
+    "location": {
+      "country": "Spain",
+      "province": "",
+      "address": ""
+    },
+    "courses": [
+      {
+        "tipo": "no courses added",
+        "url": "newcourseform.php?clid=1737570551463383"
+      }
+    ]
+  },
+  {
+    "id": "la_marquesa_golf_277",
+    "name": "La Marquesa Golf",
+    "location": {
+      "country": "Spain",
+      "province": "Comunidad Valenciana",
+      "address": "Rojales"
+    },
+    "courses": [
+      {
+        "tipo": "18-hole course",
+        "url": "showcourse.php?cid=1223571806453"
+      }
+    ]
+  },
+  {
+    "id": "la_monacilla_golf_club_278",
+    "name": "La Monacilla Golf Club",
+    "location": {
+      "country": "Spain",
+      "province": "Andalusia",
+      "address": "Dehesa Golf"
+    },
+    "courses": [
+      {
+        "tipo": "18-hole course",
+        "url": "showcourse.php?cid=1335440760113"
+      }
+    ]
+  },
+  {
+    "id": "la_morgal_golf_279",
+    "name": "La Morgal Golf",
+    "location": {
+      "country": "Spain",
+      "province": "asturias",
+      "address": "Llanera"
+    },
+    "courses": [
+      {
+        "tipo": "18-hole course",
+        "url": "showcourse.php?cid=1433970691199"
+      }
+    ]
+  },
+  {
+    "id": "la_noria_golf_280",
+    "name": "La noria golf",
+    "location": {
+      "country": "Spain",
+      "province": "Andalusia",
+      "address": "La Cala de Mijas"
+    },
+    "courses": [
+      {
+        "tipo": "9-hole course",
+        "url": "showcourse.php?cid=1251387546331"
+      }
+    ]
+  },
+  {
+    "id": "la_peuela_golf_shot_281",
+    "name": "La Peñuela Golf Shot",
+    "location": {
+      "country": "Spain",
+      "province": "Madrid",
+      "address": "Cabanillas de la Sierra"
+    },
+    "courses": [
+      {
+        "tipo": "La Peñuela",
+        "url": "showcourse.php?cid=1471383698123297"
+      }
+    ]
+  },
+  {
+    "id": "la_quinta_golf__country_club_282",
+    "name": "La Quinta Golf & Country Club",
+    "location": {
+      "country": "Spain",
+      "province": "Andalusia",
+      "address": "Benahavís"
+    },
+    "courses": [
+      {
+        "tipo": "A- San Pedro",
+        "url": "showcourse.php?cid=1238234321453_1_1"
+      },
+      {
+        "tipo": "B - Ronda",
+        "url": "showcourse.php?cid=1238234321453_2_2"
+      },
+      {
+        "tipo": "C - Guadaiza",
+        "url": "showcourse.php?cid=1238234321453_3_3"
+      },
+      {
+        "tipo": "A- San Pedro + B - Ronda",
+        "url": "showcourse.php?cid=1238234321453_1_2"
+      },
+      {
+        "tipo": "A- San Pedro + C - Guadaiza",
+        "url": "showcourse.php?cid=1238234321453_1_3"
+      },
+      {
+        "tipo": "B - Ronda + C - Guadaiza",
+        "url": "showcourse.php?cid=1238234321453_2_3"
+      }
+    ]
+  },
+  {
+    "id": "la_reserva_club_sotogrande_283",
+    "name": "La Reserva Club Sotogrande",
+    "location": {
+      "country": "Spain",
+      "province": "Andalucía",
+      "address": "Sotogrande"
+    },
+    "courses": [
+      {
+        "tipo": "18-hole course",
+        "url": "showcourse.php?cid=1285227654086"
+      }
+    ]
+  },
+  {
+    "id": "la_reserva_rotana_284",
+    "name": "La Reserva Rotana",
+    "location": {
+      "country": "Spain",
+      "province": "Mallorca",
+      "address": "Manacor"
+    },
+    "courses": [
+      {
+        "tipo": "18-hole course",
+        "url": "showcourse.php?cid=1624676672544741"
+      }
+    ]
+  },
+  {
+    "id": "la_sella_golf_285",
+    "name": "La Sella Golf",
+    "location": {
+      "country": "Spain",
+      "province": "Comunidad Valenciana",
+      "address": "Jesus Pobre"
+    },
+    "courses": [
+      {
+        "tipo": "Llebeig",
+        "url": "showcourse.php?cid=1216763022540_1_1"
+      },
+      {
+        "tipo": "Gregal",
+        "url": "showcourse.php?cid=1216763022540_2_2"
+      },
+      {
+        "tipo": "Mestral",
+        "url": "showcourse.php?cid=1216763022540_3_3"
+      },
+      {
+        "tipo": "Llebeig + Gregal",
+        "url": "showcourse.php?cid=1216763022540_1_2"
+      },
+      {
+        "tipo": "Llebeig + Mestral",
+        "url": "showcourse.php?cid=1216763022540_1_3"
+      },
+      {
+        "tipo": "Gregal + Mestral",
+        "url": "showcourse.php?cid=1216763022540_2_3"
+      }
+    ]
+  },
+  {
+    "id": "la_siesta_golf_286",
+    "name": "La Siesta Golf",
+    "location": {
+      "country": "Spain",
+      "province": "Málaga",
+      "address": "Mijas"
+    },
+    "courses": [
+      {
+        "tipo": "9-hole course",
+        "url": "showcourse.php?cid=1366738420497191"
+      }
+    ]
+  },
+  {
+    "id": "la_torre_golf__gnk_golf_287",
+    "name": "La Torre Golf - GNK Golf",
+    "location": {
+      "country": "Spain",
+      "province": "Región de Murcia",
+      "address": "Roldán"
+    },
+    "courses": [
+      {
+        "tipo": "18-hole course",
+        "url": "showcourse.php?cid=1356125407513576"
+      }
+    ]
+  },
+  {
+    "id": "la_valmuza_golf_salamanca_288",
+    "name": "La Valmuza Golf Salamanca",
+    "location": {
+      "country": "Spain",
+      "province": "Castilla y León",
+      "address": "San Julián de Valmuza"
+    },
+    "courses": [
+      {
+        "tipo": "18-hole course",
+        "url": "showcourse.php?cid=1312384729165"
+      }
+    ]
+  },
+  {
+    "id": "laguna_de_los_patos_289",
+    "name": "Laguna De Los Patos",
+    "location": {
+      "country": "Spain",
+      "province": "albacete",
+      "address": "LA RODA"
+    },
+    "courses": [
+      {
+        "tipo": "9-hole course",
+        "url": "showcourse.php?cid=1595959342971132"
+      }
+    ]
+  },
+  {
+    "id": "lanzarote_golf_290",
+    "name": "Lanzarote Golf",
+    "location": {
+      "country": "Spain",
+      "province": "Canarias",
+      "address": "Puerto del Carmen"
+    },
+    "courses": [
+      {
+        "tipo": "18-hole course",
+        "url": "showcourse.php?cid=1423679410964052"
+      }
+    ]
+  },
+  {
+    "id": "large_golf_club_cierro_291",
+    "name": "Large Golf Club Cierro",
+    "location": {
+      "country": "Spain",
+      "province": "Asturias",
+      "address": "Serantes"
+    },
+    "courses": [
+      {
+        "tipo": "Cierro Grande",
+        "url": "showcourse.php?cid=1472465582884824"
+      }
+    ]
+  },
+  {
+    "id": "larrabea_club_de_golf_292",
+    "name": "Larrabea Club de Golf",
+    "location": {
+      "country": "Spain",
+      "province": "Ala",
+      "address": "Legutiano"
+    },
+    "courses": [
+      {
+        "tipo": "LARRABEA CLUB",
+        "url": "showcourse.php?cid=1241762948668"
+      }
+    ]
+  },
+  {
+    "id": "las_caldas_293",
+    "name": "Las Caldas",
+    "location": {
+      "country": "Spain",
+      "province": "AST",
+      "address": "Oviedo"
+    },
+    "courses": [
+      {
+        "tipo": "Campo Municipal Las Caldas",
+        "url": "showcourse.php?cid=1334740260377982"
+      }
+    ]
+  },
+  {
+    "id": "las_lomas_bosque_294",
+    "name": "Las Lomas Bosque",
+    "location": {
+      "country": "Spain",
+      "province": "Madrid",
+      "address": "Villaviciosa de Odon"
+    },
+    "courses": [
+      {
+        "tipo": "18 hoyos",
+        "url": "showcourse.php?cid=1188587625118"
+      }
+    ]
+  },
+  {
+    "id": "las_palmeras_golf_295",
+    "name": "Las Palmeras Golf",
+    "location": {
+      "country": "Spain",
+      "province": "LPA",
+      "address": "Las Palmas"
+    },
+    "courses": [
+      {
+        "tipo": "Recorrido A",
+        "url": "showcourse.php?cid=1339338279071"
+      },
+      {
+        "tipo": "Recorrido B",
+        "url": "showcourse.php?cid=1407514547172153"
+      },
+      {
+        "tipo": "Recorrido C",
+        "url": "showcourse.php?cid=1742819520357696"
+      }
+    ]
+  },
+  {
+    "id": "las_pinaillas_296",
+    "name": "Las Pinaillas",
+    "location": {
+      "country": "Spain",
+      "province": "Castilla-La Mancha",
+      "address": "Albacete"
+    },
+    "courses": [
+      {
+        "tipo": "18-hole course",
+        "url": "showcourse.php?cid=1346858468858"
+      }
+    ]
+  },
+  {
+    "id": "las_rejas_golf_297",
+    "name": "Las Rejas Golf",
+    "location": {
+      "country": "Spain",
+      "province": "Comunidad Valenciana",
+      "address": "Benidorm"
+    },
+    "courses": [
+      {
+        "tipo": "Golf Pitch & Putt",
+        "url": "showcourse.php?cid=1313506210222"
+      }
+    ]
+  },
+  {
+    "id": "lauro_golf_resort_298",
+    "name": "Lauro Golf Resort",
+    "location": {
+      "country": "Spain",
+      "province": "Andalusia",
+      "address": "Alhaurín de la Torre"
+    },
+    "courses": [
+      {
+        "tipo": "1. Nine",
+        "url": "showcourse.php?cid=1153863972427_1_1"
+      },
+      {
+        "tipo": "2. Nine",
+        "url": "showcourse.php?cid=1153863972427_2_2"
+      },
+      {
+        "tipo": "3. Nine",
+        "url": "showcourse.php?cid=1153863972427_3_3"
+      },
+      {
+        "tipo": "1. Nine + 2. Nine",
+        "url": "showcourse.php?cid=1153863972427_1_2"
+      },
+      {
+        "tipo": "1. Nine + 3. Nine",
+        "url": "showcourse.php?cid=1153863972427_1_3"
+      },
+      {
+        "tipo": "2. Nine + 3. Nine",
+        "url": "showcourse.php?cid=1153863972427_2_3"
+      }
+    ]
+  },
+  {
+    "id": "len_golf_299",
+    "name": "León Golf",
+    "location": {
+      "country": "Spain",
+      "province": "Castilla y León",
+      "address": "San Miguel del Camino"
+    },
+    "courses": [
+      {
+        "tipo": "El Cueto",
+        "url": "showcourse.php?cid=1216669328576"
+      }
+    ]
+  },
+  {
+    "id": "lizaso_golf_club_300",
+    "name": "LIZASO GOLF CLUB",
+    "location": {
+      "country": "Spain",
+      "province": "Navarra",
+      "address": "Lizaso"
+    },
+    "courses": [
+      {
+        "tipo": "18-hole course",
+        "url": "showcourse.php?cid=1754904476236008"
+      }
+    ]
+  },
+  {
+    "id": "lo_romero_golfclub_301",
+    "name": "Lo Romero golfclub",
+    "location": {
+      "country": "Spain",
+      "province": "Comunidad Valenciana",
+      "address": "Pilar de la Horadada"
+    },
+    "courses": [
+      {
+        "tipo": "18-hole course",
+        "url": "showcourse.php?cid=1245662030352"
+      }
+    ]
+  },
+  {
+    "id": "logroo_302",
+    "name": "Logroño",
+    "location": {
+      "country": "Spain",
+      "province": "Rio",
+      "address": "Logroño"
+    },
+    "courses": [
+      {
+        "tipo": "La Grajera",
+        "url": "showcourse.php?cid=1478208390764319"
+      }
+    ]
+  },
+  {
+    "id": "lorca_golf_resort__spa_303",
+    "name": "LORCA GOLF RESORT & SPA",
+    "location": {
+      "country": "Spain",
+      "province": "Región de Murcia",
+      "address": "Purias"
+    },
+    "courses": [
+      {
+        "tipo": "lorca resort",
+        "url": "showcourse.php?cid=1468263619415973"
+      }
+    ]
+  },
+  {
+    "id": "los_arqueros_golf__country_club_304",
+    "name": "Los Arqueros Golf & Country Club",
+    "location": {
+      "country": "Spain",
+      "province": "Andalusia",
+      "address": "Benahavís"
+    },
+    "courses": [
+      {
+        "tipo": "18-hole course",
+        "url": "showcourse.php?cid=1215014036136"
+      }
+    ]
+  },
+  {
+    "id": "los_moriscos_club_de_golf_305",
+    "name": "Los Moriscos Club de Golf",
+    "location": {
+      "country": "Spain",
+      "province": "Andalusia",
+      "address": "Motril"
+    },
+    "courses": [
+      {
+        "tipo": "18-hole course",
+        "url": "showcourse.php?cid=1201336845315"
+      }
+    ]
+  },
+  {
+    "id": "los_naranjos_golf_club_306",
+    "name": "Los Naranjos Golf Club",
+    "location": {
+      "country": "Spain",
+      "province": "Andalusia",
+      "address": "Marbella"
+    },
+    "courses": [
+      {
+        "tipo": "18-hole course",
+        "url": "showcourse.php?cid=1207325971472"
+      }
+    ]
+  },
+  {
+    "id": "los_palos_golf_center_307",
+    "name": "Los Palos Golf Center",
+    "location": {
+      "country": "Spain",
+      "province": "Tenerife",
+      "address": "Arona"
+    },
+    "courses": [
+      {
+        "tipo": "Los Palos",
+        "url": "showcourse.php?cid=1389966620887414"
+      }
+    ]
+  },
+  {
+    "id": "magna_golf_marbella_308",
+    "name": "Magna Golf Marbella",
+    "location": {
+      "country": "Spain",
+      "province": "Andalusia",
+      "address": "Marbella"
+    },
+    "courses": [
+      {
+        "tipo": "18 holes",
+        "url": "showcourse.php?cid=1332847465384"
+      }
+    ]
+  },
+  {
+    "id": "mar_menor_309",
+    "name": "Mar Menor",
+    "location": {
+      "country": "Spain",
+      "province": "",
+      "address": ""
+    },
+    "courses": [
+      {
+        "tipo": "no courses added",
+        "url": "newcourseform.php?clid=1739623312378289"
+      }
+    ]
+  },
+  {
+    "id": "mar_menor_golf_village_310",
+    "name": "Mar Menor Golf Village",
+    "location": {
+      "country": "Spain",
+      "province": "Región de Murcia",
+      "address": "Torre-Pacheco"
+    },
+    "courses": [
+      {
+        "tipo": "18-hole course",
+        "url": "showcourse.php?cid=1351541372617314"
+      }
+    ]
+  },
+  {
+    "id": "marbella_club_golf_resort_311",
+    "name": "Marbella club golf resort",
+    "location": {
+      "country": "Spain",
+      "province": "Andalusia",
+      "address": "Benahavís"
+    },
+    "courses": [
+      {
+        "tipo": "18-hole course",
+        "url": "showcourse.php?cid=1187781405364"
+      }
+    ]
+  },
+  {
+    "id": "marbella_golf_country_club_312",
+    "name": "Marbella Golf Country Club",
+    "location": {
+      "country": "Spain",
+      "province": "Andalusia",
+      "address": "Marbella"
+    },
+    "courses": [
+      {
+        "tipo": "Marbella",
+        "url": "showcourse.php?cid=1242199968700"
+      }
+    ]
+  },
+  {
+    "id": "margas_golf_313",
+    "name": "Margas Golf",
+    "location": {
+      "country": "Spain",
+      "province": "Hue",
+      "address": "Latas"
+    },
+    "courses": [
+      {
+        "tipo": "18-hole course",
+        "url": "showcourse.php?cid=1286547279218"
+      }
+    ]
+  },
+  {
+    "id": "marina_golf_mojacar_314",
+    "name": "Marina golf Mojacar",
+    "location": {
+      "country": "Spain",
+      "province": "alm",
+      "address": "Mojacar almeria"
+    },
+    "courses": [
+      {
+        "tipo": "18-hole course",
+        "url": "showcourse.php?cid=1213823456216"
+      }
+    ]
+  },
+  {
+    "id": "mas_gurumbau__pitch__putt_315",
+    "name": "Mas Gurumbau - Pitch & Putt",
+    "location": {
+      "country": "Spain",
+      "province": "Cataluña",
+      "address": "Taradell"
+    },
+    "courses": [
+      {
+        "tipo": "18-hole course",
+        "url": "showcourse.php?cid=1444151093588728"
+      }
+    ]
+  },
+  {
+    "id": "mas_pags_golf_316",
+    "name": "Mas Pagès Golf",
+    "location": {
+      "country": "Spain",
+      "province": "Cataluña",
+      "address": "Sant Esteve de Guialbes"
+    },
+    "courses": [
+      {
+        "tipo": "Mas Pages Golf",
+        "url": "showcourse.php?cid=1448735350891509"
+      }
+    ]
+  },
+  {
+    "id": "mas_tapiolas_pitch__putt_317",
+    "name": "Mas Tapiolas Pitch & Putt",
+    "location": {
+      "country": "Spain",
+      "province": "Catalunya",
+      "address": "Santa Cristina d'Aro"
+    },
+    "courses": [
+      {
+        "tipo": "18-hole course",
+        "url": "showcourse.php?cid=1475562261435712"
+      }
+    ]
+  },
+  {
+    "id": "mas_torrellas_pitch__putt_318",
+    "name": "Mas Torrellas Pitch & Putt",
+    "location": {
+      "country": "Spain",
+      "province": "Catalunya",
+      "address": "Santa Cristina d'Aro"
+    },
+    "courses": [
+      {
+        "tipo": "18-hole course",
+        "url": "showcourse.php?cid=1475522561693751"
+      }
+    ]
+  },
+  {
+    "id": "masia_de_les_estrelles_319",
+    "name": "Masia de les Estrelles",
+    "location": {
+      "country": "Spain",
+      "province": "Comunidad Valenciana",
+      "address": "Catarroja"
+    },
+    "courses": [
+      {
+        "tipo": "18-hole course",
+        "url": "showcourse.php?cid=1171015051535"
+      },
+      {
+        "tipo": "Mini golf",
+        "url": "showcourse.php?cid=1317841501754"
+      }
+    ]
+  },
+  {
+    "id": "maspalomas_golf_320",
+    "name": "Maspalomas Golf",
+    "location": {
+      "country": "Spain",
+      "province": "Canarias",
+      "address": "Maspalomas"
+    },
+    "courses": [
+      {
+        "tipo": "18-hole course",
+        "url": "showcourse.php?cid=1148019568800"
+      }
+    ]
+  },
+  {
+    "id": "mataleas_municipal_golf_course_321",
+    "name": "Mataleñas Municipal Golf Course",
+    "location": {
+      "country": "Spain",
+      "province": "Cantabria",
+      "address": "Santander"
+    },
+    "courses": [
+      {
+        "tipo": "Mataleñas 09-09-2012",
+        "url": "showcourse.php?cid=1347182614602"
+      }
+    ]
+  },
+  {
+    "id": "meaztegi_golf_322",
+    "name": "Meaztegi Golf",
+    "location": {
+      "country": "Spain",
+      "province": "Viz",
+      "address": "Ortuella"
+    },
+    "courses": [
+      {
+        "tipo": "18-hole course",
+        "url": "showcourse.php?cid=1154990624014"
+      }
+    ]
+  },
+  {
+    "id": "medina_elvira_golf_323",
+    "name": "Medina Elvira Golf",
+    "location": {
+      "country": "Spain",
+      "province": "Andalusia",
+      "address": "Atarfe"
+    },
+    "courses": [
+      {
+        "tipo": "18-hole course",
+        "url": "showcourse.php?cid=1239901008040"
+      }
+    ]
+  },
+  {
+    "id": "mediterraneo_golf_324",
+    "name": "Mediterraneo Golf",
+    "location": {
+      "country": "Spain",
+      "province": "Comunidad Valenciana",
+      "address": "Borriol"
+    },
+    "courses": [
+      {
+        "tipo": "18-hole course",
+        "url": "showcourse.php?cid=1118834332906"
+      }
+    ]
+  },
+  {
+    "id": "meis_325",
+    "name": "Meis",
+    "location": {
+      "country": "Spain",
+      "province": "",
+      "address": "PON"
+    },
+    "courses": [
+      {
+        "tipo": "18-hole course",
+        "url": "showcourse.php?cid=1249625831192"
+      }
+    ]
+  },
+  {
+    "id": "meloneras_golf_club_326",
+    "name": "Meloneras Golf Club",
+    "location": {
+      "country": "Spain",
+      "province": "Canarias",
+      "address": "Maspalomas"
+    },
+    "courses": [
+      {
+        "tipo": "18-hole course",
+        "url": "showcourse.php?cid=1392901166429"
+      }
+    ]
+  },
+  {
+    "id": "miguel_angel_jimenez_golf_academy_327",
+    "name": "Miguel Angel Jimenez Golf Academy",
+    "location": {
+      "country": "Spain",
+      "province": "Andalusia",
+      "address": "Torremolinos"
+    },
+    "courses": [
+      {
+        "tipo": "9-hole course",
+        "url": "showcourse.php?cid=1497964215818684"
+      }
+    ]
+  },
+  {
+    "id": "mijas_golf_club_328",
+    "name": "Mijas Golf Club",
+    "location": {
+      "country": "Spain",
+      "province": "Andalusia",
+      "address": "Las Lagunas de Mijas"
+    },
+    "courses": [
+      {
+        "tipo": "Los Lagos",
+        "url": "showcourse.php?cid=1374241975773864"
+      },
+      {
+        "tipo": "Los Olivos",
+        "url": "showcourse.php?cid=1175010394261"
+      }
+    ]
+  },
+  {
+    "id": "miraflores_golf_330",
+    "name": "Miraflores Golf",
+    "location": {
+      "country": "Spain",
+      "province": "Andalucía",
+      "address": "Mijas"
+    },
+    "courses": [
+      {
+        "tipo": "18-hole course",
+        "url": "showcourse.php?cid=1144331101067"
+      }
+    ]
+  },
+  {
+    "id": "mio_club_de_golf_329",
+    "name": "Miño Club de Golf",
+    "location": {
+      "country": "Spain",
+      "province": "A Coruña",
+      "address": "Miño"
+    },
+    "courses": [
+      {
+        "tipo": "18-hole course",
+        "url": "showcourse.php?cid=1399300383196325"
+      },
+      {
+        "tipo": "MIÑO 18 Hoyos",
+        "url": "showcourse.php?cid=1558415488875966"
+      },
+      {
+        "tipo": "MIÑO 9 Hoyos IDA",
+        "url": "showcourse.php?cid=1602852253370131"
+      },
+      {
+        "tipo": "MIÑO 9 Hoyos VUELTA",
+        "url": "showcourse.php?cid=1602852669369471"
+      }
+    ]
+  },
+  {
+    "id": "monte_paraiso_country_club_331",
+    "name": "Monte Paraiso Country Club",
+    "location": {
+      "country": "Spain",
+      "province": "Málaga",
+      "address": "Marbella"
+    },
+    "courses": [
+      {
+        "tipo": "9-hole course",
+        "url": "showcourse.php?cid=1688313043730712"
+      }
+    ]
+  },
+  {
+    "id": "montealegre_golf_club_332",
+    "name": "Montealegre Golf Club",
+    "location": {
+      "country": "Spain",
+      "province": "Ourense",
+      "address": "Ourense"
+    },
+    "courses": [
+      {
+        "tipo": "Montealegre",
+        "url": "showcourse.php?cid=1435170069165079"
+      }
+    ]
+  },
+  {
+    "id": "montealvar_333",
+    "name": "Montealvar",
+    "location": {
+      "country": "Spain",
+      "province": "Guadalajara",
+      "address": "Yebes"
+    },
+    "courses": [
+      {
+        "tipo": "18-hole course",
+        "url": "showcourse.php?cid=1255970181021"
+      }
+    ]
+  },
+  {
+    "id": "naturvila_golf_el_fresnillo_334",
+    "name": "Naturávila Golf El Fresnillo",
+    "location": {
+      "country": "Spain",
+      "province": "Castilla y León",
+      "address": "Ávila"
+    },
+    "courses": [
+      {
+        "tipo": "Ávila",
+        "url": "showcourse.php?cid=1211460904970"
+      }
+    ]
+  },
+  {
+    "id": "navagrulla_335",
+    "name": "Navagrulla",
+    "location": {
+      "country": "Spain",
+      "province": "CASTILLA Y LEON",
+      "address": "San Leonardo de Yagüe"
+    },
+    "courses": [
+      {
+        "tipo": "18-hole course",
+        "url": "showcourse.php?cid=1374501660678"
+      }
+    ]
+  },
+  {
+    "id": "navaluenga_336",
+    "name": "Navaluenga",
+    "location": {
+      "country": "Spain",
+      "province": "AVI",
+      "address": "Navaluenga"
+    },
+    "courses": [
+      {
+        "tipo": "Navaluenga",
+        "url": "showcourse.php?cid=1323103293954772"
+      }
+    ]
+  },
+  {
+    "id": "negralejo_337",
+    "name": "Negralejo",
+    "location": {
+      "country": "Spain",
+      "province": "Madrid",
+      "address": "Rivas-Vaciamadrid"
+    },
+    "courses": [
+      {
+        "tipo": "Corto",
+        "url": "showcourse.php?cid=1184508665515"
+      },
+      {
+        "tipo": "Largo",
+        "url": "showcourse.php?cid=1355836820515320"
+      },
+      {
+        "tipo": "Largo-Corto",
+        "url": "showcourse.php?cid=1184064800921"
+      },
+      {
+        "tipo": "Negralejo 18 P&P",
+        "url": "showcourse.php?cid=1425326224344"
+      }
+    ]
+  },
+  {
+    "id": "new_madrid_golf_club_sd_338",
+    "name": "New Madrid Golf Club S.D.",
+    "location": {
+      "country": "Spain",
+      "province": "Madrid",
+      "address": "Madrid"
+    },
+    "courses": [
+      {
+        "tipo": "18-hole course",
+        "url": "showcourse.php?cid=1083269515077"
+      },
+      {
+        "tipo": "18-hole course",
+        "url": "showcourse.php?cid=1735203278277436"
+      }
+    ]
+  },
+  {
+    "id": "new_sierra_golf_339",
+    "name": "New Sierra Golf",
+    "location": {
+      "country": "Spain",
+      "province": "Región de Murcia",
+      "address": "Avileses"
+    },
+    "courses": [
+      {
+        "tipo": "18-hole course",
+        "url": "showcourse.php?cid=1676130788465220"
+      }
+    ]
+  },
+  {
+    "id": "norba_club_de_golf_cceres_340",
+    "name": "Norba Club de Golf Cáceres",
+    "location": {
+      "country": "Spain",
+      "province": "Extremadura",
+      "address": "Cáceres"
+    },
+    "courses": [
+      {
+        "tipo": "18-hole course",
+        "url": "showcourse.php?cid=1203246833041"
+      }
+    ]
+  },
+  {
+    "id": "olivia_nova_342",
+    "name": "Olivia Nova",
+    "location": {
+      "country": "Spain",
+      "province": "",
+      "address": ""
+    },
+    "courses": [
+      {
+        "tipo": "no courses added",
+        "url": "newcourseform.php?clid=1715854796958913"
+      }
+    ]
+  },
+  {
+    "id": "olmpico_de_len_341",
+    "name": "Olímpico de León",
+    "location": {
+      "country": "Spain",
+      "province": "León",
+      "address": "León"
+    },
+    "courses": [
+      {
+        "tipo": "18 hoyos",
+        "url": "showcourse.php?cid=1624278678999247"
+      }
+    ]
+  },
+  {
+    "id": "pp_badalona_343",
+    "name": "P&P Badalona",
+    "location": {
+      "country": "Spain",
+      "province": "BCN",
+      "address": "Badalona"
+    },
+    "courses": [
+      {
+        "tipo": "18-hole course",
+        "url": "showcourse.php?cid=1144951777520"
+      }
+    ]
+  },
+  {
+    "id": "pp_handicap_1_344",
+    "name": "P&P Handicap 1",
+    "location": {
+      "country": "Spain",
+      "province": "BCN",
+      "address": "Sant Andreu de Llavaneras"
+    },
+    "courses": [
+      {
+        "tipo": "18-hole course",
+        "url": "showcourse.php?cid=1144949440119"
+      }
+    ]
+  },
+  {
+    "id": "pp_la_garriga_345",
+    "name": "P&P La Garriga",
+    "location": {
+      "country": "Spain",
+      "province": "BCN",
+      "address": "La Garriga"
+    },
+    "courses": [
+      {
+        "tipo": "P&P La Garriga",
+        "url": "showcourse.php?cid=133663562279959"
+      }
+    ]
+  },
+  {
+    "id": "pp_roc3_346",
+    "name": "P&P ROC3",
+    "location": {
+      "country": "Spain",
+      "province": "BCN",
+      "address": "Santa Coloma de Cervello"
+    },
+    "courses": [
+      {
+        "tipo": "18-hole course",
+        "url": "showcourse.php?cid=1249145238003"
+      },
+      {
+        "tipo": "ROC3",
+        "url": "showcourse.php?cid=1369649179440808"
+      }
+    ]
+  },
+  {
+    "id": "pp_sant_cebria_347",
+    "name": "P&P Sant Cebria",
+    "location": {
+      "country": "Spain",
+      "province": "BCN",
+      "address": "Sant Cebriá de Vallalta"
+    },
+    "courses": [
+      {
+        "tipo": "18-hole course",
+        "url": "showcourse.php?cid=1144911225827"
+      }
+    ]
+  },
+  {
+    "id": "pp_tei_348",
+    "name": "P&P Teià",
+    "location": {
+      "country": "Spain",
+      "province": "Barcelona",
+      "address": "Teià"
+    },
+    "courses": [
+      {
+        "tipo": "18 forats ACPP",
+        "url": "showcourse.php?cid=1719343781334916"
+      },
+      {
+        "tipo": "EPPA",
+        "url": "showcourse.php?cid=1368083359594576"
+      }
+    ]
+  },
+  {
+    "id": "pp_tenis_mora_349",
+    "name": "P&P Tenis Mora",
+    "location": {
+      "country": "Spain",
+      "province": "BCN",
+      "address": "Sant Andreu de Llavaneras"
+    },
+    "courses": [
+      {
+        "tipo": "18-hole course",
+        "url": "showcourse.php?cid=1144952601125"
+      }
+    ]
+  },
+  {
+    "id": "pp_vallromanes_350",
+    "name": "P&P Vallromanes",
+    "location": {
+      "country": "Spain",
+      "province": "BCN",
+      "address": "Vilanova del Valles"
+    },
+    "courses": [
+      {
+        "tipo": "Recorregut Vallromanes 9 forats",
+        "url": "showcourse.php?cid=1673791855754102"
+      },
+      {
+        "tipo": "Recorregut Vilanova",
+        "url": "showcourse.php?cid=1144952994622"
+      }
+    ]
+  },
+  {
+    "id": "pablo_hernandez_351",
+    "name": "Pablo Hernandez",
+    "location": {
+      "country": "Spain",
+      "province": "Tol",
+      "address": "Noves"
+    },
+    "courses": [
+      {
+        "tipo": "18-hole course",
+        "url": "showcourse.php?cid=1381601247936"
+      }
+    ]
+  },
+  {
+    "id": "palomarejos_golf_352",
+    "name": "Palomarejos Golf",
+    "location": {
+      "country": "Spain",
+      "province": "Toledo",
+      "address": "Talavera de la Reina"
+    },
+    "courses": [
+      {
+        "tipo": "18-hole course",
+        "url": "showcourse.php?cid=1213383018484"
+      }
+    ]
+  },
+  {
+    "id": "panoramica_golf_353",
+    "name": "Panoramica Golf",
+    "location": {
+      "country": "Spain",
+      "province": "Castelló",
+      "address": "Sant Jordi"
+    },
+    "courses": [
+      {
+        "tipo": "18-hole course",
+        "url": "showcourse.php?cid=1136121319545"
+      }
+    ]
+  },
+  {
+    "id": "par_3_pitch__putt_gualta_354",
+    "name": "Par 3 pitch & putt Gualta",
+    "location": {
+      "country": "Spain",
+      "province": "GIR",
+      "address": "Gualta"
+    },
+    "courses": [
+      {
+        "tipo": "18-hole course",
+        "url": "showcourse.php?cid=1144950383663"
+      }
+    ]
+  },
+  {
+    "id": "parador_de_el_saler_355",
+    "name": "Parador de El Saler",
+    "location": {
+      "country": "Spain",
+      "province": "Comunidad Valenciana",
+      "address": "València"
+    },
+    "courses": [
+      {
+        "tipo": "18-hole course",
+        "url": "showcourse.php?cid=1118836513781"
+      }
+    ]
+  },
+  {
+    "id": "parador_de_mlaga_golf_club_356",
+    "name": "Parador de Málaga Golf Club",
+    "location": {
+      "country": "Spain",
+      "province": "Andalusia",
+      "address": "Algeciras"
+    },
+    "courses": [
+      {
+        "tipo": "18-hole course",
+        "url": "showcourse.php?cid=1328464614426248"
+      }
+    ]
+  },
+  {
+    "id": "pga_golf_catalunya_357",
+    "name": "PGA Golf Catalunya",
+    "location": {
+      "country": "Spain",
+      "province": "Catalunya",
+      "address": "Caldes de Malavella (GIR)"
+    },
+    "courses": [
+      {
+        "tipo": "Stadium",
+        "url": "showcourse.php?cid=1238939261108"
+      },
+      {
+        "tipo": "Tour",
+        "url": "showcourse.php?cid=1238939411951"
+      }
+    ]
+  },
+  {
+    "id": "pitch__putt_castellempuriabrava_358",
+    "name": "Pitch & Putt Castelló-Empuriabrava",
+    "location": {
+      "country": "Spain",
+      "province": "Girona",
+      "address": "Castelló d'Empúries"
+    },
+    "courses": [
+      {
+        "tipo": "Pitch & Putt Castelló-Empuriabrava",
+        "url": "showcourse.php?cid=1621844267720386"
+      }
+    ]
+  },
+  {
+    "id": "pitch__putt_derio_359",
+    "name": "Pitch & Putt Derio",
+    "location": {
+      "country": "Spain",
+      "province": "Viz",
+      "address": "Derio"
+    },
+    "courses": [
+      {
+        "tipo": "Pitch & Putt Derio",
+        "url": "showcourse.php?cid=1326964405534934"
+      }
+    ]
+  },
+  {
+    "id": "pitch__putt_franciac_360",
+    "name": "Pitch & putt Franciac",
+    "location": {
+      "country": "Spain",
+      "province": "Girona",
+      "address": "Caldes de Malavella"
+    },
+    "courses": [
+      {
+        "tipo": "Franciach 1 1-9",
+        "url": "showcourse.php?cid=1325954630249"
+      }
+    ]
+  },
+  {
+    "id": "pitch__putt_golf_montseny_361",
+    "name": "Pitch & Putt Golf Montseny",
+    "location": {
+      "country": "Spain",
+      "province": "Barcelona",
+      "address": "Gualba"
+    },
+    "courses": [
+      {
+        "tipo": "18-hole course",
+        "url": "showcourse.php?cid=1144952250642"
+      }
+    ]
+  },
+  {
+    "id": "pitch__putt_la_figuerola_362",
+    "name": "Pitch & Putt La Figuerola",
+    "location": {
+      "country": "Spain",
+      "province": "Catalunya",
+      "address": "Vandellos"
+    },
+    "courses": [
+      {
+        "tipo": "18-hole course",
+        "url": "showcourse.php?cid=1123592581493"
+      }
+    ]
+  },
+  {
+    "id": "pitch__putt_lleida_i_padel_lleida_363",
+    "name": "Pitch & Putt Lleida i Padel Lleida",
+    "location": {
+      "country": "Spain",
+      "province": "Catalunya",
+      "address": "Torre-Serona"
+    },
+    "courses": [
+      {
+        "tipo": "18-hole course",
+        "url": "showcourse.php?cid=1140186830940"
+      }
+    ]
+  },
+  {
+    "id": "pitch__putt_platja_daro_364",
+    "name": "Pitch & Putt Platja d'Aro",
+    "location": {
+      "country": "Spain",
+      "province": "Girona",
+      "address": "Platja d'Aro"
+    },
+    "courses": [
+      {
+        "tipo": "18-hole course",
+        "url": "showcourse.php?cid=1475591533866276"
+      }
+    ]
+  },
+  {
+    "id": "pitch_and_putt_golf_el_vendrell_365",
+    "name": "Pitch and Putt Golf el Vendrell",
+    "location": {
+      "country": "Spain",
+      "province": "Catalunya",
+      "address": "El"
+    },
+    "courses": [
+      {
+        "tipo": "18-hole course",
+        "url": "showcourse.php?cid=1140271764855"
+      }
+    ]
+  },
+  {
+    "id": "pitchputt_can_mascar_366",
+    "name": "Pitch&Putt Can Mascaró",
+    "location": {
+      "country": "Spain",
+      "province": "Barcelona",
+      "address": "La Palma de Cervello"
+    },
+    "courses": [
+      {
+        "tipo": "18-hole course",
+        "url": "showcourse.php?cid=1619760465579171"
+      }
+    ]
+  },
+  {
+    "id": "playa_de_escalona_367",
+    "name": "Playa de Escalona",
+    "location": {
+      "country": "Spain",
+      "province": "Castilla-La Mancha",
+      "address": "Escalona"
+    },
+    "courses": [
+      {
+        "tipo": "Largo",
+        "url": "showcourse.php?cid=1272917589476"
+      },
+      {
+        "tipo": "largo + par 3",
+        "url": "showcourse.php?cid=1274198093272"
+      },
+      {
+        "tipo": "par 3",
+        "url": "showcourse.php?cid=1272918556616"
+      }
+    ]
+  },
+  {
+    "id": "pollena_golf_club_368",
+    "name": "Pollença Golf Club",
+    "location": {
+      "country": "Spain",
+      "province": "Illes Balears",
+      "address": "Pollença"
+    },
+    "courses": [
+      {
+        "tipo": "9-hole course",
+        "url": "showcourse.php?cid=1640955151919612"
+      }
+    ]
+  },
+  {
+    "id": "portal_del_roc_369",
+    "name": "Portal del Roc",
+    "location": {
+      "country": "Spain",
+      "province": "Catalunya",
+      "address": "Vilanova i la Geltrú (Barcelon"
+    },
+    "courses": [
+      {
+        "tipo": "Pitch & Putt",
+        "url": "showcourse.php?cid=1165377859572"
+      }
+    ]
+  },
+  {
+    "id": "pozo_do_lago_pitch_and_putt_370",
+    "name": "Pozo do Lago Pitch and Putt",
+    "location": {
+      "country": "Spain",
+      "province": "Ourense",
+      "address": "OURENSE"
+    },
+    "courses": [
+      {
+        "tipo": "POZO DO LAGO",
+        "url": "showcourse.php?cid=1288208787013"
+      }
+    ]
+  },
+  {
+    "id": "puig_campana_golf_371",
+    "name": "Puig Campana Golf",
+    "location": {
+      "country": "Spain",
+      "province": "Comunidad Valenciana",
+      "address": "Finestrat"
+    },
+    "courses": [
+      {
+        "tipo": "9-hole course",
+        "url": "showcourse.php?cid=1502386563686477"
+      }
+    ]
+  },
+  {
+    "id": "puit_campana_372",
+    "name": "Puit Campana",
+    "location": {
+      "country": "Spain",
+      "province": "",
+      "address": ""
+    },
+    "courses": [
+      {
+        "tipo": "no courses added",
+        "url": "newcourseform.php?clid=1733912380185522"
+      }
+    ]
+  },
+  {
+    "id": "pula_golf_373",
+    "name": "Pula Golf",
+    "location": {
+      "country": "Spain",
+      "province": "Islas Baleares",
+      "address": "Son Servera"
+    },
+    "courses": [
+      {
+        "tipo": "18-hole course",
+        "url": "showcourse.php?cid=1300001498412"
+      }
+    ]
+  },
+  {
+    "id": "ramon_sota_golf_374",
+    "name": "Ramon Sota Golf",
+    "location": {
+      "country": "Spain",
+      "province": "Cantabria",
+      "address": "Agüero"
+    },
+    "courses": [
+      {
+        "tipo": "9-hole course",
+        "url": "showcourse.php?cid=1336666841133179"
+      }
+    ]
+  },
+  {
+    "id": "rcg_las_rozas_de_madrid_375",
+    "name": "RCG Las Rozas de Madrid",
+    "location": {
+      "country": "Spain",
+      "province": "Comunidad de Madrid",
+      "address": "Madrid"
+    },
+    "courses": [
+      {
+        "tipo": "18-hole course",
+        "url": "showcourse.php?cid=1222417725948"
+      }
+    ]
+  },
+  {
+    "id": "real_aero_club_de_santiago_sa_376",
+    "name": "REAL AERO CLUB DE Santiago, SA",
+    "location": {
+      "country": "Spain",
+      "province": "A Coruña",
+      "address": "Santiago de Compostela"
+    },
+    "courses": [
+      {
+        "tipo": "18-hole course",
+        "url": "showcourse.php?cid=1218195376498"
+      }
+    ]
+  },
+  {
+    "id": "real_aero_club_de_vigo_377",
+    "name": "Real Aero Club de Vigo",
+    "location": {
+      "country": "Spain",
+      "province": "Pontevedra",
+      "address": "Vigo"
+    },
+    "courses": [
+      {
+        "tipo": "RAC VIGO",
+        "url": "showcourse.php?cid=1502647648729267"
+      }
+    ]
+  },
+  {
+    "id": "real_club_de_campo_de_crdoba_378",
+    "name": "Real Club de Campo de Córdoba",
+    "location": {
+      "country": "Spain",
+      "province": "Andalusia",
+      "address": "CORDOBA"
+    },
+    "courses": [
+      {
+        "tipo": "18-hole course",
+        "url": "showcourse.php?cid=1446640422400587"
+      }
+    ]
+  },
+  {
+    "id": "real_club_de_golf_de_la_corua_379",
+    "name": "Real Club de Golf de La Coruña",
+    "location": {
+      "country": "Spain",
+      "province": "GMP",
+      "address": "A Coruña"
+    },
+    "courses": [
+      {
+        "tipo": "Zapateira",
+        "url": "showcourse.php?cid=1250025982846"
+      }
+    ]
+  },
+  {
+    "id": "real_club_de_golf_de_las_palmas_380",
+    "name": "Real Club de Golf de Las Palmas",
+    "location": {
+      "country": "Spain",
+      "province": "Gran Canaria",
+      "address": "Las Palmas"
+    },
+    "courses": [
+      {
+        "tipo": "18-hole course",
+        "url": "showcourse.php?cid=1262550452079"
+      }
+    ]
+  },
+  {
+    "id": "real_club_de_golf_de_puerta_de_hierro_381",
+    "name": "Real Club de Golf de Puerta de Hierro",
+    "location": {
+      "country": "Spain",
+      "province": "Madrid",
+      "address": "Madrid"
+    },
+    "courses": [
+      {
+        "tipo": "Abajo",
+        "url": "showcourse.php?cid=1233571266459"
+      },
+      {
+        "tipo": "Arriba",
+        "url": "showcourse.php?cid=1201949925747"
+      },
+      {
+        "tipo": "Buenavista",
+        "url": "showcourse.php?cid=1236113280062"
+      }
+    ]
+  },
+  {
+    "id": "real_club_de_golf_de_tenerife_382",
+    "name": "Real Club de Golf de Tenerife",
+    "location": {
+      "country": "Spain",
+      "province": "Canarias",
+      "address": "Tacoronte"
+    },
+    "courses": [
+      {
+        "tipo": "18-hole course",
+        "url": "showcourse.php?cid=1324039190533"
+      }
+    ]
+  },
+  {
+    "id": "real_club_de_golf_el_candado_383",
+    "name": "Real Club de Golf El Candado",
+    "location": {
+      "country": "Spain",
+      "province": "Andalusia",
+      "address": "Málaga"
+    },
+    "courses": [
+      {
+        "tipo": "El Candado",
+        "url": "showcourse.php?cid=1394479077253"
+      }
+    ]
+  },
+  {
+    "id": "real_club_de_golf_el_prat_384",
+    "name": "Real Club de Golf El Prat",
+    "location": {
+      "country": "Spain",
+      "province": "Catalunya",
+      "address": "Terrassa"
+    },
+    "courses": [
+      {
+        "tipo": "Amarillo",
+        "url": "showcourse.php?cid=1303161455219"
+      },
+      {
+        "tipo": "Azul",
+        "url": "showcourse.php?cid=1312994527926"
+      },
+      {
+        "tipo": "Open",
+        "url": "showcourse.php?cid=1306924174914"
+      },
+      {
+        "tipo": "Rosa",
+        "url": "showcourse.php?cid=1310148689972"
+      },
+      {
+        "tipo": "Verde",
+        "url": "showcourse.php?cid=1524343453758883"
+      }
+    ]
+  },
+  {
+    "id": "real_club_de_golf_guadalmina_385",
+    "name": "Real Club de Golf Guadalmina",
+    "location": {
+      "country": "Spain",
+      "province": "Málaga",
+      "address": "San Pedro Alcántara"
+    },
+    "courses": [
+      {
+        "tipo": "Norte",
+        "url": "showcourse.php?cid=1119900862826"
+      },
+      {
+        "tipo": "Sur",
+        "url": "showcourse.php?cid=1225960392257"
+      }
+    ]
+  },
+  {
+    "id": "real_club_de_golf_la_herrera_386",
+    "name": "Real Club de Golf La Herrería",
+    "location": {
+      "country": "Spain",
+      "province": "Comunidad de Madrid",
+      "address": "San Lorenzo de El Escorial"
+    },
+    "courses": [
+      {
+        "tipo": "Campo largo",
+        "url": "showcourse.php?cid=142929187866951"
+      }
+    ]
+  },
+  {
+    "id": "real_club_de_golf_la_peaza_387",
+    "name": "Real Club de Golf La Peñaza",
+    "location": {
+      "country": "Spain",
+      "province": "Aragón",
+      "address": "Zaragoza"
+    },
+    "courses": [
+      {
+        "tipo": "La Peñaza 2014",
+        "url": "showcourse.php?cid=1244411783409"
+      }
+    ]
+  },
+  {
+    "id": "real_club_de_golf_las_brisas_388",
+    "name": "Real Club de Golf Las Brisas",
+    "location": {
+      "country": "Spain",
+      "province": "Andalusia",
+      "address": "Marbella"
+    },
+    "courses": [
+      {
+        "tipo": "18-hole course",
+        "url": "showcourse.php?cid=1195239789821"
+      }
+    ]
+  },
+  {
+    "id": "real_club_golf_castiello_389",
+    "name": "Real club golf castiello",
+    "location": {
+      "country": "Spain",
+      "province": "Asturias",
+      "address": "Gijón"
+    },
+    "courses": [
+      {
+        "tipo": "Real Club de Golf de Castiello",
+        "url": "showcourse.php?cid=1399747742440"
+      }
+    ]
+  },
+  {
+    "id": "real_club_pineda_de_sevilla_390",
+    "name": "Real Club Pineda de Sevilla",
+    "location": {
+      "country": "Spain",
+      "province": "Andalusia",
+      "address": "Sevilla"
+    },
+    "courses": [
+      {
+        "tipo": "18-hole course",
+        "url": "showcourse.php?cid=153080112342206"
+      }
+    ]
+  },
+  {
+    "id": "real_club_puerta_de_hierro_391",
+    "name": "Real Club Puerta de Hierro",
+    "location": {
+      "country": "Spain",
+      "province": "Comunidad de Madrid",
+      "address": "Madrid"
+    },
+    "courses": [
+      {
+        "tipo": "RCPH-Campo Buenavista",
+        "url": "showcourse.php?cid=1560783203319573"
+      }
+    ]
+  },
+  {
+    "id": "real_club_sevilla_golf_392",
+    "name": "Real Club Sevilla Golf",
+    "location": {
+      "country": "Spain",
+      "province": "Andalucía",
+      "address": "Alcalá de Guadaíra"
+    },
+    "courses": [
+      {
+        "tipo": "18-hole course",
+        "url": "showcourse.php?cid=1179469700756"
+      }
+    ]
+  },
+  {
+    "id": "real_club_valderrama_393",
+    "name": "Real Club Valderrama",
+    "location": {
+      "country": "Spain",
+      "province": "Andalusia",
+      "address": "Sotogrande"
+    },
+    "courses": [
+      {
+        "tipo": "18-hole course",
+        "url": "showcourse.php?cid=1146054929551"
+      }
+    ]
+  },
+  {
+    "id": "real_federacin_de_golf_de_madrid_394",
+    "name": "Real Federación de Golf de Madrid",
+    "location": {
+      "country": "Spain",
+      "province": "Comunidad de Madrid",
+      "address": "Madrid"
+    },
+    "courses": [
+      {
+        "tipo": "Federación de Golf de Madrid",
+        "url": "showcourse.php?cid=1315548335467"
+      }
+    ]
+  },
+  {
+    "id": "real_golf_club_de_san_sebastian_395",
+    "name": "Real Golf Club de San Sebastian",
+    "location": {
+      "country": "Spain",
+      "province": "Gip",
+      "address": "Donostia"
+    },
+    "courses": [
+      {
+        "tipo": "18-hole course",
+        "url": "showcourse.php?cid=1213012242660"
+      },
+      {
+        "tipo": "jaizkibel",
+        "url": "showcourse.php?cid=1373042845749012"
+      }
+    ]
+  },
+  {
+    "id": "real_golf_club_de_zarauz_396",
+    "name": "Real Golf Club de Zarauz",
+    "location": {
+      "country": "Spain",
+      "province": "Euskadi",
+      "address": "Zarautz"
+    },
+    "courses": [
+      {
+        "tipo": "zarautz",
+        "url": "showcourse.php?cid=1469621586342219"
+      }
+    ]
+  },
+  {
+    "id": "real_golf_club_oyambre_397",
+    "name": "Real Golf Club Oyambre",
+    "location": {
+      "country": "Spain",
+      "province": "Cantabria",
+      "address": "Valdáliga"
+    },
+    "courses": [
+      {
+        "tipo": "9 hoyos",
+        "url": "showcourse.php?cid=169089096326702"
+      }
+    ]
+  },
+  {
+    "id": "real_golf_de_bendinat_398",
+    "name": "Real Golf de Bendinat",
+    "location": {
+      "country": "Spain",
+      "province": "Illes Balears",
+      "address": "Bendinat"
+    },
+    "courses": [
+      {
+        "tipo": "Par 69",
+        "url": "showcourse.php?cid=1113909256931"
+      },
+      {
+        "tipo": "Par 70",
+        "url": "showcourse.php?cid=1706043952255929"
+      }
+    ]
+  },
+  {
+    "id": "real_golf_de_pedrea_399",
+    "name": "REAL GOLF DE PEDREÑA",
+    "location": {
+      "country": "Spain",
+      "province": "Cantabria",
+      "address": "Pedreña"
+    },
+    "courses": [
+      {
+        "tipo": "18-hole course",
+        "url": "showcourse.php?cid=1317222950685999"
+      }
+    ]
+  },
+  {
+    "id": "real_nuevo_club_de_golf_de_san_sebastin_basozabal_400",
+    "name": "Real Nuevo club de Golf de San Sebastián Basozabal",
+    "location": {
+      "country": "Spain",
+      "province": "Gip",
+      "address": "San Sebastián"
+    },
+    "courses": [
+      {
+        "tipo": "Basozabal",
+        "url": "showcourse.php?cid=1365046548317926"
+      }
+    ]
+  },
+  {
+    "id": "real_sociedad_de_golf_de_neguri_401",
+    "name": "Real Sociedad de Golf de Neguri",
+    "location": {
+      "country": "Spain",
+      "province": "BIL",
+      "address": "Getxo"
+    },
+    "courses": [
+      {
+        "tipo": "La Galea",
+        "url": "showcourse.php?cid=1240006881187"
+      }
+    ]
+  },
+  {
+    "id": "real_sociedad_hipica_club_de_campo_402",
+    "name": "Real Sociedad Hipica Club de Campo",
+    "location": {
+      "country": "Spain",
+      "province": "Madrid",
+      "address": "San Sebastián de los Reyes"
+    },
+    "courses": [
+      {
+        "tipo": "Norte",
+        "url": "showcourse.php?cid=1371283642100828"
+      },
+      {
+        "tipo": "Sur",
+        "url": "showcourse.php?cid=1371291030591127"
+      }
+    ]
+  },
+  {
+    "id": "reial_club_de_golf_manises_403",
+    "name": "Reial Club de Golf Manises",
+    "location": {
+      "country": "Spain",
+      "province": "Comunidad Valenciana",
+      "address": "Manises"
+    },
+    "courses": [
+      {
+        "tipo": "9-hole course",
+        "url": "showcourse.php?cid=1319298541862519"
+      }
+    ]
+  },
+  {
+    "id": "resin_golf__country_club_404",
+    "name": "Resin Golf & Country Club",
+    "location": {
+      "country": "Spain",
+      "province": "Málaga",
+      "address": "Estepona"
+    },
+    "courses": [
+      {
+        "tipo": "9 Holes",
+        "url": "showcourse.php?cid=1495368779302631"
+      }
+    ]
+  },
+  {
+    "id": "retamares_405",
+    "name": "Retamares",
+    "location": {
+      "country": "Spain",
+      "province": "Madrid",
+      "address": "Alalpardo"
+    },
+    "courses": [
+      {
+        "tipo": "18-hole course",
+        "url": "showcourse.php?cid=1176558290644"
+      }
+    ]
+  },
+  {
+    "id": "retamares_experience_406",
+    "name": "Retamares Experience",
+    "location": {
+      "country": "Spain",
+      "province": "Madrid",
+      "address": "Alalpardo"
+    },
+    "courses": [
+      {
+        "tipo": "-",
+        "url": "showcourse.php?cid=1202123152547"
+      }
+    ]
+  },
+  {
+    "id": "ria_de_vigo_407",
+    "name": "Ria de vigo",
+    "location": {
+      "country": "Spain",
+      "province": "GAL",
+      "address": "Moaña"
+    },
+    "courses": [
+      {
+        "tipo": "18-hole course",
+        "url": "showcourse.php?cid=1336238979317"
+      }
+    ]
+  },
+  {
+    "id": "rioja_alta_golf_club_409",
+    "name": "Rioja Alta Golf Club",
+    "location": {
+      "country": "Spain",
+      "province": "La Rioja",
+      "address": "Cirueña"
+    },
+    "courses": [
+      {
+        "tipo": "18-hole course",
+        "url": "showcourse.php?cid=1184069585578"
+      }
+    ]
+  },
+  {
+    "id": "roc_3_pitch__putt_410",
+    "name": "Roc 3 Pitch & Putt",
+    "location": {
+      "country": "Spain",
+      "province": "Catalunya",
+      "address": "Santa Coloma de Cervelló"
+    },
+    "courses": [
+      {
+        "tipo": "Roc 3 Pitch & Putt",
+        "url": "showcourse.php?cid=1475518756667297"
+      }
+    ]
+  },
+  {
+    "id": "roda_golf_411",
+    "name": "Roda Golf",
+    "location": {
+      "country": "Spain",
+      "province": "Región de Murcia",
+      "address": "Roda"
+    },
+    "courses": [
+      {
+        "tipo": "18-hole course",
+        "url": "showcourse.php?cid=1256634503944"
+      }
+    ]
+  },
+  {
+    "id": "rovacas_comillas_412",
+    "name": "Rovacías Comillas",
+    "location": {
+      "country": "Spain",
+      "province": "Cantabria",
+      "address": "Comillas"
+    },
+    "courses": [
+      {
+        "tipo": "11+7",
+        "url": "showcourse.php?cid=1693156961410314"
+      }
+    ]
+  },
+  {
+    "id": "rshecc_413",
+    "name": "RSHECC",
+    "location": {
+      "country": "Spain",
+      "province": "ESP",
+      "address": "Madrid"
+    },
+    "courses": [
+      {
+        "tipo": "Campo Norte",
+        "url": "showcourse.php?cid=1084271781364"
+      },
+      {
+        "tipo": "Campo Sur",
+        "url": "showcourse.php?cid=1164114047259"
+      }
+    ]
+  },
+  {
+    "id": "ro_real_golf_408",
+    "name": "Río Real Golf",
+    "location": {
+      "country": "Spain",
+      "province": "Andalucía",
+      "address": "Marbella"
+    },
+    "courses": [
+      {
+        "tipo": "18-hole course",
+        "url": "showcourse.php?cid=1197532572578"
+      }
+    ]
+  },
+  {
+    "id": "salamanca_golf__country_club_414",
+    "name": "Salamanca Golf & Country Club",
+    "location": {
+      "country": "Spain",
+      "province": "Salamanca",
+      "address": "Villamayor"
+    },
+    "courses": [
+      {
+        "tipo": "18-hole course",
+        "url": "showcourse.php?cid=1262424603596"
+      }
+    ]
+  },
+  {
+    "id": "salamanca_golf_campo_de_zarapicos_415",
+    "name": "Salamanca Golf, Campo de Zarapicos",
+    "location": {
+      "country": "Spain",
+      "province": "Castilla y León",
+      "address": "Zarapicos"
+    },
+    "courses": [
+      {
+        "tipo": "18-hole course",
+        "url": "showcourse.php?cid=1153861899904"
+      }
+    ]
+  },
+  {
+    "id": "saldaa_golf_416",
+    "name": "Saldaña Golf",
+    "location": {
+      "country": "Spain",
+      "province": "Burgos",
+      "address": "Saldaña de Burgos"
+    },
+    "courses": [
+      {
+        "tipo": "Burgos Saldaña",
+        "url": "showcourse.php?cid=1253372769700"
+      }
+    ]
+  },
+  {
+    "id": "salobre_golf_417",
+    "name": "Salobre Golf",
+    "location": {
+      "country": "Spain",
+      "province": "Las Palmas",
+      "address": "Maspalomas"
+    },
+    "courses": [
+      {
+        "tipo": "Old 1-9",
+        "url": "showcourse.php?cid=1316707046904_1_1"
+      },
+      {
+        "tipo": "Old 10-18",
+        "url": "showcourse.php?cid=1316707046904_2_2"
+      },
+      {
+        "tipo": "New",
+        "url": "showcourse.php?cid=1316707046904_3_3"
+      },
+      {
+        "tipo": "Old 1-9 + Old 10-18",
+        "url": "showcourse.php?cid=1316707046904_1_2"
+      },
+      {
+        "tipo": "Old 1-9 + New",
+        "url": "showcourse.php?cid=1316707046904_1_3"
+      },
+      {
+        "tipo": "Old 10-18 + New",
+        "url": "showcourse.php?cid=1316707046904_2_3"
+      }
+    ]
+  },
+  {
+    "id": "san_roque_golf_club_418",
+    "name": "San Roque Golf Club",
+    "location": {
+      "country": "Spain",
+      "province": "Andalusia",
+      "address": "San Roque"
+    },
+    "courses": [
+      {
+        "tipo": "New Course",
+        "url": "showcourse.php?cid=1092220653671"
+      },
+      {
+        "tipo": "Old Course",
+        "url": "showcourse.php?cid=1084875202470"
+      }
+    ]
+  },
+  {
+    "id": "san_roque_golf_resort_419",
+    "name": "San Roque Golf Resort",
+    "location": {
+      "country": "Spain",
+      "province": "Cádiz",
+      "address": "San Roque"
+    },
+    "courses": [
+      {
+        "tipo": "no courses added",
+        "url": "newcourseform.php?clid=1756664732859159"
+      },
+      {
+        "tipo": "no courses added",
+        "url": "newcourseform.php?clid=1756665507527556"
+      },
+      {
+        "tipo": "New",
+        "url": "showcourse.php?cid=1756665807317961"
+      }
+    ]
+  },
+  {
+    "id": "sancti_petri_hills_golf_420",
+    "name": "Sancti Petri Hills Golf",
+    "location": {
+      "country": "Spain",
+      "province": "Andalusia",
+      "address": "Chiclana de la Frontera"
+    },
+    "courses": [
+      {
+        "tipo": "18-hole course",
+        "url": "showcourse.php?cid=1424025482911923"
+      }
+    ]
+  },
+  {
+    "id": "sanlucar_club_de_campo_421",
+    "name": "Sanlucar Club de Campo",
+    "location": {
+      "country": "Spain",
+      "province": "CAD",
+      "address": "Sanlucar de Barrameda"
+    },
+    "courses": [
+      {
+        "tipo": "18-hole course",
+        "url": "showcourse.php?cid=1194645897267"
+      }
+    ]
+  },
+  {
+    "id": "santa_clara_golf_granada_422",
+    "name": "Santa Clara Golf Granada",
+    "location": {
+      "country": "Spain",
+      "province": "Granada",
+      "address": "Otura"
+    },
+    "courses": [
+      {
+        "tipo": "18-hole course",
+        "url": "showcourse.php?cid=1460815028443997"
+      }
+    ]
+  },
+  {
+    "id": "santa_clara_golf_marbella_423",
+    "name": "Santa Clara Golf Marbella",
+    "location": {
+      "country": "Spain",
+      "province": "Andalusia",
+      "address": "Marbella"
+    },
+    "courses": [
+      {
+        "tipo": "18-hole course",
+        "url": "showcourse.php?cid=1187784380960"
+      }
+    ]
+  },
+  {
+    "id": "santa_maria_golf__country_club_424",
+    "name": "Santa Maria Golf & Country Club",
+    "location": {
+      "country": "Spain",
+      "province": "Málaga",
+      "address": "Marbella"
+    },
+    "courses": [
+      {
+        "tipo": "18-hole course",
+        "url": "showcourse.php?cid=1102439161627"
+      },
+      {
+        "tipo": "Provisional 2025",
+        "url": "showcourse.php?cid=1751027575176193"
+      }
+    ]
+  },
+  {
+    "id": "santana_golf_425",
+    "name": "Santana Golf",
+    "location": {
+      "country": "Spain",
+      "province": "Andalusia",
+      "address": "Mijas"
+    },
+    "courses": [
+      {
+        "tipo": "18-hole course",
+        "url": "showcourse.php?cid=1203588004720"
+      }
+    ]
+  },
+  {
+    "id": "saurines_golf_ugolf_426",
+    "name": "Saurines Golf Ugolf",
+    "location": {
+      "country": "Spain",
+      "province": "Región de Murcia",
+      "address": "Roldán"
+    },
+    "courses": [
+      {
+        "tipo": "18-hole course",
+        "url": "showcourse.php?cid=1340891682037"
+      }
+    ]
+  },
+  {
+    "id": "serena_golf_427",
+    "name": "Serena Golf",
+    "location": {
+      "country": "Spain",
+      "province": "Región de Murcia",
+      "address": "Los Alcázares"
+    },
+    "courses": [
+      {
+        "tipo": "18-hole course",
+        "url": "showcourse.php?cid=1221003128929"
+      }
+    ]
+  },
+  {
+    "id": "serres_de_pals__golf__sport_club_428",
+    "name": "Serres De Pals - Golf & Sport Club",
+    "location": {
+      "country": "Spain",
+      "province": "Catalunya",
+      "address": "Pals - Girona"
+    },
+    "courses": [
+      {
+        "tipo": "18-hole course",
+        "url": "showcourse.php?cid=1114861218234"
+      }
+    ]
+  },
+  {
+    "id": "sherry_golf_jerez_429",
+    "name": "Sherry Golf Jerez",
+    "location": {
+      "country": "Spain",
+      "province": "Andalusia",
+      "address": "Jerez de la Frontera"
+    },
+    "courses": [
+      {
+        "tipo": "18-hole course",
+        "url": "showcourse.php?cid=1188576773578"
+      }
+    ]
+  },
+  {
+    "id": "sojuela_club_de_campo_430",
+    "name": "Sojuela Club de Campo",
+    "location": {
+      "country": "Spain",
+      "province": "La Rioja",
+      "address": "SOJUELA (Logroño)"
+    },
+    "courses": [
+      {
+        "tipo": "18-hole course",
+        "url": "showcourse.php?cid=1327263659029"
+      }
+    ]
+  },
+  {
+    "id": "somosaguas_431",
+    "name": "Somosaguas",
+    "location": {
+      "country": "Spain",
+      "province": "Madrid",
+      "address": "Madrid"
+    },
+    "courses": [
+      {
+        "tipo": "Somosaguas",
+        "url": "showcourse.php?cid=1292498549212"
+      }
+    ]
+  },
+  {
+    "id": "sotogrande_golf__marina_432",
+    "name": "Sotogrande Golf / Marina",
+    "location": {
+      "country": "Spain",
+      "province": "Cádiz",
+      "address": "San Roque"
+    },
+    "courses": [
+      {
+        "tipo": "18-hole course",
+        "url": "showcourse.php?cid=1540204499886475"
+      },
+      {
+        "tipo": "Corto",
+        "url": "showcourse.php?cid=1744040687453178"
+      }
+    ]
+  },
+  {
+    "id": "t_golf_calvia_433",
+    "name": "T Golf Calvia",
+    "location": {
+      "country": "Spain",
+      "province": "Islas Baleares",
+      "address": "Calvià"
+    },
+    "courses": [
+      {
+        "tipo": "18-hole course",
+        "url": "showcourse.php?cid=1663699475326679"
+      }
+    ]
+  },
+  {
+    "id": "t_golf_palma_434",
+    "name": "T Golf Palma",
+    "location": {
+      "country": "Spain",
+      "province": "Illes Balears",
+      "address": "Palma"
+    },
+    "courses": [
+      {
+        "tipo": "Golfpark mallorca",
+        "url": "showcourse.php?cid=1224573056406"
+      }
+    ]
+  },
+  {
+    "id": "t_golf_palma_puntiro_435",
+    "name": "T Golf Palma Puntiro",
+    "location": {
+      "country": "Spain",
+      "province": "Illes Balears",
+      "address": "Palma"
+    },
+    "courses": [
+      {
+        "tipo": "18-hole course",
+        "url": "showcourse.php?cid=1238262031473"
+      }
+    ]
+  },
+  {
+    "id": "talayuela_golf_436",
+    "name": "Talayuela Golf",
+    "location": {
+      "country": "Spain",
+      "province": "Extremadura",
+      "address": "Talayuela"
+    },
+    "courses": [
+      {
+        "tipo": "18-hole course",
+        "url": "showcourse.php?cid=1360608223977832"
+      }
+    ]
+  },
+  {
+    "id": "tambre_golf__croquet_437",
+    "name": "Tambre Golf & Croquet",
+    "location": {
+      "country": "Spain",
+      "province": "La Coruña",
+      "address": "Sigüeiro"
+    },
+    "courses": [
+      {
+        "tipo": "18-hole course",
+        "url": "showcourse.php?cid=1640909040200791"
+      }
+    ]
+  },
+  {
+    "id": "taradell_golf_438",
+    "name": "Taradell Golf",
+    "location": {
+      "country": "Spain",
+      "province": "Catalonia",
+      "address": "Taradell (BCN)"
+    },
+    "courses": [
+      {
+        "tipo": "18-hole course",
+        "url": "showcourse.php?cid=1114791879621"
+      },
+      {
+        "tipo": "Front 9",
+        "url": "showcourse.php?cid=1657691486967019"
+      }
+    ]
+  },
+  {
+    "id": "tecina_golf_439",
+    "name": "Tecina Golf",
+    "location": {
+      "country": "Spain",
+      "province": "Canarias",
+      "address": "Playa Santiago"
+    },
+    "courses": [
+      {
+        "tipo": "18-hole course",
+        "url": "showcourse.php?cid=1195323154828"
+      }
+    ]
+  },
+  {
+    "id": "the_caminera_golf_440",
+    "name": "The Caminera Golf",
+    "location": {
+      "country": "Spain",
+      "province": "Ciudad Real",
+      "address": "Torrenueva"
+    },
+    "courses": [
+      {
+        "tipo": "La Caminera Golf",
+        "url": "showcourse.php?cid=1327561977723321"
+      }
+    ]
+  },
+  {
+    "id": "the_peraleja_golf_441",
+    "name": "The Peraleja Golf",
+    "location": {
+      "country": "Spain",
+      "province": "Región de Murcia",
+      "address": "Sucina"
+    },
+    "courses": [
+      {
+        "tipo": "peraleja",
+        "url": "showcourse.php?cid=1248770904368"
+      }
+    ]
+  },
+  {
+    "id": "torremirona_golf_club_442",
+    "name": "Torremirona Golf Club",
+    "location": {
+      "country": "Spain",
+      "province": "Catalunya",
+      "address": "Navata"
+    },
+    "courses": [
+      {
+        "tipo": "18-hole course",
+        "url": "showcourse.php?cid=1237643813004"
+      }
+    ]
+  },
+  {
+    "id": "uraburu_golf_443",
+    "name": "Uraburu Golf",
+    "location": {
+      "country": "Spain",
+      "province": "Basque Country",
+      "address": "Galdakao"
+    },
+    "courses": [
+      {
+        "tipo": "Uraburu Golf",
+        "url": "showcourse.php?cid=1419547002276"
+      }
+    ]
+  },
+  {
+    "id": "urnieta_pitch__patt_444",
+    "name": "Urnieta Pitch & Patt",
+    "location": {
+      "country": "Spain",
+      "province": "Donostia",
+      "address": "Urnieta"
+    },
+    "courses": [
+      {
+        "tipo": "18-hole course",
+        "url": "showcourse.php?cid=1709735553410250"
+      }
+    ]
+  },
+  {
+    "id": "vall_dor_golf_445",
+    "name": "Vall D'or Golf",
+    "location": {
+      "country": "Spain",
+      "province": "Illes Balears",
+      "address": "Felanitx"
+    },
+    "courses": [
+      {
+        "tipo": "18-hole course",
+        "url": "showcourse.php?cid=1600150873385877"
+      },
+      {
+        "tipo": "18-hole course",
+        "url": "showcourse.php?cid=1322990175309"
+      }
+    ]
+  },
+  {
+    "id": "valle_del_este_446",
+    "name": "Valle del Este",
+    "location": {
+      "country": "Spain",
+      "province": "Andalusia",
+      "address": "Vera"
+    },
+    "courses": [
+      {
+        "tipo": "Valle Del Este",
+        "url": "showcourse.php?cid=1247776965944"
+      }
+    ]
+  },
+  {
+    "id": "valle_romano_golf_447",
+    "name": "Valle Romano Golf",
+    "location": {
+      "country": "Spain",
+      "province": "Andalusia",
+      "address": "Estepona"
+    },
+    "courses": [
+      {
+        "tipo": "18-hole course",
+        "url": "showcourse.php?cid=1330173081151382"
+      }
+    ]
+  },
+  {
+    "id": "valles_golf_448",
+    "name": "Valles Golf",
+    "location": {
+      "country": "Spain",
+      "province": "Catalunya",
+      "address": "Terrassa"
+    },
+    "courses": [
+      {
+        "tipo": "18-hole course",
+        "url": "showcourse.php?cid=1297534923613"
+      }
+    ]
+  },
+  {
+    "id": "veneziola_golf_449",
+    "name": "Veneziola Golf",
+    "location": {
+      "country": "Spain",
+      "province": "Región de Murcia",
+      "address": "La Manga"
+    },
+    "courses": [
+      {
+        "tipo": "18-hole course",
+        "url": "showcourse.php?cid=1136656251251"
+      }
+    ]
+  },
+  {
+    "id": "villa_nueva_golf_450",
+    "name": "Villa Nueva Golf",
+    "location": {
+      "country": "Spain",
+      "province": "Cadiz",
+      "address": "Puerto Real"
+    },
+    "courses": [
+      {
+        "tipo": "18-hole course",
+        "url": "showcourse.php?cid=1241600968768"
+      }
+    ]
+  },
+  {
+    "id": "villa_padierna_golf_club_451",
+    "name": "Villa Padierna Golf Club",
+    "location": {
+      "country": "Spain",
+      "province": "Andalusia",
+      "address": "Marbella"
+    },
+    "courses": [
+      {
+        "tipo": "Alferini",
+        "url": "showcourse.php?cid=1270236262757"
+      },
+      {
+        "tipo": "Flamingos",
+        "url": "showcourse.php?cid=1189608190692"
+      },
+      {
+        "tipo": "Tramores",
+        "url": "showcourse.php?cid=1386149824767483"
+      }
+    ]
+  },
+  {
+    "id": "villaitana_golf_452",
+    "name": "Villaitana Golf",
+    "location": {
+      "country": "Spain",
+      "province": "Valencian Community",
+      "address": "Benidorm"
+    },
+    "courses": [
+      {
+        "tipo": "18-hole course",
+        "url": "showcourse.php?cid=1185121915548"
+      },
+      {
+        "tipo": "Levante",
+        "url": "showcourse.php?cid=1157094465114"
+      },
+      {
+        "tipo": "Poniente",
+        "url": "showcourse.php?cid=135721498156151"
+      }
+    ]
+  },
+  {
+    "id": "villamartn_golf_453",
+    "name": "Villamartín Golf",
+    "location": {
+      "country": "Spain",
+      "province": "Comunidad Valenciana",
+      "address": "Villamartín"
+    },
+    "courses": [
+      {
+        "tipo": "18-hole course",
+        "url": "showcourse.php?cid=1107812511656"
+      }
+    ]
+  },
+  {
+    "id": "villanueva_golf__croquet_454",
+    "name": "Villanueva Golf & Croquet",
+    "location": {
+      "country": "Spain",
+      "province": "Andalusia",
+      "address": "Puerto Real"
+    },
+    "courses": [
+      {
+        "tipo": "18-hole course",
+        "url": "showcourse.php?cid=1184782265796"
+      }
+    ]
+  },
+  {
+    "id": "villaviciosa_golf_72_455",
+    "name": "villaviciosa golf 72",
+    "location": {
+      "country": "Spain",
+      "province": "asturias",
+      "address": "villaviciosa"
+    },
+    "courses": [
+      {
+        "tipo": "villaviciosa",
+        "url": "showcourse.php?cid=1401915465184"
+      }
+    ]
+  },
+  {
+    "id": "vista_hermosa_club_de_golf_456",
+    "name": "Vista Hermosa Club De Golf",
+    "location": {
+      "country": "Spain",
+      "province": "Andalucía",
+      "address": "El Puerto de Santa María"
+    },
+    "courses": [
+      {
+        "tipo": "Vista Hermosa",
+        "url": "showcourse.php?cid=1471344805892525"
+      }
+    ]
+  },
+  {
+    "id": "vistabella_golf_457",
+    "name": "Vistabella Golf",
+    "location": {
+      "country": "Spain",
+      "province": "Comunidad Valenciana",
+      "address": "Orihuela"
+    },
+    "courses": [
+      {
+        "tipo": "18-hole course",
+        "url": "showcourse.php?cid=1269065865579"
+      }
+    ]
+  },
+  {
+    "id": "vistahermosa_club_de_golf_458",
+    "name": "VistaHermosa Club de Golf",
+    "location": {
+      "country": "Spain",
+      "province": "Cadiz",
+      "address": "Puerto de Santa Maria"
+    },
+    "courses": [
+      {
+        "tipo": "9-hole course",
+        "url": "showcourse.php?cid=1177373171059"
+      }
+    ]
+  },
+  {
+    "id": "zuasti_club_de_campo_459",
+    "name": "Zuasti Club de Campo",
+    "location": {
+      "country": "Spain",
+      "province": "Nav",
+      "address": "Zuasti"
+    },
+    "courses": [
+      {
+        "tipo": "Zuasti nuevo recorrido",
+        "url": "showcourse.php?cid=1271784143988"
+      }
+    ]
+  },
+  {
+    "id": "guilas_club_de_golf_isla_del_fraile_3",
+    "name": "Águilas Club de Golf Isla del Fraile",
+    "location": {
+      "country": "Spain",
+      "province": "Región de Murcia",
+      "address": "Águilas"
+    },
+    "courses": [
+      {
+        "tipo": "18-hole course",
+        "url": "showcourse.php?cid=1683087419301315"
+      }
+    ]
+  }
+]

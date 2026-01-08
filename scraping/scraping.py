@@ -273,9 +273,6 @@ class MSCorecardScraper:
             current_index += 1
         
         
-        # print the tee names in console
-        print("Tees:", tees)
-        
         # Ahora iteramos sobre las filas de los hoyos
         hole_rows = table.find_all('tr', class_='nonfocus')
 
@@ -443,113 +440,139 @@ def main():
         driver.get('https://www.mscorecard.com/mscorecard/login.php')
 
         # Click the "Sign in with Google" button
-        wait = WebDriverWait(driver, 10) 
-
-        google_signin_button = driver.find_element(By.CLASS_NAME, 'g-signin2')
-        google_signin_button.click()
+        wait = WebDriverWait(driver, 30) 
 
         print("===  Clicked Google Sign-In button ===")
 
-        email_input = driver.find_element(By.CSS_SELECTOR,  'input[type="email"]')
-        email_input.send_keys('rostersmusic@gmail.com')
-
-        next_button = driver.find_element(By.TAG_NAME, "button")
-        next_button.click()
-
-        print("===  Sent mail and clicked next ===")
-
-        password_field = driver.find_element(By.CSS_SELECTOR, 'input[type="password"]')
-        password_field.send_keys("Lovejustin12!")
-
-
-        login_button = driver.find_element(By.TAG_NAME, "button")
-        login_button.click()
-
-        print("===  Sent password and logged in ===")
-
-        cookies = driver.get_cookies()
-
-        if(len(cookies) == 0):
-            return
-
+        time.sleep(60)  # Wait for me to sign in manually
 
         countries = ['Spain']
-        
         index = 0
+        existing_courses = []
 
-        courses = []
+        
+        with open('courses_grouped.json', 'r', encoding='utf-8') as f:
+            existing_courses = json.load(f)
+            index = len(existing_courses)
 
-        for country in countries:
 
-            page = 1
 
-            for page in range(1, 300):  # Scrape till you find no more courses
+        if len(existing_courses) == 0:
 
-                driver.get(f"https://www.mscorecard.com/mscorecard/courses.php?CourseName=&Country={country}&SubmitButton=Search&page={page}")
-                time.sleep(5)  # Wait for the page to load
-                
-                soup = BeautifulSoup(driver.page_source, 'lxml')
+            courses = []
 
-                if(soup == None):
-                    break
+            for country in countries:
 
-                # page = 0
-                # for page in range(10):  Scrape first 10 pages
-                course_links = soup.find_all('a', class_='no-hover')
+                page = 1
 
-                for link in course_links:
-                    course_data = {}
+                for page in range(1, 300):  # Scrape till you find no more courses
 
+                    driver.get(f"https://www.mscorecard.com/mscorecard/courses.php?CourseName=&Country={country}&SubmitButton=Search&page={page}")
+                    time.sleep(5)  # Wait for the page to load
                     
+                    soup = BeautifulSoup(driver.page_source, 'lxml')
 
-                    # 1. Extraer la URL del curso
-                    course_url = link.get('href')
-                    if course_url:
-                        course_data['url'] = course_url
+                    if(soup == None):
+                        break
 
-                    # 2. Extraer el nombre del curso
-                    name_div = link.find('div', style=lambda s: s and 'font-weight: 600' in s)
-                    if name_div:
-                        course_data['name'] = name_div.text.strip()
-                    
-                    # 3. Extraer el tipo de curso (ej. "18-hole course")
-                    if name_div:
-                        type_div = name_div.find_next_sibling('div')
-                        if type_div:
-                            course_data['tipo'] = type_div.text.strip()
+                    # page = 0
+                    # for page in range(10):  Scrape first 10 pages
+                    course_links = soup.find_all('a', class_='no-hover')
 
-                    # 4. Extraer la ubicación
-                    location_div = link.find('div', class_='course-location')
-                    if location_div:
-                        course_data['location_name'] = location_div.text.strip()
+                    if not course_links:
+                        break  # No more courses found, exit the loop
+
+                    for link in course_links:
+                        course_data = {}
+
+                        
+
+                        # 1. Extraer la URL del curso
+                        course_url = link.get('href')
+                        if course_url:
+                            course_data['url'] = course_url
+
+                        # 2. Extraer el nombre del curso
+                        name_div = link.find('div', style=lambda s: s and 'font-weight: 600' in s)
+                        if name_div:
+                            course_data['name'] = name_div.text.strip()
+                        
+                        # 3. Extraer el tipo de curso (ej. "18-hole course")
+                        if name_div:
+                            type_div = name_div.find_next_sibling('div')
+                            if type_div:
+                                course_data['tipo'] = type_div.text.strip()
+
+                        # 4. Extraer la ubicación
+                        location_div = link.find('div', class_='course-location')
+                        if location_div:
+                            course_data['location_name'] = location_div.text.strip()
 
 
-                    course_data['id'] = scraper.generate_id_from_name(course_data['name'], index)
-                    index += 1
-                    courses.append(course_data)
-                    
+                        course_data['id'] = scraper.generate_id_from_name(course_data['name'], index)
+                        index += 1
+                        courses.append(course_data)
+                        
 
-        for course in courses: 
+            # add courses to courses.json
+            with open(f'courses.json', 'w', encoding='utf-8') as f:
+                json.dump(courses, f, ensure_ascii=False, indent=2)
 
-            driver.get(f"https://www.mscorecard.com/mscorecard/{course['url']}")
+
+
+        else:   
 
             time.sleep(5)  # Wait for the page to load
 
-            course_soup = BeautifulSoup(driver.page_source, 'lxml')
 
-            if(course_soup == None):
-                break
+            print( f'iterating on existing courses {len(existing_courses)}' )
 
-            course_rounds = course_soup.find('select', class_='form-control')
+            holes = []
+            tees = []
+            index = 0
+
+            for club in existing_courses: 
+
+                if index > 2: # only do the first 2 for testing
+                    break
+
+                for course in club['courses']:
+
+                    index +=1 
+
+                    if index > 2: # only do the first 2 for testing
+                        break
+
+                    driver.get(f"https://www.mscorecard.com/mscorecard/{course['url']}")
+
+                    
+
+                    time.sleep(5)  # Wait for the page to load
+
+                    course_soup = BeautifulSoup(driver.page_source, 'lxml')
+
+                    if(course_soup == None):
+                        break
+
+                    data = scraper.extract_lap_data(course_soup, club['id'])
+
+                    print(f"Extracted data for course {course['url']}")
+                    print(data)
+
+                    if len(data) > 0:
+                        holes.append(data[0])
+                        tees.append(data[1])
+
+
+            with open(f'rounds.json', 'w', encoding='utf-8') as f:
+                json.dump(holes, f, ensure_ascii=False, indent=2)
+
+
+            with open(f'tees.json', 'w', encoding='utf-8') as f:
+                json.dump(tees, f, ensure_ascii=False, indent=2)
+
+
             
-            rounds = []
-
-            if(course_rounds):
-                options = course_rounds.find_all('option')
-                for option in options:
-                    rounds.append(option.get('value')) 
-
-
 
 
 
@@ -569,9 +592,7 @@ def main():
 
         print(courses[0])
 
-        # add courses to courses.json
-        with open(f'courses.json', 'w', encoding='utf-8') as f:
-            json.dump(courses, f, ensure_ascii=False, indent=2)
+       
 
 
         
@@ -579,7 +600,7 @@ def main():
         
     
     except Exception as e:
-        print(f"Error during login: {e}")
+        print(f"Error during scraping: {e}")
 
     finally:
         driver.quit()
@@ -588,7 +609,8 @@ def main():
     return 
 
 
-    
+if __name__ == "__main__":
+    main()
    
 
 

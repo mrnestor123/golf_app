@@ -934,6 +934,7 @@ function GameStart(){
                 type:'primary',
                 onclick: (e: Event) => {
                   m.route.set(`/`)
+                  console.log('closing')
                   vnode.attrs.close()
                 }
               }, "Discard session"),

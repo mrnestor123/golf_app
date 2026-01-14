@@ -6,21 +6,86 @@ import {
     
 } from "./scrap_data.js";
 
+import { createClient } from '@supabase/supabase-js'
+
+
+
+// controller se podría llamar server.js
 export {
     getGolfClubs,
     getClub,
+    saveGame,
     endGame, 
+    getUser,
+    createUser,
     getGame,
     Data,
     AppData
 }
 
+
+const supabase = createClient('https://yzcarnnubrtaaswshopo.supabase.co', 'sb_publishable_yVJTdFY4Qlpb0eQ2V94nPA_rBjZ2VmK')
+
+
+
+
+// TO DO ! FALTA HACER AUTENTICACIÓN REAL CON GOOGLE, IOS O SIMILAR
+// crea o obtiene el usuario
+async function createUser(email:string, password:string){
+
+    // find an user with this email
+    let data = await supabase
+    .from('Users')
+    .select('*')
+    .eq('email', email)
+    .single();
+
+    console.log('data', data)
+
+    if (data.data ){
+        // user exists
+        return Promise.resolve(data.data);
+    } else {
+        // create user
+        let insertData = await supabase
+        .from('Users')
+        .insert([
+            { email: email, password: password }
+        ])
+        .select();
+
+        if (insertData.data && insertData.data.length > 0){
+            return Promise.resolve(insertData.data[0]);
+        } else {
+            return Promise.reject('Error creating user');
+        }
+    }
+}
+
+
+async function getUser(id:string){
+
+    let { data, error } = await supabase
+    .from('Users')
+    .select('*')
+    .eq('id', id)
+    .single();
+
+    if (error){
+        return Promise.reject();
+    } else {
+        return Promise.resolve(data);
+    }
+}
+
+
+
+
+
 interface Data {
     user: User | null;
     golfClubs: GolfClub[];
     selectedClub: GolfClub | null;
-    selectedRound: any | null;
-    selectedTee: any | null;
     currentGame: Game | null;
     isLoading: boolean;
     cache: Map<string, any>;
@@ -29,10 +94,8 @@ interface Data {
 // Global data store for the app
 const AppData: Data = {
     user: null,
-    golfClubs: [],
     selectedClub: null,
-    selectedRound: null,
-    selectedTee: null,
+    golfClubs: [],
     currentGame: null,
     isLoading: false,
     cache: new Map()
@@ -48,26 +111,42 @@ function getGolfClubs(){
 
     AppData.golfClubs = scrapGolfClubs;
 
-    console.log('scrapGolfClubs', scrapGolfClubs);
 
     return Promise.resolve(scrapGolfClubs);
 }
 
 
 function getClub(id:string){
-    let course = scrapGolfClubs.find(club => club.id === id);
-    course.rounds = scrapRounds.filter(round => round.club_id === course.id);
-    course.tees = scrapTees.filter(tee => tee.club_id === course.id);
+    let club = scrapGolfClubs.find(club => club.id === id);
 
-    return Promise.resolve(course);
+    console.log('club', club)
+
+    club.rounds = scrapRounds.filter(round => round.club_id === club.id);
+    club.tees = scrapTees.filter(tee => tee.club_id === club.id);
+
+    return Promise.resolve(club);
 } 
 
-function endGame(game:Game){
-    // SAVE IT IN LOCAL STORAGE AT THE MOMENT !!!
+
+function saveGame(game:Game){
+
     let games = JSON.parse(localStorage.getItem('games') || '[]');
-    games.push(game.toJSON());
+
+    let existingIndex = games.findIndex((g:any) => g.id === game.id);
+    if (existingIndex >= 0){
+        games[existingIndex] = game.toJSON();
+    } else {
+        games.push(game.toJSON());
+    }
+
     localStorage.setItem('games', JSON.stringify(games));
 }
+
+
+function endGame(game:Game){
+    saveGame(game);
+}
+
 
 function getGame(id:string){
     let games = JSON.parse(localStorage.getItem('games') || '[]');
@@ -96,6 +175,8 @@ function listGames(userId:string){
     let userGames = games.filter((game:any) => game.user_id === userId);
     return Promise.resolve(userGames);
 }
+
+
 
 
 /*

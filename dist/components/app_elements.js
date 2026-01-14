@@ -11,20 +11,31 @@ function AppBar() {
                 alignItems: 'center',
                 justifyContent: 'space-between',
                 padding: '1rem',
+                background: 'white',
+                color: 'black',
                 ...config.app?.appBar,
                 ...vnode.attrs
             }, vnode.attrs.leading ?
                 m(Tappable, {
                     onclick: () => {
-                        if (vnode.attrs.leading?.onclick) {
-                            vnode.attrs.leading.onclick();
-                        }
-                        else if (vnode.attrs.leading?.route) {
+                        if (vnode.attrs.leading.route) {
+                            mobileNavigator.pop();
                             m.route.set(vnode.attrs.leading.route);
                         }
                         else {
+                            mobileNavigator.pop();
                             window.history.back();
                         }
+                        // pensar de retomar lo de abajo
+                        /*
+                        if(vnode.attrs.leading?.onclick){
+                        
+                            //vnode.attrs.leading.onclick()
+                        } else  if(vnode.attrs.leading?.route){
+                            //m.route.set(vnode.attrs.leading.route)
+                        } else {
+                            window.history.back();
+                        }*/
                     }
                 }, m(LucideIcon, {
                     icon: vnode.attrs.leading.icon || 'chevron-left',
@@ -49,7 +60,9 @@ function AppContent() {
             return m(FlexCol, {
                 flex: 1,
                 background: config.app?.background || config.background,
-                paddingTop: '1rem'
+                paddingTop: '1rem',
+                ...config.app?.content,
+                ...vnode.attrs
             }, vnode.children);
         }
     };
@@ -67,28 +80,58 @@ function App() {
     };
 }
 function NavBar() {
+    function getLastHashSegment(url) {
+        const hash = url.split('#')[1] || '';
+        // Elimina el #! inicial y divide
+        const parts = hash.replace(/^#?!?\/?/, '').split('/').filter(Boolean);
+        return '/' + (parts.pop() || '');
+    }
     return {
         view: (vnode) => {
-            let route = m.route.get() || '/';
-            return m(FlexRow, { position: 'fixed', bottom: 0, left: 0, right: 0, height: '3.5rem', marginTop: '3.5em', background: config.app?.navBar?.background || '#060e07' }, vnode.attrs.icons.map((icon) => {
-                return m(FlexCol, {
-                    flex: 1,
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    padding: '0.5rem',
-                    gap: '0.2rem',
-                    background: route === icon.link ? config.accentColor : 'transparent',
-                    color: route === icon.link ? '#ffffff' : '#888888',
-                    cursor: 'pointer',
-                }, m(LucideIcon, {
-                    icon: icon.icon,
+            let route = m.route.get() || getLastHashSegment(window.location.href) || '/';
+            return m(FlexRow, {
+                position: 'fixed',
+                bottom: 0,
+                left: 0,
+                right: 0,
+                height: '3.5rem',
+                marginTop: '3.5em',
+                background: 'white',
+                color: 'black',
+                borderTop: '1px solid rgba(0, 0, 0, 0.08)',
+                zIndex: '1000',
+                ...config.app?.navBar
+            }, vnode.attrs.icons.map((icon) => {
+                console.log('route', route);
+                return m(Tappable, {
                     style: {
-                        color: route === icon.link ? '#ffffff' : '#888888',
-                        display: 'block'
+                        flex: 1,
+                        display: 'flex',
+                        flexDirection: 'column',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        padding: '0.5rem',
+                        gap: '0.2rem',
+                        color: route === icon.link ? config.primaryColor : '#888888',
+                        cursor: 'pointer',
+                        transform: route != icon.link ? 'scale(0.9)' : 'scale(1)',
+                        transition: 'all 0.2s ease-in-out'
                     },
-                    width: '24',
-                    height: '24'
-                }), m(SmallText, icon.name));
+                    onclick: () => {
+                        //mobileNavigator.clearStack();
+                        m.route.set(icon.link);
+                    }
+                }, [
+                    m(LucideIcon, {
+                        icon: icon.icon,
+                        style: {
+                            color: route === icon.link ? config.primaryColor : '#888888',
+                            display: 'block'
+                        },
+                        width: '24',
+                        height: '24'
+                    }),
+                ], m(SmallText, icon.name));
             }));
         }
     };

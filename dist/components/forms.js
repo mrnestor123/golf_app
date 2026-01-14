@@ -2,7 +2,7 @@ import { FlexCol, FlexRow, Box, Div, Tappable } from "./layout.js";
 import { Text, SmallText } from "./texts.js";
 import { Icon, Button } from './elements.js';
 import { config } from "./config.js";
-import { localize, translateSALT } from "../util.js";
+import { localize, translateSALT } from "./util.js";
 export { FormLabel, Input, TranslationInput, Dropdown, IntegerInput, Switch, InfoTooltip, Checkbox, HtmlDropdown, DateSelector };
 // repensar si añadir localize a estas funciones !!
 function FormLabel() {
@@ -75,10 +75,11 @@ function Input() {
                     readonly: readonly || false,
                     rows: rows,
                     style: {
-                        ...(config.form?.baseStyle),
                         fontFamily: config.fontFamily,
                         //...(config.fonts?.default || config.defaultFont || {}),
-                        ...(vnode.attrs.style || {})
+                        ...(vnode.attrs.style || {}),
+                        ...(config.form?.baseStyle),
+                        ...(config.form?.input || {}),
                     },
                     oninput: (e) => {
                         oninput ? oninput(e) : '';

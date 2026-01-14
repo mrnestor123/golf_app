@@ -54,6 +54,7 @@ class Round {
     club_id: string;
     number_of_holes?: number;
     holes?: Hole[];
+    tees?: Tee[];
     handicaps?: number[];
     slopes: {};
     course_ratings: {};
@@ -63,12 +64,14 @@ class Round {
         // make number_of_holes optional
         number_of_holes = 18, 
         handicaps, slopes, 
-        course_ratings
+        course_ratings, 
+        tees
     }){
         this.id = id
         this.name = name
         this.club_id = club_id
         this.holes = holes?.map(hole => new Hole(hole))
+        this.tees = tees?.map(tee => new Tee(tee))
         this.number_of_holes = number_of_holes
         this.handicaps = handicaps
         this.slopes = slopes
@@ -81,6 +84,7 @@ class Round {
             name: this.name,
             club_id: this.club_id,
             ...this.holes ? { holes: this.holes.map(hole => hole.id) } : {},
+            ...this.tees ? { tees: this.tees.map(tee => tee.id) } : {},
             ...this.handicaps ? { handicaps: this.handicaps } : {},
         }
     }
@@ -150,20 +154,20 @@ class Hole {
 
 class User {
     id: string
-    name: string
+    user_name: string
     email: string
     handicap?: number
-    rounds?: Round[]
+    games?: Game[]
 
     constructor({
-        id, name, email,
+        id, name, email, user_name,
         handicap, rounds
     }){
         this.id = id
-        this.name = name
+        this.user_name = user_name
         this.email = email
         this.handicap = handicap
-        this.rounds = rounds || []
+        this.games = rounds || []
     }
 }
 
@@ -171,37 +175,53 @@ class User {
 class Game {
     id: string;
     date: Date;
-    club: GolfClub ;
-    round: Round;
-    tee: Tee ;
+    club: GolfClub;
+    
     user_id: string;
+    start: Date;
+    end?: Date;
+
     // lista with the scores
     scores: Score[];
 
+    round!: Round;
+    tee!: Tee ;
+    scoring_method!: string; // stroke play, match play, stableford, etc.
+    players?: User[] = []; // for multiplayer games
+
     constructor({
-        id = 'game ' + Math.random().toString(36).substring(2, 9),
+        id = createDateId('game'),
         date, 
         club, 
-        round, 
-        tee,
         scores = Array.from({length: 18}, () => new Score({}))
     }){
         this.id = id
+        this.start = new Date();
         this.date = date
         this.club = club
-        this.round = round;
-        this.tee = tee
-        this.scores = scores 
+        this.scores = scores.map(score => new Score(score))
     }
 
 
     toJSON() {
+        console.log('game toJSON', this)
+
         return {
             id: this.id,
             date: this.date,
             club_id: this.club.id,
             round_id: this.round.id,
             tee_id: this.tee.id,
+            scores: this.scores.map((score: Score) => score.toJSON()),
+
+            // ESTO SOLO A EFECTOS DE DEBUGGING
+            club: this.club,
+            start: this.start.toISOString(),
+            end: this.end ? this.end.toISOString() : null,
+            
+            round: this.round,
+            tee: this.tee,
+
             
             //scores: this.scores.map(score => score.toJSON())
             // club_id: this.club?.id || this.club,
@@ -221,9 +241,10 @@ class Score {
     green_in_regulation: boolean;
     fairway_hit: boolean;
     up_and_down: boolean;
-    start: Date | null;
-    end: Date | null;
+    start?: Date | null;
+    end?: Date | null;
 
+    confirmed: boolean = false;
 
     constructor({
         strokes = 0,
@@ -233,7 +254,8 @@ class Score {
         fairway_hit = false,
         up_and_down = false,
         start = null,
-        end = null
+        end = null,
+        confirmed = false
     }){
         this.strokes = strokes
         this.putts = putts
@@ -243,6 +265,21 @@ class Score {
         this.up_and_down = up_and_down
         this.start = start
         this.end = end
+        this.confirmed = confirmed
+    }
+
+    toJSON() {
+        return {
+            strokes: this.strokes,
+            putts: this.putts,
+            penalties: this.penalties,
+            green_in_regulation: this.green_in_regulation,
+            fairway_hit: this.fairway_hit,
+            up_and_down: this.up_and_down,
+            start: this.start ? this.start.toISOString() : null, 
+            end: this.end ? this.end.toISOString() : null,
+            confirmed: this.confirmed
+        }
     }
 }
 
@@ -261,6 +298,21 @@ export {
 
 
 
+// Utility function for date-based IDs
+function createDateId(prefix: string = ''): string {
+  const now = new Date();
+  const year = now.getFullYear();
+  const month = String(now.getMonth() + 1).padStart(2, '0');
+  const day = String(now.getDate()).padStart(2, '0');
+  const hours = String(now.getHours()).padStart(2, '0');
+  const minutes = String(now.getMinutes()).padStart(2, '0');
+  const seconds = String(now.getSeconds()).padStart(2, '0');
+  const ms = String(now.getMilliseconds()).padStart(3, '0');
+  
+  const dateStr = `${year}${month}${day}${hours}${minutes}${seconds}${ms}`;
+  
+  return prefix ? `${prefix}_${dateStr}` : dateStr;
+}
 /*
 
 */

@@ -1,94 +1,147 @@
 // MODEL
-import { App, AppBar, AppContent, LucideIcon, NavBar} from './components/app_elements.js'
+import { App, AppBar, AppContent, LucideIcon, mobileRouter, NavBar} from './components/app_elements.js'
 import { setConfig, config } from './components/config.js'
 import { Button, Img, Label } from './components/elements.js'
+import { Input } from './components/forms.js'
 import { Animate, Box,  Div,  FlexCol, FlexRow, Tappable } from './components/layout.js'
 import { H2, H3, SmallText, Text } from './components/texts.js'
-import { getClub, getGolfClubs, Data, AppData, endGame, getGame } from './controller.js'
-import { Game, GolfClub, Hole, Round, Score, Tee } from './model.js'
+import { getClub, getGolfClubs, Data, AppData, endGame, getGame, saveGame, getUser, createUser } from './controller.js'
+import { Game, GolfClub, Hole, Round, Score, Tee, User } from './model.js'
 
 const m = (window as any).m;
 
 
 setConfig({
-<<<<<<< HEAD
-  fontFamily: 'Lexend, sans-serif',
+  background: 'white',
+  fontFamily: 'Manrope',
   primaryColor:'#013220',
-  'text-light': '#333333',
-  background: '#102210',
+  form: {
+    formLabel: {
+      color: 'black',
+      fontFamily:'Manrope'
+    },
+    input: {
+      lineHeight: 1.4,
+    }
+  },
+
+  fonts: {
+    h2: {
+      fontWeight:'normal'
+    }
+  },
 
   app: {
-    appBar: {
-      background: '#102210',
-      borderBottom: '#2a4b3a solid 1px',
-      leading: 'white'
-=======
-    background: '#',
-    fontFamily: 'Lexend, sans-serif',
-    primaryColor:'#013220',
-    'text-light': '#333333',
-    card: {
-        background:'#00000033',
-        border:' 1px solid #444444'
->>>>>>> dd95925f8936f15964d2a1a2cee1ea37a01ff087
-    },
     navBar: {
-      background:'#0a1b0b'
-    }
-  },
-  form: {
-      formLabel: {
-          color: 'white'
-      }
-  },
-  button: {
-    primary: {
-      background: '#014d26',
-      color: 'white',
-      padding: '0.75rem 1.5rem',
-      borderRadius: '0.5rem',
+      background:'white'
     },
-    secondary : {
-      padding: '0.75rem 1.5rem',
-      borderRadius: '0.5rem',
+    content: {
+      padding:'1rem'
+    },
+    appBar: {
+      background: 'white',
+      color:'black'
+    },
+    card: {
+      background:'#F3F3F3'
     }
   },
+  
   elements: {
     label: {
       secondary: {
+        border: '1px solid #ccc',
+        borderRadius:'0.1rem',
+        padding:'1rem',
+        margin:0,
         backgroundColor: "white",
-        color:'black'
+        color:'black',
+        textAlign:'center'
+      },
+
+      primary: {
+        background: '#1a1a1a',
+        color: 'white',
+        padding: '1rem',
+        lineHeight: 1.4,
+        borderRadius: '0.2rem',
+        textAlign:'center'
+      },
+    },
+
+    button: {
+      primary: {
+        background: '#1a1a1a',
+        color: 'white',
+        padding: '0.75rem 1.5rem',
+        lineHeight: 1.4,
+        borderRadius: '0.2rem',
+      },
+      secondary : {
+        padding: '0.75rem 1.5rem',
+        borderRadius: '0.5rem',
       }
-    }
+    },
+
+    card: {
+      background:'#00000033',
+      border:' 1px solid #444444'
+    },
   }
 })
 
 
+
 // Router
-m.route(document.body, "/", {
-    "/": {
-      render: function(vnode:any) {
-        return m(Layout, vnode.attrs, MainPage)
-      }
-    },
+mobileRouter(document.body, "/splash", {
 
-    "/club/:id": {
-      render: function(vnode) {
-        return m(ClubSelected, vnode.attrs)
-      }
+  "/splash": {
+    view: function(vnode:any) {
+      return m(SplashPage, vnode.attrs)
     },
+    'transition':'no'
+  },
 
-    "/club/:clubId/:roundId/:teeId": {
-      render: function(vnode: any){
-        return m(RoundStart, vnode.attrs)
-      }
+
+  "/login": {
+    view: function(vnode:any) {
+      return m(LoginPage, vnode.attrs)
     },
+    'transition':'no'
+  },
 
-    "/round/:roundId": {
-      render: function(vnode: any){
-        return m(RoundEnded, vnode.attrs)
-      }
+  "/": {
+    view: function(vnode:any) {
+      return m(Layout, vnode.attrs, MainPage)
+    },
+    'transition':'no'
+  },
+
+  "/profile": {
+    view: function(vnode:any) {
+      return m(Layout, vnode.attrs, ProfilePage)
+    },
+    'transition':'no'
+  },
+
+  "/club/:id": {
+    view: function(vnode) {
+      return m(ClubSelected, vnode.attrs)
     }
+  },
+
+  "/game/:id": {
+    view: function(vnode: any){
+      console.log('game start' , vnode.attrs)
+      return m(GameStart, vnode.attrs)
+    }
+  },
+
+  "/game/end/:id": {
+    view: function(vnode: any){
+      return m(GameEnded, vnode.attrs)
+    }
+  }
 
     /*
     "/profile": {
@@ -124,13 +177,101 @@ m.route(document.body, "/", {
 
 
 function SplashPage() {
-    return {
-        view: (vnode)=> {
-            return [
+  
+  let animation;
 
-            ]
+  return {
+    oninit: (vnode) => {
+      if(localStorage.getItem('user_cod')){
+        getUser(localStorage.getItem('user_cod') || '').then((user)=>{
+         AppData.user = new User(user);
+         console.log('loaded user', AppData.user)
+        })
+      } 
+
+      setTimeout(() => { 
+        if(localStorage.getItem('user_cod') && AppData.user.id){
+          m.route.set('/');
+        } else {
+          m.route.set('/login');
         }
+      }, 5000);
+    },
+    view: (vnode)=> {
+      return [
+        m(App,
+          m(AppContent, {justifyContent:'center', alignItems:'center', padding:'1rem', textAlign:'center'},
+
+            m(Animate,{
+              duration: 2000,
+              from: { opacity: 0, transform: 'scale(0.5)' },
+              to: { opacity: 1, transform: 'scale(1)' }
+            }, 
+              m(H2, "Welcome"),
+              //m(Box, {height:'1rem'}),
+              //(m(H2, {color: config.primaryColor}, "Golf "),
+            )
+          )
+        )
+      ]
     }
+  }
+}
+
+
+function LoginPage() {
+  let loading = false;
+
+  let data = {}
+
+  return {
+    view: (vnode)=> {
+      return [
+        m(App,
+          m(AppContent, {justifyContent:'center', alignItems:'center', padding:'1rem', textAlign:'center', gap:'0.5rem'},
+            m(H2, "Login Page"),
+
+            m(Input,{
+              label:  "Email",
+              type: 'email',
+              data: data,
+              name: 'email',
+              placeholder: 'Email'
+            }),
+
+            m(Input,{
+              label: "Password",
+              type: 'password',
+              data: data,
+              name: 'password',
+              placeholder: 'Password'
+            }),
+
+            m(FlexRow,{width:'100%'}, m(Button, {
+              type:'primary',
+              fluid:true,
+              style:{flex:1},
+              onclick:(e: Event) => {
+                if(!data['email'] || !data['password']){
+                  alert('Please enter email and password');
+                  return;
+                }
+
+                createUser(data['email'], data['password']).then(user=>{
+                  if(user){
+                    localStorage.setItem('user_cod', user.id);
+                    AppData.user = user;
+                    m.route.set('/');
+                  }
+                })
+                
+              }
+            }, "Login"))
+          )
+        )
+      ]
+    }
+  }
 }
 
 
@@ -141,8 +282,9 @@ function Layout() {
 
   return {
     view: (vnode:any)=> {
+      
       return m(App,
-
+        /*
         m(AppBar, {
           title:  'Golfing'
         },
@@ -165,7 +307,7 @@ function Layout() {
               icon:'circle-user-round'
             })
           )
-        ),
+        )*/
 
         m(AppContent, 
           vnode.children.map((child:any) => m(child)),
@@ -177,7 +319,7 @@ function Layout() {
             { icon: "land-plot", link: "/", name: 'Play'},
             // { icon: "land-plot", link: "/", name: 'Play'},
             // { icon: "dumbbell", link: "/train", name: 'Train'},
-            //{ icon: "user", link: "/profile", name:'Profile'}
+            { icon: "user", link: "/profile", name:'Profile'}
           ]
         })
       )
@@ -206,64 +348,82 @@ function MainPage(){
     view: (vnode:any)=> {
       return m('div', { 
         style: { 
-          padding: '1rem',
           color: '#fff'
         } 
       }, [
         
-        m('h3', 'Golf Courses Near You'),
+        m(H2, 'Golf Courses Near You'),
+        m(Box, {height:'1rem'}),
         
         m(FlexCol, { gap: '1rem' },
           AppData.golfClubs.map((club: GolfClub)=> {
             const photo = club.photo; 
             
             return m(Tappable,{
+              rippleEffect:true,
               onclick:(e:Event)=> {
                 AppData.selectedClub = club;
                 m.route.set(`/club/${club.id}`) 
               }
             },
-                m(FlexRow, {
-                  background:'#00000033',
-                  padding: '0.75rem',
-                  borderRadius:'0.5rem',
-                  alignItems: 'center',
-                  gap:'0.5rem'
-                },
+              m(FlexRow, {
+                background:'#F8F8F8',
+                padding: '0.75rem',
+                borderRadius:'0.5rem',
+                alignItems: 'center',
+                boxShadow:' 0 2px 4px rgba(0,0,0,0.1)',
+                color:'black',
+                gap:'0.5rem'
+              },
 
-                  m(FlexRow, {flex:1, gap:'0.5rem'},
+                m(FlexRow, { flex:1, gap:'0.5rem'},
+              
+                  photo && m("img",{
+                      style: {
+                        width:'70px',
+                        height:'90px',
+                        borderRadius:'0.5rem',
+                        objectFit:'cover'
+                      },
+                      src: photo 
+                  }),
+
+                  m(FlexCol, {justifyContent:'space-between', padding:'0.5rem'},
+                    m(Text, club.name),
+
+                    m(FlexRow, {alignItems:'center', gap:'1rem'},
+                      m(FlexRow, {alignItems:'center', gap:'0.5rem'},
+                        m(LucideIcon,{  
+                          icon: 'star',
+                          width: '16',
+                          height: '16',
+                          style: { color:'black'}
+                        }),
+                        m(SmallText, club.rating || 'N/A'),
+                      ),
+
+                      m(FlexRow, {alignItems:'center', gap:'0.5rem'},
+                        m(LucideIcon,{  
+                          icon: 'map-pin',
+                          width: '16',
+                          height: '16',
+                          style: { color:'black'}
+                        }),
+                        m(SmallText, '100 m')  
+                      ),
+                    ),
+
                     
-                    photo && m("img",{
-                        style: {
-                            width:'70px',
-                            height:'70px',
-                            borderRadius:'0.5rem'
-                        },
-                        src: photo 
-                    }),
+                  )
+                ),
 
-                    m(FlexCol, {justifyContent:'space-between'},
-                        m(Text, club.name),
-
-                        m(FlexRow, {alignItems:'center', gap:'0.5rem'},
-                          m(LucideIcon,{  
-                            icon: 'star',
-                            width: '16',
-                            height: '16',
-                            style: { color:'white'}
-                          }),
-                          m(SmallText, club.rating || 'N/A')  
-                        )
-                    )
-                  ),
-
-                  m(LucideIcon, {
-                    icon: 'chevron-right',
-                    width: '24',
-                    height: '24',
-                    style: { color:'white' }
-                  })
-                )
+                m(LucideIcon, {
+                  icon: 'chevron-right',
+                  width: '24',
+                  height: '24',
+                  style: { color:'black' }
+                })
+              )
             )
           })
         )
@@ -273,49 +433,74 @@ function MainPage(){
 }
 
 
-function ClubSelected() {
-
-  let club: GolfClub | null = null;
-  let loading = false;
-
-  let selectedRound: any = AppData.selectedRound;
-  let selectedTee: any = AppData.selectedTee;
+function ProfilePage(){
+  let user: User = AppData.user;
+  
   
   return {
+    view: (vnode) =>{
+      console.log('user', user, AppData.user)
+
+      if(!user) return
+
+      return [
+        m(FlexCol, { alignItems:'center', gap:'1rem', marginTop:'2rem'},
+          m(Div,{
+            style: {
+              width:'80px',
+              height: '80px',
+              borderRadius:'50%',
+              background: 'grey',
+            }
+          }),
+
+          m(H2, user.user_name),
+        ),
+
+        m(Box, {height:'2rem'}),
+          
+        m(Text, "My games"),
+
+      ]
+    }
+  }
+}
+
+function ClubSelected() {
+
+  let club = AppData.selectedClub;
+  let loading = false;
+
+  let game : Game | null = null;
+
+  
+
+  async function getData({id}){
+    console.log('clubId', id)
+    if(!club){
+      loading = true;
+      club = await getClub(id)
+      AppData.selectedClub = club;
+      loading = false;
+      m.redraw()
+    }
+
+    game = new Game({
+      club:club,
+      date: new Date(),
+    })
+
+    game.scoring_method = 'Stroke play';
+  }
+
+  return {
     oninit:(vnode:any)=> {
-      let clubId = vnode.attrs.id;
+      console.log(vnode.attrs)
 
-      if(!AppData.selectedClub){
-        loading = true;
-
-        getClub(clubId)
-        .then((res:any)=>{
-          club = new GolfClub(res);
-
-          if(club.rounds && club.rounds.length == 1){
-            selectedRound = club.rounds[0];
-          }
-
-          if(club.tees && club.tees.length == 1){
-            selectedTee = club.tees[0];
-          }
-
-          loading = false;
-          m.redraw();
-        })
-        .catch((error: Error) => {
-          console.error('Error loading club details:', error);
-        })
-      } else {
-        club = AppData.selectedClub;
-        m.redraw();
-      }
-
+      getData(vnode.attrs);
     },
     view: (vnode:any)=> {
       if(loading) return;
-
-      console.log('data', AppData);
 
       return [
         m(App,
@@ -325,92 +510,122 @@ function ClubSelected() {
             }
           }),
 
-          m(AppContent,
-            m(FlexCol, {padding:'1em', alignItems:'center'},
-              m("img", {
-                style: {
-                  width:'80%',
-                  borderRadius:'0.5rem',
-                  marginBottom:'1rem'
-                },
-                src: club.photo
-              }),
+          m("img", {
+            style: {
+              width:'100%',
+              height: '200px',
+              objectFit:'cover',
+            },
+            src: club.photo
+          }),
 
+          m(AppContent,{ gap:'1rem'},
+
+            m(FlexCol,{gap:'0.5rem'},
               m(H2, club.name),
 
+              m(Text, "Select the different options to start a new game"),
               
-              m(ButtonModal, {
-                left: 'Select Round',
-                right: selectedRound ? selectedRound.name : 'Select',
-                modal: club.rounds.map((round:Round)=>{
-                  return {
-                    title: round.name,
-                    description: round.number_of_holes + ' holes',
-                    onclick: (e: Event) => {
-                      selectedRound = round;
-                      AppData.selectedRound = round;
-                    }
+            ),
+
+            
+            
+            m(ButtonModal, {
+              left: 'Round',
+              icon: 'route',
+              right: game.round ? game.round?.name : 'Select',
+              selected: game.round,
+              modal: club.rounds.map((round:Round)=>{
+                return {
+                  title: round.name,
+                  description: round.number_of_holes + ' holes',
+                  onclick: (e: Event) => {
+                    game.round = round;
                   }
-                }) 
-              }),
-
-              m(ButtonModal, {
-                left: 'Select Tee',
-                right: selectedTee ? selectedTee.name : 'Select',
-                modal: club.tees.map((tee:Tee)=>{
-                  return {
-                    title: tee.name,
-                    description: selectedRound && selectedRound.course_ratings[tee.id]  
-                      ? `CR: ${selectedRound.course_ratings[tee.id]}, Slope: ${selectedRound.slopes[tee.id]}`
-                      : 'Select a round first',
-                    onclick: (e: Event) => {
-                      selectedTee = tee;
-                      AppData.selectedTee = tee;
-                    }
-                  }
-                }) 
-              }),
-
-
-              /*
-              m(ButtonModal, {
-                  left: 'Select Players',
-                  right: selectedTee ? selectedTee.name : 'Select',
-                  modal: club.tees.map((tee:Tee)=>{
-                      return {
-                          title: tee.name,
-                          description: tee.color,
-                          onclick: (e: Event) => {
-                              selectedTee = tee;
-                          }
-                      }
-                  }) 
-              }),*/
-
-
-              m(Button, {
-                type:'primary',
-                disabled: !selectedRound || !selectedTee,
-                onclick:(e: Event) => {                  
-                  AppData.currentGame = new Game({
-                    id: 'game_' + Date.now(),
-                    date: new Date(),
-                    club: club,
-                    round: selectedRound,
-                    tee: selectedTee
-                  })
-
-                  m.route.set(`/club/${club.id}/${selectedRound.id}/${selectedTee.id}`);
-                },
-                style: {
-                  marginTop:'1rem',
-                  position:'fixed',
-                  bottom:'2em',
-                  width:'80%',
-                  maxWidth:'400px'
                 }
-              }, 'Start')
-            )
+              }) 
+            }),
+
+            m(ButtonModal, {
+              left: 'Tee',
+              icon:'land-plot',
+              selected: game.tee,
+              right: game.tee ? game.tee.name : 'Select',
+              modal: club.tees.map((tee:Tee)=>{
+                return {
+                  title: tee.name,
+                  description: game.round && game.round.course_ratings[tee.id]  
+                    ? `CR: ${game.round.course_ratings[tee.id]}, Slope: ${game.round.slopes[tee.id]}`
+                    : 'Select a round first',
+                  onclick: (e: Event) => {
+                    game.tee = tee;
+                  }
+                }
+              }) 
+            }),
+
+            m(ButtonModal, {
+              left: 'Scoring',
+              icon:'arrow-down-1-0',
+              selected: game.scoring_method,
+              right: game.scoring_method ? game.scoring_method : 'Stroke Play',
+              modal: [
+                {
+                  title: 'Stroke Play',
+                  description: 'Standard scoring method. Lowest total strokes wins.',
+                  onclick:(e)=>{
+                    game.scoring_method = 'Stroke play';
+                  }
+                },
+                {
+                  title: "Stableford",
+                  description: 'Points-based system rewarding scoring relative to par.',
+                  onclick:(e)=>{
+                    game.scoring_method = 'Stableford';
+                  }
+                }
+              ]
+            }),
+
+          
+            m(ButtonModal, {
+              left: 'Players',
+              right: game.players.length || '1',
+              icon:'users-round'
+            },  
+              m(FlexCol, {gap:'1rem'},
+                game.players.map((player, index) =>
+                  m(FlexRow, { alignItems:'center', justifyContent:'space-between' },
+                    m(Text, player.user_name || `Player ${index + 1}`),
+                  )
+                ),
+
+
+                m(Button, {
+                  type:'secondary',
+                  onclick:(e: Event) => {
+                    game.players.push({} as User);
+                  }
+                })
+              )
+            ),
+
+            m("div", {style: { flex:1 }}),
+
+            m(Button, {
+              type:'primary',
+              disabled: game.round == null || game.tee == null,
+              onclick:(e: Event) => {    
+                console.log('game', game)              
+                saveGame(game);
+
+                m.route.set(`/game/${game.id}`);
+              },
+              style: {
+                marginTop:'1rem',
+                maxWidth:'400px'
+              }
+            }, 'Start')
           )
         )
       ]
@@ -441,8 +656,9 @@ function ClubSelected() {
               },
                 m(Animate, {
                   duration: 300,
-                  from: { translateY: '100%' },
-                  to: { translateY: '0%' },
+                  from: { transform: 'translateY(20%)' },
+                  to: { transform: 'translateY(0%)' },
+                  exit: { transform: 'translateY(20%)' },
                   style: {
                     position:'fixed',
                     bottom:0,
@@ -496,24 +712,34 @@ function ClubSelected() {
               )
             ],
 
-
             m(Tappable,{
               onclick:(e: Event) => {
                 openModal = true;
               },
               rippleEffect: true,
               style: {
-                background: '#00000033',
+                background: config.app.card.background,
                 borderRadius: '0.5rem',
-                padding: '1.5rem',
-                margin:'1rem ',
+                padding: '1rem',
                 display:'flex',
-                alignItems:'center',
-                width: '100%'
+                //flex:'1 1 100%',
+                alignItems:'center'
               },
             },    
               m(FlexRow, {flex:1, alignItems:'center', justifyContent:'space-between'},
-                m(Text, {fontWeight:'bold'}, left),
+
+                m(FlexRow, {gap:'1rem', alignItems:'center'},
+                  m(Div, { display:'flex', alignItems:'center', justifyContent:'center', background:'white', padding:'0.6rem', borderRadius:'0.5rem'},
+                    m(LucideIcon, {
+                      icon: vnode.attrs.icon,
+                      width: '20',
+                      height: '20',
+                      style: { color:'black', margin:'0 auto' }
+                    })
+                  ),
+                  
+                  m(Text,  left),
+                ),
                 m(SmallText, right)
               )
             )
@@ -524,41 +750,27 @@ function ClubSelected() {
 }
 
 
-function RoundStart(){ 
-  
-
-  
-
-  let club: GolfClub = AppData.selectedClub;
-  let game: Game = AppData.currentGame;
-  let round: Round = game?.round;
-  let tee: Tee = game?.tee;
-  let holes: Hole[] = round?.holes.map((hole:any) => new Hole(hole));
+function GameStart(){   
+  let game: Game  = AppData.currentGame;
+  let holes: Hole[] = game?.round?.holes.map((hole:any) => new Hole(hole));
   let hole_index = 0;
-
+  
   let loading = false;
+
+  async function getData({id}){
+    if(!game){
+      loading = true;
+      game = await getGame(id);
+      holes = game.round.holes.map((hole:any) => new Hole(hole));
+      AppData.currentGame = game;
+      loading = false;
+      m.redraw()
+    }
+  }
   
   return {
     oninit:(vnode:any)=> {
-      if(!game ){
-        loading = true;
-
-        getClub(vnode.attrs.clubId).then((res:any)=>{
-          club = res;
-          round = res.rounds.find((r:any) => r.id === vnode.attrs.roundId);
-          holes = round.holes.map((hole:any) => new Hole(hole));
-          tee = res.tees.find((t:any) => t.id === vnode.attrs.teeId);
-          
-          game = new Game({
-            date: new Date(),
-            club: club,
-            round: round,
-            tee: tee
-          });
-          loading =false;
-          m.redraw();
-        })
-      }
+      getData(vnode.attrs);
     },
     view : (vnode:any) => {
       if(loading) return;
@@ -566,28 +778,29 @@ function RoundStart(){
       console.log('game', game)
 
       return m(App,
-
         m(AppBar, {
           leading: {
             icon: 'x',
-            style: { color: 'white'},
-            onclick: () => m.route.set(`/club/${vnode.attrs.clubId}`)
+            style: { color: 'black'}
           },
-          title: round?.name,
-          subtitle: club?.name,
+          title: game.round.name,
+          subtitle: game.club.name,
         }),
 
-        m(AppContent,
+        m(AppContent, {borderTop: '1px solid #ccc'},
           
-          m(HoleInfo, {
-            hole: holes[hole_index], 
-            score: game.scores[hole_index],
-            teeId: vnode.attrs.teeId
-          }),
+          [
+            m(HoleInfo, {
+              hole: holes[hole_index], 
+              key: hole_index,
+              score: game.scores[hole_index],
+              teeId: vnode.attrs.teeId
+            }),
+          ],
 
           m(TotalScore),
 
-          m(Div,{ 
+          m(Div, { 
             position: 'fixed',
             bottom:'0px',
             left:'0px',
@@ -600,39 +813,53 @@ function RoundStart(){
             gap:'0.5rem',
             justifyContent:'space-between'
           },
-
-            m(Button, {
-              type:'secondary',
-              onclick: () => {
-                endGame(game)
-                m.route.set(`/round/${round.id}`)
-                m.redraw();
-              }
-            }, "END"),
-            
-             m(Button,{
+            m(Button,{
               disabled: hole_index == 0,
+              type:'secondary',
+              style: {
+                minWidth:'fit-content'
+              },
               onclick: () => {
                 m.redraw();
                 if(hole_index > 0){
                   hole_index--;
                 }
-              },
-              style: {
-                flex: 1
               }
             },  
               m(LucideIcon,{
                 icon:'arrow-left',
                 style: {
-                  color:'white'
+                  color:'black'
                 },
                 width: '16',
                 height: '16'
               })
             ),
 
+
+            m(Button, {
+              onclick: () => {
+                if(hole_index >= holes.length -1) {
+                  endGame(game)
+                  m.route.set(`/game/end/${game.id}`)
+                } else {
+                  game.scores[hole_index].confirmed = true;
+                  game.scores[hole_index].end = new Date()
+                  hole_index++;
+                }
+
+                m.redraw();
+              },
+              style: {
+                flex: 1
+              }
+            },  hole_index >= holes.length -1 ? "End Round" : "Add score"),
+
             m(Button,{
+              type:'secondary',
+              style: {
+                minWidth:'fit-content'
+              },
               onclick: () => {
                 m.redraw();
                 if(hole_index < holes.length -1){
@@ -644,15 +871,12 @@ function RoundStart(){
                   hole_index++;
                   
                 }
-              },
-              style: {
-                flex: 1
               }
             }, 
               m(LucideIcon,{
                 icon:'arrow-right',
                 style: {
-                  color:'white'
+                  color:'black'
                 },
                 width: '16',
                 height: '16'
@@ -672,6 +896,15 @@ function RoundStart(){
     let score: Score ;
 
     return {
+      oninit:(vnode)=>{
+        hole = vnode.attrs.hole
+        score = vnode.attrs.score
+
+        if(!score.confirmed){
+          score.strokes = hole.par;
+          score.start = new Date();
+        }
+      },
       view: (vnode)=> {
         hole = vnode.attrs.hole
         score = vnode.attrs.score
@@ -684,37 +917,53 @@ function RoundStart(){
         score.green_in_regulation = score.strokes && score.putts ? score.strokes - (score.putts || 0) <= green_score: false;
         score.up_and_down = score.strokes && !score.green_in_regulation ? hole.par >= score.strokes : false;
 
-
         return m(FlexCol,{ 
-          margin:'0 auto', padding:'1rem', borderRadius:'8px', 
-          width:'90%', maxWidth:'400px', background:'white',
+          background:'white', 
           gap: '1rem', color:'black'
         },
             
-          m(FlexRow, { alignItems:'center', justifyContent:'space-between'}, 
+          m(FlexRow, { alignItems:'center', justifyContent:'space-between', width:'100%'}, 
             m(H2, `Hole ${hole_index + 1}`),
 
+
+            m(FlexRow, { gap:'0.5rem', alignItems:'center' },
+
+              m(LucideIcon,{
+                icon:'land-plot',
+                width: '20',
+                height: '20',
+              }),
+
+              m(SmallText, hole.tees[game.tee.id] + ' m')
+            )
+            /*
             m(Label, {
               type: 'secondary',
               style: { border:`1px solid ${tee.color}`, color: tee.color, background:'white'}
-            }, m(SmallText, tee.name )
-          )),
+            }, m(SmallText, tee.name )*/
+          ),
 
-          m(FlexRow, {justifyContent:'space-between', alignItems:'center'},
-            m(FlexRow, { alignItems:'center', gap:'0.5rem'},
-              [
-                'Par ' + hole.par,
-                'Hcp ' + round.handicaps[hole_index],
-                hole.tees[vnode.attrs.teeId] + ' m',
-              ].map((text)=>{
-                return m(SmallText, {
-                  type:'default'
-                }, text)
+          m(FlexRow, {justifyContent:'space-between', alignItems:'center', flex: 1},
+             [
+              'Par ' + hole.par,
+              'Hcp ' + game.round.handicaps[hole_index],
+              ].map((text,i)=>{
+                return [
+                  m(Label,{
+                  type:'secondary',
+                  style: { flex:1}
+                },
+                  m(Text, text)
+                ),
+
+                i == 0 ? m(Box, {width:'1rem'}) : null
+              ]
               }),
-
+            
+            m(FlexRow, { alignItems:'center', gap:'0.5rem'},
+             
             ),
-
-
+            /*
              m(FlexRow, {gap:'1rem', alignItems:'center'},
               m(Label, {
                 type: score.green_in_regulation ?'primary' : 'secondary',
@@ -723,80 +972,58 @@ function RoundStart(){
               m(Label, {
                 type: score.up_and_down ?'primary' : 'secondary',
               }, "UP & DOWN")
-            ),
+            ),*/
+
+            
           ),
 
           m(NumberPut,{
             data: score,
             name: 'strokes',
-            text: 'Total Strokes'
+            text: 'Total Strokes',
           }),
-
-           
-
           
 
-          expandMore ? 
-          [
-            m(NumberPut,{
-              data: score,
-              name: 'putts',
-              text: 'Putts'
-            }),
+          m(NumberPut,{
+            data: score,
+            name: 'putts',
+            text: 'Putts'
+          }),
 
-            m(NumberPut,{
-              data: score,
-              name: 'chip',
-              text: 'Approach shots'
-            }),
+          m(NumberPut,{
+            data: score,
+            name: 'chip',
+            text: 'Approach shots'
+          }),
 
-            m(NumberPut,{
-              data: score,
-              name: 'penalties',
-              text: 'Penalties'
-            }),
+          m(NumberPut,{
+            data: score,
+            name: 'penalties',
+            text: 'Penalties'
+          }),
 
-            m(Fairway, {
-              data: score,
-              name: 'fairway',
-              text: 'Fairways Hit'
-            })
-          ] : null,
+          m(Fairway, {
+            data: score,
+            name: 'fairway',
+            text: 'Fairways Hit'
+          }),
 
 
-          m(Tappable,{
-            onclick:(e: Event) => {
-              expandMore = !expandMore;
-              m.redraw()
-            }
-          },
-           
-            m(LucideIcon, {
-              icon: 'chevron-down',
-              width: '24',
-              height: '24',
-              style: {
-                display: 'block',
-                margin: '0 auto',
-                transition: 'transform 0.3s',
-                transform: expandMore ? 'rotate(180deg)' : 'rotate(0deg)'
-              }
-            })
+          m(FlexRow, {alignItems:'center'},
+            m(Label, {
+              style: {flex:1},
+              type: score.green_in_regulation ?'primary' : 'secondary',
+            }, m(Text, {color:score.green_in_regulation ? 'white' : 'black'}, "GIR")),
 
-          ),
-            
-            /*m(HtmlIntegerInput,{
-                type:'number',
-                min: 1,
-                data: playRound?.scores || {},
-                name: hole_index,
-                onchange: (e) => {
-                    //playRound.scores[hole_index] += e;
-                    m.redraw()
-                }
-            })*/
+            m(Box, {width:'1rem'}),
+
+            m(Label, {
+              style: {flex:1},
+              type: score.up_and_down ?'primary' : 'secondary',
+            }, m(Text, {color:score.up_and_down ? 'white' : 'black'},  "UP & DOWN"))
           )
 
+        )
       }
     }
   
@@ -810,7 +1037,7 @@ function RoundStart(){
           return [
             m(FlexRow, {
               style: {
-                padding: '1rem', background: '#f0f0f0', flex:1, alignItems: 'center',
+                flex:1, alignItems: 'center',
                 borderRadius: '0.5rem', justifyContent: 'space-between'
               }
             },
@@ -818,43 +1045,39 @@ function RoundStart(){
               m(Text, text),  
 
 
-              m(FlexRow, {alignItems:'center'},
-                m(Text, data[name] || 0),
+              m(FlexRow, { minWidth:'30%', alignItems:'center', justifyContent:'space-between', background:config.app.card.background, padding:'1rem', borderRadius:'0.5rem'},
+                
+                m(Tappable, {
+                  style:{display:'flex', alignItems:'center', justifyContent:'center'},
+                  onclick: (e: Event) => {
+                    if(data[name] == 0) return;
 
-                m(FlexRow,{alignItems:'center', gap:'0.5rem', marginLeft:'1rem'},
-                  m(Tappable, {
-                    style: {
-                      border: '1px solid #ccc',
-                      borderRadius: '0.5rem',
-                      padding: '0.5rem 1rem'
-                    },
-                    onclick: (e: Event) => {
-                      if(data[name] == 0) return;
+                    score.confirmed = true;
 
-                      data[name] = (data[name] || 0) - 1;
-                      m.redraw();
-                    },
-                  }, 
-                    m(LucideIcon, {icon:'minus', width: '16', height: '16'})
-                  ),
+                    data[name] = (data[name] || 0) - 1;
+                    m.redraw();
+                  },
+                },
 
-                  m(Tappable, {
-                    style: {
-                      padding: '0.5rem 1rem',
-                      border: '1px solid #ccc',
-                      borderRadius: '0.5rem',
-                    },
-                    onclick: (e: Event) => {
-                      data[name] = (data[name] || 0) + 1;
-                      m.redraw();
-                    },
-                  }, 
-                    m(LucideIcon, {
-                      icon:'plus',
-                      width: '16',
-                      height: '16'
-                    })
-                  )
+                  m(LucideIcon, {icon:'minus', width: '24', height: '24'})
+                ),
+                
+                m(H2,{color: score.confirmed ? 'black' : 'grey' }, data[name] || 0),
+
+
+                m(Tappable, {
+                  style:{display:'flex', alignItems:'center', justifyContent:'center'},
+                  onclick: (e: Event) => {
+                    score.confirmed = true;
+                    data[name] = (data[name] || 0) + 1;
+                    m.redraw();
+                  },
+                }, 
+                  m(LucideIcon, {
+                    icon:'plus',
+                    width: '24',
+                    height: '24'
+                  })
                 )
               )
             )
@@ -869,21 +1092,19 @@ function RoundStart(){
       return {
         view: (vnode) => {
 
-          let {text, data, name } = vnode.attrs;
-
+          let { text, data, name } = vnode.attrs;
 
           return [
             m(FlexRow, {
               style: {
-                padding: '1rem', background: '#f0f0f0', flex:1, alignItems: 'center',
+                flex:1, alignItems: 'center',
                 borderRadius: '0.5rem', justifyContent: 'space-between'
               }
             },
               
               m(Text, text),  
 
-
-              m(FlexRow, {alignItems:'center'},
+              m(FlexRow, {alignItems:'center', background:config.app.card.background, padding:'1rem', borderRadius:'0.5rem'},
                 m(FlexRow,{alignItems:'center', gap:'0.5rem', marginLeft:'1rem'},
                   [
                     {icon:'arrow-left', name:'left'},
@@ -932,76 +1153,108 @@ function RoundStart(){
 }
 
 
-function RoundEnded(){
+function GameEnded(){
   let game = AppData.currentGame;
   let club: GolfClub = game?.club;
-  let round: Round = game?.round;
-  let tee: Tee = game?.tee;
+  let loading = false;
   
+  async function getData({id}){
+
+    if(!game){
+      loading = true;
+      game = await getGame(id);
+      AppData.currentGame = game;
+      club = game.club;
+      loading = false;
+      m.redraw()
+    }
+
+  }
 
   return {
     oninit:(vnode:any)=> {
-      if(!game){
-        getGame(vnode.attrs.roundId)
-        .then((res)=>{
-          if(!res) return;
-
-          game = res;
-          club = game.club;
-          round = game.round;
-          tee = game.tee;
-          m.redraw();
-        })
-      }
+      getData(vnode.attrs);
     },
     view: (vnode:any)=> {
-      console.log('game', game)
+      if(loading) return;
+
+      console.log('game end')
+
+      let total_score = game.scores.reduce((total, score) => total + (score.strokes || 0), 0) -
+        game.round.holes.reduce((total, hole) => total + hole.par, 0) 
+
       return m(App,
         m(AppBar, {
           leading: {
             icon: 'x',
-            style: { color: 'white'},
-            onclick: () => m.route.set(`/`)
+            style: { color: 'black'},
+            route: '/'
           },
-          title: 'Round Ended'
+        }), 
+
+        m(Img, {
+          src: club.photo,
+          style: {
+            width:'100%',
+            maxHeight:'200px',
+            objectFit:'cover'
+          }
         }),
         
-        m(AppContent,
-          !game 
-          ? null
-          :
-          m(FlexCol, {padding:'1em'},
-            m(Img, {
-              src: club.photo,
-              style: {
-                borderRadius:'0.5rem',
-                width:'85%',
-                maxHeight:'200px',
-                objectFit:'cover'
-              }
-            }),
+        m(AppContent, {style: {borderTop: '1px solid #ccc', padding:'1rem'}},
+           m(H2, club.name),
 
-            m(H2, club.name),
+
 
             m(FlexRow, {
               justifyContent:'space-between',
               alignItems:'center',
               marginTop:'1rem',
-            },
-              m(Text, round.name),
-              m(Text, tee.name)
+            },  
+              m(FlexCol, {alignItems:'center'},
+                m(H2,
+                  (total_score > 0 ? `+`:
+                  total_score < 0 ? `-` :
+                  '')
+                  + total_score
+                ),
+
+                m(Text, 'Total Score')
+              ),
+              
+              m(FlexCol, {alignItems:'center'},
+                m(H2,
+                  game.scores.reduce((total, score) => total + (score.green_in_regulation ? 1: 0), 0) 
+                  
+                ),
+
+                m(Text, 'GIR')
+              ),
+
+              m(FlexCol, {alignItems:'center'},
+                m(H2,
+                  game.scores.reduce((total, score) => total + (score.up_and_down ? 1: 0), 0)
+                ),
+
+                m(Text, 'UP&DOWN')
+              ),
+
+              
+              
             ),
 
             m(Div, {
               marginTop:'1.5em',
               background:'grey'
-            },
-
-            ),
+            }),
 
 
 
             m(Text, 'You have completed the round.'),
+
+          m(FlexCol, {padding:'1em'},
+
+           
           )
         )
       )

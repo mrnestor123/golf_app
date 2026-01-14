@@ -1,0 +1,248 @@
+
+.fadein {
+    animation: fade 3s ease-out
+  }
+  
+  @keyframes fade{
+    0% {
+      opacity:0
+    }
+    100% {
+      opacity:1
+    }
+  }
+
+  .rippleeffect{
+    animation: ripple 1250ms ease-out forwards, fade 1500ms ease-out forwards;
+  }
+
+  @keyframes ripple {
+    0%   { transform: translate(-100%, -100%); }
+    80%  { transform: translate(-100%, -100%) scale(50); }
+    100% { transform: translate(-100%, -100%) scale(50); opacity: 0; }
+  }
+
+
+.aspect-square{ aspect-ratio: 1/1}
+
+
+
+  /* Transiciones del calendario*/
+  .slideright {
+    animation: lefttoright 0.4s ease-in
+  }
+
+  .slideleft {
+    animation: righttoleft 0.4s ease-in
+  }
+
+  .appearfromleft {
+    animation: appearleft 0.4s ease-in
+  }
+
+  .appearfromright {
+    animation: appearright 0.4s ease-in
+  }
+
+  @keyframes appearright {
+    0% {
+      left: 100%;
+      right: -100%
+    }
+
+    100% {
+      left: 0;
+      right: 0
+    }
+  }
+
+  @keyframes appearleft {
+    0% {
+      left: -100%;
+      right: 100%
+    }
+
+    100% {
+      left: 0;
+      right: 0
+    }
+  }
+
+  @keyframes lefttoright {
+    0% {
+      left: 0;
+      right: 0
+    }
+
+    100% {
+      left: 100%;
+      right: -100%
+    }
+  }
+
+  @keyframes righttoleft {
+    0% {
+      right: 0;
+      left: 0
+    }
+
+    100% {
+      right: 100%;
+      left: -100%
+    }
+  }
+
+
+
+  /* Transiciones de la app*/
+  .transitionleft {
+    animation: transitionleft 0.3s ease-out
+  }
+
+  @keyframes transitionleft {
+    0% {
+      transform: translateX(100%);
+    }
+
+    100% {
+      transform: translateX(0%);
+    }
+  }
+
+  .transitionleftout {
+    animation: slideleftOut 0.3s ease-in
+  }
+
+  @keyframes slideleftOut {
+    0% {
+      transform: translateX(0%);
+      opacity: 1;
+    }
+
+    10% {
+      transform: translateX(10%);
+      opacity: 0.5
+    }
+
+    60% {
+      opacity: 0;
+    }
+
+    100% {
+      transform: translateX(100%);
+      opacity:0;
+    }
+  }
+
+  .slideUpIn {
+    animation: slideUp 0.3s ease-out
+  }
+
+  @keyframes slideUp {
+    0% {
+      transform: translateY(30%);
+      opacity: 0;
+    }
+
+    /* 10% {
+      transform: translateY(80%);
+      opacity: 0.2
+    } */
+
+    50% {
+      opacity: 1
+    }
+
+    100% {
+      transform: translateY(0%);
+      opacity:1
+    }
+  }
+
+  .slideOutUp {
+    animation: slideupout 0.3s ease-in
+  }
+
+  @keyframes slideupout {
+    0% {
+      transform: translateY(0%);
+      opacity: 1;
+    }
+
+    /* 10% {
+      transform: translateY(10%);
+      opacity:0.5;
+    } */
+
+    60% {
+      opacity: 0
+    }
+
+    100% {
+      transform: translateY(50%);
+      opacity: 0;
+    }
+  }
+
+
+  /*transiciones del actionsheet*/
+  .slideUpActionsheet {
+    animation: actslideUp 0.3s ease-out
+  }
+
+  @keyframes actslideUp {
+    0% {
+      transform: translateY(100%);
+    }
+
+    100% {
+      transform: translateY(0%);
+    }
+  }
+
+  .slideDownActionsheet {
+    animation: actslideDown 0.3s ease-out
+  }
+
+  @keyframes actslideDown {
+    0% {
+      transform: translateY(0%);
+    }
+
+    100% {
+      transform: translateY(100%);
+    }
+  }
+
+
+
+  
+
+  .slideDownOut {
+    animation: slideDown 0.4s ease-in
+  }
+
+  @keyframes slideDown {
+    0% {
+      top: 0;
+      bottom: 0;
+      opacity: 1
+    }
+
+    100% {
+      top: 0;
+      bottom: -110%;
+      opacity: 0
+    }
+  }
+
+
+
+  @keyframes rotate {
+    from {
+      transform: rotate(0);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }

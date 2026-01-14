@@ -5,19 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>IA Caddy</title>
     <script src="https://unpkg.com/mithril/mithril.js"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
     
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="stylesheet" href="./transitions.css" />
+
+    <script type="importmap">
+    {
+        "imports": {
+            "@supabase/supabase-js": "https://esm.sh/@supabase/supabase-js@2"
+        }
+    }
+    </script>
 
     <style>
         body {
             margin: 0;
-            font-family: 'Lexend', sans-serif;
-            background-color: #121212;
-            color: #ffffff;
+            font-family: 'Manrope', sans-serif;
             /* Disable scrolling completely */
             overflow: hidden;
+            color:'black';
             height: 100vh;
             width: 100vw;
         }
@@ -33,6 +43,8 @@
         * {
             -ms-overflow-style: none;  /* IE and Edge */
             scrollbar-width: none;     /* Firefox */
+            -webkit-tap-highlight-color: transparent;
+            tap-highlight-color: transparent;
         }
         
         *::-webkit-scrollbar {

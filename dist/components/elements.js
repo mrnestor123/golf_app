@@ -221,10 +221,11 @@ function RippleEffect() {
                     ...vnode.attrs.style
                 },
                 onmousedown: (e) => {
-                    //Datos para que el ripple aparezca donde se hace click
+                    // Datos para que el ripple aparezca donde se hace click
                     const item = e.currentTarget.getBoundingClientRect();
                     x = `${e.clientX - item.left}px`;
                     y = `${e.clientY - item.top}px`;
+                    console.log('onmousedown');
                     rippleEffect = true;
                     time1 = new Date().getTime();
                     setTimeout(() => {
@@ -259,13 +260,13 @@ function Button() {
             color: 'white',
             //border: '1px solid white',
             background: '#1b1c1d',
-            ...config.button?.primary || {}
+            ...config.elements?.button?.primary || {}
         },
         secondary: {
             color: '#4b4b4b',
             border: '1px solid #4b4b4b',
             background: 'white',
-            ...config.button?.secondary || {}
+            ...config.elements?.button?.secondary || {}
         },
         positive: {
             color: 'white',

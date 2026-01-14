@@ -1,0 +1,25 @@
+{
+  "name": "golf_app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "util.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mrnestor123/golf_app.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/mrnestor123/golf_app/issues"
+  },
+  "homepage": "https://github.com/mrnestor123/golf_app#readme",
+  "devDependencies": {
+    "@supabase/supabase-js": "^2.90.1"
+  }
+}

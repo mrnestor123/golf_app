@@ -27,6 +27,7 @@ function H2() {
                 style: {
                     fontFamily: config.fontFamily,
                     margin: 0,
+                    color: 'black',
                     ...(config.fonts.h2 || {}),
                     ...(vnode.attrs?.style || vnode.attrs)
                 }
@@ -69,6 +70,7 @@ function Text() {
                 style: {
                     fontFamily: config.fontFamily,
                     margin: 0,
+                    color: 'black',
                     ...(config.fonts.default || config.defaultFont || {}),
                     ...(vnode.attrs.style || vnode.attrs)
                 }

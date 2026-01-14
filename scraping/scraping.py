@@ -236,8 +236,15 @@ class MSCorecardScraper:
             'club_id': club_id,
             'holes': [], # list with the id of the holes
             'handicaps': [],
-            'slopes': {},
-            'course_ratings': {}
+            'tees': [],
+            'slopes': {
+                "men":{},
+                "women": {}
+            },
+            'course_ratings': {
+                "men": {},
+                "women": {}
+            }
         }
         
         table = soup.find('table', class_='scorecardtable')
@@ -259,15 +266,15 @@ class MSCorecardScraper:
         
 
         second_row = all_header_rows[1].find_all('td')
-        tees = []
         current_index = 0
 
         for cell in second_row:
             if current_index > 2 and cell.text.strip() != 'Par' and cell.text.strip() != 'SI' and cell.text.strip() != 'Hole':
-                tees.append({
+                lap['tees'].append({
                     'id': 'tee_' + cell.text.strip().lower().replace(' ', '_'),
                     'name': cell.text.strip(),
-                    'index': current_index
+                    'index': current_index,
+                    'end_index': current_index+1 if (current_index+1 < len(second_row) and second_row[current_index+1].text == 'Par') else current_index
                 })
               
             current_index += 1
@@ -282,75 +289,71 @@ class MSCorecardScraper:
             cells = row.find_all('td')
             
             # Debug: print all cell contents to see what we're working with
-            print(f"Row has {len(cells)} cells:")
+            
             for i, cell in enumerate(cells):
                 print(f"  cells[{i}]: '{cell.text.strip()}'")
 
-            if hole_index >= 18:
-                for i, tee in enumerate(tees):
-                    lap['slopes'][tee['id']] = cells[tee['index']-2].text.strip()
-                    lap['course_ratings'][tee['id']] = cells[tee['index']-2].text.strip()
-                break
-            
-            hole_data = {
-                'par': '',
-                'tees': {},
-                'club_id': 'gf_escorpion'
-            }
+            if hole_index >= len(hole_rows) - 2:
+                for i, tee in enumerate(lap['tees']):
+                    
+                    if( hole_index == len(hole_rows) - 2 ):
+                        if(lap['slopes']['men'] == None): 
+                            lap['slopes']['men'] = {}
+                        
+                        lap['slopes']['men'][tee['id']] = cells[tee['index']-2].text
+                         
+                    
+                    else:
+                        if(lap['women'] == None): 
+                            lap['women'] = {}
+                        
+                        lap['slopes']['women'][tee['id']] = cells[tee['index']-2].text
+                        lap['course_ratings']['women'][tee['id']] = cells[tee['index']-2].text
+                          
+            else:       
+                hole_data = {
+                    'par': '',
+                    'tees': {},
+                    'club_id': club_id
+                }
 
-            # Extraer el número del hoyo y par
-            if len(cells) >= 3:
-                hole_data['number'] = cells[0].text.strip()
-                hole_data['par'] = int(cells[1].text.strip())
+                # Extraer el número del hoyo y par
+                if len(cells) >= 3:
+                    hole_data['number'] = cells[0].text.strip()
+                    hole_data['par'] = int(cells[1].text.strip())
+                    
+                    # Safe access to SI (Stroke Index) in cells[2]
+                    si_value =  cells[2].text.strip()
+                    
+                    # Try to extract from span tags if the main text shows '--'
+                    if si_value and si_value != '--' and si_value != '-' and si_value.isdigit():
+                        lap['handicaps'].append(int(si_value))
+
+                    last_tee_distance = 0
+
+                    for i, tee in enumerate(lap['tees']):
+                        if tee['index'] < len(cells):
+                            tee_distance = cells[tee['index']].text.strip()
+                            
+                            try:
+                                if tee['index'] != tee['end_index'] & cells[tee['end_index']].text.strip() != hole_data['par']  :
+                                    hole_data['tees'][tee['id']] = {
+                                        'distance': tee_distance,
+                                        'par': cells[tee['end_index']].text.strip()
+                                    }
+                                else:
+                                    hole_data['tees'][tee['id']] = tee_distance
+                                    
+                            except (ValueError, IndexError):
+                                continue
                 
-                # Safe access to SI (Stroke Index) in cells[2]
-                # The SI values might be hidden in span tags with CSS obfuscation
-                si_cell = cells[2]
-                si_value = si_cell.text.strip()
-                
-                # Try to extract from span tags if the main text shows '--'
-                if si_value in ['--', '-']:
-                    span_tags = si_cell.find_all('span')
-                    if span_tags:
-                        for span in span_tags:
-                            span_text = span.text.strip()
-                            if span_text.isdigit():
-                                si_value = span_text
-                                break
-                
-                if si_value and si_value != '--' and si_value != '-' and si_value.isdigit():
-                    lap['handicaps'].append(int(si_value))
+
                 else:
-                    # If SI data not available, use hole number as default handicap order
-                    lap['handicaps'].append(int(hole_data['number']))
-            else:
-                print(f"Warning: Row has insufficient cells ({len(cells)})")
+                    print(f"Warning: Row has insufficient cells ({len(cells)})")
                 continue
 
             
-            last_tee_distance = 0
-
-            for i, tee in enumerate(tees):
-                if tee['index'] < len(cells):
-                    tee_distance = cells[tee['index']].text.strip()
-                    
-                    print('isdigit', tee_distance.isdigit())
-
-                    try:
-                        if last_tee_distance != 0 and tee_distance.isdigit() and int(tee_distance) > int(last_tee_distance):
-                            hole_data['tees'][tee['id']] = {
-                                'distance': tee_distance,
-                                'par': int(hole_data['par']) + 1
-                            }
-                        else:
-                            hole_data['tees'][tee['id']] = tee_distance
-                            
-                            if tee_distance.isdigit():
-                                last_tee_distance = int(tee_distance)
-
-                    except (ValueError, IndexError):
-                        continue
-            
+                
 
             hole_index += 1
 
@@ -360,7 +363,7 @@ class MSCorecardScraper:
         # Extraer las distancias para hombres
         lap['holes'] = holes
 
-        return [lap,tees]
+        return lap
     
     def get_course_html(self, course_url: str) -> Dict:
         """
@@ -455,8 +458,6 @@ def main():
             existing_courses = json.load(f)
             index = len(existing_courses)
 
-
-
         if len(existing_courses) == 0:
 
             courses = []
@@ -527,8 +528,8 @@ def main():
 
             print( f'iterating on existing courses {len(existing_courses)}' )
 
-            holes = []
-            tees = []
+            rounds = []
+            
             index = 0
 
             for club in existing_courses: 
@@ -545,8 +546,6 @@ def main():
 
                     driver.get(f"https://www.mscorecard.com/mscorecard/{course['url']}")
 
-                    
-
                     time.sleep(5)  # Wait for the page to load
 
                     course_soup = BeautifulSoup(driver.page_source, 'lxml')
@@ -558,33 +557,11 @@ def main():
 
                     print(f"Extracted data for course {course['url']}")
                     print(data)
-
-                    if len(data) > 0:
-                        holes.append(data[0])
-                        tees.append(data[1])
+                    rounds.append(data)
 
 
             with open(f'rounds.json', 'w', encoding='utf-8') as f:
-                json.dump(holes, f, ensure_ascii=False, indent=2)
-
-
-            with open(f'tees.json', 'w', encoding='utf-8') as f:
-                json.dump(tees, f, ensure_ascii=False, indent=2)
-
-
-            
-
-
-
-                
-
-
-
-            
-
-
-                
-
+                json.dump(rounds, f, ensure_ascii=False, indent=2)
 
         
 

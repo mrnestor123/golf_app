@@ -71,6 +71,7 @@ let scrapRounds: Round[]= [
         "id": "20251208174706",
         "club_id": "escorpion_1",
         "name":"Masia + Masia",
+        "tees":[],
         "holes": [
         {
             "par": 5,

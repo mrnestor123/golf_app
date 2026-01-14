@@ -23,8 +23,18 @@ setConfig({
         }
     },
     fonts: {
+        h1: {
+            userSelect: 'none'
+        },
         h2: {
-            fontWeight: 'normal'
+            fontWeight: 'normal',
+            userSelect: 'none'
+        },
+        text: {
+            userSelect: 'none'
+        },
+        smallText: {
+            userSelect: 'none'
         }
     },
     app: {

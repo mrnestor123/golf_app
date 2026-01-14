@@ -333,6 +333,7 @@ function Button() {
                     userSelect: 'none',
                     filter: `brightness(${brightness}%)`,
                     borderRadius: '1em',
+                    userSelect: 'none',
                     gap: "5px",
                     ...disabled && {
                         opacity: '0.5',

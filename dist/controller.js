@@ -1,4 +1,3 @@
-import { Game } from "./model.js";
 import { scrapGolfClubs, scrapRounds, scrapTees, } from "./scrap_data.js";
 import { createClient } from '@supabase/supabase-js';
 // controller se podría llamar server.js
@@ -14,10 +13,11 @@ async function createUser(email, password) {
         .eq('email', email)
         .eq('password', password)
         .single();
-    console.log('data', data);
     if (data.data) {
+        // para sacar los games !!
+        let user = await getUser(data.data.id);
         // user exists
-        return Promise.resolve(data.data);
+        return Promise.resolve(user);
     }
     else {
         // create user
@@ -45,10 +45,34 @@ async function getUser(id) {
         return Promise.reject();
     }
     else {
+        let games = await getUserGames(id);
+        data.games = games;
         return Promise.resolve(data);
     }
 }
-async function getUserGames() {
+async function getUserGames(id) {
+    let { data, error } = await supabase
+        .from('games')
+        .select('*')
+        .eq('user_id', id);
+    console.log('data', data);
+    if (error) {
+        return Promise.reject();
+    }
+    else {
+        data.map((game) => {
+            if (!game.round) {
+                game.round = scrapRounds.find((round) => round.id === game.round_id);
+            }
+            if (!game.club) {
+                game.club = scrapGolfClubs.find((club) => club.id === game.club_id);
+            }
+            if (!game.tee) {
+                game.tee = scrapTees.find((tee) => tee.id === game.tee_id);
+            }
+        });
+        return Promise.resolve(data);
+    }
 }
 // Global data store for the app
 const AppData = {
@@ -87,14 +111,20 @@ function saveGame(game) {
     localStorage.setItem('games', JSON.stringify(games));
 }
 async function endGame(game) {
-    saveGame(game);
-    return;
     // upload to supabase
     game.end = new Date();
+    if (!game.user_id) {
+        game.user_id = AppData.user?.id || localStorage.getItem('user_cod') || '';
+    }
+    console.log('Attempting to insert game:', game.toJSON());
     let insertData = await supabase
         .from('games')
-        .insert([game.toJSON()])
+        .insert(game.toJSON())
         .select();
+    if (insertData.error) {
+        console.error('Supabase error:', insertData.error);
+        return Promise.reject(insertData.error.message);
+    }
     if (insertData.data && insertData.data.length > 0) {
         return Promise.resolve(insertData.data[0]);
     }
@@ -102,25 +132,28 @@ async function endGame(game) {
         return Promise.reject('Error creating game');
     }
 }
-function getGame(id) {
-    let games = JSON.parse(localStorage.getItem('games') || '[]');
-    let gameData = games.find((game) => game.id === id);
-    if (gameData) {
-        let game = new Game(gameData);
-        console.log('game', gameData);
-        if (!game.round) {
-            game.round = scrapRounds.find((round) => round.id === gameData.round_id);
-        }
-        if (!game.club) {
-            game.club = scrapGolfClubs.find((club) => club.id === gameData.club_id);
-        }
-        if (!game.tee) {
-            game.tee = scrapTees.find((tee) => tee.id === gameData.tee_id);
-        }
-        return Promise.resolve(game);
+async function getGame(id) {
+    // get game from supabase
+    let { data, error } = await supabase
+        .from('games')
+        .select('*')
+        .eq('id', id)
+        .single();
+    if (error) {
+        console.log('error', error);
+        return Promise.reject();
     }
     else {
-        return Promise.resolve(null);
+        if (!data.round) {
+            data.round = scrapRounds.find((round) => round.id === data.round_id);
+        }
+        if (!data.club) {
+            data.club = scrapGolfClubs.find((club) => club.id === data.club_id);
+        }
+        if (!data.tee) {
+            data.tee = scrapTees.find((tee) => tee.id === data.tee_id);
+        }
+        return Promise.resolve(data);
     }
 }
 function listGames(userId) {

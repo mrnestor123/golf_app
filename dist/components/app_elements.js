@@ -76,7 +76,8 @@ function App() {
     return {
         view: (vnode) => {
             return m(FlexCol, {
-                minHeight: '100vh',
+                minHeight: '100dvh', // Use dynamic viewport height for mobile browsers
+                height: '100dvh',
                 ...vnode.attrs
             }, [
                 vnode.children

@@ -175,20 +175,20 @@ class User {
 
     constructor({
         id, name, email, user_name,
-        handicap, rounds
+        handicap, games = []
     }){
         this.id = id
         this.user_name = user_name
         this.email = email
         this.handicap = handicap
-        this.games = rounds || []
+        this.games = games || []
+
     }
 }
 
 
 class Game {
     id: string;
-    date: Date;
     club: GolfClub;
     
     user_id: string;
@@ -205,45 +205,28 @@ class Game {
 
     constructor({
         id = createDateId('game'),
-        date, 
         club, 
         scores = Array.from({length: 18}, (_, i) => new Score({hole_index: i}))
     }){
         this.id = id
         this.start = new Date();
-        this.date = date
         this.club = club
         this.scores = scores.map(score => new Score(score))
     }
 
 
-    toFullJSON(){
-
+    toJSON() {
         return {
+            //id: this.id,
             id: this.id,
-            date: this.date,
-            // ESTO SOLO A EFECTOS DE DEBUGGING
-            club: this.club,
             start: this.start.toISOString(),
             end: this.end ? this.end.toISOString() : null,
-            
-            round: this.round.toFullJSON(),
-            tee: this.tee.toJSON(),
-            scores: this.scores.map((score: Score) => score.toJSON()),
-        }
-    }
-
-    toJSON() {
-        console.log('game toJSON', this)
-
-        return {
-            id: this.id,
-            date: this.date,
             club_id: this.club.id,
+            user_id: this.user_id,
             round_id: this.round.id,
             tee_id: this.tee.id,
             scores: this.scores.map((score: Score) => score.toJSON()),
-
+            //game_id: this.id
             
             //scores: this.scores.map(score => score.toJSON())
             // club_id: this.club?.id || this.club,

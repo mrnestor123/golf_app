@@ -447,8 +447,6 @@ function ProfilePage(){
       }
     },
     view: (vnode) =>{
-      console.log('user', user, AppData.user)
-
       if(!user) return
 
       return [
@@ -459,7 +457,7 @@ function ProfilePage(){
               width:'80px',
               height: '80px',
               borderRadius:'50%',
-              background: 'grey',
+              background: config.app.card.background,
             }
           }),
 
@@ -469,6 +467,8 @@ function ProfilePage(){
         m(Box, {height:'2rem'}),
           
         m(Text, "My games"),
+        m(Box, {height:'1rem'}),
+
 
         !user.games?.length ?
         m(Text, {color:'grey', marginTop:'1rem'}, "No games played yet") :
@@ -480,8 +480,32 @@ function ProfilePage(){
                 display:'flex',
                 alignItems:'center',
                 justifyContent:'space-between',
+                background: config.app.card?.background,
+                padding:'1rem'
+              },
+              onclick:(e)=>{
+                m.route.set(`/game/end/${game.id}`)
               }
             },
+              m(FlexCol, {gap:'0.5rem'},
+                m(Text, game.club.name),
+                m(FlexRow, {gap:'0.1rem'},
+                  
+                  m(LucideIcon,{
+                    icon: 'calendar',
+                    width: '16',
+                    height: '16',
+                  }),
+                  m(SmallText, `${new Date(game.start).toLocaleDateString()}`
+                )
+                ),
+              ),
+              m(LucideIcon, {
+                icon: 'chevron-right',
+                width: '20',
+                height: '20',
+                style: { color:'black' }
+              })
             )
           )
         )
@@ -508,7 +532,7 @@ function ClubSelected() {
 
     game = new Game({
       club: club,
-      date: new Date(),
+      
     })
 
     game.scoring_method = 'Stroke play';
@@ -637,7 +661,8 @@ function ClubSelected() {
               type:'primary',
               disabled: game.round == null || game.tee == null,
               onclick:(e: Event) => {    
-                console.log('STARTING GAME', game)              
+                console.log('STARTING GAME', game)     
+                game.start = new Date();         
                 saveGame(game);
 
                 AppData.currentGame = game;
@@ -781,14 +806,18 @@ function GameStart(){
   let loading = false;
 
   async function getData({id}){
-    if(!game){
-      loading = true;
-      game = await getGame(id);
-      console.log('game', game)
+    try{
+      if(!game){
+        loading = true;
+        game = await getGame(id);
 
-      holes = game.round.holes.map((hole:any) => new Hole(hole));
-      AppData.currentGame = game;
-      loading = false;
+        holes = game.round.holes.map((hole:any) => new Hole(hole));
+        AppData.currentGame = game;
+        loading = false;
+        m.redraw()
+      }
+    } catch(e){
+      loading = false
       m.redraw()
     }
   }
@@ -811,9 +840,12 @@ function GameStart(){
             },
             style: { color: 'black'}
           },
-          title: game.round.name,
-          subtitle: game.club.name,
+          title: game && game.round.name,
+          subtitle: game && game.club.name,
         }),
+
+        !game ?
+        null :
 
         m(AppContent, {borderTop: '1px solid #ccc'},
           
@@ -944,9 +976,9 @@ function GameStart(){
               m(Button, {
                 type:'primary',
                 onclick: (e: Event) => {
+                  endGame(game)
                   m.route.set(`/game/end/${game.id}`)
                   vnode.attrs.close()
-
                 }
               }, "End and save session"),
 
@@ -1235,13 +1267,17 @@ function GameEnded(){
   let loading = false;
   
   async function getData({id}){
-
-    if(!game){
-      loading = true;
-      game = await getGame(id);
-      AppData.currentGame = game;
-      club = game.club;
-      loading = false;
+    try{
+      if(!game){
+        loading = true;
+        game = await getGame(id);
+        AppData.currentGame = game;
+        club = game.club;
+        loading = false;
+        m.redraw()
+      }
+    }catch(e){
+      loading = false
       m.redraw()
     }
 
@@ -1256,7 +1292,7 @@ function GameEnded(){
 
       console.log('game end', game)
 
-      let total_score = game.scores.filter(score => score.confirmed).reduce((total, score) => total + (score.strokes || 0), 0) -
+      let total_score = game && game.scores.filter(score => score.confirmed).reduce((total, score) => total + (score.strokes || 0), 0) -
         game.round.holes.filter((hole,i )=> game.scores[i].confirmed).reduce((total, hole) => total + hole.par, 0) 
 
 
@@ -1269,96 +1305,98 @@ function GameEnded(){
           },
         }), 
 
-        m(Img, {
-          src: club.photo,
-          style: {
-            width:'100%',
-            maxHeight:'200px',
-            objectFit:'cover'
-          }
-        }),
-        
-        m(AppContent, {style: {borderTop: '1px solid #ccc', padding:'1rem'}},
-          m(H2, club.name),
-
-          m(FlexRow, {
-            justifyContent:'space-between',
-            alignItems:'center',
-            marginTop:'1rem',
-          },  
-            m(FlexCol, {alignItems:'center'},
-              m(H2,
-                (total_score > 0 ? `+`:
-                total_score < 0 ? `-` :
-                '')
-                + total_score
-              ),
-
-              m(Text, 'Total Score')
-            ),
-            
-            m(FlexCol, {alignItems:'center'},
-              m(H2,
-                game.scores.reduce((total, score) => total + (score.green_in_regulation ? 1: 0), 0) 
-                
-              ),
-
-              m(Text, 'GIR')
-            ),
-
-            m(FlexCol, {alignItems:'center'},
-              m(H2,
-                game.scores.reduce((total, score) => total + (score.up_and_down ? 1: 0), 0)
-              ),
-
-              m(Text, 'UP&DOWN')
-            ),
-
-            
-            
-          ),
-
-          m(Div, {
-            marginTop:'1.5em',
-            background:'grey'
+        game && [
+          m(Img, {
+            src: club.photo,
+            style: {
+              width:'100%',
+              maxHeight:'200px',
+              objectFit:'cover'
+            }
           }),
-
           
+          m(AppContent, {style: {borderTop: '1px solid #ccc', padding:'1rem'}},
+            m(H2, club.name),
 
-          m(FlexCol, {gap:'0.5rem'},
-            m(Text, { marginTop:'1rem'}, 'Hole by Hole'),
-
-            game.scores
-            .filter(score => score.confirmed)
-            .map((score:Score, i)=>{
-              let hole = game.round.holes[score.hole_index];
-            
-
-              return m(FlexRow, {
-                background: config.app.card.background,
-                justifyContent:'space-between', alignItems:'center', padding:'0.5rem'
-              },
-
-                m(Div, { 
-                  background:'white', display:'flex', borderRadius:'0.1em', width:'30px', height:'30px',
-                  alignItems:'center', justifyContent:'center', padding:'0.2rem' 
-                },
-                  
-                  m(Text,score.hole_index + 1)
+            m(FlexRow, {
+              justifyContent:'space-between',
+              alignItems:'center',
+              marginTop:'1rem',
+            },  
+              m(FlexCol, {alignItems:'center'},
+                m(H2,
+                  (total_score > 0 ? `+`:
+                  total_score < 0 ? `-` :
+                  '')
+                  + total_score
                 ),
 
-                m(FlexRow,{gap:'0.5rem'},
-                  m(SmallText, `Par ${hole.par}`),
-                  m(SmallText, '/'),
-                  m(SmallText, `${score.strokes || 0} strokes`)
+                m(Text, 'Total Score')
+              ),
+              
+              m(FlexCol, {alignItems:'center'},
+                m(H2,
+                  game.scores.reduce((total, score) => total + (score.green_in_regulation ? 1: 0), 0) 
+                  
+                ),
+
+                m(Text, 'GIR')
+              ),
+
+              m(FlexCol, {alignItems:'center'},
+                m(H2,
+                  game.scores.reduce((total, score) => total + (score.up_and_down ? 1: 0), 0)
+                ),
+
+                m(Text, 'UP&DOWN')
+              ),
+
+              
+              
+            ),
+
+            m(Div, {
+              marginTop:'1.5em',
+              background:'grey'
+            }),
+
+            
+
+            m(FlexCol, {gap:'0.5rem'},
+              m(Text, { marginTop:'1rem'}, 'Hole by Hole'),
+
+              game.scores
+              .filter(score => score.confirmed)
+              .map((score:Score, i)=>{
+                let hole = game.round.holes[score.hole_index];
+              
+
+                return m(FlexRow, {
+                  background: config.app.card.background,
+                  justifyContent:'space-between', alignItems:'center', padding:'0.5rem'
+                },
+
+                  m(Div, { 
+                    background:'white', display:'flex', borderRadius:'0.1em', width:'30px', height:'30px',
+                    alignItems:'center', justifyContent:'center', padding:'0.2rem' 
+                  },
+                    
+                    m(Text,score.hole_index + 1)
+                  ),
+
+                  m(FlexRow,{gap:'0.5rem'},
+                    m(SmallText, `Par ${hole.par}`),
+                    m(SmallText, '/'),
+                    m(SmallText, `${score.strokes || 0} strokes`)
+
+                  )
 
                 )
-
-              )
-            })
-            
+              })
+              
+            )
           )
-        )
+        ]
       )
     }
   }

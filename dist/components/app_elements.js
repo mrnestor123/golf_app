@@ -18,7 +18,10 @@ function AppBar() {
             }, vnode.attrs.leading ?
                 m(Tappable, {
                     onclick: () => {
-                        if (vnode.attrs.leading.route) {
+                        if (vnode.attrs.leading?.onclick) {
+                            vnode.attrs.leading.onclick();
+                        }
+                        else if (vnode.attrs.leading.route) {
                             mobileNavigator.pop();
                             m.route.set(vnode.attrs.leading.route);
                         }
@@ -61,6 +64,8 @@ function AppContent() {
                 flex: 1,
                 background: config.app?.background || config.background,
                 paddingTop: '1rem',
+                padding: '1rem',
+                overflowY: 'auto',
                 ...config.app?.content,
                 ...vnode.attrs
             }, vnode.children);

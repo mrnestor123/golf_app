@@ -15,6 +15,7 @@ export {
     getGolfClubs,
     getClub,
     saveGame,
+   
     endGame, 
     getUser,
     createUser,
@@ -38,6 +39,7 @@ async function createUser(email:string, password:string){
     .from('Users')
     .select('*')
     .eq('email', email)
+    .eq('password', password)
     .single();
 
     console.log('data', data)
@@ -76,6 +78,11 @@ async function getUser(id:string){
     } else {
         return Promise.resolve(data);
     }
+}
+
+
+async function getUserGames(){
+
 }
 
 
@@ -133,7 +140,9 @@ function saveGame(game:Game){
     let games = JSON.parse(localStorage.getItem('games') || '[]');
 
     let existingIndex = games.findIndex((g:any) => g.id === game.id);
+
     if (existingIndex >= 0){
+        console.log('saving game', game)
         games[existingIndex] = game.toJSON();
     } else {
         games.push(game.toJSON());
@@ -143,19 +152,44 @@ function saveGame(game:Game){
 }
 
 
-function endGame(game:Game){
+async function endGame(game:Game){
+
     saveGame(game);
+
+    return;
+
+    // upload to supabase
+    game.end = new Date();
+
+    let insertData = await supabase
+    .from('games')
+    .insert([game.toJSON()])
+    .select();
+
+    if (insertData.data && insertData.data.length > 0){
+        return Promise.resolve(insertData.data[0]);
+    } else {
+        return Promise.reject('Error creating game');
+    }
+    
 }
 
 
 function getGame(id:string){
     let games = JSON.parse(localStorage.getItem('games') || '[]');
     let gameData = games.find((game:any) => game.id === id);
+
     if (gameData){
         let game = new Game(gameData);
 
+        console.log('game', gameData)
+
         if(!game.round){
             game.round = scrapRounds.find((round) => round.id === gameData.round_id);
+        }
+
+        if(!game.club){
+            game.club = scrapGolfClubs.find((club) => club.id === gameData.club_id);
         }
 
         if(!game.tee){

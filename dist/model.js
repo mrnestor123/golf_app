@@ -48,6 +48,18 @@ class Round {
             ...this.handicaps ? { handicaps: this.handicaps } : {},
         };
     }
+    toFullJSON() {
+        return {
+            id: this.id,
+            name: this.name,
+            club_id: this.club_id,
+            holes: this.holes ? this.holes.map(hole => hole.toJSON()) : [],
+            tees: this.tees ? this.tees.map(tee => tee.toJSON()) : [],
+            handicaps: this.handicaps,
+            slopes: this.slopes,
+            course_ratings: this.course_ratings
+        };
+    }
 }
 class Tee {
     // add all the elements
@@ -62,6 +74,7 @@ class Tee {
             id: this.id,
             name: this.name,
             color: this.color,
+            ...this.club_id ? { club_id: this.club_id } : {}
         };
     }
 }
@@ -91,13 +104,26 @@ class User {
     }
 }
 class Game {
-    constructor({ id = createDateId('game'), date, club, scores = Array.from({ length: 18 }, () => new Score({})) }) {
+    constructor({ id = createDateId('game'), date, club, scores = Array.from({ length: 18 }, (_, i) => new Score({ hole_index: i })) }) {
         this.players = []; // for multiplayer games
         this.id = id;
         this.start = new Date();
         this.date = date;
         this.club = club;
         this.scores = scores.map(score => new Score(score));
+    }
+    toFullJSON() {
+        return {
+            id: this.id,
+            date: this.date,
+            // ESTO SOLO A EFECTOS DE DEBUGGING
+            club: this.club,
+            start: this.start.toISOString(),
+            end: this.end ? this.end.toISOString() : null,
+            round: this.round.toFullJSON(),
+            tee: this.tee.toJSON(),
+            scores: this.scores.map((score) => score.toJSON()),
+        };
     }
     toJSON() {
         console.log('game toJSON', this);
@@ -108,12 +134,6 @@ class Game {
             round_id: this.round.id,
             tee_id: this.tee.id,
             scores: this.scores.map((score) => score.toJSON()),
-            // ESTO SOLO A EFECTOS DE DEBUGGING
-            club: this.club,
-            start: this.start.toISOString(),
-            end: this.end ? this.end.toISOString() : null,
-            round: this.round,
-            tee: this.tee,
             //scores: this.scores.map(score => score.toJSON())
             // club_id: this.club?.id || this.club,
             // round_id: this.round?.id || this.round,
@@ -123,7 +143,7 @@ class Game {
     }
 }
 class Score {
-    constructor({ strokes = 0, putts = 0, penalties = 0, green_in_regulation = false, fairway_hit = false, up_and_down = false, start = null, end = null, confirmed = false }) {
+    constructor({ strokes = 0, putts = 0, penalties = 0, green_in_regulation = false, fairway_hit = false, hole_index = 0, up_and_down = false, start = null, end = null, confirmed = false }) {
         this.confirmed = false;
         this.strokes = strokes;
         this.putts = putts;
@@ -131,6 +151,7 @@ class Score {
         this.green_in_regulation = green_in_regulation;
         this.fairway_hit = fairway_hit;
         this.up_and_down = up_and_down;
+        this.hole_index = hole_index;
         this.start = start;
         this.end = end;
         this.confirmed = confirmed;
@@ -145,6 +166,7 @@ class Score {
             up_and_down: this.up_and_down,
             start: this.start ? this.start.toISOString() : null,
             end: this.end ? this.end.toISOString() : null,
+            hole_index: this.hole_index,
             confirmed: this.confirmed
         };
     }

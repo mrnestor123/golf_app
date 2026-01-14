@@ -206,6 +206,10 @@ function openDialog(Component, options = {}) {
             onCancel: (e) => {
                 m.mount(elem, null);
                 elem.remove();
+            },
+            close: (e) => {
+                m.mount(elem, null);
+                elem.remove();
             }
         })
     });

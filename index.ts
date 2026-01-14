@@ -1,6 +1,7 @@
 // MODEL
 import { App, AppBar, AppContent, LucideIcon, mobileRouter, NavBar} from './components/app_elements.js'
 import { setConfig, config } from './components/config.js'
+import { confirmDialog, openDialog } from './components/dialogs.js'
 import { Button, Img, Label } from './components/elements.js'
 import { Input } from './components/forms.js'
 import { Animate, Box,  Div,  FlexCol, FlexRow, Tappable } from './components/layout.js'
@@ -208,8 +209,6 @@ function SplashPage() {
               to: { opacity: 1, transform: 'scale(1)' }
             }, 
               m(H2, "Welcome"),
-              //m(Box, {height:'1rem'}),
-              //(m(H2, {color: config.primaryColor}, "Golf "),
             )
           )
         )
@@ -438,13 +437,23 @@ function ProfilePage(){
   
   
   return {
+    oninit:(vnode)=>{
+      if(!user){
+        getUser(localStorage.getItem('user_cod') || '').then((u)=>{
+          AppData.user = new User(u);
+          user = AppData.user;
+          m.redraw()
+        })
+      }
+    },
     view: (vnode) =>{
       console.log('user', user, AppData.user)
 
       if(!user) return
 
       return [
-        m(FlexCol, { alignItems:'center', gap:'1rem', marginTop:'2rem'},
+        
+        m(FlexCol, { alignItems:'center', gap:'1rem'},
           m(Div,{
             style: {
               width:'80px',
@@ -461,6 +470,21 @@ function ProfilePage(){
           
         m(Text, "My games"),
 
+        !user.games?.length ?
+        m(Text, {color:'grey', marginTop:'1rem'}, "No games played yet") :
+
+        m(FlexCol, { gap: '1rem' },
+          user.games.map((game:Game) =>
+            m(Tappable, {
+              style: {
+                display:'flex',
+                alignItems:'center',
+                justifyContent:'space-between',
+              }
+            },
+            )
+          )
+        )
       ]
     }
   }
@@ -473,10 +497,7 @@ function ClubSelected() {
 
   let game : Game | null = null;
 
-  
-
   async function getData({id}){
-    console.log('clubId', id)
     if(!club){
       loading = true;
       club = await getClub(id)
@@ -486,7 +507,7 @@ function ClubSelected() {
     }
 
     game = new Game({
-      club:club,
+      club: club,
       date: new Date(),
     })
 
@@ -616,8 +637,10 @@ function ClubSelected() {
               type:'primary',
               disabled: game.round == null || game.tee == null,
               onclick:(e: Event) => {    
-                console.log('game', game)              
+                console.log('STARTING GAME', game)              
                 saveGame(game);
+
+                AppData.currentGame = game;
 
                 m.route.set(`/game/${game.id}`);
               },
@@ -761,6 +784,8 @@ function GameStart(){
     if(!game){
       loading = true;
       game = await getGame(id);
+      console.log('game', game)
+
       holes = game.round.holes.map((hole:any) => new Hole(hole));
       AppData.currentGame = game;
       loading = false;
@@ -781,6 +806,9 @@ function GameStart(){
         m(AppBar, {
           leading: {
             icon: 'x',
+            onclick:(e)=>{
+              openDialog(ExitDialog)
+            },
             style: { color: 'black'}
           },
           title: game.round.name,
@@ -889,6 +917,53 @@ function GameStart(){
   }
 
 
+  function ExitDialog(){
+    return {
+      view:(vnode)=>{
+        return m(FlexCol,{inset:'0', position:'fixed', background:'#00000088', zIndex:1000},
+          m(FlexCol, { 
+            border:'1px solid #ccc', borderRadius:'0.1rem', flex:1,
+            gap:'1rem', alignItems:'center', background:'white', padding:'0.5rem', width:'80%',
+            position:'fixed', top:'50%', left:'50%', transform:'translate(-50%, -50%)'
+          },
+            m(H3, "Are you sure?"),
+            m(Text, "You are going to end the game"),
+
+            m(FlexCol,{gap:'0.5rem'},
+              m(Button, {
+                type:'primary',
+                onclick: (e: Event) => {
+                  m.route.set(`/`)
+                  vnode.attrs.close()
+                }
+              }, "Discard session"),
+
+
+              game.scores.some((score: Score) => score.confirmed) &&
+              m(Button, {
+                type:'primary',
+                onclick: (e: Event) => {
+                  m.route.set(`/game/end/${game.id}`)
+                  vnode.attrs.close()
+
+                }
+              }, "End and save session"),
+
+              m(Button,{
+                type:"secondary",
+                onclick:(e: Event) => {
+                  vnode.attrs.close()
+                }
+              }, "Cancel"
+              )
+            )
+
+          )
+        )
+      }
+    }
+  }
+
   function HoleInfo(){
 
     let expandMore = false;
@@ -914,8 +989,8 @@ function GameStart(){
         if(!score.start) score.start = new Date();
 
         let green_score = (hole.par - 2);
-        score.green_in_regulation = score.strokes && score.putts ? score.strokes - (score.putts || 0) <= green_score: false;
-        score.up_and_down = score.strokes && !score.green_in_regulation ? hole.par >= score.strokes : false;
+        score.green_in_regulation = score.confirmed && score.strokes && score.putts ? score.strokes - (score.putts || 0) <= green_score: false;
+        score.up_and_down = score.confirmed && score.strokes && !score.green_in_regulation ? hole.par >= score.strokes : false;
 
         return m(FlexCol,{ 
           background:'white', 
@@ -1178,10 +1253,11 @@ function GameEnded(){
     view: (vnode:any)=> {
       if(loading) return;
 
-      console.log('game end')
+      console.log('game end', game)
 
-      let total_score = game.scores.reduce((total, score) => total + (score.strokes || 0), 0) -
-        game.round.holes.reduce((total, hole) => total + hole.par, 0) 
+      let total_score = game.scores.filter(score => score.confirmed).reduce((total, score) => total + (score.strokes || 0), 0) -
+        game.round.holes.filter((hole,i )=> game.scores[i].confirmed).reduce((total, hole) => total + hole.par, 0) 
+
 
       return m(App,
         m(AppBar, {
@@ -1202,59 +1278,84 @@ function GameEnded(){
         }),
         
         m(AppContent, {style: {borderTop: '1px solid #ccc', padding:'1rem'}},
-           m(H2, club.name),
+          m(H2, club.name),
 
-
-
-            m(FlexRow, {
-              justifyContent:'space-between',
-              alignItems:'center',
-              marginTop:'1rem',
-            },  
-              m(FlexCol, {alignItems:'center'},
-                m(H2,
-                  (total_score > 0 ? `+`:
-                  total_score < 0 ? `-` :
-                  '')
-                  + total_score
-                ),
-
-                m(Text, 'Total Score')
-              ),
-              
-              m(FlexCol, {alignItems:'center'},
-                m(H2,
-                  game.scores.reduce((total, score) => total + (score.green_in_regulation ? 1: 0), 0) 
-                  
-                ),
-
-                m(Text, 'GIR')
+          m(FlexRow, {
+            justifyContent:'space-between',
+            alignItems:'center',
+            marginTop:'1rem',
+          },  
+            m(FlexCol, {alignItems:'center'},
+              m(H2,
+                (total_score > 0 ? `+`:
+                total_score < 0 ? `-` :
+                '')
+                + total_score
               ),
 
-              m(FlexCol, {alignItems:'center'},
-                m(H2,
-                  game.scores.reduce((total, score) => total + (score.up_and_down ? 1: 0), 0)
-                ),
-
-                m(Text, 'UP&DOWN')
+              m(Text, 'Total Score')
+            ),
+            
+            m(FlexCol, {alignItems:'center'},
+              m(H2,
+                game.scores.reduce((total, score) => total + (score.green_in_regulation ? 1: 0), 0) 
+                
               ),
 
-              
-              
+              m(Text, 'GIR')
             ),
 
-            m(Div, {
-              marginTop:'1.5em',
-              background:'grey'
-            }),
+            m(FlexCol, {alignItems:'center'},
+              m(H2,
+                game.scores.reduce((total, score) => total + (score.up_and_down ? 1: 0), 0)
+              ),
 
+              m(Text, 'UP&DOWN')
+            ),
 
+            
+            
+          ),
 
-            m(Text, 'You have completed the round.'),
+          m(Div, {
+            marginTop:'1.5em',
+            background:'grey'
+          }),
 
-          m(FlexCol, {padding:'1em'},
+          
 
-           
+          m(FlexCol, {gap:'0.5rem'},
+            m(Text, { marginTop:'1rem'}, 'Hole by Hole'),
+
+            game.scores
+            .filter(score => score.confirmed)
+            .map((score:Score, i)=>{
+              let hole = game.round.holes[score.hole_index];
+            
+
+              return m(FlexRow, {
+                background: config.app.card.background,
+                justifyContent:'space-between', alignItems:'center', padding:'0.5rem'
+              },
+
+                m(Div, { 
+                  background:'white', display:'flex', borderRadius:'0.1em', width:'30px', height:'30px',
+                  alignItems:'center', justifyContent:'center', padding:'0.2rem' 
+                },
+                  
+                  m(Text,score.hole_index + 1)
+                ),
+
+                m(FlexRow,{gap:'0.5rem'},
+                  m(SmallText, `Par ${hole.par}`),
+                  m(SmallText, '/'),
+                  m(SmallText, `${score.strokes || 0} strokes`)
+
+                )
+
+              )
+            })
+            
           )
         )
       )

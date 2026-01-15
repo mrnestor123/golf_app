@@ -125,6 +125,8 @@ async function endGame(game) {
         return Promise.reject(insertData.error.message);
     }
     if (insertData.data && insertData.data.length > 0) {
+        AppData.user.games = AppData.user?.games || [];
+        AppData.user.games.push(game);
         return Promise.resolve(insertData.data[0]);
     }
     else {

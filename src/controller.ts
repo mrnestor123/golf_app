@@ -203,6 +203,8 @@ async function endGame(game:Game){
     }
 
     if (insertData.data && insertData.data.length > 0){
+        AppData.user.games = AppData.user?.games || [];
+        AppData.user.games.push(game);
         return Promise.resolve(insertData.data[0]);
     } else {
         return Promise.reject('Error creating game');

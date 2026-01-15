@@ -78,12 +78,14 @@ function H4(){
 function Text(){
     return{ 
         view:(vnode)=>{
+            console.log('fonts', config.fonts)
+
             return m("p",{
                 style: {
                     fontFamily: config.fontFamily,
                     margin: 0,
                     color:'black',
-                    ...(config.fonts.default || config.defaultFont || {}),
+                    ...(config.fonts?.text ||  config.defaultFont  || {}),
                     ...(vnode.attrs.style || vnode.attrs)
                 }
             }, vnode.children)

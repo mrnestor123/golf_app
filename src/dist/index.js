@@ -2,7 +2,7 @@
 import { App, AppBar, AppContent, LucideIcon, mobileNavigator, mobileRouter, NavBar } from './components/app_elements.js';
 import { setConfig, config } from './components/config.js';
 import { openDialog } from './components/dialogs.js';
-import { Button, Img, Label } from './components/elements.js';
+import { Button, Img, Label, Spinner } from './components/elements.js';
 import { Input } from './components/forms.js';
 import { Animate, Box, Div, FlexCol, FlexRow, Tappable } from './components/layout.js';
 import { H2, H3, SmallText, Text } from './components/texts.js';
@@ -28,12 +28,12 @@ setConfig({
         },
         h2: {
             fontWeight: 'normal',
-            userSelect: 'none'
+            userSelect: 'none',
         },
         text: {
             userSelect: 'none'
         },
-        smallText: {
+        small: {
             userSelect: 'none'
         }
     },
@@ -225,7 +225,11 @@ function LoginPage() {
                             alert('Please enter email and password');
                             return;
                         }
+                        if (loading)
+                            return;
+                        loading = true;
                         createUser(data['email'], data['password']).then(user => {
+                            loading = false;
                             if (user) {
                                 localStorage.setItem('user_cod', user.id);
                                 AppData.user = user;
@@ -233,7 +237,7 @@ function LoginPage() {
                             }
                         });
                     }
-                }, "Login"))))
+                }, loading ? m(Spinner) : "Login"))))
             ];
         }
     };

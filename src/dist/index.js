@@ -1,5 +1,5 @@
 // MODEL
-import { App, AppBar, AppContent, LucideIcon, mobileRouter, NavBar } from './components/app_elements.js';
+import { App, AppBar, AppContent, LucideIcon, mobileNavigator, mobileRouter, NavBar } from './components/app_elements.js';
 import { setConfig, config } from './components/config.js';
 import { openDialog } from './components/dialogs.js';
 import { Button, Img, Label } from './components/elements.js';
@@ -129,6 +129,7 @@ mobileRouter(document.body, "/splash", {
         }
     },
     "/game/end/:id": {
+        'replace': true,
         view: function (vnode) {
             return m(GameEnded, vnode.attrs);
         }
@@ -206,18 +207,21 @@ function LoginPage() {
                     data: data,
                     name: 'email',
                     placeholder: 'Email'
-                }), m(Input, {
-                    label: "Password",
-                    type: 'password',
-                    data: data,
-                    name: 'password',
-                    placeholder: 'Password'
-                }), m(FlexRow, { width: '100%' }, m(Button, {
+                }), 
+                /*
+                m(Input,{
+                  label: "Password",
+                  type: 'password',
+                  data: data,
+                  name: 'password',
+                  placeholder: 'Password'
+                }),*/
+                m(FlexRow, { width: '100%' }, m(Button, {
                     type: 'primary',
                     fluid: true,
                     style: { flex: 1 },
                     onclick: (e) => {
-                        if (!data['email'] || !data['password']) {
+                        if (!data['email']) {
                             alert('Please enter email and password');
                             return;
                         }
@@ -364,8 +368,18 @@ function ProfilePage() {
                         height: '80px',
                         borderRadius: '50%',
                         background: config.app.card.background,
+                        alignItems: 'center',
+                        display: 'flex',
+                        justifyContent: 'center'
                     }
-                }), m(H2, user.user_name)),
+                }, m(Div, {
+                    style: {
+                        width: '60px',
+                        height: '60px',
+                        borderRadius: '50%',
+                        border: '2px solid grey'
+                    }
+                })), m(H2, user.user_name)),
                 m(Box, { height: '2rem' }),
                 m(Text, "My games"),
                 m(Box, { height: '1rem' }),
@@ -380,7 +394,9 @@ function ProfilePage() {
                             padding: '1rem'
                         },
                         onclick: (e) => {
-                            m.route.set(`/game/end/${game.id}`);
+                            AppData.currentGame = new Game(game);
+                            console.log('game', game, AppData.currentGame);
+                            m.route.set(`/game/end/${game.id}?past=true`);
                         }
                     }, m(FlexCol, { gap: '0.5rem' }, m(Text, game.club.name), m(FlexRow, { gap: '0.1rem' }, m(LucideIcon, {
                         icon: 'calendar',
@@ -928,14 +944,23 @@ function GameEnded() {
         view: (vnode) => {
             if (loading)
                 return;
-            console.log('game end', game);
             let total_score = game && game.scores.filter(score => score.confirmed).reduce((total, score) => total + (score.strokes || 0), 0) -
                 game.round.holes.filter((hole, i) => game.scores[i].confirmed).reduce((total, hole) => total + hole.par, 0);
+            console.log('attrs', vnode.attrs);
             return m(App, m(AppBar, {
                 leading: {
                     icon: 'x',
                     style: { color: 'black' },
-                    route: '/'
+                    onclick: (e) => {
+                        AppData.currentGame = null;
+                        mobileNavigator.pop();
+                        if (vnode.attrs.past) {
+                            m.route.set('/profile');
+                        }
+                        else {
+                            m.route.set('/');
+                        }
+                    }
                 },
             }), game && [
                 m(Img, {
@@ -946,14 +971,14 @@ function GameEnded() {
                         objectFit: 'cover'
                     }
                 }),
-                m(AppContent, { style: { borderTop: '1px solid #ccc', padding: '1rem' } }, m(H2, club.name), m(FlexRow, {
+                m(AppContent, { style: { borderTop: '1px solid #ccc', padding: '1rem' } }, m(H2, club.name), m(SmallText, game.start ? `Played on ${new Date(game.start).toLocaleDateString()}` : ''), m(FlexRow, {
                     justifyContent: 'space-between',
                     alignItems: 'center',
                     marginTop: '1rem',
                 }, m(FlexCol, { alignItems: 'center' }, m(H2, (total_score > 0 ? `+` :
                     total_score < 0 ? `-` :
                         '')
-                    + total_score), m(Text, 'Total Score')), m(FlexCol, { alignItems: 'center' }, m(H2, game.scores.reduce((total, score) => total + (score.green_in_regulation ? 1 : 0), 0)), m(Text, 'GIR')), m(FlexCol, { alignItems: 'center' }, m(H2, game.scores.reduce((total, score) => total + (score.up_and_down ? 1 : 0), 0)), m(Text, 'UP&DOWN'))), m(Div, {
+                    + total_score), m(Text, 'Total Score')), m(FlexCol, { alignItems: 'center' }, m(H2, game.scores.reduce((total, score) => total + (score.green_in_regulation ? 1 : 0), 0)), m(Text, 'GIR')), m(FlexCol, { alignItems: 'center' }, m(H2, game.scores.reduce((total, score) => total + (score.up_and_down ? 1 : 0), 0)), m(Text, 'UP&DOWN')), m(FlexCol, { alignItems: 'center' }, m(H2, game.scores.reduce((total, score) => total + (score.fairway_hit ? 1 : 0), 0)), m(Text, 'Fairways'))), m(Div, {
                     marginTop: '1.5em',
                     background: 'grey'
                 }), m(FlexCol, { gap: '0.5rem' }, m(Text, { marginTop: '1rem' }, 'Hole by Hole'), game.scores
@@ -966,7 +991,9 @@ function GameEnded() {
                     }, m(Div, {
                         background: 'white', display: 'flex', borderRadius: '0.1em', width: '30px', height: '30px',
                         alignItems: 'center', justifyContent: 'center', padding: '0.2rem'
-                    }, m(Text, score.hole_index + 1)), m(FlexRow, { gap: '0.5rem' }, m(SmallText, `Par ${hole.par}`), m(SmallText, '/'), m(SmallText, `${score.strokes || 0} strokes`)));
+                    }, m(Text, score.hole_index + 1)), m(FlexRow, { gap: '0.5rem' }, m(SmallText, `Par ${hole.par}`), m(SmallText, '/'), m(SmallText, `${score.strokes || 0} strokes`), score.putts
+                        ? m(SmallText, `putts ${score.putts} `)
+                        : null));
                 })))
             ]);
         }

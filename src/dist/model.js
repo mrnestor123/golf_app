@@ -104,12 +104,17 @@ class User {
     }
 }
 class Game {
-    constructor({ id = createDateId('game'), club, scores = Array.from({ length: 18 }, (_, i) => new Score({ hole_index: i })) }) {
+    constructor({ id = createDateId('game'), scores = Array.from({ length: 18 }, (_, i) => new Score({ hole_index: i })), round = null, club = null, tee = null, }) {
         this.players = []; // for multiplayer games
         this.id = id;
         this.start = new Date();
-        this.club = club;
         this.scores = scores.map(score => new Score(score));
+        if (round)
+            this.round = round;
+        if (club)
+            this.club = club;
+        if (tee)
+            this.tee = tee;
     }
     toJSON() {
         return {

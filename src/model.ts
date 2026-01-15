@@ -65,6 +65,7 @@ class Round {
         number_of_holes = 18, 
         handicaps, slopes, 
         course_ratings, 
+        
         tees
     }){
         this.id = id
@@ -205,13 +206,19 @@ class Game {
 
     constructor({
         id = createDateId('game'),
-        club, 
-        scores = Array.from({length: 18}, (_, i) => new Score({hole_index: i}))
+        
+        scores = Array.from({length: 18}, (_, i) => new Score({hole_index: i})),
+        round = null,
+        club = null,
+        tee = null,
     }){
         this.id = id
         this.start = new Date();
-        this.club = club
         this.scores = scores.map(score => new Score(score))
+
+        if(round) this.round = round
+        if(club) this.club = club
+        if(tee) this.tee = tee
     }
 
 

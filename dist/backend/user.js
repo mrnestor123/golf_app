@@ -35,7 +35,7 @@ async function signInWithGoogle() {
     const { data, error } = await supabase.auth.signInWithOAuth({
         provider: 'google',
         options: {
-            redirectTo: `${window.location.origin}/#!/popup-callback`,
+            redirectTo: `${window.location.href.split('#')[0]}#!/popup-callback`,
             queryParams: { prompt: "select_account" },
             skipBrowserRedirect: true
         }

@@ -9,6 +9,7 @@ import { AppData } from './controller.js';
 import { openPopup } from '../components/dialogs.js';
 import { User } from '../model/user.js';
 const m = window.m;
+// mirar de quitar esto, me lo ha hecho el bot
 const AUTH_ERROR_MESSAGES = {
     invalid_credentials: 'Invalid email or password',
     user_not_found: 'User not found',

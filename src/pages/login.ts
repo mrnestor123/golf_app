@@ -124,6 +124,7 @@ export function LoginPage() {
 
   return {
     view: () => {
+      alert('nuevo');
       return [
         m(App,
           error ? m(BottomToolbar, { text: error }) : null,
@@ -552,6 +553,7 @@ export function PopUpCallBack() {
       }
     },
     view: () => {
+      
       return [
         m("div", {
           style: {

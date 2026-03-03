@@ -424,7 +424,10 @@ export function GameStart() {
                 })), m(Button, {
                     onclick: () => {
                         if (hole_index >= holes.length - 1) {
+                            game.scores[hole_index].confirmed = true;
+                            game.scores[hole_index].end = new Date();
                             uploadGame(game);
+                            AppData.user.games.push(game);
                             AppData.currentGame = game;
                             m.route.set(`/game/end/${game.id}`);
                         }
@@ -485,6 +488,7 @@ export function GameStart() {
                         onclick: (e) => {
                             uploadGame(game);
                             AppData.currentGame = game;
+                            AppData.user.games.push(game);
                             m.route.set(`/game/end/${game.id}`);
                             vnode.attrs.close();
                         }
@@ -520,7 +524,6 @@ export function GameStart() {
                 let green_score = (hole.par - 2);
                 score.green_in_regulation = score.confirmed && score.strokes && score.putts ? score.strokes - (score.putts || 0) <= green_score : false;
                 score.up_and_down = score.confirmed && score.strokes && !score.green_in_regulation ? hole.par >= score.strokes : false;
-                console.log('handicapssss', game.round.handicaps[hole_index]);
                 return m(FlexCol, {
                     background: 'white',
                     gap: '1rem', color: 'black'
@@ -528,7 +531,8 @@ export function GameStart() {
                     icon: 'land-plot',
                     width: '20',
                     height: '20',
-                }), m(SmallText, (typeof hole.tees[game.tee.id] == 'string' ? hole.tees[game.tee.id] : hole.tees[game.tee.id].distance) + ' m'))
+                }), hole.tees[game.tee.id] ?
+                    m(SmallText, (typeof hole.tees[game.tee.id] == 'string' ? hole.tees[game.tee.id] : hole.tees[game.tee.id].distance) + ' m') : null)
                 /*
                 m(Label, {
                   type: 'secondary',

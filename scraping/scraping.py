@@ -279,7 +279,7 @@ class MSCorecardScraper:
         current_index = 0
 
         for cell in second_row:
-            if current_index > 2 and cell.text.strip() != 'Par' and cell.text.strip() != 'SI' and cell.text.strip() != 'Hole':
+            if current_index > 2 and cell.text.strip() != '' and cell.text.strip() != 'Par' and cell.text.strip() != 'SI' and cell.text.strip() != 'Hole':
                 
                 end_index = current_index
                 field_type = ''
@@ -321,20 +321,17 @@ class MSCorecardScraper:
 
             if hole_index >= len(hole_rows) - 2:
                 for i, tee in enumerate(tees):
-                    
-                    if( hole_index == len(hole_rows) - 2 ):
-                        if(round['slopes']['men'] == None): 
-                            round['slopes']['men'] = {}
-                        
-                        round['slopes']['men'][tee['id']] = cells[tee['index']-2].text
-                         
-                    
+                    cell_index = tee['index'] - 2
+                    if cell_index < 0 or cell_index >= len(cells):
+                        continue
+                    value = cells[cell_index].text.strip()
+                    if not value or value in ('-', '--', '---'):
+                        continue
+                    if hole_index == len(hole_rows) - 2:
+                        round['slopes']['men'][tee['id']] = value
                     else:
-                        if(round['slopes']['women'] == None): 
-                            round['slopes']['women'] = {}
-                        
-                        round['slopes']['women'][tee['id']] = cells[tee['index']-2].text
-                        round['course_ratings']['women'][tee['id']] = cells[tee['index']-2].text
+                        round['slopes']['women'][tee['id']] = value
+                        round['course_ratings']['women'][tee['id']] = value
                           
             else:       
                 hole_data = {
@@ -346,7 +343,11 @@ class MSCorecardScraper:
 
                 # Extraer el número del hoyo y par
                 if len(cells) >= 3:
-                    hole_data['number'] = int(cells[0].text.strip())
+                    try:
+                        hole_data['number'] = int(cells[0].text.strip())
+                    except (ValueError, TypeError):
+                        hole_index += 1
+                        continue
                     
                     try:
                         hole_data['par'] = int(cells[1].text.strip())
@@ -355,23 +356,26 @@ class MSCorecardScraper:
                         continue
                     
                     # Safe access to SI (Stroke Index) in cells[2]
-                    si_value = int(cells[2].text.strip())
-                    round['handicaps'].append(si_value)
+                    try:
+                        si_value = int(cells[2].text.strip())
+                        round['handicaps'].append(si_value)
+                    except (ValueError, TypeError):
+                        pass  # skip handicap if value is '--' or invalid
 
                     
                     for i, tee in enumerate(tees):
                         if tee['index'] < len(cells):
                             tee_distance = cells[tee['index']].text.strip()
-                            
-                            if tee_distance == '-':
-                                continue
 
+                            if tee_distance in ('-', '--', '---'):
+                                continue  # skip this hole's distance but keep the tee
+                            
                             try:
                                 if tee['index'] != tee['end_index']:
                                     end_value = cells[tee['end_index']].text.strip()
                                     hole_data['tees'][tee['id']] = {
                                         'distance': tee_distance,
-                                        tee['field_type']: end_value if end_value != '-' else None
+                                        tee['field_type']: end_value if end_value not in ('-', '--', '---') else None
                                     }
                                 else:
                                     hole_data['tees'][tee['id']] = tee_distance

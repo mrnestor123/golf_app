@@ -686,8 +686,6 @@ export function GameStart(){
         score.green_in_regulation = score.confirmed && score.strokes && score.putts ? score.strokes - (score.putts || 0) <= green_score: false;
         score.up_and_down = score.confirmed && score.strokes && !score.green_in_regulation ? hole.par >= score.strokes : false;
 
-        console.log('handicapssss', game.round.handicaps[hole_index])
-
         return m(FlexCol,{ 
           background:'white', 
           gap: '1rem', color:'black'
@@ -705,9 +703,10 @@ export function GameStart(){
                 height: '20',
               }),
 
+              hole.tees[game.tee.id] ?
               m(SmallText, 
                 (typeof hole.tees[game.tee.id] == 'string' ? hole.tees[game.tee.id] : hole.tees[game.tee.id].distance)  + ' m'
-              )
+              ): null
             )
             /*
             m(Label, {

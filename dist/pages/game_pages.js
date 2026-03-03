@@ -84,25 +84,28 @@ export function GameConfig() {
                         let course_ratings = game.round.course_ratings;
                         let slopes = game.round.slopes;
                         let descriptionText = '';
+                        console.log(game.round.course_ratings, 'slopes', slopes);
                         if (course_ratings) {
-                            descriptionText += 'CR ';
                             let menCR = course_ratings['men']?.[tee.id];
-                            if (menCR) {
-                                descriptionText += 'M ' + menCR.split('/')[0];
-                            }
                             let womenCR = course_ratings['women']?.[tee.id];
-                            if (womenCR) {
-                                descriptionText += ' W ' + womenCR.split('/')[0];
-                            }
+                            let crParts = [];
+                            if (menCR && menCR != '---')
+                                crParts.push('M ' + menCR.split('/')[0]);
+                            if (womenCR && womenCR != '---')
+                                crParts.push('W ' + womenCR.split('/')[0]);
+                            if (crParts.length)
+                                descriptionText += 'CR ' + crParts.join(' ');
                         }
                         if (slopes) {
-                            descriptionText += '// SL';
-                            if (slopes['men'] && slopes['men'][tee.id]) {
-                                descriptionText += ' M ' + slopes['men'][tee.id].split('/')[0];
-                            }
-                            if (slopes['women'] && slopes['women'][tee.id]) {
-                                descriptionText += ' W ' + slopes['women'][tee.id].split('/')[0];
-                            }
+                            let menSlope = slopes['men']?.[tee.id];
+                            let womenSlope = slopes['women']?.[tee.id];
+                            let slParts = [];
+                            if (menSlope && menSlope != '---')
+                                slParts.push('M ' + menSlope.split('/')[0]);
+                            if (womenSlope && womenSlope != '---')
+                                slParts.push('W ' + womenSlope.split('/')[0]);
+                            if (slParts.length)
+                                descriptionText += (descriptionText ? ' // ' : '') + 'SL ' + slParts.join(' ');
                         }
                         return {
                             title: tee.name,

@@ -143,6 +143,7 @@ export function LoginPage() {
                     try {
                         let { url } = await UserServer.signInWithGoogle();
                         let popup = openPopup(url);
+                        console.log('url', url);
                         if (interval)
                             clearInterval(interval);
                         interval = setInterval(async () => {
@@ -452,7 +453,9 @@ export function PopUpCallBack() {
             popupError = '';
             try {
                 await UserServer.createSession(vnode.attrs.access_token, vnode.attrs.refresh_token);
-                window.close();
+                setTimeout(() => {
+                    window.close();
+                }, 1000);
             }
             catch (e) {
                 popupLoading = false;

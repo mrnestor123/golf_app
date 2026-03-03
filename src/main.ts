@@ -131,7 +131,6 @@ startUser().then((r)=>{
       'transition':'no'
     },
 
-
     "/login": {
       view: function(vnode:any) {
         return m(LoginPage, vnode.attrs)
@@ -197,7 +196,7 @@ async function startUser(){
   } else {
     if(document.location) {
       const path = document.location.hash;
-      if (!path.includes('/splash') && !path.includes('/login')) {
+      if (!path.includes('popup-callback') && !path.includes('/splash') && !path.includes('/login')) {
         document.location.hash = '#!/login';
       }
     }

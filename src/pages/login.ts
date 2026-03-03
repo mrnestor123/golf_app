@@ -189,6 +189,8 @@ export function LoginPage() {
               let { url } = await UserServer.signInWithGoogle();
               let popup = openPopup(url);
 
+              console.log('url', url)
+
               if (interval) clearInterval(interval)
 
               interval = setInterval(async () => {
@@ -236,11 +238,11 @@ export function LoginPage() {
           style: { width: '100%', position: 'relative', justifyContent: 'center', gap: '1rem' }
         },
           loading && provider == 'google'
-            ? m(Spinner)
-            : [
-              m(SVGIcon, { icon: 'google' }),
-              m(Text, { textAlign: 'center' }, "Continue with Google")
-            ]
+          ? m(Spinner)
+          : [
+            m(SVGIcon, { icon: 'google' }),
+            m(Text, { textAlign: 'center' }, "Continue with Google")
+          ]
         )
     }
   }
@@ -537,7 +539,11 @@ export function PopUpCallBack() {
 
       try {
         await UserServer.createSession(vnode.attrs.access_token, vnode.attrs.refresh_token)
-        window.close()
+        
+        setTimeout(()=>{
+          window.close()
+        }, 1000)
+        
       } catch (e) {
         popupLoading = false;
         popupError = mapAuthError((e as any)?.message);

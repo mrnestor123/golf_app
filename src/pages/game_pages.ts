@@ -561,6 +561,7 @@ export function GameStart(){
               onclick: () => {
                 if(hole_index >= holes.length -1) {
                   uploadGame(game)
+                  AppData.currentGame = game;
                   m.route.set(`/game/end/${game.id}`)
                 } else {
                   game.scores[hole_index].confirmed = true;
@@ -640,6 +641,7 @@ export function GameStart(){
                 type:'primary',
                 onclick: (e: Event) => {
                   uploadGame(game)
+                  AppData.currentGame = game;
                   m.route.set(`/game/end/${game.id}`)
                   vnode.attrs.close()
                 }
@@ -925,16 +927,26 @@ export function GameStart(){
 
 
 export function GameEnded(){
-  let game;
+  let game = AppData.currentGame;
   let club: GolfClub = game?.club;
   let loading = false;
-
+  let total_score = 0;
   // AGRUPAR ESTO EN UN WRAPPER EN CONTROLLER !!
   async function getData({id}){
     try {
+      if(game) return;
+
       loading = true;
       game = await getGame(id);
       AppData.currentGame = game;
+
+      game.scores.map((score: Score, i)=>{
+        if(!score.confirmed) return;
+
+        let hole:Hole = game.round.holes[score.hole_index != undefined ? score.hole_index : i]
+        total_score+= score.strokes - hole.par
+      })
+
       club = game.club;
       loading = false;
       m.redraw()
@@ -944,15 +956,15 @@ export function GameEnded(){
     }
   }
 
+  
   return {
     oninit:(vnode:any)=> {
       getData(vnode.attrs);
     },
     view: (vnode:any)=> {
-      if(loading) return;
+      
 
-      let total_score = game && game.scores.filter(score => score.confirmed).reduce((total, score) => total + (score.strokes || 0), 0) -
-        game.round.holes.filter((hole,i )=> game.scores[i].confirmed).reduce((total, hole) => total + hole.par, 0) 
+      
 
       return m(App,
         m(AppBar, {
@@ -973,6 +985,7 @@ export function GameEnded(){
           },
         }), 
 
+        loading ? m(Skeleton) :
         game && [
           
           m(AppContent, {style: {borderTop: '1px solid #ccc', padding:'1rem'}},
@@ -981,9 +994,6 @@ export function GameEnded(){
             m(SmallText, 
               game.start ? `Played on ${new Date(game.start).toLocaleDateString()}` : ''
             ),
-
-             
-              
 
             m(FlexRow, {
               justifyContent:'space-between',
@@ -1077,8 +1087,72 @@ export function GameEnded(){
               
             )
           )
-        ]
+        ] :
+        
       )
+    }
+  }
+
+
+  function Skeleton(){
+    const shimmer = {
+      background: 'linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%)',
+      backgroundSize: '200% 100%',
+      animation: 'shimmer 1.4s infinite',
+      borderRadius: '0.25rem',
+    };
+
+    const block = (w: string, h: string, extra: any = {}) =>
+      m(Div, { style: { ...shimmer, width: w, height: h, ...extra } });
+
+    return {
+      view: () => [
+        m('style', `
+          @keyframes shimmer {
+            0%   { background-position: 200% 0; }
+            100% { background-position: -200% 0; }
+          }
+        `),
+        m(AppContent, { style: { borderTop: '1px solid #ccc', padding: '1rem' } },
+
+          // Title + date
+          block('55%', '22px'),
+          block('35%', '14px', { marginTop: '0.5rem' }),
+
+          // Stats row
+          m(FlexRow, {
+            style: { justifyContent: 'space-between', alignItems: 'center', marginTop: '1.5rem' }
+          },
+            [1,2,3,4].map(() =>
+              m(FlexCol, { style: { alignItems: 'center', gap: '0.4rem' } },
+                block('40px', '28px'),
+                block('50px', '12px')
+              )
+            )
+          ),
+
+          // Hole by hole title
+          block('100px', '14px', { marginTop: '1.5rem' }),
+
+          // Hole rows
+          m(FlexCol, { style: { gap: '0.5rem', marginTop: '0.5rem' } },
+            [1,2,3,4,5,6].map(() =>
+              m(FlexRow, {
+                style: {
+                  background: config.app.card.background,
+                  justifyContent: 'space-between',
+                  alignItems: 'center',
+                  padding: '0.5rem',
+                  borderRadius: '0.2rem'
+                }
+              },
+                block('30px', '30px', { borderRadius: '0.1rem', flexShrink: 0 }),
+                block('40%', '14px')
+              )
+            )
+          )
+        )
+      ]
     }
   }
 }

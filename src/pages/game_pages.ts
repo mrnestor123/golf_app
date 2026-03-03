@@ -690,6 +690,8 @@ export function GameStart(){
         score.green_in_regulation = score.confirmed && score.strokes && score.putts ? score.strokes - (score.putts || 0) <= green_score: false;
         score.up_and_down = score.confirmed && score.strokes && !score.green_in_regulation ? hole.par >= score.strokes : false;
 
+        console.log('te',hole.tees[game.tee.id])
+
         return m(FlexCol,{ 
           background:'white', 
           gap: '1rem', color:'black'
@@ -707,7 +709,9 @@ export function GameStart(){
                 height: '20',
               }),
 
-              m(SmallText, hole.tees[game.tee.id] + ' m')
+              m(SmallText, 
+                (typeof hole.tees[game.tee.id] == 'string' ? hole.tees[game.tee.id] : hole.tees[game.tee.id].distance)  + ' m'
+              )
             )
             /*
             m(Label, {
@@ -717,21 +721,21 @@ export function GameStart(){
           ),
 
           m(FlexRow, {justifyContent:'space-between', alignItems:'center', flex: 1},
-             [
-              'Par ' + hole.par,
-              'Hcp ' + game.round.handicaps[hole_index],
-              ].map((text,i)=>{
-                return [
-                  m(Label,{
-                  type:'secondary',
-                  style: { flex:1}
-                },
-                  m(Text, text)
-                ),
+            [
+            'Par ' + hole.tees[game.tee.id]?.par ||  hole.par,
+            'Hcp ' + hole.tees[game.tee.id]?.handicap || game.round.handicaps[hole_index],
+            ].map((text,i)=>{
+              return [
+                m(Label,{
+                type:'secondary',
+                style: { flex:1}
+              },
+                m(Text, text)
+              ),
 
-                i == 0 ? m(Box, {width:'1rem'}) : null
-              ]
-              }),
+              i == 0 ? m(Box, {width:'1rem'}) : null
+            ]
+            }),
             
             m(FlexRow, { alignItems:'center', gap:'0.5rem'},
              
@@ -934,19 +938,15 @@ export function GameEnded(){
   // AGRUPAR ESTO EN UN WRAPPER EN CONTROLLER !!
   async function getData({id}){
     try {
-      if(game) return;
+      if(game){
+        getScore()
+        return;
+      }
 
       loading = true;
       game = await getGame(id);
       AppData.currentGame = game;
-
-      game.scores.map((score: Score, i)=>{
-        if(!score.confirmed) return;
-
-        let hole:Hole = game.round.holes[score.hole_index != undefined ? score.hole_index : i]
-        total_score+= score.strokes - hole.par
-      })
-
+      getScore()
       club = game.club;
       loading = false;
       m.redraw()
@@ -956,15 +956,21 @@ export function GameEnded(){
     }
   }
 
+  function getScore(){
+    game.scores.map((score: Score, i)=>{
+    if(!score.confirmed) return;
+
+    let hole:Hole = game.round.holes[score.hole_index != undefined ? score.hole_index : i]
+    total_score+= score.strokes - hole.par
+  })
+  }
+
   
   return {
     oninit:(vnode:any)=> {
       getData(vnode.attrs);
     },
     view: (vnode:any)=> {
-      
-
-      
 
       return m(App,
         m(AppBar, {
@@ -1055,6 +1061,8 @@ export function GameEnded(){
               .filter(score => score.confirmed)
               .map((score:Score, i)=>{
                 let hole = game.round.holes[score.hole_index];
+                let handicap = hole.tees[game.tee.id]?.handicap || game.round.handicaps[i]
+                let par = hole.tees[game.tee.id]?.par || hole.par
               
 
                 return m(FlexRow, {
@@ -1071,7 +1079,7 @@ export function GameEnded(){
                   ),
 
                   m(FlexRow,{gap:'0.5rem'},
-                    m(SmallText, `Par ${hole.par}`),
+                    m(SmallText, `Par ${par}`),
                     m(SmallText, '/'),
                     m(SmallText, `${score.strokes || 0} strokes`),
 
@@ -1087,7 +1095,7 @@ export function GameEnded(){
               
             )
           )
-        ] :
+        ]
         
       )
     }

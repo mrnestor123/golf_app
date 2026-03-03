@@ -517,6 +517,7 @@ export function GameStart() {
                 let green_score = (hole.par - 2);
                 score.green_in_regulation = score.confirmed && score.strokes && score.putts ? score.strokes - (score.putts || 0) <= green_score : false;
                 score.up_and_down = score.confirmed && score.strokes && !score.green_in_regulation ? hole.par >= score.strokes : false;
+                console.log('te', hole.tees[game.tee.id]);
                 return m(FlexCol, {
                     background: 'white',
                     gap: '1rem', color: 'black'
@@ -524,15 +525,15 @@ export function GameStart() {
                     icon: 'land-plot',
                     width: '20',
                     height: '20',
-                }), m(SmallText, hole.tees[game.tee.id] + ' m'))
+                }), m(SmallText, (typeof hole.tees[game.tee.id] == 'string' ? hole.tees[game.tee.id] : hole.tees[game.tee.id].distance) + ' m'))
                 /*
                 m(Label, {
                   type: 'secondary',
                   style: { border:`1px solid ${tee.color}`, color: tee.color, background:'white'}
                 }, m(SmallText, tee.name )*/
                 ), m(FlexRow, { justifyContent: 'space-between', alignItems: 'center', flex: 1 }, [
-                    'Par ' + hole.par,
-                    'Hcp ' + game.round.handicaps[hole_index],
+                    'Par ' + hole.tees[game.tee.id]?.par || hole.par,
+                    'Hcp ' + hole.tees[game.tee.id]?.handicap || game.round.handicaps[hole_index],
                 ].map((text, i) => {
                     return [
                         m(Label, {
@@ -657,17 +658,14 @@ export function GameEnded() {
     // AGRUPAR ESTO EN UN WRAPPER EN CONTROLLER !!
     async function getData({ id }) {
         try {
-            if (game)
+            if (game) {
+                getScore();
                 return;
+            }
             loading = true;
             game = await getGame(id);
             AppData.currentGame = game;
-            game.scores.map((score, i) => {
-                if (!score.confirmed)
-                    return;
-                let hole = game.round.holes[score.hole_index != undefined ? score.hole_index : i];
-                total_score += score.strokes - hole.par;
-            });
+            getScore();
             club = game.club;
             loading = false;
             m.redraw();
@@ -676,6 +674,14 @@ export function GameEnded() {
             loading = false;
             m.redraw();
         }
+    }
+    function getScore() {
+        game.scores.map((score, i) => {
+            if (!score.confirmed)
+                return;
+            let hole = game.round.holes[score.hole_index != undefined ? score.hole_index : i];
+            total_score += score.strokes - hole.par;
+        });
     }
     return {
         oninit: (vnode) => {
@@ -713,13 +719,15 @@ export function GameEnded() {
                         .filter(score => score.confirmed)
                         .map((score, i) => {
                         let hole = game.round.holes[score.hole_index];
+                        let handicap = hole.tees[game.tee.id]?.handicap || game.round.handicaps[i];
+                        let par = hole.tees[game.tee.id]?.par || hole.par;
                         return m(FlexRow, {
                             background: config.app.card.background,
                             justifyContent: 'space-between', alignItems: 'center', padding: '0.5rem'
                         }, m(Div, {
                             background: 'white', display: 'flex', borderRadius: '0.1em', width: '30px', height: '30px',
                             alignItems: 'center', justifyContent: 'center', padding: '0.2rem'
-                        }, m(Text, score.hole_index + 1)), m(FlexRow, { gap: '0.5rem' }, m(SmallText, `Par ${hole.par}`), m(SmallText, '/'), m(SmallText, `${score.strokes || 0} strokes`), score.putts
+                        }, m(Text, score.hole_index + 1)), m(FlexRow, { gap: '0.5rem' }, m(SmallText, `Par ${par}`), m(SmallText, '/'), m(SmallText, `${score.strokes || 0} strokes`), score.putts
                             ? m(SmallText, `putts ${score.putts} `)
                             : null));
                     })))

@@ -690,7 +690,7 @@ export function GameStart(){
         score.green_in_regulation = score.confirmed && score.strokes && score.putts ? score.strokes - (score.putts || 0) <= green_score: false;
         score.up_and_down = score.confirmed && score.strokes && !score.green_in_regulation ? hole.par >= score.strokes : false;
 
-        console.log('te',hole.tees[game.tee.id])
+        console.log('handicapssss', game.round.handicaps[hole_index])
 
         return m(FlexCol,{ 
           background:'white', 
@@ -722,8 +722,8 @@ export function GameStart(){
 
           m(FlexRow, {justifyContent:'space-between', alignItems:'center', flex: 1},
             [
-            'Par ' + hole.tees[game.tee.id]?.par ||  hole.par,
-            'Hcp ' + hole.tees[game.tee.id]?.handicap || game.round.handicaps[hole_index],
+            'Par ' + (hole.tees[game.tee.id]?.par ||  hole.par),
+            'Hcp ' + (hole.tees[game.tee.id]?.handicap || game.round.handicaps[hole_index]),
             ].map((text,i)=>{
               return [
                 m(Label,{

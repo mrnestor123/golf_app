@@ -556,7 +556,10 @@ export function GameStart(){
             m(Button, {
               onclick: () => {
                 if(hole_index >= holes.length -1) {
+                  game.scores[hole_index].confirmed = true;
+                  game.scores[hole_index].end = new Date()
                   uploadGame(game)
+                  AppData.user.games.push(game)
                   AppData.currentGame = game;
                   m.route.set(`/game/end/${game.id}`)
                 } else {
@@ -638,6 +641,7 @@ export function GameStart(){
                 onclick: (e: Event) => {
                   uploadGame(game)
                   AppData.currentGame = game;
+                  AppData.user.games.push(game)
                   m.route.set(`/game/end/${game.id}`)
                   vnode.attrs.close()
                 }

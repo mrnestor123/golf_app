@@ -5,7 +5,7 @@ export {
     Container,
     Grid, FlexCol, FlexRow, 
     Div, Animate, Tappable, Draggable,
-    Box, CssStyle
+    Box, CssStyle, ViewPortComponent
 }
 
 
@@ -75,8 +75,6 @@ function Container(){
 function FlexCol(){
     return {
         view:(vnode)=>{
-            /// let {justifyContent, alignItems} = vnode.attrs
-
 
             return m("div",{
                 style:{
@@ -173,6 +171,36 @@ function Box(){
     }
 }
 
+/**
+ * Componente de utilidad que retrasa el renderizado de sus hijos hasta que
+ * el componente entra en el viewport.
+ */
+function ViewPortComponent() {
+    let on = false
+    return {
+        oncreate: ({ dom, attrs }) => {
+            const { callback } = attrs
+            const observer = new IntersectionObserver((entries) => {
+                if (entries[0].isIntersecting) {
+                    on = true
+                    m.redraw()
+                    if (typeof callback === "function")
+                        callback()
+                    observer.disconnect()
+                }
+            });
+            observer.observe(dom);
+        },
+        view: ({ children, attrs }) => {
+            return m("div", {
+                ...attrs,
+                callback: null,
+                style: { ...attrs.style }
+            }, on  && children)
+        }
+    }
+}
+
 
 
 /**
@@ -225,7 +253,7 @@ function Tappable(){
 
     return {
         view:(vnode)=>{
-            return m( vnode.attrs.rippleEffect ? RippleEffect : "div",{
+            return m("div",{
                 oncreate:({dom})=> { 
                     elem = dom;
                     
@@ -356,8 +384,9 @@ function Animate() {
 
     let animations = {
         'scaleIn': {
-            from: { transform: 'scale(0)' },
-            to: { transform: 'scale(1)' }
+            from: { transform: 'scale(0.7)', opacity:0.8 },
+            to: { transform: 'scale(1)', opacity:1 },
+            exit: {opacity: 0, transform: 'scale(0.8)'}
         },
 
         'fadeUpIn': {
@@ -368,6 +397,10 @@ function Animate() {
             to: {
                 opacity: 1,
                 transform: 'translateY(0)'
+            },
+            exit: {
+                opacity: 0,
+                transform: 'translateY(20px)'
             }
         },
 
@@ -383,7 +416,23 @@ function Animate() {
         'opacity': {
             from: { opacity: 0 },
             to: { opacity: 1 }
-        }
+        },
+
+        'slideDown': {
+            from: {
+                display:'grid',
+                gridTemplateRows:'0fr',
+            },
+            to: {
+                display:'grid',
+                gridTemplateRows:'1fr'
+            },
+            exit: {
+                display:'grid',
+                gridTemplateRows:'0fr',
+            },
+
+        },
     }
 
     let observer;
@@ -406,7 +455,8 @@ function Animate() {
                                 Object.keys(animate).forEach(a => {
                                     dom.style[a] = animate[a] 
                                 })
-                            }, delay) 
+                            }, delay)
+                            observer.disconnect()
                         }
                     })
                 }, { threshold: 0.1 })
@@ -420,6 +470,8 @@ function Animate() {
                     })
                 }, delay)
             }
+
+            if(attrs.oncreate) attrs.oncreate({attrs, dom})
 
             // porque los estilos default se añaden al animar ??
             /*if(style && Object.keys(style).length > 0){
@@ -451,6 +503,7 @@ function Animate() {
             if(attrs.animation){
                 attrs.from = animations[attrs.animation]?.from || {}
                 attrs.to = animations[attrs.animation]?.to || {}
+                attrs.exit = animations[attrs.animation]?.exit || {}
             }
 
             return m("div", {
@@ -494,7 +547,7 @@ function Animate() {
                 style: {
                     ...attrs?.style,
                     ...attrs?.from,
-                    transition: `${duration}ms`
+                    transition: attrs.transition || `${duration}ms`
                 },
                 class: attrs?.class || attrs?.className || ''
             }, children)

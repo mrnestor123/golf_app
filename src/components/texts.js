@@ -35,8 +35,7 @@ function H2(){
             return m("h2",{
                 style: {
                     fontFamily: config.fontFamily,
-                    margin: 0,
-                    color:'black',
+                    margin:0,
                     ...(config.fonts.h2 || {}),
                     ...(vnode.attrs?.style || vnode.attrs)
                 }
@@ -76,10 +75,8 @@ function H4(){
 }
 
 function Text(){
-    return{ 
+    return { 
         view:(vnode)=>{
-            console.log('fonts', config.fonts)
-
             return m("p",{
                 style: {
                     fontFamily: config.fontFamily,

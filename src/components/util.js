@@ -40,13 +40,14 @@ async function translateSALT(text, mode = "spa-cat_valencia") {
     return "ERROR AL TRADUCIR"
 }
 
+// 
 function localize(localized, lang = null) {
     if (!localized) return '';
     if (typeof localized == 'string' || typeof localized == 'number') return localized
     if (typeof localized != 'object') return 'ERR translation:'+typeof localized; //???
     if (Object.entries(localized).length === 0) return  '';  //???
 
-    if (lang===null && Page && Page.lang) lang=Page.lang
+    //if (lang===null && Page && Page.lang) lang=Page.lang
 
     if (lang === 'va' && !localized[lang]) lang = 'ca'; // va === ca
     else if (lang === 'ca' && !localized[lang]) lang = 'va'; // va === ca
@@ -57,4 +58,19 @@ function localize(localized, lang = null) {
     return 'ERR translation';
 }
 
-export { loadScript, translateSALT, localize }
+
+function trimAccents(text = ''){
+  if (text === null || text === undefined) return '';
+  return String(text)
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '');
+}
+
+function normalizeStr(text = ''){
+  return trimAccents(text)
+    .trim()
+    .toLowerCase()
+    .replace(/\s+/g, ' ');
+}
+
+export { loadScript, translateSALT, localize, normalizeStr, trimAccents }

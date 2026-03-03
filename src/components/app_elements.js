@@ -1,6 +1,6 @@
 
 import {config} from './config.js';
-import { FlexRow, FlexCol, Tappable } from './layout.js';
+import { FlexRow, FlexCol, Tappable, Div } from './layout.js';
 import { loadScript } from './util.js';
 import { H2, Text, SmallText } from './texts.js';
 
@@ -11,7 +11,8 @@ export {
     AppContent,
     NavBar,
     LucideIcon,
-    mobileRouter, mobileNavigator
+    mobileRouter, 
+    mobileNavigator
 }
 
 
@@ -27,52 +28,46 @@ function AppBar() {
                 ...config.app?.appBar,
                 ...vnode.attrs
             }, 
-            vnode.attrs.leading ? 
-            m(Tappable, {
-                onclick: ()=> {
-                    if(vnode.attrs.leading?.onclick){
+
+                vnode.attrs.leading ? 
+                m(Tappable, {
+                    onclick: ()=>{
+                      if(vnode.attrs.leading?.onclick){
                         vnode.attrs.leading.onclick()
-                    }else if(vnode.attrs.leading.route){
-                        mobileNavigator.pop();
-                        m.route.set(vnode.attrs.leading.route)
-                    } else {
-                        mobileNavigator.pop();
-                        window.history.back()
+                      } else {
+                        
+                        if(mobileNavigator.pagestack.length > 1){
+                            mobileNavigator.pop()
+                        }
+
+                        if(vnode.attrs.leading?.route){
+                            m.route.set(vnode.attrs.leading.route)    
+                        } else {
+                            window.history.back();  
+                        }
+                      }
                     }
-                    
-                    
-                    // pensar de retomar lo de abajo
-                    /*
-                    if(vnode.attrs.leading?.onclick){
-                    
-                        //vnode.attrs.leading.onclick()
-                    } else  if(vnode.attrs.leading?.route){
-                        //m.route.set(vnode.attrs.leading.route)
-                    } else {
-                        window.history.back();
-                    }*/
-                }
-            },
-                m(LucideIcon, {
-                    icon: vnode.attrs.leading.icon || 'chevron-left',
-                    width: '24',
-                    height: '24',
-                    style: {
-                        display: 'block',
-                        color: config.app?.appBar?.color || 'white',
-                        ...vnode.attrs.leading.style
-                    }
-                })
-            ) : null,
+                },
+                    m(LucideIcon, {
+                        icon: vnode.attrs.leading.icon || 'move-left',
+                        width: '24',
+                        height: '24',
+                        style: {
+                            display: 'block',
+                            color: config.app?.appBar?.color || 'white',
+                            ...vnode.attrs.leading.style
+                        }
+                    })
+                ) : m('div', {style: {width: '24px', height: '24px'}}),
 
             m(FlexCol,
 
               vnode.attrs.title 
-              ? m(H2, vnode.attrs.title ) 
+              ? m(H2,{textAlign:'right'}, vnode.attrs.title ) 
               : null,
 
               vnode.attrs.subtitle 
-              ? m(Text,  vnode.attrs.subtitle)
+              ? m(Text, {textAlign:'right'},  vnode.attrs.subtitle)
               : null
             ),
             
@@ -85,14 +80,19 @@ function AppBar() {
 function AppContent() {
     return {
       view: (vnode) => {
-        return m(FlexCol, {
-          flex: 1,
-          background: config.app?.background || config.background,
-          paddingTop: '1rem',
-          padding:'1rem',
-          overflowY: 'auto',
-          ...config.app?.content,
-          ...vnode.attrs
+        return m(Div, {
+            id: 'app-content',
+            style: {
+                flex: 1,
+                display:'flex',
+                flexDirection:'column',
+                background: config.app?.background || config.background,
+                paddingTop: '1rem',
+                padding:'1rem',
+                overflowY: 'auto',
+                ...config.app?.content,
+                ...vnode.attrs
+            }
         },
           vnode.children
         )
@@ -144,8 +144,6 @@ function NavBar() {
                 ...config.app?.navBar
             },
                 vnode.attrs.icons.map((icon)=> {
-                    console.log('route', route)
-
                     return m(Tappable, {
                         style: {
                             flex: 1,
@@ -200,21 +198,21 @@ function LucideIcon(){
           }
         },
         oncreate: (vnode) => {
-            if(window.lucide){
-                window.lucide.createIcons();
-            }
+          if(window.lucide){
+            window.lucide.createIcons();
+          }
         },
         view: (vnode) => {
-            return m("i", {
-                "data-lucide": vnode.attrs.icon,
-                width: vnode.attrs.width || 24,
-                height: vnode.attrs.height || 24,
-                style: {
-                    display: 'inline-block',
-                    color: 'black',
-                    ...vnode.attrs.style
-                }
-            })
+          return m("i", {
+            "data-lucide": vnode.attrs.icon,
+            width: vnode.attrs.width || 24,
+            height: vnode.attrs.height || 24,
+            onclick: vnode.attrs.onclick,
+            style: {
+              display: 'inline-block',
+              ...vnode.attrs.style
+            }
+          })
         }
     }
 }
@@ -245,6 +243,7 @@ var mobileNavigator = {
 }
 
 
+
 /*
     A LO MEJOR SE PUEDE UTILIZAR ALGÚN COMPONENTE DE JAVASCRIPT DE URLS/ROUTER PARA OPTIMIZAR EL ROUTER
 */
@@ -270,158 +269,174 @@ function mobileRouter(root, initialroute, routes, realRealm) {
         m.redraw()
     })
 
-    m.mount(root,
-        {
-            view: function (vnode) {
-                let route = window.location.hash
-                //pagestack = mobileNavigator.pagestack
+    m.mount(root, {
+        view: function (vnode) {
+            let route = window.location.hash
+            //pagestack = mobileNavigator.pagestack
 
-                if (locationchanged || firstroute) {
-                    firstroute = false;
-                    locationchanged = false;
-                    attrs = {}
-                    if (realm) { attrs['realm'] = realm; }
+            if (locationchanged || firstroute) {
+                firstroute = false;
+                locationchanged = false;
+                attrs = {}
 
-                    popped = false;
+                if (realm) { attrs['realm'] = realm; }
 
-                    if (route.startsWith('#!')) {
-                        route = route.substring(2)
-                    }
+                popped = false;
 
-                    // se podria utilizar route.indexOf('?')
-                    // sacamos los atributos de detrás del ?
-                    let questionparams = route.split('?')
-
-                    if (questionparams.length > 1) {
-                        let params = questionparams[questionparams.length - 1].split('&')
-                        for (var attr of params) {
-                            if (attr.split('=')[0] == 'realm') {
-                                // para pasar el realm a traves de la url en todos los sitios
-                                realm = attr.split('=')[1]
-                            }
-                            attrs[attr.split('=')[0]] = decodeURIComponent(attr.split('=')[1])
-                        }
-                        route = route.split('?')[0]
-                    }
-
-                    //hacemos pattern matching por si hay alguna ruta con :
-                    if (routes[route] ||  !route) {
-                        currentpage = routes[route]
-                    } else {                        
-                        let splittedroute = route.split('/')
-                        let auxattrs = {}
-                        let isFound = false
-
-
-                        for (let r of Object.keys(routes)) {
-                            let splittedsubroute = r.split('/')
-
-                            let regex = new RegExp("^" + r.replace(/:[^\s/]+/g, '([\\w-]+)') + "$")
-
-                            if (splittedsubroute.length == splittedroute.length && route.match(regex)) {
-                                currentpage = routes[r]
-
-                                splittedsubroute.forEach(function(sr, index) {
-                                    if (sr.startsWith(':')) {
-                                        attrs[sr.substring(1)] = splittedroute[index]
-                                    }
-                                })
-
-                                //Object.assign(attrs, auxattrs)
-
-                                break;
-                                /*
-                                splittedsubroute.forEach(function(sr, index) {
-                                    if (sr.startsWith(':')) {
-                                        auxattrs[sr.substring(1)] = splittedroute[index]
-                                        matchedcount++;
-                                    } else if (sr == splittedroute[index]) {
-                                        matchedcount++;
-                                    }
-
-                                    if (matchedcount == splittedroute.length) {
-                                        if (typeof routes[r]['onmatch'] != 'function' || routes[r]['onmatch'](auxattrs)) {
-                                            Object.assign(attrs, auxattrs)
-                                            currentpage = routes[r]
-                                            console.log('CURRENTPAGE',)
-                                            isFound = true
-                                            return;
-                                        }
-                                    }
-                                })
-                                if (isFound) break;*/
-                            }
-                            //let match = route.match(r.replace(/:[^\s/]+/g, '([\\w-]+)')) con regex
-                        }
-
-
-                        if (!isFound && currentpage == undefined) {
-                            currentpage = routes['/404']
-                        }
-                    }
-
-                    if (currentpage != undefined) {
-                        if (!mobileNavigator.wentback) {
-                            // telemetría
-                            if (realRealm) {
-                                if(navigator && navigator.sendBeacon) {
-                                    navigator.sendBeacon(`${TELEMETRIA}/${realRealm}/app/register/${encodeURIComponent(route)}`)
-                                }
-                                else {
-                                    fetch(`${TELEMETRIA}/${realRealm}/app/register/${encodeURIComponent(route)}`).catch(e => {})
-                                }
-                            }
-                            // console.error(route)
-                            if (currentpage['replace']) {
-                                pagestack = [currentpage]
-                            } else {
-                                pagestack.push(currentpage)
-                            }
-                        } else {
-                            setTimeout(() => { popped = true; pagestack.pop(); mobileNavigator.wentback = false; m.redraw(); }, 150) // tiene que ser menor que el tiempo de la animación
-                        }
-                    }
+                if (route.startsWith('#!')) {
+                    route = route.substring(2)
                 }
 
-                mobileNavigator.pagestack = pagestack // para mantenerlo
+                // se podria utilizar route.indexOf('?')
+                // sacamos los atributos de detrás del ?
+                let questionparams = route.split('?')
 
-                let transition;
+                if (questionparams.length > 1) {
+                    let params = questionparams[questionparams.length - 1].split('&')
+                    for (var attr of params) {
+                        if (attr.split('=')[0] == 'realm') {
+                            // para pasar el realm a traves de la url en todos los sitios
+                            realm = attr.split('=')[1]
+                        }
+                        attrs[attr.split('=')[0]] = decodeURIComponent(attr.split('=')[1])
+                    }
+                    route = route.split('?')[0]
+                }
+
+
+                let padParams = route.split('#')
+
+
+                // sacamos los atributos de detrás del #
+                if(padParams.length > 1){
+                    let params = padParams[padParams.length - 1].split('&')
+
+                    for (var attr of params) {
+                        attrs[attr.split('=')[0]] = decodeURIComponent(attr.split('=')[1])
+                    }
+
+                    route = route.split('#')[0]
+                }
+
+
+                //hacemos pattern matching por si hay alguna ruta con :
+                if (routes[route] ||  !route) {
+                    currentpage = routes[route]
+                } else {                        
+                    let splittedroute = route.split('/')
+                    let auxattrs = {}
+                    let isFound = false
+
+
+                    for (let r of Object.keys(routes)) {
+                        let splittedsubroute = r.split('/')
+
+                        let regex = new RegExp("^" + r.replace(/:[^\s/]+/g, '([\\w-]+)') + "$")
+
+                        if (splittedsubroute.length == splittedroute.length && route.match(regex)) {
+                            currentpage = routes[r]
+
+                            splittedsubroute.forEach(function(sr, index) {
+                                if (sr.startsWith(':')) {
+                                    attrs[sr.substring(1)] = splittedroute[index]
+                                }
+                            })
+
+                            //Object.assign(attrs, auxattrs)
+
+                            break;
+                            /*
+                            splittedsubroute.forEach(function(sr, index) {
+                                if (sr.startsWith(':')) {
+                                    auxattrs[sr.substring(1)] = splittedroute[index]
+                                    matchedcount++;
+                                } else if (sr == splittedroute[index]) {
+                                    matchedcount++;
+                                }
+
+                                if (matchedcount == splittedroute.length) {
+                                    if (typeof routes[r]['onmatch'] != 'function' || routes[r]['onmatch'](auxattrs)) {
+                                        Object.assign(attrs, auxattrs)
+                                        currentpage = routes[r]
+                                        console.log('CURRENTPAGE',)
+                                        isFound = true
+                                        return;
+                                    }
+                                }
+                            })
+                            if (isFound) break;*/
+                        }
+                        //let match = route.match(r.replace(/:[^\s/]+/g, '([\\w-]+)')) con regex
+                    }
+
+
+                    if (!isFound && currentpage == undefined) {
+                        currentpage = routes['/404']
+                    }
+                }
 
                 if (currentpage != undefined) {
-
-                    lastpage = pagestack[pagestack.length - 1] || {} // a veces lanza error donde lastpage es undefined
-                    transition = !popped 
-                        ? mobileNavigator.wentback 
-                            ? transitions[lastpage['transition'] || defaultTransition].out
-                            : transitions[currentpage['transition'] || defaultTransition].in 
-                        : ''
-
-                    if (!vnode.attrs) { vnode.attrs = {} }
-                    Object.assign(vnode.attrs, attrs)
-                } else if (pagestack.length == 0 || currentpage == null) {
-                    m.route.set(initialroute);
-                    currentpage = routes[initialroute]
-                    return;
+                    if (!mobileNavigator.wentback) {
+                        // telemetría
+                        /*if (realRealm) {
+                            if(navigator && navigator.sendBeacon) {
+                                navigator.sendBeacon(`${TELEMETRIA}/${realRealm}/app/register/${encodeURIComponent(route)}`)
+                            }
+                            else {
+                                fetch(`${TELEMETRIA}/${realRealm}/app/register/${encodeURIComponent(route)}`).catch(e => {})
+                            }
+                        }*/
+                        // console.error(route)
+                        if (currentpage['replace']) {
+                            pagestack = [currentpage]
+                        } else {
+                            pagestack.push(currentpage)
+                        }
+                    } else {
+                        setTimeout(() => { popped = true; pagestack.pop(); mobileNavigator.wentback = false; m.redraw(); }, 150) // tiene que ser menor que el tiempo de la animación
+                    }
                 }
-
-                return m("div", { style: "height:100vh;width:100vw;position:relative" },
-                    pagestack.length > 0 ?
-                    pagestack.map((page, index) => {
-                        const findPage = page['page'] ? page['page'] : page['view'] ? page['view'] : page
-                        return m("div", {
-                            style: `position:absolute; z-index:${index * 100};height:100dvh;width:100vw;background:white;inset:0px;`,
-                            class: index == pagestack.length - 1 ? transition : ''
-                        }, findPage(vnode))
-                    }) : 
-                    m("div", { 
-                        style: `position:absolute; z-index: 0; height:100dvh; width:100vw; inset:0px;`,
-                        class: ''
-                    },  
-                        currentpage['page'] ? currentpage['page'](vnode) : 
-                        currentpage['view'] ? currentpage['view'](vnode) : 
-                        currentpage(vnode)
-                    )
-                )
             }
+
+            mobileNavigator.pagestack = pagestack // para mantenerlo
+
+            let transition;
+
+            if (currentpage != undefined) {
+
+                lastpage = pagestack[pagestack.length - 1] || {} // a veces lanza error donde lastpage es undefined
+                transition = !popped 
+                    ? mobileNavigator.wentback 
+                        ? transitions[lastpage['transition'] || defaultTransition].out
+                        : transitions[currentpage['transition'] || defaultTransition].in 
+                    : ''
+
+                if (!vnode.attrs) { vnode.attrs = {} }
+                Object.assign(vnode.attrs, attrs)
+            } else if (pagestack.length == 0 || currentpage == null) {
+                m.route.set(initialroute);
+                currentpage = routes[initialroute]
+                return;
+            }
+
+            return m("div", { style: "height:100vh;width:100vw;position:relative" },
+                pagestack.length > 0 ?
+                pagestack.map((page, index) => {
+                    const findPage = page['page'] ? page['page'] : page['view'] ? page['view'] : page
+                    return m("div", {
+                        style: `position:absolute; z-index:${index * 100};height:100dvh;width:100vw;background:white;inset:0px;`,
+                        class: index == pagestack.length - 1 ? transition : ''
+                    }, findPage(vnode))
+                }) : 
+                m("div", { 
+                    style: `position:absolute; z-index: 0; height:100dvh; width:100vw; inset:0px;`,
+                    class: ''
+                },  
+                    currentpage['page'] ? currentpage['page'](vnode) : 
+                    currentpage['view'] ? currentpage['view'](vnode) : 
+                    currentpage(vnode)
+                )
+            )
+        }
     });
 }

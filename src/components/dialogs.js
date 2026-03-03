@@ -1,14 +1,16 @@
-import { Button, Icon } from "./elements.js";
+import { config } from "./config.js";
+import { Button, Icon, SVGIcon } from "./elements.js";
 import { Input } from "./forms.js";
-import { Box, Div, FlexRow } from "./layout.js";
-import { H2 } from "./texts.js";
+import { Animate, Box, Div, FlexRow } from "./layout.js";
+import { H2, Text } from "./texts.js";
 
 
 
-export { 
-    alertDialog, confirmDialog, promptDialog, openDialog,
-    Modal, ModalContent, ModalHeader, ModalFooter 
-}
+export {
+    alertDialog, confirmDialog,  openDialog,
+    Dimmer, Modal, ModalContent, ModalFooter,  ModalHeader, 
+    openPopup, promptDialog, showSnackbar
+};
 
 
 
@@ -49,7 +51,7 @@ function confirmDialog(options={'title':'','message':'','buttonLabels':[],'then'
       view:()=>  m(Modal, {size: options.size || 'tiny'},
               m(ModalHeader, m(H2, options.title || 'Confirma la acción')),
               
-              m(Div,{padding:'1em'}, m.trust(options.message)),
+              m(Div,{padding:'1em'}, m(Text, m.trust(options.message))),
               
               m(ModalFooter,
 
@@ -62,11 +64,10 @@ function confirmDialog(options={'title':'','message':'','buttonLabels':[],'then'
 
                 m(Button, {
                     type:'negative',
-                    onclick:()=>{options.then ? options.then(false):null; elem.remove()}}, options.buttonLabels ? options.buttonLabels[0] : localize({es:'Cancelar',va:'Cancel·lar'})
-                ),
-
-            
-                
+                    onclick:()=>{options.then ? options.then(false):null; elem.remove()}
+                },   
+                    options.buttonLabels ? options.buttonLabels[0] : localize({es:'Cancelar',va:'Cancel·lar'})
+                )
               )
           )
     })
@@ -139,7 +140,7 @@ function alertDialog(options={
                     m(H2,{marginTop:0}, options.title ||  types[options.type]?.text )
                 ):  null,
 
-                m(ModalContent, m(Div,{padding:'1em'}, m.trust(options.message))),
+                m(ModalContent, m(Div,{padding:'1em'}, m(Text, m.trust(options.message)))),
 
                 m(ModalFooter,
                     m(Button, {
@@ -150,7 +151,8 @@ function alertDialog(options={
                         fluid:options.fluid,
                         type:'negative'
                     },
-                    options.buttonLabels ? options.buttonLabels[0] : localize({es:'Cerrar',va:"Tancar"}))
+                    m(Text,options.buttonLabels ? options.buttonLabels[0] : localize({es:'Cerrar',va:"Tancar"}))
+                    )
                 )
             )
     })
@@ -287,7 +289,11 @@ function openDialog(Component, options = {}) {
         },
         view: () => m(Component, {
             ...(options.attrs ? options.attrs : {}),
-            onCancel: (e) => {
+            onCancel: (e) => { // cambiar esto por close en algún momento !!
+                m.mount(elem, null)
+                elem.remove()
+            },
+            close: (e) => {
                 m.mount(elem, null)
                 elem.remove()
             },
@@ -300,6 +306,63 @@ function openDialog(Component, options = {}) {
 }
 
 
+// cuadrado que sale debajo de la pantalla, está bien para móviles !!
+function showSnackbar({message, duration = 3000, fixed = false, id, background = '#1a1a1a'} = {}){
+
+    var elem = document.createElement("div")
+
+    elem.style = 'position:fixed;inset:0px;z-index:100000'
+    elem.id = id || Math.random() * 10000 + ''
+    document.body.appendChild(elem);
+
+    m.mount(elem, {
+        view: () =>  m(Animate,{
+            from: { transform: 'translateY(100%)' },
+            to: { transform: 'translateY(0%)' },
+            duration: duration || 300,
+            oncreate:(vnode)=>{
+                if(!fixed){
+                    setTimeout(() => {
+                        vnode.dom.style.transform = 'translateY(100%)';
+
+                        setTimeout(()=>{
+                            m.mount(elem, null)
+                            elem.remove()
+                        }, duration || 300 )
+                    }, 2000);
+                }
+            },
+            style: {
+                background: background,
+                padding:'1rem',
+                position:'fixed',
+                bottom:0, minHeight:'60px', 
+                display:'flex', alignItems:'center', justifyContent:'center',
+                zIndex:10, left:0, right:0
+            }
+        },  m(Text, {color:'white'}, message)
+        )
+    })
+
+
+}
+
+
+// abre una ventana pop up
+function openPopup(url){
+    const width = 500;
+    const height = 600;
+    const left = window.screen.width / 2 - width / 2;
+    const top = window.screen.height / 2 - height / 2;
+
+    // window features for popup
+    const windowFeatures = `scrollbars=no, resizable=no, copyhistory=no, width=${width}, height=${height}, top=${top}, left=${left}`;
+    const popup = window.open(url, "popup", windowFeatures);
+    return popup;
+};
+
+
+
 function Modal(){
     let modalStyle = {
         display:'block',
@@ -308,15 +371,17 @@ function Modal(){
         position:'absolute',
         backgroundColor:'white',
         margin:'0 auto',
-        borderRadius:'1em',
+        borderRadius:config.borderRadius || '1em',
         left:'50%',
         top:'50%',
+        maxWidth:'90%',
         transform:'translate(-50%,-50%)',
         zIndex:1001,
         display:'flex',
         flexDirection:'column',
         maxWidth:'90%',
-        transition: 'all 0.3s ease-out'
+        transition: 'all 0.3s ease-out',
+        outline: 'none'
     }
 
     let sizes = {
@@ -329,7 +394,7 @@ function Modal(){
         backgroundColor: '#000000a8',
         transition:'animate ease-in',
         position:'fixed',
-        fontFamily:'Poppins',
+        fontFamily: config.fontFamily || 'Poppins',
         inset:'0px',
         zIndex:'1000',
     }
@@ -347,7 +412,8 @@ function Modal(){
 
             return m("div", {
                 style: dimmerStyle
-            }, m("div",{
+            }, 
+                m("div",{
                     style:{ ...modalStyle, ...vnode.attrs.style },
                     tabindex: -1,
                     oncreate:({dom})=> { 
@@ -367,7 +433,13 @@ function Modal(){
                     m(ModalHeader,{  justifyContent:'space-between',borderBottom: '2px solid lightgrey',  alignItems:'center'},
                         m(H2,{marginBottom:0}, vnode.attrs.header),
 
-                        m(Icon,{size:'large', style:"cursor:pointer", icon:'cancel', onclick: vnode.attrs.close})
+                        m(SVGIcon,{
+                            width:26, height:26, 
+                            style:"cursor:pointer", 
+                            icon:'circle_close', 
+                            color: "#db2828",
+                            onclick: vnode.attrs.close
+                        })
                     ) : null,
 
                     vnode.children
@@ -386,7 +458,7 @@ function ModalContent(){
                     padding:'1em',
                     overflowY:'auto',
                     maxHeight:'50vh',
-                    ...vnode.attrs
+                    ...(vnode.attrs.style || vnode.attrs)
                 }
             }, vnode.children)
         }
@@ -398,7 +470,9 @@ function ModalHeader(){
 
     return {
         view:(vnode)=>{
-            return m(FlexRow,{borderBottom:'2px solid lightgrey', justifyContent:'center', alignItems:'center', padding:'1em', paddingLeft:'1.5em', fontWeight:'bold', ...vnode.attrs},
+            return m(FlexRow,{
+                borderBottom:'2px solid lightgrey', justifyContent:'center', alignItems:'center', padding:'1em', paddingLeft:'1.5em', fontWeight:'bold', ...vnode.attrs
+            },
                 vnode.children
             )
         }
@@ -409,8 +483,34 @@ function ModalHeader(){
 function ModalFooter(){
     return {
         view:(vnode)=>{
-            return m(FlexRow,{ borderTop:'2px solid lightgrey', justifyContent:'end', padding:'1em'},
+            return m(FlexRow,{ borderTop:'2px solid lightgrey', justifyContent:'end', padding:'1em', gap:'1em'},
                 vnode.children
+            )
+        }
+    }
+}
+
+
+function Dimmer(){
+
+    let dimmerStyle = {
+        position: "absolute",
+        inset:0,
+        display:'flex',
+        flexDirection:'column',
+        alignItems:'center',
+        justifyContent:'center',
+        zIndex:100
+    }
+
+
+    return {
+        view: (vnode)=> {
+            let {inverted} = vnode.attrs 
+
+            return m(Div,{ background: inverted ? 'rgba(255,255,255,.85)':'rgba(0,0,0,.85)', ...dimmerStyle},
+                vnode.children
+
             )
         }
     }

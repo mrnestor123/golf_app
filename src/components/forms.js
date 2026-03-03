@@ -1,14 +1,14 @@
 import { FlexCol, FlexRow, Box, Div, Tappable  } from "./layout.js"
 import { Text, SmallText } from "./texts.js"
-import { Icon, Button } from './elements.js'
+import { Icon, Button, SVGIcon } from './elements.js'
 import { config } from "./config.js"
 import { localize, translateSALT } from "./util.js"
 
 
 export {
     FormLabel, Input, TranslationInput, Dropdown,
-    IntegerInput, Switch, InfoTooltip, Checkbox,
-    HtmlDropdown, DateSelector
+    IntegerInput, Switch, InfoTooltip, Checkbox, RadioButtons,
+    HtmlIntegerInput, HtmlDropdown, DateSelector
 }
 
 
@@ -33,7 +33,12 @@ function FormLabel(){
             return [
                 m(FlexRow,
                     // label debería ser Text ??
-                    m("label", { style:config.form?.formLabel || style }, 
+                    m("label", {
+                        style: {
+                            ...(config.form?.formLabel || style),
+                            fontFamily: config.fontFamily
+                        }
+                    }, 
                         typeof vnode.children?.[0] == 'object' ? null : vnode.children 
                     ),
                     
@@ -62,13 +67,14 @@ function Checkbox(){
 
     return {
         view:(vnode)=>{
-            let {data, name, onchange,label, checked, vertical=false} = vnode.attrs
+            let {data, name, onchange,label, disabled=false, checked, vertical=false} = vnode.attrs
 
             return [
                 m(FlexRow, { alignItems: "center", flexDirection: vertical ? "column-reverse" : "row", gap:'0.5em'},
                     
                     m("input",{
                         type:'checkbox',
+                        disabled,
                         checked: data && name ? data[name] : checked,
                         style: checkboxStyle,
                         onchange:(e)=>{
@@ -90,21 +96,16 @@ function Checkbox(){
 
 
 function Input(){
+
+    let focused = false;
     
     return {
         view: (vnode)=>{
-            let { data, name, oninput, type, label, required, rows, readonly, pattern, title, onchange, placeholder, value, info, onkeyup} = vnode.attrs
+            let { data, name, oninput, type, label, required, rows, icon,  readonly, pattern, title, onchange, disabled, placeholder, value, info, onkeyup} = vnode.attrs
 
             return [
 
                 // TO DO: editar el estilo de focus
-                /*m("style", `
-                    input, textarea > :focus, textarea:focus {
-                        border: ${focusedStyle.border} !important;
-                        box-shadow: ${focusedStyle.boxShadow} !important;
-                    }    
-                `),*/
-
                 m(FlexCol,{ width:'100%'}, // pensar otra manera sin necesidad de meter width: 100%
 
                     label 
@@ -112,39 +113,73 @@ function Input(){
                         m(FormLabel,{required: required, info:info}, label),
                     ] : null,
 
-                    m(type =='textarea'? "textarea": "input", {
-                        readonly: readonly || false,
-                        rows:rows,
-                        style:  {
-                            fontFamily: config.fontFamily,
-                            //...(config.fonts?.default || config.defaultFont || {}),
-                            ...(vnode.attrs.style || {}),
-                            ...(config.form?.baseStyle),
-                            ...(config.form?.input || {}),
+                    m(Div, {position:'relative', width:'100%', display:'flex'},
+                        m(type =='textarea'? "textarea": "input", {
+                            readonly: readonly || false, // es lo mismo que disabbled==
+                            rows:rows,
+                            style:  {
+                                transition:' box-shadow 0.1s ease-in-out, outline 0.1s ease-in-out',
+                                width:'100%',
+                                fontFamily: config.fontFamily,
+                                ...(config.form?.baseStyle),
+                                ...icon ? {paddingLeft:'32px'}:{},
+                                //...(config.fonts?.default || config.defaultFont || {}),
+                                ...(vnode.attrs.style || {}),
+                                ...(config.form?.baseStyle),
+                                ...(config.form?.input || {}),
+                            },
+                            oninput:(e)=>{
+                                data && name ? data[name] = e.target.value : ''
+                                oninput ? oninput(e): ''
+                            },
+                            
+                            onfocus:(e)=> {
+                                Object.keys(config.form?.focusStyle || {}).forEach((key)=>{
+                                    e.target.style[key] = config.form.focusStyle[key]
+                                })
+
+                                focused = true;
+                                
+                                if(vnode.attrs.onfocus){
+                                    vnode.attrs.onfocus(e)
+                                }
+                            },
+                            onblur:(e)=>{
+                                focused = false;
+                                Object.keys(config.form?.focusStyle || {}).forEach((key)=>{
+                                    e.target.style[key] = config.form.baseStyle[key]
+                                })
+
+                                if(vnode.attrs.onblur){
+                                    vnode.attrs.onblur(e)
+                                }
+                            },
+                            ...( value ? {value:value}:{} ),
+                            ...( data && data[name] ? {value:data[name]}:{} ),
+                            ...type && type != 'textarea' ? {type:type}: {},
+                            ...vnode.attrs.min && vnode.attrs.max ? {min:vnode.attrs.min, max:vnode.attrs.max}: {},
+                            ...vnode.attrs.minlength && vnode.attrs.maxlength ? {minlength:vnode.attrs.minlength, maxlength:vnode.attrs.maxlength}: {},
+                            ...pattern ? {pattern: pattern} : {},
+                            ...(vnode.attrs.id ? { id: vnode.attrs.id }: {}),
+                            ...title ? {title: title} : {},
+                            ...placeholder ? {placeholder: placeholder} : {},
+                            disabled: disabled || false,
+
+                            ...onkeyup ? {onkeyup: onkeyup} : {},
+                            onchange:(e)=>{
+                                if(onchange) onchange(e)
+                            },
                         },
-                        oninput:(e)=>{
-                            oninput ? oninput(e): ''
-                            data && name ? data[name] = e.target.value : ''
-                        },
-                        /*
-                        onfocus:(e)=> {
-                            e.target.style.border = focusedStyle.border
-                            e.target.style.boxShadow = focusedStyle.boxShadow
-                        },*/
-                        ...( value ? {value:value}:{} ),
-                        ...( data && data[name] ? {value:data[name]}:{} ),
-                        ...type && type != 'textarea' ? {type:type}: {},
-                        ...vnode.attrs.min && vnode.attrs.max ? {min:vnode.attrs.min, max:vnode.attrs.max}: {},
-                        ...vnode.attrs.minlength && vnode.attrs.maxlength ? {minlength:vnode.attrs.minlength, maxlength:vnode.attrs.maxlength}: {},
-                        ...pattern ? {pattern: pattern} : {},
-                        ...(vnode.attrs.id ? { id: vnode.attrs.id }: {}),
-                        ...title ? {title: title} : {},
-                        ...placeholder ? {placeholder: placeholder} : {},
-                        ...onkeyup ? {onkeyup: onkeyup} : {},
-                        onchange:(e)=>{
-                            if(onchange) onchange(e)
-                        },
-                    })
+                    
+                            
+                        ),
+                        icon ?
+                        m(SVGIcon,{
+                            icon:icon, width:18, height:19, color: focused ? 'black': 'grey',
+                            style: { position:'absolute', top:'50%', transform:'translateY(-50%)', left:'8px'}
+                        }) : null
+                    )
+
                 )
 
             ]
@@ -181,7 +216,7 @@ function TranslationInput(){
 
         },
         view:(vnode)=>{
-            let {data, name, label, required, type, rows, info, onfocusout } = vnode.attrs
+            let {data, name, label, required, type, rows, info, onfocusout, onchange } = vnode.attrs
 
             if(!data) data = {}
             if(!name) name = 'translation'
@@ -203,7 +238,8 @@ function TranslationInput(){
                             if (!e.target.value.length && typeof value == "object") delete data[name][languages[selectedlang]]
                         },
                         type: type,
-                        onfocusout: onfocusout
+                        onfocusout: onfocusout,
+                        onchange: onchange
                     }),
                     
                     m(Button,{
@@ -320,17 +356,19 @@ function Dropdown(){
     
     return {
         view:(vnode)=>{
-            let { data, name, label,  onchange, info, required, value, style={}} = vnode.attrs
+            let { data, name, label,  onchange, disabled=false, info, required, value, placeholder, style={}} = vnode.attrs
 
 
             return [
-
                 m(FlexCol,{width:'100%', ...vnode.attrs.style},
                     label ? m(FormLabel,{info:info, required:required}, label): null,
 
                     m("select",{
+                        disabled,
                         style: {
-                            ...(config.form?.baseStyle)
+                            ...(config.form?.baseStyle),
+                            appearance: 'none',
+                            WebkitAppearance: 'none',
                         },
                         onchange:(e)=>{
                             data && name !=undefined ? data[name] = e.target.value: ''
@@ -338,7 +376,7 @@ function Dropdown(){
                             m.redraw()
                         }
                     },
-                        m("option",{ disabled:true, selected:true },"Selecciona una opción"),
+                        m("option",{ disabled:true, selected:true }, placeholder ||  "Selecciona una opción"),
 
                         vnode.children.map((o)=> m("option",{
                             value: o.value != undefined ? o.value : o, 
@@ -348,6 +386,66 @@ function Dropdown(){
                                 : data[name] == o 
                                 : value
                         }, o.label || o))
+                    )
+                )
+            ]
+        }
+    }
+}
+
+function RadioButtons() {
+    
+    return {
+        view:(vnode)=>{
+            let { data, name, label, onchange, disabled=false, info, required } = vnode.attrs
+
+
+            return [
+                m(FlexCol,{width:'100%', gap: "5px", ...vnode.attrs.style},
+
+                    label ? m(FormLabel,{info:info, required:required}, label): null,
+
+                    m(FlexCol, { gap: "10px" },
+                        vnode.children.map((o)=> m(Tappable, {
+                            style: {
+                                display: "flex",
+                                gap: "5px",
+                                alignItems: "center"
+                            },
+                            onclick: ()=> {
+                                if(disabled)
+                                    return
+
+                                let value = o.value != undefined ? o.value : o
+
+                                if(data && name)
+                                    data[name] = value
+
+                                if(onchange && typeof onchange == "function")
+                                    onchange(value)
+                            }
+                        },
+
+                            m(FlexRow, {
+                                style: {
+                                    width: "20px",
+                                    height: "20px",
+                                    justifyContent: "center",
+                                    alignItems: "center",
+                                    borderRadius: "100px",
+                                    border: "1px solid lightgray"
+                                }
+                            },
+                                m(Div, { style: {
+                                    background: data && name && data[name] == (o.value != undefined ? o.value : o) ? disabled ? "gray" : "#2185d0" : "white",
+                                    width: "10px",
+                                    height: "10px",
+                                    borderRadius: "100px"
+                                }})
+                            ),
+
+                            m(Text, o.label || o))
+                        )
                     )
                 )
             ]
@@ -421,7 +519,7 @@ function DateSelector() {
                                     //...(config.fonts?.default || config.defaultFont || {}),
                                 },
                                 id: 'date-input',
-                                placeholder: 'yyyy/mm/dd',
+                                placeholder: 'aaaa/mm/dd',
                                 type: 'text',
                                 maxlength: 10,
                                 value: (year ? `${year}${month ? '/'+ month : ''}${day ? '/'+ day : ''}` : ''),
@@ -447,7 +545,7 @@ function DateSelector() {
                             }), 
                             
                             year && focused ? 
-                            m(SmallText, {style:{position:'absolute', bottom:'-20px', color:'grey'}} , 'yyyy/mm/dd'): null,
+                            m(SmallText, {style:{position:'absolute', bottom:'-20px', color:'grey'}} , 'aaaa/mm/dd'): null,
 
                             m(Icon, {
                                 icon: 'calendar_today',
@@ -468,9 +566,12 @@ function DateSelector() {
 function HtmlDropdown() {
     let open = false;
 
+    let val = ''
+
     return {
         view: (vnode) => {
             let { data, name, label, onchange, required} = vnode.attrs
+
 
             return [
                 m(FlexCol,{width:'100%'},
@@ -496,21 +597,24 @@ function HtmlDropdown() {
                         },
                         onclick:(e)=> open = !open
                     },
-                        m(FlexRow, { justifyContent:'space-between', alignItems:'center'},
+                        m(FlexRow, { justifyContent:'space-between', alignItems:'center', height:'100%'},
                             
                             m(Text, {
                                 maxWidth:'80%',
                                 overflow:'hidden',
                                 textOverflow:'ellipsis',
                                 whiteSpace:'nowrap',
-                                color:  data && name && data[name] ? 'black' : 'grey',
-
-                            }, data && name && data[name] ? data[name] : 'Selecciona'),
+                                color:  data && name && data[name] ? 'black' : 'grey'
+                            }, 
+                            val ? val : data && name && data[name] ? data[name] : 'Selecciona'),
 
                             // is there a built-in icon without using a library??
 
-                            m(Icon, { icon: open ? 'keyboard_arrow_up' : 'keyboard_arrow_down', color:'rgba(34, 36, 38)' }
-                        )),
+                            m(SVGIcon, { 
+                                icon: open ? 'chevron_up' : 'chevron_down', 
+                                color:'rgba(34, 36, 38)' 
+                            })
+                        ),
 
                         open ?
                         m(FlexCol, {
@@ -541,6 +645,10 @@ function HtmlDropdown() {
 
                                     if(data && name != undefined) {
                                         data[name] = o.value != undefined ? o.value : o
+
+                                        if(o.label){
+                                            val = o.label
+                                        }
                                     }
 
                                     open = !open
@@ -633,7 +741,6 @@ function IntegerInput(){
                 m(FlexCol,
                     label ? m(FormLabel, {required:required}, label) : null,
 
-
                     m("div",{
                         style: {
                             ...(config.form?.baseStyle),
@@ -677,6 +784,76 @@ function IntegerInput(){
                                     
                                     }
                                 })
+                            )
+                        )
+                    )
+                )
+            ]
+        }
+    }
+}
+
+
+function HtmlIntegerInput(){ 
+
+    let inputStyle = `line-height: 1.21428571em;
+        padding: .67857143em 1em;
+        font-size: 1em;
+        background: #fff;
+        border: 1px solid rgba(34, 36, 38, .15);
+        color: rgba(0, 0, 0, .87);
+        border-radius: .28571429rem;
+        -webkit-box-shadow: 0 0 0 0 transparent inset;
+        box-shadow: 0 0 0 0 transparent inset;`
+
+    let on = false;
+
+    return {
+        view: (vnode)=>{
+            let { data, name, max, min=0, label, onchange, jump=1, required } = vnode.attrs
+            
+
+            console.log('redraw', data[name], data && name && data[name])
+
+            return [
+                m(FlexCol,
+                    label ? m(FormLabel, {required:required}, label) : null,
+
+
+                    m("div",{style: inputStyle}, 
+                        m(FlexRow,{alignItems:'center',justifyContent:'space-between'},
+                            m("div",
+                                data && name != undefined && data[name] != undefined ? data[name]: 0,
+                                // se le puede pasar elementos dentro
+                                vnode.children 
+                            ),
+
+                            m(FlexRow,{gap:'1em'},
+                                m(Tappable,{
+                                    icon:'remove',
+                                    color: data[name] && data[name] > 0 && data[name]>min ? 'black' : 'lightgrey',
+                                    onclick:(e)=>{
+                                        if((min == undefined || data[name]>min) &&  data[name] && data[name] > 0){
+                                            data[name] -= jump
+                                            
+                                            if(onchange) onchange(-1)
+                                        }
+                                    }
+                                }, m(Text,{fontSize:'1.3rem'}, '-') ),
+
+                                m(Tappable,{
+                                    icon:'add',
+                                    color: max !=undefined && (data[name] == max || max == 0) ? 'lightgrey': 'black',
+                                    onclick:(e)=>{
+                                        if(!data[name]) data[name] = 0
+
+                                        if(max == undefined || data[name] < max){
+                                            data[name] += Number(jump)
+                                            console.log('data[name]', data[name])
+                                            if(onchange) onchange(1)
+                                        }
+                                    }
+                                }, m(Text,{fontSize:'1.3rem'}, '+'))
                             )
                         )
                     )

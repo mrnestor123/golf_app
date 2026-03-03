@@ -13,6 +13,7 @@ import csv
 import time
 from typing import List, Dict
 import getpass
+import uuid
 
 
 from selenium import webdriver
@@ -221,22 +222,31 @@ class MSCorecardScraper:
         
         return courses
     
-    def extract_lap_data(self, soup, club_id) -> List[Dict]:
+    def extract_round_data(self, soup, club_id, course_url='') -> List[Dict]:
         """
         Extrae los datos de los hoyos de la página de detalles de un curso.
         """
 
         holes = []
+        tees = []
         
         if not soup:
-            return holes
+            return [None, [], []]
 
-        lap = {
-            'id': 'lap_gf_' + time.strftime("%Y%m%d%H%M%S"),
+        # Get the course name from the selected option in the NewCourse select
+        course_name = ""
+        course_select = soup.find('select', id='NewCourse')
+        if course_select:
+            selected_option = course_select.find('option', selected=True)
+            if selected_option:
+                course_name = selected_option.text.strip()
+
+        round = {
+            'id': str(uuid.uuid4()),
+            "name": course_name,
             'club_id': club_id,
-            'holes': [], # list with the id of the holes
+            'course_url': course_url,
             'handicaps': [],
-            'tees': [],
             'slopes': {
                 "men":{},
                 "women": {}
@@ -250,19 +260,19 @@ class MSCorecardScraper:
         table = soup.find('table', class_='scorecardtable')
 
         if not table:
-            return holes
+            return [round, [], []]
         
 
         # find the first row to determine column spans, 
         header_row = table.find('tr', class_='total')
 
         if not header_row:
-            return holes
+            return [round, [], []]
         
         # iteramos sobre la segunda fila para sacar los nombres de las tees
         all_header_rows = table.find_all('tr', class_='total')
         if len(all_header_rows) < 2:
-            return holes
+            return [round, [], []]
         
 
         second_row = all_header_rows[1].find_all('td')
@@ -270,11 +280,28 @@ class MSCorecardScraper:
 
         for cell in second_row:
             if current_index > 2 and cell.text.strip() != 'Par' and cell.text.strip() != 'SI' and cell.text.strip() != 'Hole':
-                lap['tees'].append({
-                    'id': 'tee_' + cell.text.strip().lower().replace(' ', '_'),
+                
+                end_index = current_index
+                field_type = ''
+
+                if current_index+1 < len(second_row) and second_row[current_index+1].text == 'Par' :
+                    end_index = current_index+1
+                    field_type = 'par'
+                
+
+                if current_index+1 < len(second_row) and second_row[current_index+1].text == 'SI' :
+                    end_index = current_index+1
+                    field_type = 'handicap'
+                
+                
+                tees.append({
+                    'id': str(uuid.uuid4()),
+                    'club_id': club_id,
+                    "round_id": round['id'],
                     'name': cell.text.strip(),
                     'index': current_index,
-                    'end_index': current_index+1 if (current_index+1 < len(second_row) and second_row[current_index+1].text == 'Par') else current_index
+                    'field_type': field_type,
+                    'end_index': end_index
                 })
               
             current_index += 1
@@ -289,81 +316,73 @@ class MSCorecardScraper:
             cells = row.find_all('td')
             
             # Debug: print all cell contents to see what we're working with
-            
             for i, cell in enumerate(cells):
                 print(f"  cells[{i}]: '{cell.text.strip()}'")
 
             if hole_index >= len(hole_rows) - 2:
-                for i, tee in enumerate(lap['tees']):
+                for i, tee in enumerate(tees):
                     
                     if( hole_index == len(hole_rows) - 2 ):
-                        if(lap['slopes']['men'] == None): 
-                            lap['slopes']['men'] = {}
+                        if(round['slopes']['men'] == None): 
+                            round['slopes']['men'] = {}
                         
-                        lap['slopes']['men'][tee['id']] = cells[tee['index']-2].text
+                        round['slopes']['men'][tee['id']] = cells[tee['index']-2].text
                          
                     
                     else:
-                        if(lap['women'] == None): 
-                            lap['women'] = {}
+                        if(round['slopes']['women'] == None): 
+                            round['slopes']['women'] = {}
                         
-                        lap['slopes']['women'][tee['id']] = cells[tee['index']-2].text
-                        lap['course_ratings']['women'][tee['id']] = cells[tee['index']-2].text
+                        round['slopes']['women'][tee['id']] = cells[tee['index']-2].text
+                        round['course_ratings']['women'][tee['id']] = cells[tee['index']-2].text
                           
             else:       
                 hole_data = {
                     'par': '',
                     'tees': {},
+                    'round_id': round['id'],
                     'club_id': club_id
                 }
 
                 # Extraer el número del hoyo y par
                 if len(cells) >= 3:
-                    hole_data['number'] = cells[0].text.strip()
-                    hole_data['par'] = int(cells[1].text.strip())
+                    hole_data['number'] = int(cells[0].text.strip())
+                    
+                    try:
+                        hole_data['par'] = int(cells[1].text.strip())
+                    except (ValueError, TypeError):
+                        hole_index += 1
+                        continue
                     
                     # Safe access to SI (Stroke Index) in cells[2]
-                    si_value =  cells[2].text.strip()
+                    si_value = int(cells[2].text.strip())
+                    round['handicaps'].append(si_value)
+
                     
-                    # Try to extract from span tags if the main text shows '--'
-                    if si_value and si_value != '--' and si_value != '-' and si_value.isdigit():
-                        lap['handicaps'].append(int(si_value))
-
-                    last_tee_distance = 0
-
-                    for i, tee in enumerate(lap['tees']):
+                    for i, tee in enumerate(tees):
                         if tee['index'] < len(cells):
                             tee_distance = cells[tee['index']].text.strip()
                             
                             try:
-                                if tee['index'] != tee['end_index'] & cells[tee['end_index']].text.strip() != hole_data['par']  :
+                                if tee['index'] != tee['end_index']:
                                     hole_data['tees'][tee['id']] = {
                                         'distance': tee_distance,
-                                        'par': cells[tee['end_index']].text.strip()
+                                        tee['field_type']: cells[tee['end_index']].text.strip()
                                     }
                                 else:
                                     hole_data['tees'][tee['id']] = tee_distance
                                     
                             except (ValueError, IndexError):
                                 continue
-                
+
+                    holes.append(hole_data)
 
                 else:
                     print(f"Warning: Row has insufficient cells ({len(cells)})")
-                continue
-
-            
-                
 
             hole_index += 1
 
-            
-            holes.append(hole_data)
-
-        # Extraer las distancias para hombres
-        lap['holes'] = holes
-
-        return lap
+        return [round, tees, holes]
     
     def get_course_html(self, course_url: str) -> Dict:
         """
@@ -447,16 +466,19 @@ def main():
 
         print("===  Clicked Google Sign-In button ===")
 
-        time.sleep(60)  # Wait for me to sign in manually
+        time.sleep(30)  # Wait for me to sign in manually
 
         countries = ['Spain']
         index = 0
         existing_courses = []
 
         
-        with open('courses_grouped.json', 'r', encoding='utf-8') as f:
+        with open('json/courses_grouped.json', 'r', encoding='utf-8') as f:
             existing_courses = json.load(f)
             index = len(existing_courses)
+
+        
+        
 
         if len(existing_courses) == 0:
 
@@ -523,26 +545,47 @@ def main():
 
         else:   
 
-            time.sleep(5)  # Wait for the page to load
-
+            time.sleep(2)  # Wait for the page to load
 
             print( f'iterating on existing courses {len(existing_courses)}' )
 
             rounds = []
-            
-            index = 0
+            tees = []
+            holes = []
 
-            for club in existing_courses: 
+            # Load already-scraped round URLs to avoid duplicates
+            scraped_urls = set()
+            try:
+                with open('json/rounds.json', 'r', encoding='utf-8') as f:
+                    existing_rounds = json.load(f)
+                    rounds = existing_rounds
+                    scraped_urls = {r['course_url'] for r in existing_rounds if 'course_url' in r}
+                    print(f'Skipping {len(scraped_urls)} already scraped courses')
+            except (FileNotFoundError, json.JSONDecodeError):
+                pass
 
-                if index > 2: # only do the first 2 for testing
-                    break
+            try:
+                with open('json/tees.json', 'r', encoding='utf-8') as f:
+                    tees = json.load(f)
+            except (FileNotFoundError, json.JSONDecodeError):
+                pass
 
-                for course in club['courses']:
+            try:
+                with open('json/holes.json', 'r', encoding='utf-8') as f:
+                    holes = json.load(f)
+            except (FileNotFoundError, json.JSONDecodeError):
+                pass
 
-                    index +=1 
+            # Filter out already-scraped courses before iterating
+            pending_courses = [
+                (club, course)
+                for club in existing_courses
+                for course in club['courses']
+                if course['url'] not in scraped_urls
+            ]
+            print(f'Courses to scrape: {len(pending_courses)}')
 
-                    if index > 2: # only do the first 2 for testing
-                        break
+            for club, course in pending_courses:
 
                     driver.get(f"https://www.mscorecard.com/mscorecard/{course['url']}")
 
@@ -553,21 +596,35 @@ def main():
                     if(course_soup == None):
                         break
 
-                    data = scraper.extract_lap_data(course_soup, club['id'])
+                    data = scraper.extract_round_data(course_soup, club['id'], course['url'])
 
-                    print(f"Extracted data for course {course['url']}")
-                    print(data)
-                    rounds.append(data)
+                    if data[0] is not None:
+                        rounds.append(data[0])
+                        tees.extend(data[1])
+                        holes.extend(data[2])
+
+                        with open(f'json/rounds.json', 'w', encoding='utf-8') as f:
+                            json.dump(rounds, f, ensure_ascii=False, indent=2)
+
+                        with open(f'json/tees.json', 'w', encoding='utf-8') as f:
+                            json.dump(tees, f, ensure_ascii=False, indent=2)
+
+                        with open(f'json/holes.json', 'w', encoding='utf-8') as f:
+                            json.dump(holes, f, ensure_ascii=False, indent=2)
+
+                        print(f"Saved progress: {len(rounds)} rounds, {len(tees)} tees, {len(holes)} holes.")
 
 
-            with open(f'rounds.json', 'w', encoding='utf-8') as f:
+            with open(f'json/rounds.json', 'w', encoding='utf-8') as f:
                 json.dump(rounds, f, ensure_ascii=False, indent=2)
 
-        
+            with open(f'json/tees.json', 'w', encoding='utf-8') as f:
+                json.dump(tees, f, ensure_ascii=False, indent=2)
 
-        print(f"Found {len(courses)} courses in {country}")
+            with open(f'json/holes.json', 'w', encoding='utf-8') as f:
+                json.dump(holes, f, ensure_ascii=False, indent=2)
 
-        print(courses[0])
+            print(f"Done. Saved {len(rounds)} rounds, {len(tees)} tees, {len(holes)} holes.")
 
        
 

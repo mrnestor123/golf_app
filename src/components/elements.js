@@ -1,16 +1,11 @@
-
 import { config } from "./config.js"
-import { Div, FlexRow, Tappable, FlexCol, Animate, Box } from "./layout.js"
-import { Text, SmallText, H2 } from "./texts.js"
+import { Box, Div, FlexCol, FlexRow, Tappable } from "./layout.js"
+import { SmallText, Text } from "./texts.js"
 
 
-export { 
-    Segment,  Span, RippleEffect,
-    Button, Icon, Img,    
-    Sidebar, Label, 
-    Message,  Card,  Checkbox, Spinner, 
-    BreadCrumb,
-    Table, TableHead, TableBody, TableRow, TableCell
+export {
+    BreadCrumb, Button, Card, Checkbox, Icon, Img, Label,
+    Message, RippleEffect, Segment, Sidebar, Span, Spinner, SVGIcon, Table, TableBody, TableCell, TableFooter, TableHead, TableRow
 }
 
 
@@ -75,18 +70,22 @@ function Segment(){
 
     return {
         view:(vnode)=>{
-            let {type='default'} = vnode.attrs || {}
+            let {type='default'} = vnode.attrs || {}
 
             return m(Div,{
-                    padding:'1rem',
-                    borderRadius: '1em',
-                    transition: 'all .2s ease',
-                    ...types[type] || types.primary,
-                    ...(vnode.attrs?.basic && {border: 'none'}),
-                    ...(vnode.attrs?.attach && attach[vnode.attrs.attach]),
-                    ...(vnode.attrs?.raised && { boxShadow: '0 2px 4px rgba(34, 36, 38, .12), 0 2px 10px rgba(34, 36, 38, .15)'}),
-                    ...(vnode.attrs?.style || vnode.attrs)
-                },
+                padding:'1rem',
+                borderRadius: config.borderRadius || '1em',
+                position:'relative',
+                transition: 'all .2s ease',
+                ...types[type] || types.primary,
+                ...(vnode.attrs?.basic && {border: 'none'}),
+                ...(vnode.attrs?.attach && attach[vnode.attrs.attach]),
+                ...(vnode.attrs?.raised && { 
+                    boxShadow: '0 2px 4px rgba(34, 36, 38, .12), 0 2px 10px rgba(34, 36, 38, .15)'
+                }),
+                ...(config.elements?.segment || {}),
+                ...(vnode.attrs?.style || vnode.attrs)
+            },
             vnode.children)
         }
     }
@@ -97,11 +96,12 @@ function Table(){
     let tableStyle = {
         width: "100%",
         background: "#fff",
-        margin: "1em 0",
+        //margin: "1em 0", quitado
         border: "1px solid rgba(34,36,38,.15)",
         boxShadow: "none",
         borderRadius: "0.28571429rem",
         textAlign: "left",
+        tableLayout: "auto",
         color: "rgba(0,0,0,.87)",
         borderCollapse: "separate",
         borderSpacing: "0",
@@ -111,7 +111,11 @@ function Table(){
     return {
         view:(vnode)=>{
             return m("table",{
-                style:{ ...tableStyle, ...vnode.attrs.style},
+                style:{ 
+                    ...tableStyle, 
+                    ...config.elements?.table?.table || {},
+                    ...vnode.attrs.style
+                },
             }, 
                 // use rows and
                 vnode.attrs.header ? m(TableHead,  
@@ -152,6 +156,7 @@ function TableHead(){
         cursor: "auto",
         background: "#24303f",
         textAlign: "inherit",
+        lineHeight:2,
         color: "white",
         borderTopRadius:'1em',
         verticalAlign: "middle",
@@ -163,14 +168,19 @@ function TableHead(){
         borderTopLeftRadius: '1em',
         borderTopRightRadius: '1em',
         position: 'sticky',
-        top: 0
+        top: 0,
+        zIndex:2
     }
     
 
     return {
         view:(vnode)=>{
             return m("thead",{
-                style: style
+                style: {
+                    ...style,
+                    ...config.elements?.table?.head || {},
+                    ...vnode.attrs.style
+                }
             }, vnode.children
             )
         }
@@ -183,6 +193,20 @@ function TableBody(){
         view:(vnode)=>{
             return m("tbody",{
                 style:  {
+                    ...config.elements?.table?.body || {},
+                    ...vnode.attrs
+                }
+            }, vnode.children)
+        }
+    }
+}
+
+function TableFooter(){
+    return {
+        view: (vnode) => {
+            return m("tfoot", {
+                style: {
+                    ...config.elements?.table?.footer || {},
                     ...vnode.attrs
                 }
             }, vnode.children)
@@ -213,10 +237,15 @@ function TableCell(){
 
             return m(header ? "th" : "td",{
                 colspan: vnode.attrs.colspan,
+                onclick: vnode.attrs.onclick ? vnode.attrs.onclick : null,
                 style: {
                     textAlign:'left',
                     padding:'1em',
                     fontFamily: config.fontFamily,
+                    ...config.elements?.table?.cell || {},
+                    ...header ? {
+                        ...config.elements?.table?.headerCell 
+                    }: {},
                     ...vnode.attrs
                 }
             }, vnode.children)
@@ -273,7 +302,7 @@ function RippleEffect() {
         
         return m("div",{
           id : vnode.attrs.id || null,
-          ...vnode.attrs,
+          //...vnode.attrs,
           style : {
             position : "relative",
             overflow : "hidden",
@@ -324,53 +353,78 @@ function RippleEffect() {
 * type: primary, secondary, danger
 */
 function Button(){
+    let hover = {
+        filter: 'brightness(80%)',
+    }
+
+    let onmousedown = {
+        filter: 'brightness(70%)',
+    }
+
 
     let types = {
         primary: {
             color: 'white',
             //border: '1px solid white',
             background: '#1b1c1d',
-            ...config.elements?.button?.primary || {}
+            hover,
+            onmousedown,
+            ...config.elements?.button?.primary
         },
         secondary: {
             color: '#4b4b4b',
             border: '1px solid #4b4b4b',
             background: 'white',
-            ...config.elements?.button?.secondary || {}
+            hover,
+            onmousedown,
+            ...config.elements?.button?.secondary 
         },
         positive: {
             color: 'white',
             border: '1px solid #00c853',
-            background: '#00c853'
+            background: '#00c853',
+            hover,
+            onmousedown
         },
         negative: {
             color: '#db2828',
             border: '1px solid #db2828',
-            background: 'transparent'
+            background: 'transparent',
+            hover,
+            onmousedown
         },
         default: {
             color: '#4b4b4b',
             border: '1px solid #4b4b4b',
-            background: 'transparent'
+            background: 'transparent',
+            hover,
+            onmousedown
         },
         blue: {
             color: 'white',
             border: '1px solid #2185d0',
-            background: '#2185d0'
+            background: '#2185d0',
+            hover,
+            onmousedown
         },
         danger: {
             color: 'red',
             border: '1px solid red',
-            background: 'white'
+            background: 'white',
+            hover,
+            onmousedown
         },
         glass: {
             color: '#1a1a1a',
             border: '1px solid rgba(255, 255, 255, 0.2)',
             background: 'rgba(255, 255, 255, 0.25)',
             backdropFilter: 'blur(10px)',
-            boxShadow: '0 8px 32px 0 rgba(31, 38, 135, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.3)'
+            boxShadow: '0 8px 32px 0 rgba(31, 38, 135, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.3)',
+            hover,
+            onmousedown
         }
     }
+
 
     let sizes= {
         small: {
@@ -389,23 +443,24 @@ function Button(){
         }
     }
     
-    let brightness = 100;
-
     return {
+        
         view:(vnode)=>{
             let { type='primary', onclick, disabled, fluid, icon, size } = vnode.attrs
             
-            return m("div",{
-                style:{
+            // REPASAR ESTO, MUCHAS CONDICIONES
+            return m(Tappable, { 
+                style: {
                     cursor:'pointer',
                     display:'flex',
                     alignItems:'center',
                     justifyContent:'center',
+                    fontWeight:'normal',
                     fontFamily: config.fontFamily,
                     minHeight:'40px',
                     width: fluid ? '100%': 'auto',
                     userSelect:'none',
-                    filter:`brightness(${brightness}%)`,
+                    filter:`brightness(100%)`,
                     borderRadius:'1em',
                     userSelect:'none',
                     gap: "5px",
@@ -414,15 +469,20 @@ function Button(){
                         cursor: 'not-allowed',
                         boxShadow:'none'
                     },
+                    ...config.elements?.button,
                     ...types[type] || types.primary,
                     ...sizes[vnode.attrs.size || 'default'],
                     ...vnode.attrs.style
                 },
-                onclick:!disabled && onclick,
-                onmouseover:(e)=> !disabled && (brightness=80),
-                onmouseout:(e)=> (brightness=100),
-                onmousedown:(e)=> (brightness=60),
-                onmouseup:(e)=> (brightness=100),
+                onclick: !disabled && onclick,
+                hover: !disabled && {
+                    ...config.elements?.button?.hover,
+                    ...types[type]?.hover
+                },
+                onmousedown: !disabled && {
+                    ...config.elements?.button?.onmousedown,
+                    ...types[type]?.onmousedown
+                }
             }, 
                 icon ? [
                     m(Icon,{ icon:icon, size: size || 'small', color: "inherit" || types[type].color || "black" }),
@@ -494,34 +554,57 @@ function Span(){
 
 function Message(){
 
-    let messageStyle = {
-        position: "relative",
-        minHeight: "1em",
-        margin: "0 0",
-        background: "#f8ffff",
-        padding: "1em 1.5em",
-        lineHeight: "1.4285em",
-        color: "#276f86",
-        borderRadius: "1em",
-        boxShadow: "0 0 0 2px #a9d5de inset,0 0 0 0 transparent"
+    let types = {
+        'error': {
+            background:'#fef2f2',
+            color:'#B91C1C',
+            icon: 'shield_error'
+        },
+        'info': {
+            color:'black',
+            icon: 'info'
+        }
     }
+    
 
     // set different types 
 
     return {
         view:(vnode)=>{
+            let { type='info' } = vnode.attrs
+
             return m(Segment,{
-                  type:'secondary',
+                    style: {
+                        ...types[type] || {},
+                        ...vnode.attrs?.style
+                    },
+                    type:'secondary',
                 }, 
                 m(FlexRow, {alignItems: 'center', gap:'1em'},
-                    m(Icon, {icon:'info', size:'mini'}),
+                    m(SVGIcon, {
+                        icon: types[type]?.icon || 'info', 
+                        size: 'small', 
+                        color: type == 'error' ? 'red': 'black'
+                    }),
 
                     vnode.attrs.header || vnode.attrs.message ? 
-                    m(FlexCol, {},
-                        vnode.attrs.header && m(H2, {marginBottom:'0.5em'}, vnode.attrs.header),
-                        vnode.attrs.message && m(SmallText, {}, vnode.attrs.message)
-                    ):
-                    m(SmallText, vnode.children )
+                    m(FlexCol, 
+                        
+                        vnode.attrs.header && m(Text, {
+                            marginBottom:'0.5em', 
+                            fontWeight:'bold', 
+                            
+                        }, vnode.attrs.header),
+
+                        vnode.attrs.message && 
+                        m(Text, {
+                            //color: type == 'error' ? '#7f1d1d': 'black'
+                        }, vnode.attrs.message)
+
+                    ) :
+                    m(Text,{
+                        //color: type == 'error' ? '#7f1d1d': 'black'
+                    }, vnode.children )
                 )
             )
         }
@@ -556,14 +639,14 @@ function Label(){
             border: "1px solid #e8e8e8",
         },
         positive: {
-            backgroundColor: "#00c853",
-            color: "white",
-            border: "1px solid #00c853"
+            backgroundColor: "#dcfce7",
+            color: "#166534",
+            border: "1px solid #dcfce7"
         },
         negative: {
-            backgroundColor: "#db2828",
-            color: "white",
-            border: "1px solid #db2828"
+            backgroundColor: "#fee2e2",
+            color: "#991b1b",
+            border: "1px solid #fee2e2"
         },
         blue: {
             backgroundColor: "#2185d0",
@@ -618,6 +701,7 @@ function Label(){
                         backgroundImage: "none",
                         padding: ".5833em .833em",
                         textTransform: "none",
+                        
                         borderRadius: "2em",
                         transition: "background .1s ease",
                         cursor: vnode.attrs.onclick ? 'pointer' : 'default',
@@ -807,9 +891,10 @@ function BreadCrumb(){
 function Spinner(){
     // can you create different sizes, only sizes
     let sizes = {
+        
         small: {
             width: 20,
-            height: 20
+            height: 20,
         },
         medium: {
             width: 40,
@@ -835,7 +920,9 @@ function Spinner(){
 
     return {
         view:(vnode)=>{
-            let {color, size = 'small'}= vnode.attrs
+            let {color = config.elements?.spinner?.color, size = 'small'}= vnode.attrs
+
+            console.log('color', color)
 
             
            return [
@@ -852,19 +939,20 @@ function Spinner(){
                 }`),
                     
                 m(Div,{
-                    "display": "inline-flex",
+                    display: "inline-flex",
                     justifyContent: "center",
-                    "position": "relative",
-                    "width": `${sizes[size].width*2}px`,
-                    "height": `${sizes[size].height*2}px`,
+                    alignItems: "center",
+                    position: "relative",
+                    width: `${sizes[size].width*2}px`,
+                    height: `${sizes[size].height*2}px`,
                 },
                     
                     m(Div,{
                         style: {
                             ...spinStyle,
                             color: color || '#1c4c5b',
-                            width: `${sizes[size].width}px`,
-                            height: `${sizes[size].height}px`,
+                            ...sizes[size],
+                            
                             "animation-delay": "-0.45s"
                         }
                     }),
@@ -873,8 +961,7 @@ function Spinner(){
                         style: {
                             ...spinStyle,
                             color: color || '#1c4c5b',
-                            width: `${sizes[size].width}px`,
-                            height: `${sizes[size].height}px`,
+                            ...sizes[size],
                             "animation-delay": "-0.3s"
                         }
                     })
@@ -929,3 +1016,288 @@ function Sidebar() {
 }
 
 
+
+
+
+
+function SVGIcon(){
+
+    const Icons = {
+        arrow_down: [
+
+        ],
+        arrow_left: [
+            m("path", { d: "m12 19-7-7 7-7" }),
+            m("path", { d: "M19 12H5" })
+        ],
+        calendar: [
+            m("path", { d: "M8 2v4" }),
+            m("path", { d: "M16 2v4" }),
+            m("rect", { width: "18", height: "18", x: "3", y: "4", rx: "2" }),
+            m("path", { d: "M3 10h18" })
+        ],
+        credit_card: [
+            m("rect", { x: "2", y: "5", width: "20", height: "14", rx: "2" }),
+            m("path", { d: "M2 10h20" }),
+            m("path", { d: "M6 15h4" })
+        ],
+       
+        card: [
+            m("rect", { x: "4", y: "3", width: "16", height: "18", rx: "2" }),
+            m("path", { d: "M4 13h16" }),
+            m("circle", { cx: "9", cy: "8", r: "1.8" }),
+            m("path", { d: "m20 13-4.2-4.2a2 2 0 0 0-2.8 0L9 13" }),
+            m("path", { d: "M8 17h8" })
+        ],
+        chevron_right: [
+            m("path", { d: "m9 18 6-6-6-6" })
+        ],
+        chevron_left:[
+            m("path", { d: "m15 18-6-6 6-6" })
+        ],
+        chevron_down:[
+            m("path", { d: "m6 9 6 6 6-6" })
+        ],
+        chevron_up: [
+            m("path", { d: "m18 15-6-6-6 6" })
+        ],
+        circle_check: [
+            m("circle", { cx: "12", cy: "12", r: "10" }),
+            m("path", { d: "m9 12 2 2 4-4" })
+        ],
+        circle_close: [
+            m("circle",{cx:"12", cy:"12", r:"10"}),
+            m("path",{d:"m15 9-6 6"}),
+            m("path",{d:"m9 9 6 6"})
+        ],
+        clock: [
+            m("circle", {cx:"12", cy:"12", r:"10"}),
+            m("path", {d:"M12 6v6l4 2"})
+        ],
+        close:[
+            m("path", { d: "M18 6 6 18" }),
+            m("path", { d: "m6 6 12 12" })
+        ],
+        
+        edit: [
+            m("path", { d: "M12 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7" }),
+            m("path", { d: "M18.375 2.625a1.5 1.5 0 1 1 2.121 2.121L12 13.243l-3 0.757 0.757-3Z" })
+        ],
+        edit_v2: [
+            m("path", { d: "M12 20h9" }),
+            m("path", { d: "M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z" })
+        ],
+        error: [
+            
+            m("circle", { cx: "12", cy: "12", r: "10" }),
+            m("path", { d: "M12 8v5" }),
+            m("path", { d: "M12 16h.01" })
+        ],
+        google: [
+            m("path", {d:"M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"}),
+            m("path", {d:"M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"}),
+            m("path", {d:"M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"}),
+            m("path", {d:"M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"})
+        ],
+        shield_error: [
+           m("path",{
+            d:"M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"
+           }),
+           m("path",{d:"M12 8v4"}),
+           m("path",{d:"M12 16h.01"})
+        ],
+        euro: [
+            m("path", { d: "M18 7a8 8 0 1 0 0 10" }),
+            m("path", { d: "M4 10h9" }),
+            m("path", { d: "M4 14h8" })
+        ],
+        eye_open:[
+            m("path", { d: "M2.062 12.348a1 1 0 0 1 0-.696 10.75 10.75 0 0 1 19.876 0 1 1 0 0 1 0 .696 10.75 10.75 0 0 1-19.876 0" }),
+            m("circle", { cx: "12", cy: "12", r: "3" })
+        ],
+        eye_closed:[
+            m("path", { d: "m4 4 16 16" }),
+            m("path", { d: "M10.58 10.58a2 2 0 0 0 2.83 2.83" }),
+            m("path", { d: "M9.88 5.09A10.94 10.94 0 0 1 12 5c4.5 0 8.27 2.94 9.54 7a10.66 10.66 0 0 1-2.38 3.88" }),
+            m("path", { d: "M6.61 6.61A10.82 10.82 0 0 0 2.46 12a10.66 10.66 0 0 0 4.13 5.37" }),
+            m("path", { d: "M14.12 14.12A3 3 0 0 1 9.88 9.88" })
+        ],
+        gallery: [
+            m("rect", { x: "3", y: "4", width: "18", height: "16", rx: "2" }),
+            m("circle", { cx: "9", cy: "9", r: "1.5" }),
+            m("path", { d: "m21 15-4-4a2 2 0 0 0-2.8 0L7 18" })
+        ],
+        group: [
+            m("circle", { cx: "12", cy: "8", r: "3" }),
+            m("path", { d: "M6 20c0-3.313 2.686-6 6-6s6 2.687 6 6" }),
+            m("circle", { cx: "5", cy: "9", r: "2" }),
+            m("path", { d: "M1.5 20c0-2.2 1.8-4 4-4" }),
+            m("circle", { cx: "19", cy: "9", r: "2" }),
+            m("path", { d: "M22.5 20c0-2.2-1.8-4-4-4" })
+        ],
+        info: [
+            m("circle", { cx: "12", cy: "12", r: "10" }),
+            m("path", { d: "M12 16v-4" }),
+            m("path", { d: "M12 8h.01" })
+        ],
+        kiosk: [
+            m("rect", { x: "5", y: "2", width: "14", height: "20", rx: "2" }),
+            m("rect", { x: "8", y: "5", width: "8", height: "5", rx: "1" }),
+            m("path", { d: "M8 14h8" }),
+            m("path", { d: "M8 17h8" }),
+            m("path", { d: "M9 22v-2" }),
+            m("path", { d: "M15 22v-2" }),
+            m("path", { d: "M3 18h2" }),
+            m("path", { d: "M19 18h2" })
+        ],
+        log_out: [
+            m("path", { d: "m16 17 5-5-5-5" }),
+            m("path", { d: "M21 12H9" }),
+            m("path", { d: "M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4" })
+        ],
+        list: [
+            m("path", { d: "M8 6h13" }),
+            m("path", { d: "M8 12h13" }),
+            m("path", { d: "M8 18h13" }),
+            m("circle", { cx: "3", cy: "6", r: "1" }),
+            m("circle", { cx: "3", cy: "12", r: "1" }),
+            m("circle", { cx: "3", cy: "18", r: "1" })
+        ],
+        mail: [
+            m("path", { d: "m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7" }),
+            m("rect", { x: "2", y: "4", width: "20", height: "16", rx: "2" })
+        ],
+        map_pin: [
+            m("path", { d: "M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0" }),
+            m("circle", { cx: "12", cy: "10", r: "3" })
+        ],
+        lock: [
+            m("rect", {width:"18", height:"11", x:"3", y:"11", rx:"2", ry:"2"}),
+            m("path",{d:"M7 11V7a5 5 0 0 1 10 0v4"})
+        ],
+
+        messages: [
+            m("path", {
+                d:"M16 10a2 2 0 0 1-2 2H6.828a2 2 0 0 0-1.414.586l-2.202 2.202A.71.71 0 0 1 2 14.286V4a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"
+            }),
+            m("path", {
+                d:"M20 9a2 2 0 0 1 2 2v10.286a.71.71 0 0 1-1.212.502l-2.202-2.202A2 2 0 0 0 17.172 19H10a2 2 0 0 1-2-2v-1"
+            })
+        ],
+        notebook:[
+            m("path", {d:"M13.4 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-7.4"}),
+            m("path", {d:"M2 6h4"}),
+            m("path", {d:"M2 10h4"}),
+            m("path", {d:"M2 14h4"}),
+            m("path", {d:"M2 18h4"}),
+            m("path", {d:"M21.378 5.626a1 1 0 1 0-3.004-3.004l-5.01 5.012a2 2 0 0 0-.506.854l-.837 2.87a.5.5 0 0 0 .62.62l2.87-.837a2 2 0 0 0 .854-.506z"})
+        ],
+        phone: [
+            m("path", { d: "M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" })
+        ],
+        print: [
+            m("polyline", { points: "6 9 6 2 18 2 18 9" }),
+            m("path", { d: "M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2" }),
+            m("rect", { x: "6", y: "14", width: "12", height: "8", rx: "1" }),
+            m("circle", { cx: "18", cy: "12", r: "1" })
+        ],
+        qr: [
+            m("rect", { x: "3", y: "3", width: "6", height: "6", rx: "1" }),
+            m("rect", { x: "15", y: "3", width: "6", height: "6", rx: "1" }),
+            m("rect", { x: "3", y: "15", width: "6", height: "6", rx: "1" }),
+            m("path", { d: "M11 11h2" }),
+            m("path", { d: "M15 11h2" }),
+            m("path", { d: "M11 15h2" }),
+            m("path", { d: "M13 13h2" }),
+            m("path", { d: "M17 15h2" }),
+            m("path", { d: "M15 17h2" }),
+            m("path", { d: "M19 19h2" })
+        ],
+
+        reservations:[
+            m("rect", { x: "4", y: "3", width: "16", height: "18", rx: "2" }),
+            m("path", { d: "M8 7h8" }),
+            m("path", { d: "M8 11h8" }),
+            m("path", { d: "M8 15h5" }),
+            m("circle", { cx: "17", cy: "15", r: "1" })
+        ],
+        search: [
+            m("path", { d: "m21 21-4.34-4.34" }),
+            m("circle", { cx: "11", cy: "11", r: "8" })
+        ],
+        save: [
+            m("path", { d: "M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2Z" }),
+            m("path", { d: "M17 21v-8H7v8" }),
+            m("path", { d: "M7 3v5h8" })
+        ],
+        settings: [
+            m("circle", { cx: "12", cy: "12", r: "3" }),
+            m("path", { d: "M19.4 15a1.7 1.7 0 0 0 .34 1.87l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.7 1.7 0 0 0-1.87-.34 1.7 1.7 0 0 0-1.04 1.55V21a2 2 0 0 1-4 0v-.09a1.7 1.7 0 0 0-1.04-1.55 1.7 1.7 0 0 0-1.87.34l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06A1.7 1.7 0 0 0 4.6 15a1.7 1.7 0 0 0-1.55-1.04H3a2 2 0 0 1 0-4h.05A1.7 1.7 0 0 0 4.6 8.92a1.7 1.7 0 0 0-.34-1.87l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06a1.7 1.7 0 0 0 1.87.34H9A1.7 1.7 0 0 0 10.04 3H10a2 2 0 0 1 4 0h-.04A1.7 1.7 0 0 0 15 4.56h.04a1.7 1.7 0 0 0 1.87-.34l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06a1.7 1.7 0 0 0-.34 1.87V9A1.7 1.7 0 0 0 20.95 10H21a2 2 0 0 1 0 4h-.05A1.7 1.7 0 0 0 19.4 15z" })
+        ],
+        stats: [
+            m("path", { d: "M3 3v18h18" }),
+            m("rect", { x: "7", y: "13", width: "3", height: "5", rx: "1" }),
+            m("rect", { x: "12", y: "10", width: "3", height: "8", rx: "1" }),
+            m("rect", { x: "17", y: "7", width: "3", height: "11", rx: "1" })
+        ],
+        sign_in : [
+            m("path", { d: "m8 17-5-5 5-5" }),
+            m("path", { d: "M3 12h12" }),
+            m("path", { d: "M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4" })
+        ],
+        tv: [
+            m("rect", { x: "2", y: "5", width: "20", height: "14", rx: "2" }),
+            m("path", { d: "M8 21h8" }),
+            m("path", { d: "M12 19v2" }),
+            m("path", { d: "m9 2 3 3 3-3" })
+        ],
+        trash: [
+            m("path", {d:"M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6"}),
+            m("path", {d:"M3 6h18"}),
+            m("path", {d:"M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"})
+        ],
+        user: [
+            m("circle", { cx: "12", cy: "8", r: "4" }),
+            m("path", { d: "M4 21c0-4.418 3.582-8 8-8s8 3.582 8 8" })
+        ],
+        web: [
+            m("circle", { cx: "12", cy: "12", r: "9" }),
+            m("path", { d: "M3 12h18" }),
+            m("path", { d: "M12 3a14 14 0 0 1 0 18" }),
+            m("path", { d: "M12 3a14 14 0 0 0 0 18" }),
+            m("path", { d: "M5.5 7.5h13" }),
+            m("path", { d: "M5.5 16.5h13" })
+        ],
+        whatsapp: [
+            m("path", { d: "M12 3a8.5 8.5 0 0 0-7.2 13l-1 4 4-1a8.5 8.5 0 1 0 4.2-16Z" }),
+            m("path", { d: "M9.5 10.2c.2-.5.6-.7 1-.5l1.1.6c.3.2.4.5.3.8l-.3.7c-.1.2 0 .4.1.5.4.7 1 1.3 1.7 1.7.1.1.3.2.5.1l.7-.3c.3-.1.6 0 .8.3l.6 1.1c.2.4 0 .8-.5 1-1 .4-2.3.2-3.6-.6-1.3-.8-2.4-1.9-3.2-3.2-.8-1.3-1-2.6-.6-3.6Z" })
+        ],
+        X: [
+            m("path", { d: "M18 6 6 18" }),
+            m("path", { d: "m6 6 12 12" })
+        ]
+
+    }
+
+
+    return {
+        view: ({attrs}) => {
+            const iconName = attrs.icon || "search"
+            const iconNodes = Icons[iconName] || Icons.search
+
+            return m("svg",{
+                width: attrs.width || 18 ,
+                height: attrs.height || attrs.width || 18,
+                viewBox: "0 0 24 24",
+                xmlns: "http://www.w3.org/2000/svg",
+                fill: attrs.filled ? attrs.color : 'none',
+                stroke: attrs.color || 'black',
+                "stroke-width": attrs.strokeWidth || 2,
+                "stroke-linecap": attrs.strokeLinecap || "round",
+                "stroke-linejoin": attrs.strokeLinejoin || "round",
+                style: attrs.style,
+                onclick: attrs.onclick
+            }, iconNodes)
+        }
+    }
+}

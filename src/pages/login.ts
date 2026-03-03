@@ -11,6 +11,7 @@ import { User } from '../model/user.js';
 
 const m = (window as any).m;
 
+// mirar de quitar esto, me lo ha hecho el bot
 const AUTH_ERROR_MESSAGES = {
   invalid_credentials: 'Invalid email or password',
   user_not_found: 'User not found',
@@ -543,7 +544,7 @@ export function PopUpCallBack() {
         setTimeout(()=>{
           window.close()
         }, 1000)
-        
+
       } catch (e) {
         popupLoading = false;
         popupError = mapAuthError((e as any)?.message);

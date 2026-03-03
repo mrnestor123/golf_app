@@ -363,11 +363,15 @@ class MSCorecardScraper:
                         if tee['index'] < len(cells):
                             tee_distance = cells[tee['index']].text.strip()
                             
+                            if tee_distance == '-':
+                                continue
+
                             try:
                                 if tee['index'] != tee['end_index']:
+                                    end_value = cells[tee['end_index']].text.strip()
                                     hole_data['tees'][tee['id']] = {
                                         'distance': tee_distance,
-                                        tee['field_type']: cells[tee['end_index']].text.strip()
+                                        tee['field_type']: end_value if end_value != '-' else None
                                     }
                                 else:
                                     hole_data['tees'][tee['id']] = tee_distance
